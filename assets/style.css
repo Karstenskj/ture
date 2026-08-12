@@ -149,43 +149,48 @@ h1 {
 /* ---------- springmenu ---------- */
 
 nav.jump {
-  display: flex;
-  gap: 7px;
-  overflow-x: auto;
-  padding: 4px 14px 6px;
-  margin: 0 -14px;
-  scrollbar-width: none;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
 }
-nav.jump::-webkit-scrollbar { display: none; }
 
 nav.jump a {
-  flex: none;
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 1px;
+  font-size: 11px;
+  letter-spacing: .4px;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--ink-2);
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 9px 14px;
-  min-height: 38px;
-  display: inline-flex;
+  border-radius: 9px;
+  padding: 8px 2px;
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 2px;
+  line-height: 1.1;
 }
-nav.jump a.hot { color: var(--alpine); border-color: var(--alpine); }
+nav.jump a span { font-size: 14px; font-weight: 600; color: var(--ink); }
+nav.jump a.hot { color: var(--alpine); border-color: var(--alpine); background: var(--alpine-2); }
+nav.jump a.hot span { color: var(--alpine); }
 
-/* ---------- sektionsoverskrift ---------- */
+/* ---------- sektioner ---------- */
+
+section { display: flex; flex-direction: column; gap: 16px; }
 
 h2.sec {
-  font-family: var(--display);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
   color: var(--muted);
-  margin: 0 0 -12px;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
 }
 
 /* ---------- dagkort ---------- */
@@ -202,34 +207,56 @@ h2.sec {
 
 .day.big { border-color: var(--alpine); border-width: 2px; }
 
-.day-head { padding: 16px 16px 0; display: flex; flex-direction: column; gap: 8px; }
-.day-id { display: flex; align-items: baseline; gap: 10px; }
+.day-head { padding: 18px 16px 0; display: flex; flex-direction: column; gap: 9px; }
+.day-id { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
 
-.dow { font-family: var(--display); font-size: 26px; font-weight: 600; line-height: 1; letter-spacing: .5px; color: var(--accent); }
+.dow { font-family: var(--display); font-size: 27px; font-weight: 600; line-height: 1; letter-spacing: .5px; color: var(--accent); }
 .day.big .dow { color: var(--alpine); }
 .date { font-family: var(--mono); font-size: 12px; letter-spacing: 1.1px; text-transform: uppercase; color: var(--muted); }
-.tagline { margin-left: auto; font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.1px; text-transform: uppercase; color: var(--muted); }
 
-h3.day-title { font-family: var(--display); font-size: 26px; font-weight: 600; line-height: 1.12; margin: 0; text-wrap: balance; }
-.day-sum { margin: 0; font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: .2px; }
-
-/* ---------- vejr i et dagkort ---------- */
-
-.wx { padding: 14px 16px 0; display: flex; flex-direction: column; gap: 10px; }
-.wx-row { display: flex; flex-direction: column; gap: 6px; }
-
-.wx-place {
+.tagline {
+  margin-left: auto;
   font-family: var(--mono);
-  font-size: 11.5px;
+  font-size: 10px;
   letter-spacing: 1.1px;
   text-transform: uppercase;
   color: var(--muted);
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+.day.big .tagline { color: var(--alpine); background: var(--alpine-2); border-color: var(--alpine); }
+
+h3.day-title { font-family: var(--display); font-size: 27px; font-weight: 600; line-height: 1.14; margin: 0; text-wrap: balance; }
+.day-sum { margin: 0; font-family: var(--mono); font-size: 12.5px; color: var(--muted); letter-spacing: .2px; line-height: 1.5; }
+
+/* ---------- vejr i et dagkort ---------- */
+
+.wx { padding: 16px 16px 0; display: flex; flex-direction: column; gap: 14px; }
+
+.wx-row {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
+  background: var(--soft);
+  border-radius: 9px;
+  padding: 11px 12px;
+}
+
+.wx-place {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
   flex-wrap: wrap;
 }
-.wx-place em { font-style: normal; color: var(--ink-2); text-transform: none; letter-spacing: 0; font-family: var(--body); font-size: 13px; }
+.wx-place strong { color: var(--ink); font-weight: 600; font-size: 12px; letter-spacing: 1px; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 
@@ -237,46 +264,51 @@ h3.day-title { font-family: var(--display); font-size: 26px; font-weight: 600; l
   font-family: var(--mono);
   font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: .2px;
-  padding: 6px 10px;
-  border-radius: 7px;
-  background: var(--soft);
+  letter-spacing: .1px;
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: var(--card);
   color: var(--ink);
   border: 1px solid var(--line);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 .chip.cold { color: var(--alpine); border-color: var(--alpine); background: var(--alpine-2); }
-.chip.wind { color: var(--accent); border-color: var(--line-2); }
+.chip.wind { color: var(--accent); }
 .chip.dry  { color: var(--accent); background: var(--accent-2); border-color: var(--accent); }
 .chip.wet  { color: var(--alpine); background: var(--alpine-2); border-color: var(--alpine); }
 
+.wx-note { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.4; }
+
 /* ---------- nøglefakta ---------- */
 
-.keys { list-style: none; margin: 14px 0 0; padding: 0 16px; display: flex; flex-direction: column; }
+.keys { list-style: none; margin: 16px 0 0; padding: 0 16px; display: flex; flex-direction: column; }
 
 .keys li {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 10px;
-  padding: 11px 0;
+  flex-direction: column;
+  gap: 4px;
+  padding: 13px 0;
   border-top: 1px solid var(--line);
-  font-size: 16px;
+  font-size: 16.5px;
+  line-height: 1.45;
 }
-.keys li:first-child { border-top: 0; }
+.keys li:first-child { border-top: 0; padding-top: 4px; }
+.keys li:last-child { padding-bottom: 4px; }
+
+.k-top { display: flex; align-items: baseline; gap: 10px; }
 
 .keys b {
   font-family: var(--mono);
   font-size: 10.5px;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.3px;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 400;
-  flex: 0 0 66px;
 }
-.keys .val { flex: 1 1 180px; min-width: 0; }
-.keys .cost { font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--accent); margin-left: auto; }
+.keys .cost { font-family: var(--mono); font-size: 14.5px; font-weight: 600; color: var(--accent); margin-left: auto; font-variant-numeric: tabular-nums; }
+.keys .val { min-width: 0; }
+.keys .val .pin { margin-left: 2px; }
 
 /* ---------- kortlink ---------- */
 
@@ -336,9 +368,19 @@ details[open] > summary::after { transform: rotate(-135deg) translate(-2px, -2px
 
 .panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .panel > details { border-top: 0; }
-.panel summary { font-size: 13px; color: var(--ink); }
-.panel summary .lead { font-family: var(--display); font-size: 21px; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--ink); }
-.panel summary .hint { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .6px; text-transform: none; }
+
+.panel summary {
+  display: grid;
+  grid-template-columns: 1fr 16px;
+  align-items: center;
+  gap: 2px 14px;
+  font-size: 13px;
+  color: var(--ink);
+  padding: 16px;
+}
+.panel summary .lead { grid-column: 1; font-family: var(--display); font-size: 21px; font-weight: 600; line-height: 1.15; letter-spacing: 0; text-transform: none; color: var(--ink); }
+.panel summary .hint { grid-column: 1; font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .6px; text-transform: none; line-height: 1.3; }
+.panel summary::after { grid-column: 2; grid-row: 1 / -1; margin-left: 0; justify-self: end; }
 
 /* ---------- tidslinje ---------- */
 
