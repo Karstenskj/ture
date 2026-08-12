@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ture · Karstens rejseplaner</title>
+<meta name="description" content="Samling af planlagte og gennemførte ture. Hver tur har dag for dag, vejr, vandringer, kortlink og budget.">
+<meta name="theme-color" content="#0A6E76">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="top">
+    <p class="eyebrow">Rejseplaner · New Zealand</p>
+    <h1>Ture</h1>
+    <p class="standfirst">Hver tur har dag for dag med vejr og kortlink, vandringer, overnatning og budget. Bygget til telefon. Fold afsnittene ud når du vil have detaljerne.</p>
+  </header>
+
+  <section>
+    <h2 class="sec">Næste tur</h2>
+
+    <div class="trips">
+
+      <!-- ===================================================================
+           TURKORT — kopiér blokken herunder når der skal en ny tur ind.
+           badge: soon = kommende · done = gennemført · idea = idé
+           =================================================================== -->
+
+      <a class="trip next" href="trips/2026-08-sydoeen.html">
+        <div class="trip-when">
+          <span class="badge soon">Om 2 dage</span>
+          <span>14.–19. august 2026 · 6 dage</span>
+        </div>
+        <h3>Sydøen på seks dage</h3>
+        <p>Ned langs kysten til Waimate, ind gennem Waitaki-dalen, to nætter i Wanaka og to i Queenstown. Solopgang på Mount Iron, Roys Peak i sne, og et brændefyret kar i Omarama.</p>
+        <div class="trip-stats">
+          <span>5 nætter i telt</span>
+          <span>1 173 km</span>
+          <span>31 km til fods</span>
+          <span>$1 090 for to</span>
+        </div>
+        <div class="trip-go">Åbn planen →</div>
+      </a>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec">Tidligere</h2>
+    <div class="trips">
+      <div class="empty">
+        <b>Ingen gemte ture endnu.</b><br />
+        Når en tur er overstået, flytter den herned og får mærket <span class="badge done">Gennemført</span>. Så kan man slå op hvad man gjorde, hvad det kostede, og hvad man ville gøre anderledes.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec">Sådan kommer en ny tur ind</h2>
+    <div class="panel">
+      <details>
+        <summary><span class="lead">Til Claude</span> <span class="hint">opskriften</span></summary>
+        <div class="det-body">
+          <p style="margin:0;font-size:16px;color:var(--ink-2);">Sig bare <em>&laquo;læg turen ind i ture-platformen&raquo;</em>. Fremgangsmåden ligger i <code>README.md</code> i repoet, og kort fortalt er den:</p>
+          <ul class="plain">
+            <li>Ny fil i <code>trips/</code> med navnet <code>ÅÅÅÅ-MM-sted.html</code></li>
+            <li>Den linker til <code>../assets/style.css</code> og <code>../assets/map.js</code>, så designet følger med af sig selv</li>
+            <li>Samme opbygning: dagkort med vejr og kortlink, foldbare paneler til kort, vejr, vandringer, budget og pakkeliste</li>
+            <li>Et nyt turkort øverst i <code>index.html</code>, og den gamle tur flytter ned under Tidligere</li>
+            <li>Commit og push, så er den live på GitHub Pages efter cirka 30 sekunder</li>
+          </ul>
+          <p class="note ok"><b>Designet skal ikke genopfindes.</b> Alt ligger i <code>assets/style.css</code>. Skal en ny tur have en ny komponent, så læg den i stilarket så den også kan bruges næste gang.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <footer>
+    Statisk side, ingen sporing, ingen cookies. Følger telefonens lyse eller mørke tema.
+    Vejr fra <a href="https://www.metservice.com/" target="_blank" rel="noopener noreferrer">MetService</a>, turdata fra <a href="https://www.doc.govt.nz/" target="_blank" rel="noopener noreferrer">DOC</a>.
+  </footer>
+
+</div>
+
+</body>
+</html>
