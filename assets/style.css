@@ -177,6 +177,55 @@ nav.jump a span { font-size: 14px; font-weight: 600; color: var(--ink); }
 nav.jump a.hot { color: var(--alpine); border-color: var(--alpine); background: var(--alpine-2); }
 nav.jump a.hot span { color: var(--alpine); }
 
+/* ---------- overblik: hele turen på én liste ----------
+   Hver række linker til sit dagkort, så listen er også navigationen. */
+
+ol.ov {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+ol.ov a {
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  gap: 2px 12px;
+  align-items: baseline;
+  background: var(--card);
+  padding: 13px 14px;
+  text-decoration: none;
+  color: var(--ink);
+  min-height: 62px;
+}
+ol.ov a:hover { background: var(--accent-2); }
+
+.ov-day {
+  grid-row: 1 / 3;
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: .4px;
+  color: var(--accent);
+  align-self: center;
+}
+
+.ov-route { grid-column: 2; font-family: var(--display); font-size: 19px; font-weight: 600; line-height: 1.2; }
+.ov-sleep { grid-column: 2; font-size: 14.5px; color: var(--muted); line-height: 1.35; }
+.ov-drive { grid-column: 3; grid-row: 1; font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--ink-2); white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+.ov-cost  { grid-column: 3; grid-row: 2; font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+
+ol.ov li.big a { background: var(--alpine-2); }
+ol.ov li.big a:hover { filter: brightness(.97); }
+ol.ov li.big .ov-day, ol.ov li.big .ov-cost { color: var(--alpine); }
+
 /* ---------- sektioner ---------- */
 
 section { display: flex; flex-direction: column; gap: 16px; }

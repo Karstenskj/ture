@@ -55,10 +55,28 @@ Rækkefølgen er bevidst. Det vigtigste øverst, alt opslagsværk foldet væk ne
 
 1. **Header** med eyebrow, `h1`, standfirst og `.facts` med fire nøgletal.
 2. **Stor grøn knap** (`.cta`) der åbner hele ruten i Google Maps med waypoints.
-3. **Springmenu** (`nav.jump`) med én chip pr. dag. Den hårdeste dag får `class="hot"`.
+3. **Overblik** (`ol.ov`) med én linje pr. dag. Det er Karstens favorit og skal altid med.
 4. **Ét dagkort pr. dag** (`article.day`). Den store dag får `class="day big"`.
 5. **Foldbare paneler** (`div.panel > details`) til kort, vejr, vandringer, budget og booking.
 6. **Footer** med kilder og dato for hvornår tallene er hentet.
+
+### Overblikket
+
+Hele turen på én liste, og samtidig sidens navigation. Hver række linker til sit dagkort.
+Den hårdeste dag får `class="big"` på sit `<li>` og bliver orange. Der er ingen separat
+springmenu, listen erstatter den.
+
+```html
+<ol class="ov">
+  <li><a href="#fre">
+    <span class="ov-day">FRE</span>
+    <span class="ov-route">Christchurch → Waimate</span>
+    <span class="ov-sleep">Victoria Park, Waimate</span>
+    <span class="ov-drive">2 t 40</span>
+    <span class="ov-cost">$50</span>
+  </a></li>
+</ol>
+```
 
 ### Et dagkort indeholder
 
