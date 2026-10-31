@@ -74,7 +74,8 @@
 
   var all = [];
   (D.extras || []).forEach(function (x) {
-    tap(L.polyline(x.pts, { className: 'rk-extra', weight: 4, dashArray: '8 8', opacity: .75, bubblingMouseEvents: false }).addTo(map), x.html);
+    L.polyline(x.pts, { className: 'rk-case', weight: 7, dashArray: '8 8', interactive: false }).addTo(map);
+    tap(L.polyline(x.pts, { className: 'rk-extra', weight: 4, dashArray: '8 8', bubblingMouseEvents: false }).addTo(map), x.html);
   });
   (D.ferries || []).forEach(function (x) {
     tap(L.polyline(x.pts, { className: 'rk-ferry', weight: 3, dashArray: '6 8', bubblingMouseEvents: false }).addTo(map), x.html);
@@ -84,6 +85,8 @@
   (D.legs || []).forEach(function (x) {
     // bred usynlig linje under, så den er nem at ramme med en finger
     tap(L.polyline(x.pts, { weight: 22, opacity: 0, bubblingMouseEvents: false }).addTo(map), x.html);
+    // mørk kant under en lys linje, så ruten ses på både kort, terræn og satellit
+    L.polyline(x.pts, { className: 'rk-case', weight: 9, interactive: false }).addTo(map);
     L.polyline(x.pts, { className: 'rk-leg', weight: 5, interactive: false }).addTo(map);
     all = all.concat(x.pts);
     if (x.label) tap(L.marker(x.mid, { icon: icon('rk-time', x.label), keyboard: false }), x.html, x.mid).addTo(times);
