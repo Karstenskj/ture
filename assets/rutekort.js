@@ -77,6 +77,10 @@
     L.polyline(x.pts, { className: 'rk-case', weight: 7, dashArray: '8 8', interactive: false }).addTo(map);
     tap(L.polyline(x.pts, { className: 'rk-extra', weight: 4, dashArray: '8 8', bubblingMouseEvents: false }).addTo(map), x.html);
   });
+  (D.after || []).forEach(function (x) {
+    L.polyline(x.pts, { className: 'rk-case', weight: 7, dashArray: '8 8', interactive: false }).addTo(map);
+    tap(L.polyline(x.pts, { className: 'rk-after', weight: 4, dashArray: '8 8', bubblingMouseEvents: false }).addTo(map), x.html);
+  });
   (D.ferries || []).forEach(function (x) {
     tap(L.polyline(x.pts, { className: 'rk-ferry', weight: 3, dashArray: '6 8', bubblingMouseEvents: false }).addTo(map), x.html);
   });

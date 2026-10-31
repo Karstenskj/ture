@@ -25,6 +25,7 @@
   --scrim:     rgba(6, 16, 20, .55);
   --on-scrim:  #FFFFFF;
   --shout:     #D32F2F;
+  --after:     #F28C28;
 
   --display: "Avenir Next Condensed", "Avenir Next", "Gill Sans MT", "Trebuchet MS", sans-serif;
   --body: Charter, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
@@ -785,6 +786,7 @@ path.rk-leg { stroke: var(--route, var(--accent)); }
 path.rk-extra { stroke: var(--route, var(--accent)); }
 path.rk-ferry { stroke: var(--muted); }
 path.rk-case { stroke: var(--route-case, transparent); }
+path.rk-after { stroke: var(--after); }
 
 .rk-night, .rk-pin, .rk-time, .rk-me { position: absolute; transform: translate(-50%, -50%); box-shadow: 0 1px 4px var(--scrim); }
 .rk-night { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--card); background: var(--accent); border: 2px solid var(--card); border-radius: 999px; padding: 3px 7px; white-space: nowrap; cursor: pointer; }
@@ -841,6 +843,7 @@ path.rk-case { stroke: var(--route-case, transparent); }
   --logo:      #153524;
   --route:     #4DB8F0;  /* lyseblå med kul-kant, Karstens valg 31. okt., så ruten ses på kort, terræn og satellit */
   --route-case: #1B2722;
+  --after:     #F28C28;  /* orange: det de ser efter Auckland, Karstens valg 1. nov. */
   --display: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
   --body: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
   --mono: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
