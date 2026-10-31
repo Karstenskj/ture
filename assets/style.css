@@ -26,7 +26,7 @@
   --on-scrim:  #FFFFFF;
   --shout:     #D32F2F;
   --after:     #F28C28;
-  --maybe:     #1FA85A;
+  --maybe:     #5EEA8F;
   --on-maybe:  #1B2722;
 
   --display: "Avenir Next Condensed", "Avenir Next", "Gill Sans MT", "Trebuchet MS", sans-serif;
@@ -857,7 +857,7 @@ path.rk-maybe { stroke: var(--maybe); }
   --route:     #4DB8F0;  /* lyseblå med kul-kant, Karstens valg 31. okt., så ruten ses på kort, terræn og satellit */
   --route-case: #1B2722;
   --after:     #F28C28;  /* orange: det de ser efter Auckland, Karstens valg 1. nov. */
-  --maybe:     #1FA85A;  /* grøn: det de stadig tænker over, fx Northland, Karstens valg 1. nov. Kul på grøn er 5,0:1 */
+  --maybe:     #5EEA8F;  /* lys grøn med kul-kant som ruten, så den ses på terræn og satellit: det de stadig tænker over, fx Northland, Karstens valg 1. nov. Kul på grøn er 10:1 */
   --display: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
   --body: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
   --mono: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
