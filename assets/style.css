@@ -778,8 +778,8 @@ body.rk-lock { overflow: hidden; }
 .rk-btn { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 8px; min-height: 40px; padding: 0 12px; box-shadow: 0 1px 5px var(--scrim); cursor: pointer; }
 .rk-btn:hover { background: var(--accent-2); color: var(--accent); }
 
-path.rk-leg { stroke: var(--accent); }
-path.rk-extra { stroke: var(--accent); }
+path.rk-leg { stroke: var(--route, var(--accent)); }
+path.rk-extra { stroke: var(--route, var(--accent)); }
 path.rk-ferry { stroke: var(--muted); }
 
 .rk-night, .rk-pin, .rk-time, .rk-me { position: absolute; transform: translate(-50%, -50%); box-shadow: 0 1px 4px var(--scrim); }
@@ -808,3 +808,87 @@ path.rk-ferry { stroke: var(--muted); }
   .rk-sheet.open { transform: none; }
   .rk-btns { top: auto; bottom: 10px; flex-direction: row; }
 }
+
+/* ---------- tema: CPH Agentic ----------
+   Sæt class="theme-cpha" på <body> og hent Hanken Grotesk fra Google Fonts i <head>.
+   Fire farver, grøn #153524, lysgrøn #A7CDB6, papir #F8F7F2 og kul #1B2722. Tonerne er de fire med
+   lavere dækning, ikke nye farver. Lysgrøn er aldrig tekst på papir, der er ingen rød, og advarsler
+   er kul på en grå tone. Logoet findes kun i grøn, kul eller papir. Kontraster er målt, alle over 4,5:1. */
+
+.theme-cpha {
+  --ground:    #EFEFEA;  /* kul 4 */
+  --card:      #F8F7F2;  /* papir */
+  --soft:      #DCE8DD;  /* lysgrøn 35 */
+  --ink:       #1B2722;  /* kul */
+  --ink-2:     #3C4641;  /* kul 85 */
+  --muted:     #5D6560;  /* kul 70 */
+  --line:      #E6E6E1;  /* kul 8 */
+  --line-2:    #D7D8D3;  /* kul 15 */
+  --accent:    #153524;  /* grøn */
+  --accent-2:  #DCE8DD;  /* lysgrøn 35 */
+  --alpine:    #1B2722;
+  --alpine-2:  #E6E6E1;
+  --lake:      #A7CDB6;
+  --sea:       #DCE8DD;
+  --land:      #F8F7F2;
+  --coast:     #D7D8D3;
+  --scrim:     rgba(27, 39, 34, .6);
+  --on-scrim:  #F8F7F2;
+  --logo:      #153524;
+  --route:     #153524;  /* grøn i begge temaer, kortet under er altid lyst */
+  --display: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  --body: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  --mono: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-cpha {
+    --ground:    #1B2722;  /* kul */
+    --card:      #26312C;  /* papir 5 på kul */
+    --soft:      #153524;  /* grøn */
+    --ink:       #F8F7F2;  /* papir */
+    --ink-2:     #CCCDC8;  /* papir 80 */
+    --muted:     #B6B9B4;  /* papir 70 */
+    --line:      #36403B;  /* papir 12 */
+    --line-2:    #47514C;  /* papir 20 */
+    --accent:    #A7CDB6;  /* lysgrøn */
+    --accent-2:  #153524;  /* grøn */
+    --alpine:    #F8F7F2;
+    --alpine-2:  #36403B;
+    --lake:      #153524;
+    --sea:       #153524;
+    --land:      #26312C;
+    --coast:     #47514C;
+    --scrim:     rgba(10, 16, 13, .65);
+    --on-scrim:  #F8F7F2;
+    --logo:      #F8F7F2;
+  }
+}
+
+:root[data-theme="dark"] .theme-cpha {
+  --ground:    #1B2722;  /* kul */
+  --card:      #26312C;  /* papir 5 på kul */
+  --soft:      #153524;  /* grøn */
+  --ink:       #F8F7F2;  /* papir */
+  --ink-2:     #CCCDC8;  /* papir 80 */
+  --muted:     #B6B9B4;  /* papir 70 */
+  --line:      #36403B;  /* papir 12 */
+  --line-2:    #47514C;  /* papir 20 */
+  --accent:    #A7CDB6;  /* lysgrøn */
+  --accent-2:  #153524;  /* grøn */
+  --alpine:    #F8F7F2;
+  --alpine-2:  #36403B;
+  --lake:      #153524;
+  --sea:       #153524;
+  --land:      #26312C;
+  --coast:     #47514C;
+  --scrim:     rgba(10, 16, 13, .65);
+  --on-scrim:  #F8F7F2;
+  --logo:      #F8F7F2;
+}
+
+.cpha-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.cpha-logo { color: var(--logo); display: inline-flex; }
+.cpha-logo svg { display: block; height: 28px; width: auto; }
+.cpha-foot { display: flex; padding-top: 18px; }
+.cpha-foot svg { height: 64px; }

@@ -121,6 +121,10 @@ Alt ligger i `assets/style.css`. Rør ikke farverne i den enkelte turside.
 
 Nye komponenter hører hjemme i stilarket, ikke i turfilen, så næste tur også kan bruge dem.
 
+## Tema: CPH Agentic
+
+En tur kan bruge CPH Agentics identitet i stedet for glacier-teal: sæt `class="theme-cpha"` på `<body>`, hent Hanken Grotesk fra Google Fonts i `<head>`, og læg logoet ind fra `assets/cpha-logo-vandret.svg` (øverst, 28 px høj) og `assets/cpha-logo-stablet.svg` (i footeren). Logoerne er tegnet i `currentColor`, så de bliver grønne i lyst tema og papirfarvede i mørkt. Temaets farver står i bunden af stilarket. Lysgrøn er aldrig tekst på papir, der er ingen rød, og logoet findes kun i grøn, kul eller papir. Den store NZ-tur bruger temaet.
+
 ## Rigtigt kort
 
 `assets/rutekort.js` tegner ruten på et rigtigt kort med Leaflet 1.9.4 fra cdnjs og tre baggrunde: OpenStreetMap, OpenTopoMap (terræn) og Esri (satellit). Al data ligger i `<script type="application/json" id="rk-data">` på tursiden: køredage (`legs`), det der ikke er med (`extras`), færger (`ferries`), pladser (`bases`) og nummererede steder (`spots`), hver med færdig, escapet html til arket der glider op ved tryk. Se kommentaren øverst i filen. Kortet får fuld skærm med en CSS-klasse, så det også virker på iPhone, og på telefonen flyttes det med to fingre, indtil det fylder skærmen. Den gamle SVG-tegning med `assets/map.js` bruges stadig af de ældre ture.
