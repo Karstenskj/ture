@@ -24,6 +24,7 @@
   --coast:     #93B0B6;
   --scrim:     rgba(6, 16, 20, .55);
   --on-scrim:  #FFFFFF;
+  --shout:     #D32F2F;
 
   --display: "Avenir Next Condensed", "Avenir Next", "Gill Sans MT", "Trebuchet MS", sans-serif;
   --body: Charter, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
@@ -50,6 +51,7 @@
     --coast:     #3E6470;
   --scrim:     rgba(0, 0, 0, .6);
   --on-scrim:  #FFFFFF;
+  --shout:     #FF6B6B;
   }
 }
 
@@ -72,6 +74,7 @@
   --coast:     #3E6470;
   --scrim:     rgba(0, 0, 0, .6);
   --on-scrim:  #FFFFFF;
+  --shout:     #FF6B6B;
 }
 
 * { box-sizing: border-box; }
@@ -909,3 +912,6 @@ path.rk-case { stroke: var(--route-case, transparent); }
 body.on-kort { padding-bottom: 0; }
 body.on-kort .wrap { gap: 10px; }
 body.on-kort #kort .rk { height: calc(100dvh - var(--bar, 110px) - 22px); min-height: 360px; }
+
+/* stor rød vægt på ét ord, efter Karstens ønske */
+.shout { color: var(--shout); font-family: var(--display); font-size: 2em; font-weight: 800; text-transform: uppercase; line-height: 1.1; }
