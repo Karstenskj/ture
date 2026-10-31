@@ -894,3 +894,18 @@ path.rk-case { stroke: var(--route-case, transparent); }
 .cpha-logo svg { display: block; height: 28px; width: auto; }
 .cpha-foot { display: flex; padding-top: 18px; }
 .cpha-foot svg { height: 64px; }
+
+/* ---------- faner: titel og menu øverst, én visning ad gangen ---------- */
+
+.appbar { position: sticky; top: 0; z-index: 1200; background: var(--ground); padding: 10px 0 10px; display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid var(--line); margin-top: -22px; }
+.appbar-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.appbar-title { font-family: var(--display); font-size: 17px; font-weight: 700; color: var(--ink); }
+.tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs a { flex: none; font-family: var(--mono); font-size: 13.5px; font-weight: 600; color: var(--ink-2); background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 0 14px; min-height: 40px; display: inline-flex; align-items: center; text-decoration: none; }
+.tabs a[aria-current="page"] { color: var(--card); background: var(--accent); border-color: var(--accent); }
+.tab[hidden] { display: none; }
+.tab, .spot { scroll-margin-top: calc(var(--bar, 110px) + 10px); }
+body.on-kort { padding-bottom: 0; }
+body.on-kort .wrap { gap: 10px; }
+body.on-kort #kort .rk { height: calc(100dvh - var(--bar, 110px) - 22px); min-height: 360px; }

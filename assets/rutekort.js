@@ -102,7 +102,14 @@
     tap(L.marker(x.ll, { icon: icon('rk-night', x.label), zIndexOffset: 200 }).addTo(map), x.html, x.ll);
   });
 
-  map.fitBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]], { padding: [16, 16] });
+  // kortet kan ligge i en skjult fane; tilpas og zoom ind på ruten, når det bliver synligt
+  var fitted = false;
+  function fit() {
+    map.invalidateSize();
+    if (!fitted && box.offsetWidth) { map.fitBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]], { padding: [16, 16] }); fitted = true; }
+  }
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(box);
+  fit();
   showTimes();
 
   // fuld skærm med en klasse, så det også virker på iPhone

@@ -121,6 +121,10 @@ Alt ligger i `assets/style.css`. Rør ikke farverne i den enkelte turside.
 
 Nye komponenter hører hjemme i stilarket, ikke i turfilen, så næste tur også kan bruge dem.
 
+## Faner
+
+Lange ture kan bygges som faner i stedet for én lang side: en fast bjælke øverst (`.appbar` med `.tabs`) og én `<section class="tab" id="...">` pr. visning, hvor alle andre end den første har `hidden`. Et lille script på siden viser fanen, som adressen peger på (`#kort`, `#naetter` ...), og et link til et element inde i en fane åbner fanen og springer derned. Kortfanen fylder resten af skærmen. Den store NZ-tur bruger faner.
+
 ## Tema: CPH Agentic
 
 En tur kan bruge CPH Agentics identitet i stedet for glacier-teal: sæt `class="theme-cpha"` på `<body>`, hent Hanken Grotesk fra Google Fonts i `<head>`. Karsten vil ikke have logoet på tursiderne, kun stilen. Logofilerne `assets/cpha-logo-*.svg` ligger der, hvis det ændrer sig. Temaets farver står i bunden af stilarket. Lysgrøn er aldrig tekst på papir, der er ingen rød, og logoet findes kun i grøn, kul eller papir. Den store NZ-tur bruger temaet.
