@@ -61,6 +61,11 @@
       var date = el.getAttribute('data-date');
       var w = res[0][land.idx[el.getAttribute('data-wx')]];
       var i = w && w.daily ? w.daily.time.indexOf(date) : -1;
+      // den sidste dag i prognosen kan mangle tal, og så er det bedre at vente en dag end at vise 0°
+      if (i >= 0 && w.daily.temperature_2m_max[i] == null) {
+        el.appendChild(chip('wait', 'vejret kommer i morgen'));
+        return;
+      }
       if (i < 0) {
         var from = new Date(date + 'T12:00:00');
         from.setDate(from.getDate() - (DAYS - 1));

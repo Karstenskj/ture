@@ -28,6 +28,8 @@
   --after:     #F28C28;
   --maybe:     #5EEA8F;
   --on-maybe:  #1B2722;
+  --map-ink:   #1B2722;  /* navne på kortet, der altid er lyst */
+  --map-halo:  #F8F7F2;
 
   --display: "Avenir Next Condensed", "Avenir Next", "Gill Sans MT", "Trebuchet MS", sans-serif;
   --body: Charter, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
@@ -795,9 +797,18 @@ path.rk-maybe { stroke: var(--maybe); }
 
 .rk-night, .rk-pin, .rk-time, .rk-me { position: absolute; transform: translate(-50%, -50%); box-shadow: 0 1px 4px var(--scrim); }
 .rk-night { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--card); background: var(--accent); border: 2px solid var(--card); border-radius: 999px; padding: 3px 7px; white-space: nowrap; cursor: pointer; }
-.rk-pin { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-family: var(--mono); font-size: 10.5px; font-weight: 600; color: var(--accent); background: var(--card); border: 2.5px solid var(--accent); cursor: pointer; }
-.rk-pin.k { color: var(--card); background: var(--accent); border-color: var(--card); }
-.rk-pin.out { opacity: .5; }
+.rk-pin { --pc: var(--accent); width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-family: var(--mono); font-size: 10.5px; font-weight: 600; color: var(--pc); background: var(--card); border: 2.5px solid var(--pc); cursor: pointer; }
+.rk-pin.k { color: var(--card); background: var(--pc); border-color: var(--card); }
+/* status i samme farver som linjerne: orange efter Auckland, grøn måske, grå ikke på ruten */
+.rk-pin.after { --pc: var(--after); }
+.rk-pin.maybe { --pc: var(--maybe); }
+.rk-pin.out { --pc: var(--muted); }
+.rk-pin.after, .rk-pin.maybe { color: var(--ink); }
+.rk-pin.k.after, .rk-pin.k.maybe { color: var(--on-maybe); }
+/* navnet ved hvert nummer, når man zoomer ind (rutekort.js sætter .rk-names) */
+.leaflet-tooltip.rk-label { display: none; padding: 0; background: none; border: 0; box-shadow: none; font-family: var(--body); font-size: 12px; font-weight: 600; color: var(--map-ink); text-shadow: 0 0 3px var(--map-halo), 0 0 3px var(--map-halo), 0 0 2px var(--map-halo); }
+.leaflet-tooltip.rk-label::before { display: none; }
+.rk-names .leaflet-tooltip.rk-label { display: block; }
 .rk-time { font-family: var(--mono); font-size: 10.5px; font-weight: 600; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; white-space: nowrap; cursor: pointer; }
 .rk-me { width: 16px; height: 16px; border-radius: 50%; background: var(--accent); border: 3px solid var(--card); }
 
@@ -808,6 +819,7 @@ path.rk-maybe { stroke: var(--maybe); }
 .rk-legend .rk-night, .rk-legend .rk-pin { position: static; transform: none; box-shadow: none; cursor: default; }
 .rk-legend .rk-night { font-size: 9.5px; padding: 1px 5px; border-width: 1px; }
 .rk-legend .rk-pin { width: 13px; height: 13px; border-width: 2px; }
+.rk-legend .rk-hint { color: var(--muted); }
 
 .rk-sheet { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1100; max-height: 64%; overflow-y: auto; background: var(--card); color: var(--ink); border-radius: 14px 14px 0 0; box-shadow: 0 -4px 18px var(--scrim); transform: translateY(105%); transition: transform .22s ease; }
 .rk-sheet.open { transform: none; }

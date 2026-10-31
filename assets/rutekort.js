@@ -15,7 +15,7 @@
      after:   [{pts, html, maybe}]                                                efter turen, stiplet orange, grøn med maybe
      ferries: [{pts, html}]                                                       færger, stiplet grå
      bases:   [{ll: [lat, lon], label: "17/11", html}]                            hvor I sover
-     spots:   [{ll, n, k: egen ønske, out: ikke med, html}]                       nummererede steder
+     spots:   [{ll, n, name, left, k: egen ønske, st: out/after/maybe, html}]     nummererede steder, navnet fra zoom 8
      legend:  "<span>…</span>"                                                    forklaringen på farverne i bunden af kortet
 
    Et tryk åbner et kort nedefra med alt om stedet, som i en kortapp.
@@ -97,12 +97,17 @@
     all = all.concat(x.pts);
     if (x.label) tap(L.marker(x.mid, { icon: icon('rk-time', x.label), keyboard: false }), x.html, x.mid).addTo(times);
   });
-  function showTimes() { if (map.getZoom() >= 7) times.addTo(map); else times.remove(); }
+  // køretiderne fra zoom 7, navnene ved numrene fra zoom 8
+  function showTimes() {
+    if (map.getZoom() >= 7) times.addTo(map); else times.remove();
+    box.classList.toggle('rk-names', map.getZoom() >= 8);
+  }
   map.on('zoomend', showTimes);
 
   (D.spots || []).forEach(function (x) {
-    var cls = 'rk-pin' + (x.k ? ' k' : '') + (x.out ? ' out' : '');
-    tap(L.marker(x.ll, { icon: icon(cls, x.n), title: String(x.n), zIndexOffset: 100 }).addTo(map), x.html, x.ll);
+    var cls = 'rk-pin' + (x.k ? ' k' : '') + (x.st ? ' ' + x.st : '');
+    var m = tap(L.marker(x.ll, { icon: icon(cls, x.n), title: x.name || String(x.n), zIndexOffset: 100 }).addTo(map), x.html, x.ll);
+    if (x.name) m.bindTooltip(x.name, { permanent: true, direction: x.left ? 'left' : 'right', offset: [x.left ? -10 : 10, 0], opacity: 1, className: 'rk-label' });
   });
   (D.bases || []).forEach(function (x) {
     tap(L.marker(x.ll, { icon: icon('rk-night', x.label), zIndexOffset: 200 }).addTo(map), x.html, x.ll);
