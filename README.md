@@ -11,6 +11,7 @@ index.html              forsiden med menuen over alle ture
 assets/style.css        hele designsystemet, deles af alle sider
 assets/map.js           zoom og træk på inline SVG-kort
 assets/forecast.js      vejr og bølger fra Open-Meteo, hentes hver gang siden åbnes
+assets/rutekort.js      rigtigt kort (Leaflet + OpenStreetMap) med ruten og et ark der glider op ved tryk
 trips/ÅÅÅÅ-MM-sted.html én fil pr. tur
 .nojekyll               så GitHub Pages ikke kører Jekyll
 ```
@@ -119,6 +120,10 @@ Alt ligger i `assets/style.css`. Rør ikke farverne i den enkelte turside.
 - **Begge temaer.** Farver defineres som variabler tre steder: `:root`, `@media (prefers-color-scheme: dark)` med `:root:not([data-theme="light"])`, og `:root[data-theme="dark"]`. Skriv aldrig en farve direkte i en komponent
 
 Nye komponenter hører hjemme i stilarket, ikke i turfilen, så næste tur også kan bruge dem.
+
+## Rigtigt kort
+
+`assets/rutekort.js` tegner ruten på et rigtigt kort med Leaflet 1.9.4 fra cdnjs og tre baggrunde: OpenStreetMap, OpenTopoMap (terræn) og Esri (satellit). Al data ligger i `<script type="application/json" id="rk-data">` på tursiden: køredage (`legs`), det der ikke er med (`extras`), færger (`ferries`), pladser (`bases`) og nummererede steder (`spots`), hver med færdig, escapet html til arket der glider op ved tryk. Se kommentaren øverst i filen. Kortet får fuld skærm med en CSS-klasse, så det også virker på iPhone, og på telefonen flyttes det med to fingre, indtil det fylder skærmen. Den gamle SVG-tegning med `assets/map.js` bruges stadig af de ældre ture.
 
 ## Vejrdata
 
