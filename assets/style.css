@@ -26,6 +26,8 @@
   --on-scrim:  #FFFFFF;
   --shout:     #D32F2F;
   --after:     #F28C28;
+  --maybe:     #1FA85A;
+  --on-maybe:  #1B2722;
 
   --display: "Avenir Next Condensed", "Avenir Next", "Gill Sans MT", "Trebuchet MS", sans-serif;
   --body: Charter, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
@@ -238,6 +240,7 @@ ol.ov li.big .ov-day, ol.ov li.big .ov-cost { color: var(--alpine); }
 
 /* lange ture: ugedag og dato i to linjer, og vejret under hver dag (fyldes af assets/forecast.js) */
 ol.ov.compact .ov-day { font-size: 15px; letter-spacing: .2px; line-height: 1.15; }
+ol.ov .ov-day.maybe { justify-self: start; font-size: 12px; letter-spacing: 0; padding: 2px 4px; border-radius: 5px; background: var(--maybe); color: var(--on-maybe); }
 ol.ov .ov-wx { grid-column: 2 / 4; display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
 ol.ov .ov-wx:empty { display: none; }
 ol.ov .ov-wx .chip { font-size: 11px; padding: 3px 7px; }
@@ -736,6 +739,7 @@ h3.spot-name { font-family: var(--display); font-size: 25px; font-weight: 600; l
 .tag { font-family: var(--mono); font-size: 10.5px; letter-spacing: .8px; text-transform: uppercase; padding: 4px 7px; border-radius: 5px; background: var(--soft); color: var(--ink-2); border: 1px solid var(--line); }
 .tag.k { background: var(--accent); color: var(--card); border-color: var(--accent); }
 .tag.hot { background: var(--accent-2); color: var(--accent); border-color: var(--accent); }
+.tag.maybe { background: var(--maybe); color: var(--on-maybe); border-color: var(--maybe); }
 
 .spot-facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
 .spot-facts div { background: var(--soft); padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; }
@@ -773,8 +777,8 @@ h3.spot-name { font-family: var(--display); font-size: 25px; font-weight: 600; l
 
 /* ---------- rigtigt kort med Leaflet (assets/rutekort.js) ---------- */
 
-.rk { position: relative; height: 76vh; min-height: 420px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--sea); }
-.rk-map { position: absolute; inset: 0; background: var(--sea); }
+.rk { position: relative; display: flex; flex-direction: column; height: 76vh; min-height: 420px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--sea); }
+.rk-map { position: relative; flex: 1; min-height: 0; background: var(--sea); }
 .rk.full { position: fixed; inset: 0; z-index: 2000; height: auto; min-height: 0; border-radius: 0; border: 0; }
 body.rk-lock { overflow: hidden; }
 
@@ -787,6 +791,7 @@ path.rk-extra { stroke: var(--route, var(--accent)); }
 path.rk-ferry { stroke: var(--muted); }
 path.rk-case { stroke: var(--route-case, transparent); }
 path.rk-after { stroke: var(--after); }
+path.rk-maybe { stroke: var(--maybe); }
 
 .rk-night, .rk-pin, .rk-time, .rk-me { position: absolute; transform: translate(-50%, -50%); box-shadow: 0 1px 4px var(--scrim); }
 .rk-night { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--card); background: var(--accent); border: 2px solid var(--card); border-radius: 999px; padding: 3px 7px; white-space: nowrap; cursor: pointer; }
@@ -795,6 +800,14 @@ path.rk-after { stroke: var(--after); }
 .rk-pin.out { opacity: .5; }
 .rk-time { font-family: var(--mono); font-size: 10.5px; font-weight: 600; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; white-space: nowrap; cursor: pointer; }
 .rk-me { width: 16px; height: 16px; border-radius: 50%; background: var(--accent); border: 3px solid var(--card); }
+
+/* forklaringen på farverne i bunden af kortet, med de samme klasser som kortet selv */
+.rk-legend { flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 8px 12px; background: var(--card); border-top: 1px solid var(--line); font-size: 12.5px; line-height: 1.3; color: var(--ink-2); }
+.rk-legend > span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.rk-legend svg { width: 28px; height: 10px; flex: none; }
+.rk-legend .rk-night, .rk-legend .rk-pin { position: static; transform: none; box-shadow: none; cursor: default; }
+.rk-legend .rk-night { font-size: 9.5px; padding: 1px 5px; border-width: 1px; }
+.rk-legend .rk-pin { width: 13px; height: 13px; border-width: 2px; }
 
 .rk-sheet { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1100; max-height: 64%; overflow-y: auto; background: var(--card); color: var(--ink); border-radius: 14px 14px 0 0; box-shadow: 0 -4px 18px var(--scrim); transform: translateY(105%); transition: transform .22s ease; }
 .rk-sheet.open { transform: none; }
@@ -844,6 +857,7 @@ path.rk-after { stroke: var(--after); }
   --route:     #4DB8F0;  /* lyseblå med kul-kant, Karstens valg 31. okt., så ruten ses på kort, terræn og satellit */
   --route-case: #1B2722;
   --after:     #F28C28;  /* orange: det de ser efter Auckland, Karstens valg 1. nov. */
+  --maybe:     #1FA85A;  /* grøn: det de stadig tænker over, fx Northland, Karstens valg 1. nov. Kul på grøn er 5,0:1 */
   --display: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
   --body: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
   --mono: "Hanken Grotesk", system-ui, -apple-system, sans-serif;

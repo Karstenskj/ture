@@ -12,9 +12,11 @@
    Data (alt html er bygget og escapet på forhånd):
      legs:    [{pts: [[lat, lon], ...], label: "4 t 26", mid: [lat, lon], html}]   køredage, fuld linje
      extras:  [{pts, html}]                                                       det der ikke er med, stiplet
+     after:   [{pts, html, maybe}]                                                efter turen, stiplet orange, grøn med maybe
      ferries: [{pts, html}]                                                       færger, stiplet grå
      bases:   [{ll: [lat, lon], label: "17/11", html}]                            hvor I sover
      spots:   [{ll, n, k: egen ønske, out: ikke med, html}]                       nummererede steder
+     legend:  "<span>…</span>"                                                    forklaringen på farverne i bunden af kortet
 
    Et tryk åbner et kort nedefra med alt om stedet, som i en kortapp.
    Knapperne giver fuld skærm og "her er vi". Gør ingenting uden data eller Leaflet.
@@ -79,7 +81,7 @@
   });
   (D.after || []).forEach(function (x) {
     L.polyline(x.pts, { className: 'rk-case', weight: 7, dashArray: '8 8', interactive: false }).addTo(map);
-    tap(L.polyline(x.pts, { className: 'rk-after', weight: 4, dashArray: '8 8', bubblingMouseEvents: false }).addTo(map), x.html);
+    tap(L.polyline(x.pts, { className: x.maybe ? 'rk-maybe' : 'rk-after', weight: 4, dashArray: '8 8', bubblingMouseEvents: false }).addTo(map), x.html);
   });
   (D.ferries || []).forEach(function (x) {
     tap(L.polyline(x.pts, { className: 'rk-ferry', weight: 3, dashArray: '6 8', bubblingMouseEvents: false }).addTo(map), x.html);
@@ -106,6 +108,14 @@
     tap(L.marker(x.ll, { icon: icon('rk-night', x.label), zIndexOffset: 200 }).addTo(map), x.html, x.ll);
   });
 
+  // forklaringen på farverne står i bunden, under kortet
+  if (D.legend) {
+    var legend = document.createElement('div');
+    legend.className = 'rk-legend';
+    legend.innerHTML = D.legend;
+    box.appendChild(legend);
+  }
+
   // kortet kan ligge i en skjult fane; tilpas og zoom ind på ruten, når det bliver synligt
   var fitted = false;
   function fit() {
@@ -120,7 +130,8 @@
   var btns = document.createElement('div');
   btns.className = 'rk-btns';
   btns.innerHTML = '<button type="button" class="rk-btn" data-a="full">Fuld skærm</button><button type="button" class="rk-btn" data-a="me">Her er vi</button>';
-  box.appendChild(btns);
+  // i selve kortet, så knapperne aldrig dækker forklaringen
+  map.getContainer().appendChild(btns);
   L.DomEvent.disableClickPropagation(btns);
   var fullBtn = btns.querySelector('[data-a="full"]');
 
