@@ -494,6 +494,7 @@ tr.sum td { font-weight: 600; background: var(--soft); border-top: 2px solid var
 .map-lake   { fill: var(--lake); opacity: .55; }
 .map-route  { fill: none; stroke: var(--accent); stroke-width: 5.5; stroke-linecap: round; stroke-linejoin: round; }
 .map-return { fill: none; stroke: var(--muted); stroke-width: 2.6; stroke-dasharray: 13 10; stroke-linecap: round; stroke-linejoin: round; }
+.map-detour { fill: none; stroke: var(--accent); stroke-width: 3.2; stroke-dasharray: 9 7; stroke-linecap: round; stroke-linejoin: round; opacity: .7; }
 .map-node   { fill: var(--accent); stroke: var(--land); stroke-width: 3.5; }
 .map-alp    { fill: var(--alpine); stroke: var(--land); stroke-width: 3; }
 .map-stop   { fill: var(--land); stroke: var(--accent); stroke-width: 3; }
