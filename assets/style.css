@@ -232,6 +232,13 @@ ol.ov li.big a { background: var(--alpine-2); }
 ol.ov li.big a:hover { filter: brightness(.97); }
 ol.ov li.big .ov-day, ol.ov li.big .ov-cost { color: var(--alpine); }
 
+/* lange ture: ugedag og dato i to linjer, og vejret under hver dag (fyldes af assets/forecast.js) */
+ol.ov.compact .ov-day { font-size: 15px; letter-spacing: .2px; line-height: 1.15; }
+ol.ov .ov-wx { grid-column: 2 / 4; display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+ol.ov .ov-wx:empty { display: none; }
+ol.ov .ov-wx .chip { font-size: 11px; padding: 3px 7px; }
+.chip.wait { color: var(--muted); font-weight: 400; }
+
 /* ---------- sektioner ---------- */
 
 section { display: flex; flex-direction: column; gap: 16px; }

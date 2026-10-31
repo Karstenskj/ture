@@ -10,6 +10,7 @@ Statisk side med rejseplaner. Ingen build, ingen afhængigheder, ingen npm. Ren 
 index.html              forsiden med menuen over alle ture
 assets/style.css        hele designsystemet, deles af alle sider
 assets/map.js           zoom og træk på inline SVG-kort
+assets/forecast.js      vejr og bølger fra Open-Meteo, hentes hver gang siden åbnes
 trips/ÅÅÅÅ-MM-sted.html én fil pr. tur
 .nojekyll               så GitHub Pages ikke kører Jekyll
 ```
@@ -121,7 +122,9 @@ Nye komponenter hører hjemme i stilarket, ikke i turfilen, så næste tur også
 
 ## Vejrdata
 
-MetService har et offentligt endpoint til de større byer:
+**Live i siden.** `assets/forecast.js` henter vejr og bølger fra Open-Meteo i browseren, hver gang siden åbnes. Sæt `<span class="ov-wx" data-wx="lat,lon" data-date="ÅÅÅÅ-MM-DD"></span>` ind, fx i en række i overblikket, og `data-sea="lat,lon"` med et punkt lidt ude i vandet for bølger. Prognosen rækker 16 dage frem, dage længere ude viser hvornår vejret kommer. MetService kan ikke hentes fra browseren (den tillader kun about.metservice.com), og Surfline har ingen åbne data, så link til deres sider i stedet.
+
+**Fast i siden.** MetService har et offentligt endpoint til de større byer:
 
 ```
 https://www.metservice.com/publicData/localForecast<by>
