@@ -701,7 +701,7 @@ footer { font-size: 13.5px; color: var(--muted); line-height: 1.6; border-top: 1
 .spot[hidden] { display: none; }
 
 .spot-img { position: relative; margin: 0; gap: 0; background: var(--soft); }
-.spot-img img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.spot-img img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
 .spot-img figcaption {
   position: absolute; right: 0; bottom: 0;
   font-family: var(--mono); font-size: 9.5px; line-height: 1.3;
