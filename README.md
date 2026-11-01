@@ -24,6 +24,8 @@ Hans Bay ved Lake Kaniere er valgt tor 19 nov efter Lake Pearson i stedet for Go
 
 NZ-programmet vises som en kalender fra mandag til søndag med ét dagsprogram åbent ad gangen. Fanerne Nætter, Pladser og Steder er fjernet: camping- og stedkort er flyttet ind under Program, og stedernes eksisterende ankre åbner automatisk den rette dag og dens detaljer. Steder uden fast dag og Instagram-forslag ligger i Program under mulige ture. Bevar billeder, ratings, citater og kortlinks ved fremtidige ændringer.
 
+Mobilkortet bruger hele bredden i Kort-fanen og kan åbnes i CSS-baseret fuld skærm, også på iPhone. Bevar viewport-fit=cover, safe-area-kanter, én-finger-navigation i kortfanen og muligheden for at gå til Program fra fuld skærm. På mobil vises campingprikker i overblikket; datoer og navne kommer frem ved indzoomning. Forklaringen åbnes med en knap, og stedkort kan udvides.
+
 ## Sådan lægges en ny tur ind
 
 1. **Opret filen** `trips/ÅÅÅÅ-MM-sted.html`, fx `trips/2026-12-nordoeen.html`.

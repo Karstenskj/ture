@@ -1012,3 +1012,74 @@ body.on-kort #kort .rk { height: calc(100dvh - var(--bar, 110px) - 22px); min-he
 }
 
 .day-overview { margin: 14px 16px 0; color: var(--ink-2); font-size: 15px; line-height: 1.5; }
+
+/* Mobilkort: kant til kant, berøringsvenlige knapper og plads til Safari-kanter. */
+.rk-topbar { position: absolute; left: 10px; top: 10px; z-index: 1050; display: flex; align-items: center; gap: 8px; }
+.rk-topbar .rk-program { display: none; text-decoration: none; align-items: center; }
+.rk.full .rk-program { display: inline-flex; }
+.rk-btns { top: auto; bottom: 26px; flex-direction: row; gap: 6px; }
+.rk-btn { min-height: 44px; font-size: 12px; letter-spacing: 0; text-transform: none; touch-action: manipulation; }
+.rk-btn:disabled { opacity: .65; cursor: wait; }
+.rk.full, body.on-kort #kort .rk.full { inset: 0; width: 100%; height: 100vh; height: 100dvh; min-height: 0; max-height: none; margin: 0; border-radius: 0; }
+body.rk-lock { position: fixed; width: 100%; overscroll-behavior: none; }
+.rk-sheet[hidden] { display: none; }
+.rk-sheet { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding-bottom: env(safe-area-inset-bottom, 0px); }
+.rk-sheet-bar { position: sticky; top: 0; z-index: 2; background: var(--card); padding: 8px 10px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.rk-close { position: static; flex: none; width: 44px; height: 44px; font-size: 27px; }
+.rk-expand { min-height: 44px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 7px; font: inherit; font-size: 14px; color: var(--ink); background: var(--soft); cursor: pointer; }
+.rk-in { overflow-wrap: anywhere; }
+.rk-sheet-open .rk-btns { visibility: hidden; }
+.rk-sheet-open .leaflet-control-zoom { visibility: hidden; }
+.leaflet-control-layers-toggle { min-width: 44px; min-height: 44px; }
+.leaflet-touch .leaflet-bar a { width: 44px; height: 44px; line-height: 44px; }
+.rk-topbar .rk-btn:focus-visible, .rk-btns .rk-btn:focus-visible, .rk-close:focus-visible, .rk-expand:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media (min-width: 720px) {
+  .rk-expand { display: none; }
+  .rk-sheet-bar { justify-content: flex-end; padding: 4px 6px; }
+}
+@media (max-width: 719px) {
+  body.on-kort { padding: 0; overflow: hidden; }
+  body.on-kort > .wrap { max-width: none; height: 100vh; height: 100dvh; padding-top: 0; gap: 0; }
+  body.on-kort .trip-overview { display: none; }
+  body.on-kort .appbar { flex: none; margin: 0; padding: calc(4px + env(safe-area-inset-top, 0px)) 12px 8px; }
+  body.on-kort .appbar-top { min-height: 30px; }
+  body.on-kort .appbar-top .back { min-height: 32px; }
+  body.on-kort #kort { min-height: 0; flex: 1; }
+  body.on-kort #kort .rk { width: 100%; height: 100%; min-height: 0; border: 0; border-radius: 0; }
+  .rk.full .rk-topbar, .rk.full .leaflet-top { top: env(safe-area-inset-top, 0px); }
+  .rk-topbar { left: max(10px, env(safe-area-inset-left, 0px)); padding-top: 10px; }
+  .rk.full .rk-topbar { top: 0; padding-top: calc(10px + env(safe-area-inset-top, 0px)); }
+  .rk-btns { left: max(10px, env(safe-area-inset-left, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+  .rk-btn { padding: 0 12px; border-radius: 10px; font-size: 13px; }
+  .rk-map { touch-action: none; }
+  .rk .leaflet-right { right: env(safe-area-inset-right, 0px); }
+  .rk .leaflet-bottom.leaflet-right { bottom: calc(70px + env(safe-area-inset-bottom, 0px)); }
+  .rk .leaflet-control-attribution { max-width: 240px; font-size: 9px; line-height: 1.35; }
+  .rk-legend { display: none; position: absolute; bottom: calc(70px + env(safe-area-inset-bottom, 0px)); left: 10px; right: 64px; z-index: 1060; max-height: 48%; overflow: auto; border: 1px solid var(--line-2); border-radius: 10px; padding: 12px; box-shadow: 0 2px 12px var(--scrim); }
+  .rk-legend-open .rk-legend { display: flex; }
+  .rk-sheet { max-height: 62%; border-radius: 18px 18px 0 0; }
+  .rk-sheet.expanded { max-height: 90%; }
+  .rk-sheet .spot-img img { max-height: 180px; object-fit: cover; }
+  .rk-sheet .rk-body { padding: 14px 16px 20px; }
+  .rk-sheet .rk-body h3 { padding-right: 0; font-size: 25px; }
+  .rk-sheet .spot-facts { grid-template-columns: minmax(0, 1fr); }
+  .rk-sheet .pin { min-height: 44px; display: inline-flex; align-items: center; }
+  .rk-camp-names .leaflet-tooltip.rk-camp-label { display: block; font-size: 11px; max-width: 170px; white-space: normal; line-height: 1.2; }
+  .rk-mobile-overview .rk-spot-marker { display: none; }
+  .rk-mobile-overview .rk-night { font-size: 0; padding: 0; width: 17px; height: 17px; border-width: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { .rk-sheet { transition: none; } }
+
+@media (min-width: 720px) { .rk-btn[data-a="legend"] { display: none; } }
+
+.rk .rk-program { color: var(--ink); }
+@media (max-width: 719px) { .rk:not(.rk-mobile-overview) .rk-night { min-height: 30px; padding: 5px 9px; } }
+
+.rk-me { pointer-events: none; }
+.rk.full .leaflet-right { right: env(safe-area-inset-right, 0px); }
+@media (min-width: 720px) {
+  .rk.full .rk-topbar { top: max(10px, env(safe-area-inset-top, 0px)); left: max(10px, env(safe-area-inset-left, 0px)); }
+  .rk.full .rk-btns { left: max(10px, env(safe-area-inset-left, 0px)); bottom: calc(26px + env(safe-area-inset-bottom, 0px)); }
+}
+
+.rk-sheet figcaption .pin { min-height: 0; display: inline; padding: 0; border: 0; background: none; box-shadow: none; font: inherit; letter-spacing: inherit; text-transform: none; color: inherit; }

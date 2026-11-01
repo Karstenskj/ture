@@ -29,7 +29,10 @@
   var D = JSON.parse(src.textContent);
   var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 
-  // én finger skal scrolle siden, ikke kortet, indtil kortet fylder skærmen
+  var mobile = window.matchMedia('(max-width: 719px)');
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // I kortfanen og fuld skærm kan kortet flyttes med én finger.
   var map = L.map('rk-map', { zoomControl: false, dragging: !touch, tap: false });
   L.control.zoom({ position: 'bottomright', zoomInTitle: 'Zoom ind', zoomOutTitle: 'Zoom ud' }).addTo(map);
 
@@ -45,23 +48,57 @@
   // arket nedefra
   var sheet = document.createElement('div');
   sheet.className = 'rk-sheet';
-  sheet.innerHTML = '<button type="button" class="rk-close" aria-label="Luk">&times;</button><div class="rk-in"></div>';
+  sheet.hidden = true;
+  sheet.setAttribute('role', 'dialog');
+  sheet.setAttribute('aria-label', 'Detaljer om stedet');
+  sheet.innerHTML = '<div class="rk-sheet-bar"><button type="button" class="rk-expand" aria-expanded="false">Udvid detaljer</button><button type="button" class="rk-close" aria-label="Luk stedets detaljer">&times;</button></div><div class="rk-in"></div>';
   box.appendChild(sheet);
   var inner = sheet.querySelector('.rk-in');
   L.DomEvent.disableClickPropagation(sheet);
   L.DomEvent.disableScrollPropagation(sheet);
 
-  function open(html, ll) {
-    inner.innerHTML = html;
-    sheet.scrollTop = 0;
-    sheet.classList.add('open');
-    if (!ll) return;
-    // stedet skal stå frit over arket nedefra (telefon) eller til venstre for det (computer)
-    var wide = window.innerWidth >= 720;
-    map.panTo(ll, { animate: false });
-    map.panBy(wide ? [sheet.offsetWidth / 2, 0] : [0, sheet.offsetHeight / 2], { animate: true });
+  var lastTrigger = null;
+  var selectedPoint = null;
+  var expand = sheet.querySelector('.rk-expand');
+  function positionPoint() {
+    if (!selectedPoint || sheet.hidden) return;
+    map.panTo(selectedPoint, { animate: false });
+    map.panBy(window.innerWidth >= 720 ? [sheet.offsetWidth / 2, 0] : [0, sheet.offsetHeight / 2], { animate: !reducedMotion.matches });
   }
-  function close() { sheet.classList.remove('open'); }
+  function open(html, ll) {
+    lastTrigger = document.activeElement;
+    selectedPoint = ll || null;
+    inner.innerHTML = html;
+    sheet.hidden = false;
+    sheet.classList.remove('expanded');
+    expand.setAttribute('aria-expanded', 'false');
+    expand.textContent = 'Udvid detaljer';
+    sheet.scrollTop = 0;
+    box.classList.add('rk-sheet-open');
+    box.classList.remove('rk-legend-open');
+    if (legendBtn) legendBtn.setAttribute('aria-expanded', 'false');
+    requestAnimationFrame(function () {
+      if (sheet.hidden) return;
+      sheet.classList.add('open');
+      positionPoint();
+      sheet.querySelector('.rk-close').focus({ preventScroll: true });
+    });
+  }
+  function close() {
+    if (sheet.hidden) return;
+    sheet.classList.remove('open', 'expanded');
+    sheet.hidden = true;
+    box.classList.remove('rk-sheet-open');
+    if (lastTrigger && document.contains(lastTrigger)) lastTrigger.focus({ preventScroll: true });
+    selectedPoint = null;
+    lastTrigger = null;
+  }
+  expand.addEventListener('click', function () {
+    var expanded = sheet.classList.toggle('expanded');
+    expand.setAttribute('aria-expanded', String(expanded));
+    expand.textContent = expanded ? 'Vis mere af kortet' : 'Udvid detaljer';
+    positionPoint();
+  });
   sheet.querySelector('.rk-close').addEventListener('click', close);
   map.on('click', close);
 
@@ -71,10 +108,11 @@
   }
 
   function icon(cls, text) {
-    return L.divIcon({ className: '', iconSize: null, html: '<div class="' + cls + '">' + text + '</div>' });
+    return L.divIcon({ className: cls.indexOf('rk-pin') === 0 ? 'rk-spot-marker' : cls === 'rk-night' ? 'rk-camp-marker' : '', iconSize: null, html: '<div class="' + cls + '">' + text + '</div>' });
   }
 
   var all = [];
+  var spotLabels = [];
   (D.extras || []).forEach(function (x) {
     L.polyline(x.pts, { className: 'rk-case', weight: 7, dashArray: '8 8', interactive: false }).addTo(map);
     tap(L.polyline(x.pts, { className: 'rk-extra', weight: 4, dashArray: '8 8', bubblingMouseEvents: false }).addTo(map), x.html);
@@ -97,17 +135,23 @@
     all = all.concat(x.pts);
     if (x.label) tap(L.marker(x.mid, { icon: icon('rk-time', x.label), keyboard: false }), x.html, x.mid).addTo(times);
   });
-  // køretiderne fra zoom 7, navnene ved numrene fra zoom 8
+  // Mobil viser færre etiketter i overblikket; campingnavne har førsteprioritet.
   function showTimes() {
-    if (map.getZoom() >= 7) times.addTo(map); else times.remove();
-    box.classList.toggle('rk-names', map.getZoom() >= 8);
+    if (map.getZoom() >= (mobile.matches ? 8 : 7)) times.addTo(map); else times.remove();
+    box.classList.toggle('rk-names', map.getZoom() >= (mobile.matches ? 10 : 8));
+    box.classList.toggle('rk-camp-names', map.getZoom() >= 8);
+    box.classList.toggle('rk-mobile-overview', mobile.matches && map.getZoom() < 7);
+    layoutLabels();
   }
   map.on('zoomend', showTimes);
 
   (D.spots || []).forEach(function (x) {
     var cls = 'rk-pin' + (x.k ? ' k' : '') + (x.st ? ' ' + x.st : '');
     var m = tap(L.marker(x.ll, { icon: icon(cls, x.st === 'out' ? '' : (x.n || '')), title: x.name || String(x.n), zIndexOffset: 100 }).addTo(map), x.html, x.ll);
-    if (x.name) m.bindTooltip(x.name, { permanent: true, direction: x.left ? 'left' : 'right', offset: [x.left ? -10 : 10, 0], opacity: 1, className: 'rk-label' });
+    if (x.name) {
+      m.bindTooltip(x.name, { permanent: true, direction: x.left ? 'left' : 'right', offset: [x.left ? -10 : 10, 0], opacity: 1, className: 'rk-label' });
+      spotLabels.push({ marker: m, data: x });
+    }
   });
   (D.bases || []).forEach(function (x) {
     var m = tap(L.marker(x.ll, { icon: icon('rk-night', x.label), title: x.name || x.label, zIndexOffset: 200 }).addTo(map), x.html, x.ll);
@@ -117,17 +161,33 @@
         if (!el) return;
         var badge = el.querySelector('.rk-night');
         var offset = badge ? badge.offsetWidth / 2 + 6 : 32;
-        m.bindTooltip(x.name, { permanent: true, direction: 'right', offset: [offset, 0], opacity: 1, className: 'rk-label' });
+        m.bindTooltip(x.name, { permanent: true, direction: 'right', offset: [offset, 0], opacity: 1, className: 'rk-label rk-camp-label' });
       }
       m.on('add', showName);
       showName();
     }
   });
 
+  // Ved nærliggende campingpladser lægges stednavnet på modsatte side på mobil.
+  function layoutLabels() {
+    spotLabels.forEach(function (entry) {
+      var point = map.latLngToContainerPoint(entry.data.ll);
+      var nearCamp = mobile.matches && (D.bases || []).some(function (camp) {
+        return point.distanceTo(map.latLngToContainerPoint(camp.ll)) < 70;
+      });
+      var left = nearCamp || entry.data.left;
+      var tooltip = entry.marker.getTooltip();
+      tooltip.options.direction = left ? 'left' : 'right';
+      tooltip.options.offset = L.point(left ? -18 : 10, 0);
+      tooltip.update();
+    });
+  }
+
   // forklaringen på farverne står i bunden, under kortet
   if (D.legend) {
     var legend = document.createElement('div');
     legend.className = 'rk-legend';
+    legend.id = 'rk-legend';
     legend.innerHTML = D.legend;
     box.appendChild(legend);
   }
@@ -135,41 +195,87 @@
   // kortet kan ligge i en skjult fane; tilpas og zoom ind på ruten, når det bliver synligt
   var fitted = false;
   function fit() {
-    map.invalidateSize();
+    syncDragging();
+    map.invalidateSize({ pan: false });
     if (!fitted && box.offsetWidth) { map.fitBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]], { padding: [16, 16] }); fitted = true; }
   }
   if (window.ResizeObserver) new ResizeObserver(fit).observe(box);
   fit();
   showTimes();
 
-  // fuld skærm med en klasse, så det også virker på iPhone
+  // CSS-baseret fuld skærm virker også i Safari på iPhone.
+  var topbar = document.createElement('div');
+  topbar.className = 'rk-topbar';
+  topbar.innerHTML = '<button type="button" class="rk-btn" data-a="full" aria-pressed="false">Fuld skærm</button>' +
+    (document.getElementById('program') ? '<a class="rk-btn rk-program" href="#program">Program</a>' : '');
   var btns = document.createElement('div');
   btns.className = 'rk-btns';
-  btns.innerHTML = '<button type="button" class="rk-btn" data-a="full">Fuld skærm</button><button type="button" class="rk-btn" data-a="me">Her er vi</button>';
-  // i selve kortet, så knapperne aldrig dækker forklaringen
+  btns.innerHTML = '<button type="button" class="rk-btn" data-a="route">Vis ruten</button><button type="button" class="rk-btn" data-a="me">Find os</button>' +
+    (D.legend ? '<button type="button" class="rk-btn" data-a="legend" aria-expanded="false" aria-controls="rk-legend">Forklaring</button>' : '');
+  map.getContainer().appendChild(topbar);
   map.getContainer().appendChild(btns);
-  L.DomEvent.disableClickPropagation(btns);
-  var fullBtn = btns.querySelector('[data-a="full"]');
-
+  [btns, topbar].forEach(function (element) { L.DomEvent.disableClickPropagation(element); });
+  var fullBtn = topbar.querySelector('[data-a="full"]');
+  var savedScroll = 0;
+  function syncDragging() {
+    if (!touch || box.classList.contains('full') || (box.closest('#kort') && !box.closest('#kort').hidden)) map.dragging.enable();
+    else map.dragging.disable();
+  }
   function setFull(on) {
+    if (on === box.classList.contains('full')) return;
+    if (on) savedScroll = window.scrollY;
     box.classList.toggle('full', on);
     document.body.classList.toggle('rk-lock', on);
+    document.body.style.top = on ? -savedScroll + 'px' : '';
     fullBtn.textContent = on ? 'Luk fuld skærm' : 'Fuld skærm';
-    if (touch) { if (on) map.dragging.enable(); else map.dragging.disable(); }
-    setTimeout(function () { map.invalidateSize(); }, 60);
+    fullBtn.setAttribute('aria-pressed', String(on));
+    syncDragging();
+    if (!on) window.scrollTo(0, savedScroll);
+    requestAnimationFrame(function () { map.invalidateSize({ pan: false }); });
   }
   fullBtn.addEventListener('click', function () { setFull(!box.classList.contains('full')); });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') { if (sheet.classList.contains('open')) close(); else if (box.classList.contains('full')) setFull(false); }
+  btns.querySelector('[data-a="route"]').addEventListener('click', function () {
+    close();
+    map.fitBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]], { padding: mobile.matches ? [36, 72] : [28, 48], animate: !reducedMotion.matches });
   });
+  var legendBtn = btns.querySelector('[data-a="legend"]');
+  if (legendBtn) legendBtn.addEventListener('click', function () {
+    var on = box.classList.toggle('rk-legend-open');
+    legendBtn.setAttribute('aria-expanded', String(on));
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      if (!sheet.hidden) close();
+      else if (box.classList.contains('full')) setFull(false);
+    }
+  });
+  window.addEventListener('hashchange', function () {
+    var target = document.getElementById(location.hash.slice(1));
+    if (target && !box.contains(target) && target.id !== 'kort') {
+      close();
+      setFull(false);
+    }
+  });
+  window.addEventListener('resize', function () { showTimes(); map.invalidateSize({ pan: false }); });
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', function () { map.invalidateSize({ pan: false }); });
+  mobile.addEventListener('change', function () { showTimes(); syncDragging(); });
 
   var me = null;
-  btns.querySelector('[data-a="me"]').addEventListener('click', function () { map.locate({ setView: true, maxZoom: 12 }); });
-  map.on('locationfound', function (e) {
-    if (me) me.remove();
-    me = L.marker(e.latlng, { icon: icon('rk-me', ''), keyboard: false, zIndexOffset: 300 }).addTo(map);
+  var locateBtn = btns.querySelector('[data-a="me"]');
+  function locateDone() { locateBtn.disabled = false; locateBtn.textContent = 'Find os'; }
+  locateBtn.addEventListener('click', function () {
+    locateBtn.disabled = true;
+    locateBtn.textContent = 'Finder…';
+    map.locate({ setView: true, maxZoom: 12, timeout: 12000, enableHighAccuracy: true });
   });
-  map.on('locationerror', function () {
-    open('<div class="rk-body"><h3>Kunne ikke finde jer</h3><p class="spot-sum">Telefonen gav ikke lov til at bruge placeringen. Tillad det i browseren og prøv igen.</p></div>');
+  map.on('locationfound', function (e) {
+    locateDone();
+    if (me) me.remove();
+    me = L.marker(e.latlng, { icon: icon('rk-me', ''), keyboard: false, interactive: false, zIndexOffset: 300 }).addTo(map);
+  });
+  map.on('locationerror', function (e) {
+    locateDone();
+    var message = e.code === 1 ? 'Tillad placering for siden i browseren, og prøv igen.' : 'Placeringen er ikke tilgængelig lige nu. Kontrollér GPS og forbindelse, og prøv igen.';
+    open('<div class="rk-body"><h3>Kunne ikke finde jer</h3><p class="spot-sum">' + message + '</p></div>');
   });
 })();
