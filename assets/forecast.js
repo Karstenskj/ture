@@ -16,7 +16,8 @@
   var els = [].slice.call(document.querySelectorAll('[data-wx]'));
   if (!els.length) return;
 
-  var MON = ['jan.', 'feb.', 'mar.', 'apr.', 'maj', 'jun.', 'jul.', 'aug.', 'sep.', 'okt.', 'nov.', 'dec.'];
+  var MON = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
+  var DOW = ['søn', 'man', 'tir', 'ons', 'tor', 'fre', 'lør'];
   var DIR = ['N', 'NØ', 'Ø', 'SØ', 'S', 'SV', 'V', 'NV'];
   var DAYS = 16;
 
@@ -47,7 +48,7 @@
     return s;
   }
 
-  function day(d) { return d.getDate() + '. ' + MON[d.getMonth()]; }
+  function day(d) { return DOW[d.getDay()] + ' ' + d.getDate() + ' ' + MON[d.getMonth()]; }
 
   var land = points('data-wx'), sea = points('data-sea');
 

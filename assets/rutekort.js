@@ -14,7 +14,7 @@
      extras:  [{pts, html}]                                                       det der ikke er med, stiplet
      after:   [{pts, html, maybe}]                                                efter turen, stiplet orange, grøn med maybe
      ferries: [{pts, html}]                                                       færger, stiplet grå
-     bases:   [{ll: [lat, lon], label: "17/11", html}]                            hvor I sover
+     bases:   [{ll: [lat, lon], label: "tir 17 nov", name, html}]                  hvor I sover
      spots:   [{ll, n, name, left, k: egen ønske, st: out/after/maybe, html}]     nummererede steder, navnet fra zoom 8
      legend:  "<span>…</span>"                                                    forklaringen på farverne i bunden af kortet
 
@@ -110,7 +110,18 @@
     if (x.name) m.bindTooltip(x.name, { permanent: true, direction: x.left ? 'left' : 'right', offset: [x.left ? -10 : 10, 0], opacity: 1, className: 'rk-label' });
   });
   (D.bases || []).forEach(function (x) {
-    tap(L.marker(x.ll, { icon: icon('rk-night', x.label), zIndexOffset: 200 }).addTo(map), x.html, x.ll);
+    var m = tap(L.marker(x.ll, { icon: icon('rk-night', x.label), title: x.name || x.label, zIndexOffset: 200 }).addTo(map), x.html, x.ll);
+    if (x.name) {
+      function showName() {
+        var el = m.getElement();
+        if (!el) return;
+        var badge = el.querySelector('.rk-night');
+        var offset = badge ? badge.offsetWidth / 2 + 6 : 32;
+        m.bindTooltip(x.name, { permanent: true, direction: 'right', offset: [offset, 0], opacity: 1, className: 'rk-label' });
+      }
+      m.on('add', showName);
+      showName();
+    }
   });
 
   // forklaringen på farverne står i bunden, under kortet
