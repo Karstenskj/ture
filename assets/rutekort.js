@@ -106,7 +106,7 @@
 
   (D.spots || []).forEach(function (x) {
     var cls = 'rk-pin' + (x.k ? ' k' : '') + (x.st ? ' ' + x.st : '');
-    var m = tap(L.marker(x.ll, { icon: icon(cls, x.n), title: x.name || String(x.n), zIndexOffset: 100 }).addTo(map), x.html, x.ll);
+    var m = tap(L.marker(x.ll, { icon: icon(cls, x.st === 'out' ? '' : (x.n || '')), title: x.name || String(x.n), zIndexOffset: 100 }).addTo(map), x.html, x.ll);
     if (x.name) m.bindTooltip(x.name, { permanent: true, direction: x.left ? 'left' : 'right', offset: [x.left ? -10 : 10, 0], opacity: 1, className: 'rk-label' });
   });
   (D.bases || []).forEach(function (x) {
