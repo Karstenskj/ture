@@ -22,6 +22,8 @@ Ankomsten til Auckland skal altid være den 11. december 2026. Når ruten forkor
 
 Hans Bay ved Lake Kaniere er valgt tor 19 nov efter Lake Pearson i stedet for Goldsborough. Hokitika Gorge besøges fre 20 nov før Brunner Mine og Punakaiki. Instagram-hikes fra @roamdates er forslag uden for ruten; behold rating og direkte citat. Eksisterende Hooker Valley, Tongariro og Duke’s Nose bevarer deres status.
 
+NZ-programmet vises som en kalender fra mandag til søndag med ét dagsprogram åbent ad gangen. Fanerne Nætter, Pladser og Steder er fjernet: camping- og stedkort er flyttet ind under Program, og stedernes eksisterende ankre åbner automatisk den rette dag og dens detaljer. Steder uden fast dag og Instagram-forslag ligger i Program under mulige ture. Bevar billeder, ratings, citater og kortlinks ved fremtidige ændringer.
+
 ## Sådan lægges en ny tur ind
 
 1. **Opret filen** `trips/ÅÅÅÅ-MM-sted.html`, fx `trips/2026-12-nordoeen.html`.
