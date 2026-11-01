@@ -16,6 +16,10 @@ trips/ÅÅÅÅ-MM-sted.html én fil pr. tur
 .nojekyll               så GitHub Pages ikke kører Jekyll
 ```
 
+## Faste rammer for NZ-rundturen 2026
+
+Ankomsten til Auckland skal altid være den 11. december 2026. Når ruten forkortes, fordeles de frigjorte nætter før Auckland; ankomstdatoen må ikke rykkes frem. De fem frigjorte nætter fra omlægningen via Arthur’s Pass står foreløbig som fleksible nætter uden valgt sted eller campsite og skal først fordeles, når Karsten beder om det.
+
 ## Sådan lægges en ny tur ind
 
 1. **Opret filen** `trips/ÅÅÅÅ-MM-sted.html`, fx `trips/2026-12-nordoeen.html`.
