@@ -24,9 +24,16 @@
       <span class="appbar-title">Den store NZ-tur</span>
     </div>
     <nav class="tabs" aria-label="Vælg hvad I vil se">
-      <a href="#kort">Kort</a><a href="#program">Program</a><a href="#naetter">Nætter</a><a href="#pladser">Pladser</a><a href="#steder">Steder</a><a href="#todo">To do</a><a href="#husk">Husk</a><a href="#efter">Efter</a><a href="#tips">Tips</a>
+      <a href="#kort">Kort</a><a href="#program">Program</a><a href="#naetter">Nætter</a><a href="#pladser">Pladser</a><a href="#steder">Steder</a><a href="#todo">Opgaver</a><a href="#husk">Husk</a><a href="#efter">Efter</a><a href="#tips">Tips</a>
     </nav>
   </div>
+
+  <header class="top trip-overview">
+    <p class="eyebrow">man 16 nov–tor 10 dec 2026 · tagtelt · Karsten &amp; Helena · udkast</p>
+    <h1>Den store NZ-tur</h1>
+    <p class="standfirst">Fra Christchurch til Auckland, hvor bilen sælges. Højst 350 km om dagen og to nætter de fleste steder. Intet er booket, og I kan flytte rundt på det hele.</p>
+    <dl class="facts"><div class="fact"><dt>Nætter</dt><dd>24</dd></div><div class="fact"><dt>Km at køre</dt><dd>≈ 3 800</dd></div><div class="fact"><dt>Timer bag rattet</dt><dd>≈ 58</dd></div><div class="fact"><dt>Steder på listen</dt><dd>32</dd></div></dl>
+  </header>
 
   <section class="tab" id="kort">
     <div class="rk" id="rk"><div class="rk-map" id="rk-map"></div></div>
@@ -332,12 +339,6 @@
   </section>
 
   <section class="tab" id="naetter" hidden>
-  <header class="top">
-    <p class="eyebrow">man 16 nov–tor 10 dec 2026 · tagtelt · Karsten &amp; Helena · udkast</p>
-    <h1>Den store NZ-tur</h1>
-    <p class="standfirst">Fra Christchurch til Auckland, hvor bilen sælges. Højst 350 km om dagen og to nætter de fleste steder. Intet er booket, og I kan flytte rundt på det hele.</p>
-    <dl class="facts"><div class="fact"><dt>Nætter</dt><dd>24</dd></div><div class="fact"><dt>Km at køre</dt><dd>≈ 3 800</dd></div><div class="fact"><dt>Timer bag rattet</dt><dd>≈ 58</dd></div><div class="fact"><dt>Steder på listen</dt><dd>32</dd></div></dl>
-  </header>
     <h2 class="sec">Nat for nat</h2>
     <p style="margin:0;font-size:16px;color:var(--ink-2);">Tryk på en dag for at se køreturen i Google Maps. Vejr og bølger kommer af sig selv 16 dage før og opdateres, hver gang siden åbnes. Ingen dag er over 350 km, og 8 steder har I 2 nætter. Tagteltet hver nat undtagen Wellington. Pladserne er ikke booket. <span id="wx-stamp"></span></p>
     <ol class="ov compact">
@@ -1030,28 +1031,31 @@
   </section>
 
   <section class="tab" id="todo" hidden>
-    <h2 class="sec">To do</h2>
-    <p style="margin:0;font-size:16px;color:var(--ink-2);">Kryds af, når det er gjort. Afkrydsningen huskes på den telefon, I krydser af på.</p>
+    <h2 class="sec">Bookinger</h2>
+    <p style="margin:0;font-size:16px;color:var(--ink-2);">Kryds af, når bookingen er bekræftet. Afkrydsningen huskes på den telefon, I bruger.</p>
     <ul class="todo">
-          <li><label><input type="checkbox" data-k="t0r"> <span>Route79 Holiday Park ved Geraldine, man 16 nov Ring og sig, at I kommer ca. 21.30</span></label> <a class="pin" href="https://route79holidaypark.nz/book-now/" target="_blank" rel="noopener noreferrer">Book</a></li>
-          <li><label><input type="checkbox" data-k="t1"> <span>Glentanner Park Centre, tir 17 nov</span></label></li>
-          <li><label><input type="checkbox" data-k="t2"> <span>Kidds Bush (DOC), ons 18 nov og lør 21 nov</span></label> <a class="pin" href="https://bookings.doc.govt.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
-          <li><label><input type="checkbox" data-k="t3"> <span>Cascade Creek (DOC), tor 19 nov–fre 20 nov</span></label> <a class="pin" href="https://bookings.doc.govt.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
-          <li><label><input type="checkbox" data-k="t4"> <span>Bådtur i Milford Sound fre 20 nov kl. 10.30 eller første afgang, tjek BookMe</span></label> <a class="pin" href="https://www.bookme.co.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
-          <li><label><input type="checkbox" data-k="t5"> <span>Lake Mapourika (DOC, Ottos Corner), søn 22 nov · 1 nat</span></label> <a class="pin" href="https://bookings.doc.govt.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
-          <li><label><input type="checkbox" data-k="t6"> <span>Punakaiki Beach Camp, man 23 nov–tir 24 nov</span></label> <a class="pin" href="https://www.smartbooking.co.nz/sfxbook/?hostel=punakaikibeachcamp&agent=PUNAKAIKIBEACHCAMP" target="_blank" rel="noopener noreferrer">Book</a></li>
-          <li><label><input type="checkbox" data-k="t7"> <span>Kerr Bay (DOC, Kiwi zone), ons 25 nov–tor 26 nov</span></label> <a class="pin" href="https://bookings.doc.govt.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
-          <li><label><input type="checkbox" data-k="t8"> <span>The Barn, Marahau, fre 27 nov–lør 28 nov</span></label></li>
-          <li><label><input type="checkbox" data-k="t9"> <span>Færgen Picton → Wellington søn 29 nov med bil og to voksne</span></label> <a class="pin" href="https://www.bluebridge.co.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
-          <li><label><input type="checkbox" data-k="t10"> <span>Hotel i Wellington søn 29 nov med parkering</span></label></li>
-          <li><label><input type="checkbox" data-k="t11"> <span>Opunake Beach Holiday Park, tir 1 dec–ons 2 dec</span></label></li>
-          <li><label><input type="checkbox" data-k="t12"> <span>Mangahuia (DOC), tor 3 dec–fre 4 dec</span></label> <a class="pin" href="https://bookings.doc.govt.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
-          <li><label><input type="checkbox" data-k="t13"> <span>Tongariro Crossing: gratis DOC-booking og shuttle fre 4 dec</span></label></li>
-          <li><label><input type="checkbox" data-k="t14"> <span>Motutere Bay TOP 10 ved Lake Taupō, lør 5 dec–søn 6 dec</span></label> <a class="pin" href="https://top10.co.nz/park/central-north-island/motutere-bay-top-10-holiday-park/lakeside-unpowered-site/" target="_blank" rel="noopener noreferrer">Book</a></li>
-          <li><label><input type="checkbox" data-k="t15"> <span>Marokopa via Penny, man 7 dec</span></label> <a class="pin" href="https://marokopa.co.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
-          <li><label><input type="checkbox" data-k="t16"> <span>Hent Gaspy og få et Everyday Rewards-kort til benzinrabat</span></label></li>
-          <li><label><input type="checkbox" data-k="t17"> <span>Gasblus eller lille gasgrill, og tjek gasflaskens testdato</span></label></li>
-          <li><label><input type="checkbox" data-k="t18"> <span>Tjek bilens højde med tagteltet til færgen og parkeringen i Wellington</span></label></li>
+          <li><label><input type="checkbox" data-k="t0r"> <span>Book Route79 Holiday Park, man 16 nov, og giv besked om ankomst ca. 21.30</span></label> <a class="pin" href="https://route79holidaypark.nz/book-now/" target="_blank" rel="noopener noreferrer">Book</a></li>
+          <li><label><input type="checkbox" data-k="t1"> <span>Book Glentanner Park Centre, tir 17 nov</span></label></li>
+          <li><label><input type="checkbox" data-k="t2"> <span>Book Kidds Bush (DOC), ons 18 nov og lør 21 nov</span></label> <a class="pin" href="https://bookings.doc.govt.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
+          <li><label><input type="checkbox" data-k="t3"> <span>Book Cascade Creek (DOC), tor 19 nov–fre 20 nov</span></label> <a class="pin" href="https://bookings.doc.govt.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
+          <li><label><input type="checkbox" data-k="t4"> <span>Book bådturen i Milford Sound, fre 20 nov kl. 10.30 eller første afgang. Tjek BookMe</span></label> <a class="pin" href="https://www.bookme.co.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
+          <li><label><input type="checkbox" data-k="t5"> <span>Book Ottos Corner ved Lake Mapourika (DOC), søn 22 nov · 1 nat</span></label> <a class="pin" href="https://bookings.doc.govt.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
+          <li><label><input type="checkbox" data-k="t6"> <span>Book Punakaiki Beach Camp, man 23 nov–tir 24 nov</span></label> <a class="pin" href="https://www.smartbooking.co.nz/sfxbook/?hostel=punakaikibeachcamp&agent=PUNAKAIKIBEACHCAMP" target="_blank" rel="noopener noreferrer">Book</a></li>
+          <li><label><input type="checkbox" data-k="t7"> <span>Book Kerr Bay (DOC, Kiwi zone), ons 25 nov–tor 26 nov</span></label> <a class="pin" href="https://bookings.doc.govt.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
+          <li><label><input type="checkbox" data-k="t8"> <span>Book The Barn i Marahau, fre 27 nov–lør 28 nov</span></label></li>
+          <li><label><input type="checkbox" data-k="t9"> <span>Book færgen Picton → Wellington, søn 29 nov, med bil og to voksne</span></label> <a class="pin" href="https://www.bluebridge.co.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
+          <li><label><input type="checkbox" data-k="t10"> <span>Book hotel i Wellington, søn 29 nov, og få parkering til bilen med tagtelt bekræftet</span></label></li>
+          <li><label><input type="checkbox" data-k="t11"> <span>Book Opunake Beach Holiday Park, tir 1 dec–ons 2 dec</span></label></li>
+          <li><label><input type="checkbox" data-k="t12"> <span>Book Mangahuia (DOC), tor 3 dec–fre 4 dec</span></label> <a class="pin" href="https://bookings.doc.govt.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
+          <li><label><input type="checkbox" data-k="t13"> <span>Book gratis DOC-adgang og shuttle til Tongariro Crossing, fre 4 dec</span></label></li>
+          <li><label><input type="checkbox" data-k="t14"> <span>Book Motutere Bay TOP 10 ved Lake Taupō, lør 5 dec–søn 6 dec</span></label> <a class="pin" href="https://top10.co.nz/park/central-north-island/motutere-bay-top-10-holiday-park/lakeside-unpowered-site/" target="_blank" rel="noopener noreferrer">Book</a></li>
+          <li><label><input type="checkbox" data-k="t15"> <span>Book Marokopa via Penny, man 7 dec</span></label> <a class="pin" href="https://marokopa.co.nz/" target="_blank" rel="noopener noreferrer">Book</a></li>
+    </ul>
+    <h2 class="sec">Vigtige forberedelser</h2>
+    <ul class="todo">
+          <li><label><input type="checkbox" data-k="t17"> <span>Pak gasblus eller gasgrill, og tjek gasflaskens testdato</span></label></li>
+          <li><label><input type="checkbox" data-k="t18"> <span>Mål bilens højde med tagtelt, og oplys den til færgeselskabet</span></label></li>
+          <li><label><input type="checkbox" data-k="gas-ferry"> <span>Meld gasflasken til færgeselskabet før afgang</span></label></li>
     </ul>
   </section>
 
