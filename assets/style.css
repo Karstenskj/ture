@@ -951,3 +951,9 @@ body.on-kort #kort .rk { height: calc(100dvh - var(--bar, 110px) - 22px); min-he
 .todo label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 16px; line-height: 1.4; }
 .todo input { width: 20px; height: 20px; margin-top: 1px; accent-color: var(--accent); flex: none; }
 .todo input:checked + span { color: var(--muted); text-decoration: line-through; }
+
+/* Instagram-kilder: vurdering og direkte citat i både stedkort og kortpopup. */
+.instagram-quote { margin: 0; padding: 12px 14px; border-left-color: var(--accent); background: var(--soft); border-radius: 0 8px 8px 0; display: flex; flex-direction: column; gap: 8px; }
+.instagram-quote p { margin: 0; }
+.instagram-quote strong { color: var(--ink); }
+.instagram-quote footer { padding-top: 8px; font-size: 12px; line-height: 1.5; color: var(--muted); }
