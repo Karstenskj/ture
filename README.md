@@ -18,7 +18,7 @@ trips/ÅÅÅÅ-MM-sted.html én fil pr. tur
 
 ## Faste rammer for NZ-rundturen 2026
 
-Ankomsten til Auckland skal altid være den 11. december 2026. Når ruten forkortes, fordeles de frigjorte nætter før Auckland; ankomstdatoen må ikke rykkes frem. Der er tre fleksible nætter tilbage uden valgt sted eller campsite; de skal først fordeles, når Karsten beder om det. Én af de oprindelige fem er brugt til Whatamango Bay den 26. november med planlagt morgenfærge fra Picton til Wellington den 27. november. En anden er reserveret til to nætter enten på The Barn eller ved Wharariki; Karsten vælger senere hvilket sted. Begge har vaskemaskine.
+Ankomsten til Auckland skal altid være den 11. december 2026. Når ruten forkortes, fordeles de frigjorte nætter før Auckland; ankomstdatoen må ikke rykkes frem. Der er to fleksible nætter tilbage uden valgt sted eller campsite; de skal først fordeles, når Karsten beder om det. Én af de oprindelige fem er brugt til Whatamango Bay den 27. november med planlagt morgenfærge fra Picton til Wellington den 28. november. En anden er reserveret til to nætter enten på The Barn eller ved Wharariki; Karsten vælger senere hvilket sted. Begge har vaskemaskine. Endnu en fleksibel nat er brugt til Mistletoe Bay Eco Village den 26. november med Onahau Point næste morgen. Biladgang skal bekræftes med pladsen; færgens lørdagsmorgenafgang skal vælges ved booking.
 
 ## Sådan lægges en ny tur ind
 
