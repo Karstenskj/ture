@@ -1083,3 +1083,12 @@ body.rk-lock { position: fixed; width: 100%; overscroll-behavior: none; }
 }
 
 .rk-sheet figcaption .pin { min-height: 0; display: inline; padding: 0; border: 0; background: none; box-shadow: none; font: inherit; letter-spacing: inherit; text-transform: none; color: inherit; }
+
+/* Tre fotos pr. nyt sted; hvert billede kan åbnes i fuld størrelse. */
+.spot-gallery { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); grid-template-rows: repeat(2, 112px); gap: 3px; background: var(--line); }
+.spot-gallery .spot-img { min-width: 0; overflow: hidden; }
+.spot-gallery .spot-img:first-child { grid-row: span 2; }
+.spot-gallery .photo-open { display: block; height: 100%; }
+.spot-gallery .spot-img img, .rk-sheet .spot-gallery .spot-img img { width: 100%; height: 100%; max-height: none; aspect-ratio: auto; object-fit: cover; }
+.spot-gallery .spot-img figcaption { font-size: 8px; padding: 2px 4px; max-width: 100%; }
+.spot-gallery .photo-open:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }

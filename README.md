@@ -26,6 +26,8 @@ NZ-programmet vises som en kalender fra mandag til søndag med ét dagsprogram �
 
 Mobilkortet bruger hele bredden i Kort-fanen og kan åbnes i CSS-baseret fuld skærm, også på iPhone. Bevar viewport-fit=cover, safe-area-kanter, én-finger-navigation i kortfanen og muligheden for at gå til Program fra fuld skærm. På mobil vises campingprikker i overblikket; datoer og navne kommer frem ved indzoomning. Forklaringen åbnes med en knap, og stedkort kan udvides.
 
+Valgte ekstra stop på Nordøen: Escarpment Track søn 29 nov (med returtransport mellem stationerne), Dawson Falls med Wilkies Pools man 30 nov, Lake Mangamahoe som udflugt fra Opunake tir 1 dec samt Whangamōmona, Moki Tunnel, Mount Damper Falls og Tāngarākau Gorge ons 2 dec. Kørsel og vandfaldsafstikker er medregnet; den 2. december er en hel udflugtsdag. Rotokare og Zealandia er fravalgt. Hvert af de syv valgte stedkort har tre fotos.
+
 ## Sådan lægges en ny tur ind
 
 1. **Opret filen** `trips/ÅÅÅÅ-MM-sted.html`, fx `trips/2026-12-nordoeen.html`.
