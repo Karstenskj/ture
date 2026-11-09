@@ -30,6 +30,8 @@ Mobilkortet bruger hele bredden i Kort-fanen og kan åbnes i CSS-baseret fuld sk
 
 Valgte ekstra stop på Nordøen: Escarpment Track tir 1 dec (med returtransport mellem stationerne), Dawson Falls med Wilkies Pools ons 2 dec, Lake Mangamahoe som udflugt fra Opunake tor 3 dec samt Whangamōmona, Moki Tunnel, Mount Damper Falls og Tāngarākau Gorge fre 4 dec. Kørsel og vandfaldsafstikker er medregnet; den 4. december er en hel udflugtsdag. Rotokare og Zealandia er fravalgt. Hvert af de syv valgte stedkort har tre fotos.
 
+Heldagen i Raglan tor 10 dec har et muligt surfbesøg ved Manu Bay. Axel og de andre anbefalede stedet og sagde, at surfen var bedre end ved stranden tæt på Te Kopua-campen. Besøget er en overvejelse, ikke en fast køreetape.
+
 ## Sådan lægges en ny tur ind
 
 1. **Opret filen** `trips/ÅÅÅÅ-MM-sted.html`, fx `trips/2026-12-nordoeen.html`.
