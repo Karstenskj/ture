@@ -9,6 +9,9 @@
   var steps = Array.from(program.querySelectorAll('[data-calendar-step]'));
   var selected = 0;
   if (!days.length) return;
+  var firstDate = dates[0] && dates[0].querySelector('time');
+  var firstWeekday = firstDate ? new Date(firstDate.dateTime + 'T00:00:00Z').getUTCDay() : 1;
+  var startOffset = (firstWeekday + 6) % 7;
 
   function select(index) {
     selected = Math.max(0, Math.min(days.length - 1, index));
@@ -45,8 +48,8 @@
       if (event.key === 'ArrowLeft') next = index - 1;
       if (event.key === 'ArrowDown') next = index + 7;
       if (event.key === 'ArrowUp') next = index - 7;
-      if (event.key === 'Home') next = index - index % 7;
-      if (event.key === 'End') next = Math.min(index - index % 7 + 6, dates.length - 1);
+      if (event.key === 'Home') next = index - (index + startOffset) % 7;
+      if (event.key === 'End') next = Math.min(index + 6 - (index + startOffset) % 7, dates.length - 1);
       if (next !== undefined) {
         event.preventDefault();
         dates[Math.max(0, Math.min(dates.length - 1, next))].focus();
