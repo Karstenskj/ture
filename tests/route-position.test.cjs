@@ -13,14 +13,14 @@ test('NZ clock and independent Brisbane clock do not follow visitor timezone',()
   assert.equal(P.helenaState(data,new Date('2026-11-13T22:00:00+10:00')).scene,'helena-sleep');
   assert.equal(P.helenaState(data,new Date('2026-11-14T08:00:00+10:00')).scene,'helena-run');
 });
-test('approximate public start, one Gore Bay night, two Kaikoura nights and solo day activities',()=>{
+test('approximate public start, one Hurunui night, two Kaikoura nights and solo day activities',()=>{
   assert.deepEqual(at('2026-11-13T16:00:00+13:00').ll,[-43.53016,172.73651]);
   assert.equal(at('2026-11-13T16:00:00+13:00').scene,'packing');
   assert.equal(at('2026-11-14T06:30:00+13:00').scene,'packing');
   assert.equal(at('2026-11-14T08:00:00+13:00').scene,'drive');
   assert.equal(at('2026-11-14T20:00:00+13:00').scene,'beer');
   assert.equal(at('2026-11-14T22:00:00+13:00').scene,'solo-sleep');
-  assert.equal(at('2026-11-15T06:00:00+13:00').name,'Gore Bay Campground');
+  assert.equal(at('2026-11-15T06:00:00+13:00').name,'Hurunui River Mouth Reserve Camping Ground');
   assert.match(at('2026-11-15T11:00:00+13:00').name,/Kaikōura/);
   assert.equal(at('2026-11-16T10:00:00+13:00').scene,'work');
   assert.equal(at('2026-11-16T13:30:00+13:00').scene,'solo-surf');

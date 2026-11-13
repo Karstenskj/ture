@@ -56,7 +56,8 @@
   function resizeMap() {
     var element = map.getContainer(), width = element.clientWidth, height = element.clientHeight;
     if (!width || !height) return;
-    if (knownSize && knownSize[0] === width && knownSize[1] === height) return;
+    var actualSize = map.getSize();
+    if (knownSize && knownSize[0] === width && knownSize[1] === height && actualSize.x === width && actualSize.y === height) return;
     knownSize = [width,height];
     var view = rememberedView;
     resizingMap = true;
@@ -310,7 +311,8 @@
   function fit() {
     syncDragging();
     resizeMap();
-    if (!fitted && box.offsetWidth && document.readyState !== 'loading') { map.fitBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]], { padding: [16, 16], animate: false }); fitted = true; showTimes(); }
+    var pane = box.closest('#kort');
+    if (!fitted && (!pane || !pane.hidden) && box.offsetWidth && box.offsetHeight && document.readyState !== 'loading') { map.fitBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]], { padding: [16, 16], animate: false }); fitted = true; showTimes(); }
   }
   if (window.ResizeObserver) new ResizeObserver(fit).observe(map.getContainer());
   document.addEventListener('DOMContentLoaded', fit, { once: true });
@@ -363,6 +365,7 @@
   });
   btns.querySelector('[data-a="route"]').addEventListener('click', function () {
     close();
+    resizeMap();
     map.fitBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]], { padding: mobile.matches ? [36, 72] : [28, 48], animate: !reducedMotion.matches });
   });
   var legendBtn = btns.querySelector('[data-a="legend"]');

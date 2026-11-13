@@ -131,7 +131,7 @@ def solo_day(index, start):
     coast = [base["ll"][0] - .001, base["ll"][1] + .009]
     parts = [(start, 720, "work", base["ll"], "arbejder ved bilen"),
              (720, 780, "food", base["ll"], "spiser frokost"),
-             (780, 900, "solo-surf", coast, "surfer"),
+             (780, 900, "walk" if index == 0 else "solo-surf", base["ll"] if index == 0 else coast, "går en tur" if index == 0 else "surfer"),
              (900, 1020, "work", base["ll"], "arbejder ved bilen"),
              (1080, 1140, "food", base["ll"], "spiser aftensmad"),
              (1140, 1320, "beer", base["ll"], "hygger i campingstolen")]
