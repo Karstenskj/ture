@@ -19,13 +19,13 @@ document = html.fromstring(source)
 match = re.search(r'(<script\b[^>]*\bid="rk-data"[^>]*>)(.*?)(</script>)', source, re.S)
 data = json.loads(match[2])
 
-coastal = {0, 6, 8, 9, 10, 12, 13, 16, 17, 19}
+coastal = {0, 6, 8, 9, 10, 12, 13, 16, 17, 19, 20}
 for index, base in enumerate(data["bases"]):
     base["camp"] = index not in {11, 18}
     base["coastal"] = index in coastal
 
 activities = {
-    "s-airport": ("airport", 50), "s2": ("hike", 180), "s47": ("hike", 45),
+    "s-airport": ("airport", 50), "s-cheviot-pies": ("food", 45), "s2": ("hike", 180), "s47": ("hike", 45),
     "s48": ("hike", 60), "s41": ("walk", 25), "s42": ("waterfall", 60),
     "s49": ("vista", 20), "s50": ("waterfall", 30), "s45": ("hike", 60),
     "s59": ("hike", 480), "s6": ("hike", 360), "s51": ("walk", 45),
@@ -62,8 +62,8 @@ data["helenaFlight"] = {
     "note": "Afgangen og flyets position er anslået ud fra 3½ timers direkte flyvning. Kun ankomsten kl. 18.10 er oplyst. Ikke flytracking."
 }
 
-stay_indexes = [0, 19, 19, 1, 2, 3, 4, 5, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 12, 13, 13, 14, 14, 15, 16, 17, 17, 18]
-leg_for_day = {0: 0, 1: 22, 4: 2, 5: 3, 6: 4, 7: 5, 9: 7, 11: 8, 12: 9, 14: 10,
+stay_indexes = [0, 20, 19, 1, 2, 3, 4, 5, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 12, 13, 13, 14, 14, 15, 16, 17, 17, 18]
+leg_for_day = {0: 0, 1: 22, 2: 23, 4: 2, 5: 3, 6: 4, 7: 5, 9: 7, 11: 8, 12: 9, 14: 10,
                15: 11, 18: 14, 19: 15, 20: 16, 21: 17, 23: 18, 24: 19, 25: 20, 27: 21}
 calendar = document.xpath('//*[@data-calendar-day]')
 days = []
@@ -124,34 +124,36 @@ for index, leg_index in leg_for_day.items():
         selected.append(spots[anchor])
     if index == 14:
         selected = [spots[a] for a in ("s46", "s44", "s43")]
-    days[index]["segments"] = road_day(index, leg_index, selected, 420 if index in {0, 4} else 540)
+    start = 420 if index in {0, 4} else 690 if index == 1 else 540
+    days[index]["segments"] = road_day(index, leg_index, selected, start)
 
 def solo_day(index, start):
     base = days[index]["stay"]
     coast = [base["ll"][0] - .001, base["ll"][1] + .009]
     parts = [(start, 720, "work", base["ll"], "arbejder ved bilen"),
              (720, 780, "food", base["ll"], "spiser frokost"),
-             (780, 900, "walk" if index == 0 else "solo-surf", base["ll"] if index == 0 else coast, "går en tur" if index == 0 else "surfer"),
+             (780, 900, "walk" if index in {0, 2} else "solo-surf", base["ll"] if index in {0, 2} else coast, "går en tur" if index in {0, 2} else "surfer"),
              (900, 1020, "work", base["ll"], "arbejder ved bilen"),
              (1080, 1140, "food", base["ll"], "spiser aftensmad"),
              (1140, 1320, "beer", base["ll"], "hygger i campingstolen")]
-    days[index]["segments"] += [{"from": a, "to": b, "point": ll, "activity": activity,
+    days[index]["segments"] += [{"from": max(a, start), "to": b, "point": ll, "activity": activity,
                                  "name": base["name"].split(" · ")[0] + " · " + name}
-                                for a, b, activity, ll, name in parts if b > a]
+                                for a, b, activity, ll, name in parts if b > max(a, start) and not (index == 1 and b == 780)]
     days[index]["note"] = "Arbejde, surf, mad og aftenhygge er illustreret efter et anslået dagsforløb, ikke live aktivitetsdata."
 
 solo_day(0, max(555, days[0]["segments"][-1]["to"]))
 solo_day(1, max(630, days[1]["segments"][-1]["to"]))
-solo_day(2, 540)
+solo_day(2, max(840, days[2]["segments"][-1]["to"]))
 
 # The arrival evening and ferry have their own known/assumed time windows.
 airport = spots["s-airport"]["ll"]
 airport_progress = progress_at(data["legs"][1]["pts"], airport)
 days[3]["segments"] = [
-    {"from": 480, "to": 690, "point": data["bases"][19]["ll"], "activity": "work", "name": "Kaikōura · arbejder ved bilen"},
-    {"from": 690, "to": 750, "point": data["bases"][19]["ll"], "activity": "food", "name": "Kaikōura · frokost"},
-    {"from": 780, "to": 870, "point": data["bases"][19]["ll"], "activity": "packing", "name": "Kaikōura · pakker bilen"},
-    {"from": 870, "to": 1035, "leg": 1, "portion": [0, airport_progress], "name": "på vej til Christchurch lufthavn"},
+    {"from": 480, "to": 540, "point": data["bases"][19]["ll"], "activity": "food", "name": "Godley Head · morgenmad"},
+    {"from": 540, "to": 600, "point": data["bases"][19]["ll"], "activity": "packing", "name": "Godley Head · pakker sammen før check-out kl. 10"},
+    {"from": 600, "to": 640, "leg": 1, "portion": [0, airport_progress * .25], "name": "på vej mod Christchurch"},
+    {"from": 640, "to": 960, "point": data["legs"][1]["pts"][max(1, len(data["legs"][1]["pts"]) // 10)], "activity": "work", "name": "Christchurch · arbejde og frokost før afhentning"},
+    {"from": 960, "to": 1035, "leg": 1, "portion": [airport_progress * .25, airport_progress], "name": "på vej til Christchurch lufthavn"},
     {"from": 1035, "to": 1140, "point": airport, "activity": "airport", "name": "Henter Helena i Christchurch kl. 18.10"},
     {"from": 1140, "to": 1290, "leg": 1, "portion": [airport_progress, 1], "name": "på vej til Route79"},
 ]

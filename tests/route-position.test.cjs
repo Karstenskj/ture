@@ -13,7 +13,7 @@ test('NZ clock and independent Brisbane clock do not follow visitor timezone',()
   assert.equal(P.helenaState(data,new Date('2026-11-13T22:00:00+10:00')).scene,'helena-sleep');
   assert.equal(P.helenaState(data,new Date('2026-11-14T08:00:00+10:00')).scene,'helena-run');
 });
-test('approximate public start, one Hurunui night, two Kaikoura nights and solo day activities',()=>{
+test('approximate public start, Hurunui, Cheviot lunch, Gore Bay and booked Godley Head',()=>{
   assert.deepEqual(at('2026-11-13T16:00:00+13:00').ll,[-43.53016,172.73651]);
   assert.equal(at('2026-11-13T16:00:00+13:00').scene,'packing');
   assert.equal(at('2026-11-14T06:30:00+13:00').scene,'packing');
@@ -21,9 +21,12 @@ test('approximate public start, one Hurunui night, two Kaikoura nights and solo 
   assert.equal(at('2026-11-14T20:00:00+13:00').scene,'beer');
   assert.equal(at('2026-11-14T22:00:00+13:00').scene,'solo-sleep');
   assert.equal(at('2026-11-15T06:00:00+13:00').name,'Hurunui River Mouth Reserve Camping Ground');
-  assert.match(at('2026-11-15T11:00:00+13:00').name,/Kaikōura/);
-  assert.equal(at('2026-11-16T10:00:00+13:00').scene,'work');
-  assert.equal(at('2026-11-16T13:30:00+13:00').scene,'solo-surf');
+  assert.match(at('2026-11-15T12:00:00+13:00').name,/pies.*Cheviot/);
+  assert.equal(at('2026-11-15T12:00:00+13:00').scene,'food');
+  assert.equal(at('2026-11-15T13:30:00+13:00').scene,'solo-surf');
+  assert.match(at('2026-11-16T06:30:00+13:00').name,/Gore Bay/);
+  assert.equal(at('2026-11-16T10:00:00+13:00').scene,'drive');
+  assert.match(at('2026-11-16T15:30:00+13:00').name,/Godley Head/);
   assert.equal(at('2026-11-16T19:30:00+13:00').scene,'beer');
   assert.equal(at('2026-11-16T23:00:00+13:00').scene,'solo-sleep');
 });
@@ -62,7 +65,8 @@ test('all approximate days have ordered non-overlapping segments on valid routes
  assert.equal(data.locationPlan.days.length,28);
  for(const d of data.locationPlan.days){let end=0;for(const s of d.segments){assert.ok(s.to>s.from);assert.ok(s.from>=end,`${d.date}: overlaps`);assert.ok(s.to<=1440);end=s.to;if(s.leg!=null)assert.ok(data.legs[s.leg].pts.length>1);}}
  assert.equal(data.bases[15].label,'man 7 dec');
- assert.equal(data.bases[19].provisional,true);
+ assert.equal(data.bases[20].provisional,true);
+ assert.equal(data.bases[19].name,'Awaroa/Godley Head Campsite');
  assert.ok(!data.spots.some(s=>/Napier/i.test(s.name)));
 });
 test('route interpolation follows distance and stays on the supplied path',()=>{

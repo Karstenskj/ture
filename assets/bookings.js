@@ -52,7 +52,7 @@
     if (!base || !card || !(record.until > record.from)) throw new Error('Ugyldig booking: ' + anchor);
     var nights = Math.round((Date.parse(record.until) - Date.parse(record.from)) / 86400000);
     var description = 'Booket · ' + stamp(record.from) + '–' + stamp(record.until) + ' · ' + nights + (nights === 1 ? ' nat' : ' nætter');
-    if (record.total != null) description += ' · NZ$' + record.total + ' i alt' + (record.adults ? ' for ' + record.adults + ' voksne' : '');
+    if (record.total != null) description += ' · NZ$' + record.total + ' i alt' + (record.adults ? ' for ' + record.adults + (record.adults === 1 ? ' voksen' : ' voksne') : '');
     markCard(card, description);
     var fragment = document.createElement('div'); fragment.innerHTML = base.html;
     markCard(fragment, description); base.html = fragment.innerHTML;
