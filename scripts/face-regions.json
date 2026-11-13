@@ -1,0 +1,212 @@
+[
+  {
+    "path": "assets/trip-world/characters-base.png",
+    "id": "master-k",
+    "rect": [
+      220,
+      0,
+      230,
+      310
+    ]
+  },
+  {
+    "path": "assets/trip-world/characters-base.png",
+    "id": "master-h",
+    "rect": [
+      590,
+      100,
+      270,
+      310
+    ]
+  },
+  {
+    "path": "assets/trip-world/camp.webp",
+    "id": "camp-k",
+    "rect": [
+      450,
+      330,
+      240,
+      250
+    ]
+  },
+  {
+    "path": "assets/trip-world/camp.webp",
+    "id": "camp-h",
+    "rect": [
+      800,
+      340,
+      240,
+      250
+    ]
+  },
+  {
+    "path": "assets/trip-world/hike.webp",
+    "id": "hike-k",
+    "rect": [
+      480,
+      0,
+      220,
+      250
+    ]
+  },
+  {
+    "path": "assets/trip-world/hike.webp",
+    "id": "hike-h",
+    "rect": [
+      790,
+      50,
+      270,
+      260
+    ]
+  },
+  {
+    "path": "assets/trip-world/surf.webp",
+    "id": "surf-k",
+    "rect": [
+      400,
+      0,
+      230,
+      270
+    ]
+  },
+  {
+    "path": "assets/trip-world/surf.webp",
+    "id": "surf-h",
+    "rect": [
+      940,
+      110,
+      280,
+      260
+    ]
+  },
+  {
+    "path": "assets/trip-world/cave.webp",
+    "id": "cave-k",
+    "rect": [
+      470,
+      100,
+      240,
+      250
+    ]
+  },
+  {
+    "path": "assets/trip-world/cave.webp",
+    "id": "cave-h",
+    "rect": [
+      710,
+      150,
+      240,
+      250
+    ]
+  },
+  {
+    "path": "assets/trip-world/helena-day.webp",
+    "id": "helena-day-0",
+    "rect": [
+      192,
+      4,
+      137,
+      145
+    ]
+  },
+  {
+    "path": "assets/trip-world/helena-day.webp",
+    "id": "helena-day-1",
+    "rect": [
+      706,
+      4,
+      139,
+      146
+    ]
+  },
+  {
+    "path": "assets/trip-world/helena-day.webp",
+    "id": "helena-day-2",
+    "rect": [
+      1210,
+      4,
+      144,
+      148
+    ]
+  },
+  {
+    "path": "assets/trip-world/helena-day.webp",
+    "id": "helena-day-3",
+    "rect": [
+      168,
+      517,
+      187,
+      212
+    ]
+  },
+  {
+    "path": "assets/trip-world/helena-day.webp",
+    "id": "helena-day-4",
+    "rect": [
+      564,
+      580,
+      158,
+      172
+    ]
+  },
+  {
+    "path": "assets/trip-world/helena-day.webp",
+    "id": "helena-day-5",
+    "rect": [
+      1077,
+      687,
+      195,
+      177
+    ]
+  },
+  {
+    "path": "assets/trip-world/karsten-solo-day.webp",
+    "id": "karsten-solo-day-0",
+    "rect": [
+      109,
+      48,
+      126,
+      136
+    ]
+  },
+  {
+    "path": "assets/trip-world/karsten-solo-day.webp",
+    "id": "karsten-solo-day-1",
+    "rect": [
+      579,
+      85,
+      134,
+      153
+    ]
+  },
+  {
+    "path": "assets/trip-world/karsten-solo-day.webp",
+    "id": "karsten-solo-day-2",
+    "rect": [
+      1174,
+      41,
+      135,
+      138
+    ]
+  },
+  {
+    "path": "assets/trip-world/karsten-solo-day.webp",
+    "id": "karsten-solo-day-3",
+    "rect": [
+      130,
+      505,
+      159,
+      180
+    ]
+  },
+  {
+    "path": "assets/trip-world/karsten-solo-day.webp",
+    "id": "karsten-solo-day-4",
+    "rect": [
+      507,
+      561,
+      147,
+      165
+    ]
+  }
+]

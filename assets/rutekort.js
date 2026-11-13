@@ -30,9 +30,11 @@
   var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 
   var mobile = window.matchMedia('(max-width: 719px)');
+  var phoneView = window.matchMedia('(max-width: 719px), (max-width: 960px) and (max-height: 500px)');
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var smoothZooming = false;
   var worldReady = false;
+  var quietMap = false, phoneMapWasVisible = false;
 
   // I kortfanen og fuld skærm kan kortet flyttes med én finger.
   var map = L.map('rk-map', {
@@ -44,6 +46,41 @@
     fadeAnimation: !reducedMotion.matches,
     markerZoomAnimation: !reducedMotion.matches
   });
+  map.getContainer().setAttribute('role','region');
+  var rememberedView = null, resizingMap = false, knownSize = null;
+  map.on('moveend', function () {
+    if (resizingMap || map.getZoom() == null) return;
+    var center = map.getCenter();
+    rememberedView = {center:L.latLng(center.lat,center.lng),zoom:map.getZoom()};
+  });
+  function resizeMap() {
+    var element = map.getContainer(), width = element.clientWidth, height = element.clientHeight;
+    if (!width || !height) return;
+    if (knownSize && knownSize[0] === width && knownSize[1] === height) return;
+    knownSize = [width,height];
+    var view = rememberedView;
+    resizingMap = true;
+    map.invalidateSize({pan:false,animate:false});
+    if (view) map.setView(view.center,view.zoom,{animate:false});
+    resizingMap = false;
+  }
+  function setQuiet(on) {
+    quietMap = !!on && phoneView.matches;
+    box.classList.toggle('rk-quiet',quietMap);
+    map.getContainer().setAttribute('aria-label',phoneView.matches ? (quietMap ? 'Kort over turen. Tryk for at vise menu, knapper og nøgletal.' : 'Kort over turen. Tryk på et frit sted for at skjule menu, knapper og nøgletal.') : 'Kort over turen med rute, overnatninger og steder.');
+  }
+  function syncPhoneView() {
+    var phone = phoneView.matches, pane = box.closest('#kort');
+    var visible = !pane || !pane.hidden;
+    box.classList.toggle('rk-phone',phone);
+    document.body.classList.toggle('rk-phone-view',phone);
+    if (phone && visible) {
+      setFull(true);
+      if (!phoneMapWasVisible) setQuiet(true);
+    } else setQuiet(false);
+    phoneMapWasVisible = phone && visible;
+    resizeMap();
+  }
   L.control.zoom({ position: 'bottomright', zoomInTitle: 'Zoom ind', zoomOutTitle: 'Zoom ud' }).addTo(map);
   // Follow the wheel continuously instead of starting a new stepped zoom for
   // every wheel burst. Pinch, keyboard and +/- keep Leaflet's native controls.
@@ -66,7 +103,7 @@
     wheelStamp = performance.now();
     function frame(stamp) {
       var difference = wheelTarget - map.getZoom();
-      var amount = 1 - Math.exp(-Math.min(40,stamp-wheelStamp)/65);
+      var amount = 1 - Math.exp(-Math.min(40,stamp-wheelStamp)/45);
       wheelStamp = stamp;
       if (Math.abs(difference) < .002 || document.hidden) {
         map.setZoomAround(wheelPoint,wheelTarget,{animate:false});
@@ -110,6 +147,7 @@
     map.panBy(window.innerWidth >= 720 ? [sheet.offsetWidth / 2, 0] : [0, sheet.offsetHeight / 2], { animate: !reducedMotion.matches });
   }
   function open(html, ll) {
+    setQuiet(false);
     lastTrigger = document.activeElement;
     selectedPoint = ll || null;
     inner.innerHTML = html;
@@ -144,7 +182,15 @@
     positionPoint();
   });
   sheet.querySelector('.rk-close').addEventListener('click', close);
-  map.on('click', close);
+  map.on('click', function () {
+    if (!sheet.hidden) {close();return;}
+    if (phoneView.matches) setQuiet(!quietMap);
+  });
+  map.getContainer().addEventListener('keydown', function (event) {
+    if (phoneView.matches && event.target === map.getContainer() && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();setQuiet(!quietMap);
+    }
+  });
 
   function tap(layer, html, ll) {
     layer.on('click', function (e) { L.DomEvent.stopPropagation(e); open(html, ll || e.latlng); });
@@ -263,10 +309,10 @@
   var fitted = false;
   function fit() {
     syncDragging();
-    map.invalidateSize({ pan: true, animate: false });
+    resizeMap();
     if (!fitted && box.offsetWidth && document.readyState !== 'loading') { map.fitBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]], { padding: [16, 16], animate: false }); fitted = true; showTimes(); }
   }
-  if (window.ResizeObserver) new ResizeObserver(fit).observe(box);
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(map.getContainer());
   document.addEventListener('DOMContentLoaded', fit, { once: true });
   // Vent til fanens endelige layout er på plads, før hele ruten indrammes.
   requestAnimationFrame(function () { fit(); showTimes(); });
@@ -274,7 +320,7 @@
   // CSS-baseret fuld skærm virker også i Safari på iPhone.
   var topbar = document.createElement('div');
   topbar.className = 'rk-topbar';
-  topbar.innerHTML = '<button type="button" class="rk-btn" data-a="full" aria-pressed="false">Fuld skærm</button>' +
+  topbar.innerHTML = '<button type="button" class="rk-btn rk-menu" data-a="menu" aria-haspopup="dialog">Menu</button><button type="button" class="rk-btn" data-a="full" aria-pressed="false">Fuld skærm</button>' +
     (document.getElementById('program') ? '<a class="rk-btn rk-program" href="#program">Program</a>' : '');
   var btns = document.createElement('div');
   btns.className = 'rk-btns';
@@ -282,6 +328,15 @@
     (D.legend ? '<button type="button" class="rk-btn" data-a="legend" aria-expanded="false" aria-controls="rk-legend">Forklaring</button>' : '');
   map.getContainer().appendChild(topbar);
   map.getContainer().appendChild(btns);
+  var metrics = document.createElement('div');
+  metrics.className = 'rk-map-metrics';
+  metrics.setAttribute('role','group');
+  metrics.setAttribute('aria-label','Turens nøgletal');
+  metrics.innerHTML = [].slice.call(document.querySelectorAll('.trip-overview .fact')).map(function (fact) {
+    return '<span><b>' + safe(fact.querySelector('dd').textContent) + '</b> ' + safe(fact.querySelector('dt').textContent.toLowerCase()) + '</span>';
+  }).join('');
+  map.getContainer().appendChild(metrics);
+  L.DomEvent.disableClickPropagation(metrics);
   [btns, topbar].forEach(function (element) { L.DomEvent.disableClickPropagation(element); });
   var fullBtn = topbar.querySelector('[data-a="full"]');
   var savedScroll = 0;
@@ -299,9 +354,13 @@
     fullBtn.setAttribute('aria-pressed', String(on));
     syncDragging();
     if (!on) window.scrollTo(0, savedScroll);
-    requestAnimationFrame(function () { map.invalidateSize({ pan: true, animate: false }); });
+    requestAnimationFrame(resizeMap);
   }
   fullBtn.addEventListener('click', function () { setFull(!box.classList.contains('full')); });
+  topbar.querySelector('[data-a="menu"]').addEventListener('click', function () {
+    var links = [].slice.call(document.querySelectorAll('.tabs a')).filter(function (link) {return link.getAttribute('href') !== '#kort';});
+    open('<div class="rk-body"><h3>Turmenu</h3><nav class="rk-menu-links" aria-label="Turens sider">' + links.map(function (link) {return '<a href="' + safe(link.getAttribute('href')) + '">' + safe(link.textContent) + '</a>';}).join('') + '</nav></div>');
+  });
   btns.querySelector('[data-a="route"]').addEventListener('click', function () {
     close();
     map.fitBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]], { padding: mobile.matches ? [36, 72] : [28, 48], animate: !reducedMotion.matches });
@@ -314,6 +373,7 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       if (!sheet.hidden) close();
+      else if (phoneView.matches && !quietMap) setQuiet(true);
       else if (box.classList.contains('full')) setFull(false);
     }
   });
@@ -322,11 +382,14 @@
     if (target && !box.contains(target) && target.id !== 'kort') {
       close();
       setFull(false);
+      phoneMapWasVisible = false;
     }
+    requestAnimationFrame(syncPhoneView);
   });
-  window.addEventListener('resize', function () { showTimes(); map.invalidateSize({ pan: true, animate: false }); });
-  if (window.visualViewport) window.visualViewport.addEventListener('resize', function () { map.invalidateSize({ pan: true, animate: false }); });
+  window.addEventListener('resize', function () { resizeMap();showTimes();syncPhoneView(); });
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', resizeMap);
   mobile.addEventListener('change', function () { showTimes(); syncDragging(); });
+  phoneView.addEventListener('change',syncPhoneView);
 
   var me = null, helenaMarker = null, flightPath = null;
   var position = window.TripPosition, scenes = window.TripScenes;
@@ -344,8 +407,8 @@
   var helenaChip = hud.querySelector('[data-person="helena"]');
   var status = hud.querySelector('.rk-position-status');
   if (!position || !scenes || !D.locationPlan) hud.hidden = true;
-  function sceneIcon(scene) {
-    return L.divIcon({ className: 'rk-world-marker', html: scene.html, iconSize: scene.size, iconAnchor: scene.anchor });
+  function sceneIcon(scene, sourceLabel) {
+    return L.divIcon({ className: 'rk-world-marker', html: scene.html + (sourceLabel ? '<span class="rk-location-tag">' + safe(sourceLabel) + '</span>' : ''), iconSize: scene.size, iconAnchor: scene.anchor });
   }
   function makeMarker(marker, ll, markerIcon, key, title) {
     if (!marker) marker = L.marker(ll, { icon: markerIcon, alt: title, title: title, keyboard: false, interactive: false, zIndexOffset: 1100 }).addTo(map);
@@ -420,15 +483,16 @@
     var compactWorld = mobile.matches || map.getSize().y < 500;
     var opts = {solo:current.solo,coastal:current.coastal,small:compactWorld || map.getZoom() < 8};
     var scene = current.scene === 'drive' ? null : scenes.render(current.scene, opts);
-    var key = current.scene + ':' + current.solo + ':' + current.coastal + ':' + opts.small;
-    me = makeMarker(me, current.ll, scene ? sceneIcon(scene) : vehicleIcon, key, scene ? scene.label : 'Blå Honda Accord Tourer CW2 med sort hardshell-tagtelt og gult surfboard');
+    var key = current.scene + ':' + current.solo + ':' + current.coastal + ':' + opts.small + ':' + current.source;
+    var car = {html:'<img class="world-car-image" src="../assets/honda-accord-tourer-cw2.svg" alt="">',size:[42,80],anchor:[21,40]};
+    me = makeMarker(me, current.ll, sceneIcon(scene || car,current.source === 'gps' ? 'GPS · denne enhed' : 'Ca. position'), key, scene ? scene.label : 'Blå Honda Accord Tourer CW2 med sort hardshell-tagtelt og gult surfboard');
     var nzTime = String(current.clock.minutes / 60 | 0).padStart(2,'0') + ':' + String(current.clock.minutes % 60).padStart(2,'0');
     karstenChip.querySelector('b').textContent = current.solo ? 'Karsten' : 'Karsten & Helena';
     karstenChip.querySelector('small').textContent = 'NZ ' + nzTime + ' · ' + (scenes.labels[current.scene] || 'på tur');
     helenaChip.hidden = helena.phase === 'joined';
     if (helena.phase !== 'joined') {
       var hscene = helena.phase === 'flight' ? scenes.flight() : scenes.render(helena.scene, {helena:true,small:compactWorld});
-      helenaMarker = makeMarker(helenaMarker, helena.ll, sceneIcon(hscene), helena.scene + ':' + helena.phase + ':' + compactWorld, hscene.label);
+      helenaMarker = makeMarker(helenaMarker, helena.ll, sceneIcon(hscene,'Ca. position'), helena.scene + ':' + helena.phase + ':' + compactWorld, hscene.label);
       helenaChip.querySelector('small').textContent = helena.phase === 'flight' ? 'Flyver til NZ · anslået' : helena.phase === 'airport' ? 'Brisbane lufthavn' : 'Brisbane ' + helena.localTime + ' · ' + (scenes.labels[helena.scene] || 'i byen');
       if (helena.phase === 'flight' && !flightPath && worldReady) {
         var points = [];
@@ -480,6 +544,7 @@
   }
   function startMap() {
     resumeWorld();
+    syncPhoneView();
     if (location.hash && location.hash !== '#kort') return;
     setFull(true);
     fitted=false;

@@ -865,6 +865,29 @@ path.rk-maybe { stroke: var(--maybe); }
 .rk-portrait--helena img { left: -65px; top: -16px; }
 .rk-position-status { margin: 0; padding: 6px 9px; border-radius: 8px; background: var(--card); color: var(--ink); border-left: 3px solid var(--after); font-size: 11px; line-height: 1.4; box-shadow: 0 1px 5px var(--scrim); }
 .rk-position-status[data-source="gps"] { border-left-color: var(--map-blue); }
+.rk-map-metrics, .rk-topbar .rk-menu, .rk-location-tag { display: none; }
+.rk-phone .rk-topbar .rk-menu { display: inline-flex; align-items: center; justify-content: center; }
+.rk-phone .rk-topbar [data-a="full"] { display: none; }
+.rk-phone .rk-map-metrics { position: absolute; display: flex; flex-wrap: wrap; gap: 5px 13px; left: 10px; right: 68px; bottom: calc(76px + env(safe-area-inset-bottom, 0px)); z-index: 1040; width: fit-content; max-width: calc(100% - 78px); padding: 8px 11px; border-radius: 10px; background: var(--card); color: var(--ink-2); font-size: 11px; box-shadow: 0 1px 5px var(--scrim); }
+.rk-map-metrics b { color: var(--ink); font-weight: 700; }
+.rk-phone.rk-quiet .rk-world-hud, .rk-phone.rk-quiet .rk-topbar, .rk-phone.rk-quiet .rk-btns, .rk-phone.rk-quiet .rk-map-metrics, .rk-phone.rk-quiet .leaflet-control-zoom, .rk-phone.rk-quiet .leaflet-control-layers, .rk-phone.rk-quiet .rk-legend { visibility: hidden; pointer-events: none; }
+.rk-phone.rk-quiet .rk-time, .rk-phone.rk-quiet .leaflet-tooltip { visibility: hidden; }
+.rk-phone.rk-quiet .rk-night { font-size: 0; padding: 0 !important; width: 13px; height: 13px; min-height: 0 !important; border-width: 2px; }
+.rk-phone.rk-quiet .rk-pin { font-size: 0; width: 13px; height: 13px; min-height: 0; line-height: 0; border-width: 2px; }
+.rk-phone.rk-quiet .rk-photo b { display: none; }
+.rk-phone .rk-legend { display: none; position: absolute; bottom: calc(76px + env(safe-area-inset-bottom, 0px)); left: 10px; right: 64px; z-index: 1060; max-height: 48%; overflow: auto; border: 1px solid var(--line-2); border-radius: 10px; padding: 12px; box-shadow: 0 2px 12px var(--scrim); }
+.rk-phone.rk-legend-open .rk-legend { display: flex; }
+.rk-phone .rk-btn[data-a="legend"] { display: inline-flex; align-items: center; justify-content: center; }
+.rk-phone .leaflet-bottom.leaflet-right { bottom: calc(70px + env(safe-area-inset-bottom, 0px)); }
+.rk-phone.rk-quiet .leaflet-bottom.leaflet-right { bottom: 0; }
+.rk-phone.rk-quiet .rk-location-tag { display: block; position: absolute; top: calc(100% + 3px); left: 50%; transform: translateX(-50%); padding: 3px 7px; border: 1px solid var(--line); border-radius: 6px; white-space: nowrap; font: 600 10px var(--body); background: var(--card); color: var(--ink); box-shadow: 0 1px 4px var(--scrim); }
+.world-car-image { display: block; width: 100%; height: 100%; object-fit: contain; }
+body.rk-phone-view.on-kort .appbar, body.rk-phone-view.on-kort .trip-overview { display: none; }
+body.rk-phone-view .trip-overview .facts { display: none; }
+.rk-phone .rk-spot-marker::before, .rk-phone .rk-camp-marker::before { content: ''; position: absolute; width: 44px; height: 44px; left: -22px; top: -22px; }
+.rk-menu-links { display: grid; gap: 8px; }
+.rk-menu-links a { display: flex; align-items: center; min-height: 48px; padding: 10px 14px; border-radius: 10px; background: var(--soft); color: var(--ink); text-decoration: none; font-weight: 600; }
+.rk-sheet-open .rk-map-metrics { visibility: hidden; }
 .rk-position-status { cursor: pointer; text-align: left; font-family: var(--body); }
 .rk-traveller[aria-pressed="true"] { border-color: var(--map-blue); }
 .rk-world-detail { position: relative; height: 250px; max-width: 340px; margin: 0 auto 15px; }

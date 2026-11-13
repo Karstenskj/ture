@@ -15,16 +15,29 @@
   // Every face is the SAME pixels from the approved master. Scene edits cannot
   // redraw the likeness. Coordinates describe body poses, never new faces.
   var identityId = 0;
-  var heads = {
-    camp: [['k',426,342,194,222],['h',873,365,186,222]],
-    hike: [['k',496,12,144,207],['h',840,80,171,216]],
-    surf: [['k',428,12,158,223],['h',979,142,167,212]],
-    cave: [['k',489,124,157,222],['h',740,187,149,222]]
-  };
-  var soloHeads = [[['k',139,68,66,96]],[['k',609,105,74,113]],[['k',1204,61,75,98]],
-    [['k',160,525,99,140]],[['k',537,581,87,125]],[]];
-  var helenaHeads = [[['h',222,24,77,105]],[['h',736,24,79,106]],[['h',1240,24,84,108]],
-    [['h',198,537,127,172]],[['h',594,600,98,132]],[['h',1107,707,135,137,-40]]];
+  var registration = root.TripFaceRegistration || (typeof require === 'function' ? require('./face-registration.js') : null);
+  var heads = {camp:['camp-k','camp-h'],hike:['hike-k','hike-h'],surf:['surf-k','surf-h'],cave:['cave-k','cave-h']};
+  var soloHeads = [0,1,2,3,4,5].map(function (cell) {return cell < 5 ? ['karsten-solo-day-'+cell] : [];});
+  var helenaHeads = [0,1,2,3,4,5].map(function (cell) {return ['helena-day-'+cell];});
+  function closedEyes(kind, prefix) {
+    if (!registration) return '';
+    var points = registration.source[kind], distance = Math.hypot(points[1][0]-points[0][0],points[1][1]-points[0][1]);
+    var rx = distance*.34, ry = distance*.22, result = '';
+    points.slice(0,2).forEach(function (point,index) {
+      var id = prefix+'-eye-'+index, x = point[0], y = point[1];
+      result += '<defs><clipPath id="'+id+'"><ellipse cx="'+x+'" cy="'+y+'" rx="'+rx+'" ry="'+ry+'"/></clipPath></defs><g clip-path="url(#'+id+')"><image href="'+assets+'characters-base.webp" width="1024" height="1536" transform="translate(0 -24)"/></g><path d="M'+(x-rx*.85)+' '+y+'q'+rx*.85+' '+ry*.55+' '+rx*1.7+' 0" fill="none" stroke="'+(kind==='k'?'#754a35':'#5c3e35')+'" stroke-width="2.8" stroke-linecap="round"/>';
+    });
+    return result;
+  }
+  function registeredFace(poseId) {
+    var pose = registration && registration.poses[poseId];
+    if (!pose) return '';
+    var id = 'registered-face-'+(++identityId), k = pose.kind === 'k', gains = pose.gains;
+    var contour = k ? 'M287 119C313 105 368 110 391 122L401 151 400 181C402 201 387 226 367 238 342 249 309 238 287 222L270 202 262 177 267 144Z' : 'M651 200C677 182 722 184 748 202L765 227 767 253C763 281 737 309 703 317 675 315 649 298 635 275L632 245 638 220Z';
+    var bounds = k ? 'x="245" y="100" width="175" height="170"' : 'x="620" y="178" width="160" height="165"';
+    var lighting = gains[0]+' 0 0 0 0 0 '+gains[1]+' 0 0 0 0 0 '+gains[2]+' 0 0 0 0 0 1 0';
+    return '<g class="world-registered-face" data-face-id="'+poseId+'" data-source-landmarks="'+JSON.stringify(registration.source[pose.kind])+'" data-target-landmarks="'+JSON.stringify(pose.points)+'" transform="matrix('+pose.matrix.join(' ')+')"><defs><filter id="'+id+'-feather" filterUnits="userSpaceOnUse" '+bounds+'><feGaussianBlur stdDeviation="2.5"/></filter><filter id="'+id+'-light" filterUnits="userSpaceOnUse" '+bounds+'><feColorMatrix values="'+lighting+'"/></filter><mask id="'+id+'-mask" maskUnits="userSpaceOnUse" '+bounds+'><path d="'+contour+'" fill="white" filter="url(#'+id+'-feather)"/></mask></defs><g mask="url(#'+id+'-mask)" filter="url(#'+id+'-light)"><image href="'+assets+'characters-base.webp" width="1024" height="1536"/>'+(poseId==='helena-day-5'?closedEyes(pose.kind,id):'')+'</g></g>';
+  }
   function equipmentImage() {
     // The far-side rain awning projects behind the hard shell; the large near
     // side opening and awning are in the immutable equipment image itself.
@@ -33,7 +46,7 @@
   function sleepingHead(kind, x, y, width, height, angle) {
     var k = kind === 'k', id = 'sleep-face-' + (++identityId);
     var contour = k ? 'M330 16C272 10 235 48 233 100L239 159C228 157 229 194 247 211L260 239 269 268 275 292 367 292 373 255C393 241 404 221 409 197 425 189 423 163 411 159L413 108C425 57 390 18 349 20Z' : 'M707 126C652 119 614 162 612 202L618 263C608 283 621 313 648 325L656 357 687 392 754 375 748 339 777 314 810 372 833 387 829 320 802 241C798 167 760 123 707 126Z';
-    return '<svg x="' + x + '" y="' + y + '" width="' + width + '" height="' + height + '" viewBox="' + (k ? '226 10 200 282' : '610 119 225 277') + '" transform="rotate(' + angle + ' ' + (x+width/2) + ' ' + (y+height/2) + ')"><defs><clipPath id="' + id + '"><path d="' + contour + '"/></clipPath></defs><image href="' + assets + 'characters-base.webp" width="1024" height="1536" clip-path="url(#' + id + ')"/>' + (k ? '<g fill="#f2b17b"><ellipse cx="298" cy="151" rx="23" ry="12"/><ellipse cx="375" cy="144" rx="20" ry="12"/></g><path d="M278 151q20 11 39-2m42-5q17 9 33-3" stroke="#74432f" stroke-width="3" fill="none"/>' : '<g fill="#df9b72"><ellipse cx="650" cy="238" rx="22" ry="12"/><ellipse cx="716" cy="228" rx="23" ry="12"/></g><path d="M631 237q19 12 39-2m25-7q20 11 39-3" stroke="#563a32" stroke-width="3" fill="none"/>') + '</svg>';
+    return '<svg x="' + x + '" y="' + y + '" width="' + width + '" height="' + height + '" viewBox="' + (k ? '226 10 200 282' : '610 119 225 277') + '" transform="rotate(' + angle + ' ' + (x+width/2) + ' ' + (y+height/2) + ')"><defs><clipPath id="' + id + '"><path d="' + contour + '"/></clipPath></defs><image href="' + assets + 'characters-base.webp" width="1024" height="1536" clip-path="url(#' + id + ')"/>' + closedEyes(kind,id) + '</svg>';
   }
   function equipmentCamp(solo, asleep) {
     var id = 'camp-people-' + (++identityId);
@@ -43,33 +56,22 @@
       if (!solo) result += sleepingHead('h',876,171,103,127,12);
       result += '<path d="M732 253q54-34 130 0t155-5v32H732Z" fill="#3b4965" stroke="#1c293f" stroke-width="5"/><path d="M746 262q71-10 136 5t122-5" fill="none" stroke="#566681" stroke-width="4"/><path d="M1268 58q-30 48 15 76-66 8-66-47 1-22 18-38 4 19 33 9Z" fill="#ffe8a8" stroke="#4e5354" stroke-width="3"/>';
     } else {
-      var karsten = 'M506 342C450 340 420 375 426 435L445 485 395 487 352 538 325 595 320 660 356 702 375 780 330 900 316 980 337 1024 475 1024 474 981 488 882 560 969 637 995 706 968 701 934 658 902 636 845 621 746 628 694 690 660 755 633 765 601 741 566 655 526 598 512 604 478 621 433 609 383 570 353Z';
-      var helena = 'M960 364C889 354 865 409 877 465L895 508 865 534 843 594 862 653 884 681 876 741 924 826 949 910 945 978 978 1024 1045 1024 1050 967 1045 913 1060 1024 1179 1024 1180 980 1141 941 1099 910 1096 815 1139 756 1153 709 1119 652 1091 622 1078 558 1046 532 1014 511 1059 458 1049 404 1004 372Z';
+      var karsten = 'M506 342C450 340 420 375 426 435L445 485 395 487 352 538 325 595 320 660 356 702 375 780 330 900 316 980 337 1024 570 1024 568 970 520 935 488 882 560 969 637 995 706 968 701 934 658 902 636 845 621 746 628 694 690 660 755 633 765 601 741 566 655 526 598 512 604 478 621 433 609 383 570 353Z';
+      var helena = 'M960 364C889 354 865 409 877 465L895 508 865 534 843 594 862 653 884 681 876 741 924 826 949 910 915 932 911 994 978 1024 1060 1024 1055 960 1045 913 1060 1024 1179 1024 1180 980 1141 941 1099 910 1096 815 1139 756 1153 709 1119 652 1091 622 1078 558 1046 532 1014 511 1059 458 1049 404 1004 372Z';
       result += '<defs><clipPath id="' + id + '"><path d="' + karsten + '"/>' + (solo ? '' : '<path d="' + helena + '"/>') + '</clipPath></defs><g clip-path="url(#' + id + ')">' + lockedArt('camp',solo?[heads.camp[0]]:heads.camp).replace('class="world-composite"', 'x="0" y="0" width="1536" height="1024"') + '</g>';
     }
     return result + '</svg>';
   }
   function lockedArt(file, faces, view) {
     var id = 'identity-' + (++identityId), crop = view || [0,0,1536,1024];
-    var result = '<svg class="world-composite" viewBox="' + crop.join(' ') + '" aria-hidden="true">';
+    var result = '<svg class="world-composite" data-art-file="' + file + '" viewBox="' + crop.join(' ') + '" aria-hidden="true">';
     if (file === 'karsten-solo-day') {
       // Reuse the same tent equipment pixels in the work/beer poses too.
-      result += '<defs><mask id="' + id + '"><rect width="1536" height="1024" fill="white"/><rect x="565" y="0" width="420" height="185" fill="black"/><rect x="590" y="512" width="390" height="170" fill="black"/><ellipse cx="649" cy="160" rx="48" ry="66" fill="white"/><ellipse cx="582" cy="649" rx="50" ry="67" fill="white"/></mask></defs>';
+      result += '<defs><mask id="' + id + '"><rect width="1536" height="1024" fill="white"/><rect x="565" y="0" width="420" height="185" fill="black"/><rect x="590" y="512" width="390" height="170" fill="black"/><rect x="600" y="95" width="96" height="135" rx="28" fill="white"/><rect x="530" y="573" width="105" height="145" rx="28" fill="white"/></mask></defs>';
       [[570,15,390,151],[595,527,370,143]].forEach(function (t) {result += '<svg x="' + t[0] + '" y="' + t[1] + '" width="' + t[2] + '" height="' + t[3] + '" viewBox="350 15 890 310">' + equipmentImage() + '</svg>';});
     }
     result += '<image href="' + assets + file + '.webp" width="1536" height="1024"' + (file === 'karsten-solo-day' ? ' mask="url(#' + id + ')"' : '') + '/>';
-    faces.forEach(function (f) {
-      var k = f[0] === 'k', source = k ? '226 10 200 282' : '610 119 225 277';
-      var faceId = id + '-face-' + f[1] + '-' + f[2];
-      result += '<svg x="' + f[1] + '" y="' + f[2] + '" width="' + f[3] + '" height="' + f[4] + '" viewBox="' + source + '" overflow="hidden"' + (f[5] ? ' transform="rotate(' + f[5] + ' ' + (f[1]+f[3]/2) + ' ' + (f[2]+f[4]/2) + ')"' : '') + '><image href="' + assets + 'characters-base.webp" width="1024" height="1536"/>';
-      var contour = k ? 'M277 81C312 60 373 65 395 90L407 133 405 178C411 201 395 232 370 247 338 268 303 251 279 230L255 200 245 163 252 125Z' : 'M659 176C681 156 724 157 750 179L775 211 774 254C768 293 738 325 704 334 676 330 643 309 627 277L624 233 633 198Z';
-      result = result.replace('<image href="' + assets + 'characters-base.webp" width="1024" height="1536"/>', '<defs><clipPath id="' + faceId + '"><path d="' + contour + '"/></clipPath></defs><image href="' + assets + 'characters-base.webp" width="1024" height="1536" clip-path="url(#' + faceId + ')"/>');
-      if (file.indexOf('sleep') >= 0 || (file === 'helena-day' && crop[1] > 500 && crop[0] > 1000)) {
-        result += k ? '<g fill="#f2b17b"><ellipse cx="298" cy="151" rx="23" ry="12"/><ellipse cx="375" cy="144" rx="20" ry="12"/></g><path d="M278 151q20 11 39-2m42-5q17 9 33-3" stroke="#74432f" stroke-width="3" fill="none"/>' : '<g fill="#df9b72"><ellipse cx="650" cy="238" rx="22" ry="12"/><ellipse cx="716" cy="228" rx="23" ry="12"/></g><path d="M631 237q19 12 39-2m25-7q20 11 39-3" stroke="#563a32" stroke-width="3" fill="none"/>';
-      }
-      if (file === 'cave') result += '<path d="m238 117 173-8" stroke="#243343" stroke-width="11"/><rect x="305" y="100" width="25" height="19" rx="4" fill="#ffe49a" stroke="#5e5945" stroke-width="3"/>';
-      result += '</svg>';
-    });
+    faces.forEach(function (poseId) {result += registeredFace(poseId);});
     return result + '</svg>';
   }
   function escape(value) { return String(value).replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
@@ -101,7 +103,8 @@
       if (type === 'camp') content += '<span class="world-steam world-steam--one"></span><span class="world-steam world-steam--two"></span><span class="world-spark">♥</span>';
     } else if (cells[type] != null) {
       var cell = cells[type], sheet = type.indexOf('helena-') === 0 ? 'helena-day' : 'karsten-solo-day';
-      content = '<div class="world-sprite">' + lockedArt(sheet,(sheet === 'helena-day' ? helenaHeads : soloHeads)[cell],[cell%3*512+8,(cell<3?0:512)+8,496,496]) + '</div>';
+      var frame = type === 'food' ? [8,520,468,496] : [cell%3*512+8,(cell<3?0:512)+8,496,496];
+      content = '<div class="world-sprite">' + lockedArt(sheet,(sheet === 'helena-day' ? helenaHeads : soloHeads)[cell],frame) + '</div>';
     } else if (art) {
       var soloView = {hike:[250,0,520,1024],cave:[320,70,400,940],surf:[0,0,820,1024]};
       content = lockedArt(art,options.solo ? [heads[art][0]] : heads[art],options.solo ? soloView[art] : null);
@@ -129,5 +132,7 @@
     };
     return '<div class="world-animal world-animal--' + type + '">' + svg(shapes[type] || shapes.sheep) + '</div>';
   }
-  root.TripScenes = { render: render, flight: flight, animal: animal, labels: labels };
+  var api = {render:render,flight:flight,animal:animal,labels:labels};
+  root.TripScenes = api;
+  if (typeof module === 'object' && module.exports) module.exports = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

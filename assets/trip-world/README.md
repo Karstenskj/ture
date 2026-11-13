@@ -7,3 +7,5 @@
 `camp.webp`, `hike.webp`, `surf.webp`, `cave.webp` giver kropspositurer. `helena-day.webp` og `karsten-solo-day.webp` er 3 × 2 ark med dagsaktiviteter. SVG-sammensætningen i `trip-scenes.js` genbruger originalens ansigtspixels oven på hver positur og bruger de faste udstyrsdele. Skift ikke hele scenebilledet for at rette én genstand.
 
 Illustrationerne er genereret til denne tur fra brugerens referencer. Originale personfotos og HEIC-referencer publiceres ikke i repositoriet. Ekstra arbejdsudkast er ikke produktionsfiler.
+
+Ansigtsplaceringerne følger nu målte punkter for begge øjne og mund, gemt i `../face-registration.js`. Det retter forskudte ansigtslag og matcher kroppens hovedvinkel. `tests/face-registration.test.cjs` kontrollerer alle 19 ansigter mod de målte punkter og masterens hash.
