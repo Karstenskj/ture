@@ -417,7 +417,8 @@
     current = position.state(D, now, validGPS);
     helena = position.helenaState(D, now);
     if (!current) return;
-    var opts = {solo:current.solo,coastal:current.coastal,small:mobile.matches || map.getZoom() < 8};
+    var compactWorld = mobile.matches || map.getSize().y < 500;
+    var opts = {solo:current.solo,coastal:current.coastal,small:compactWorld || map.getZoom() < 8};
     var scene = current.scene === 'drive' ? null : scenes.render(current.scene, opts);
     var key = current.scene + ':' + current.solo + ':' + current.coastal + ':' + opts.small;
     me = makeMarker(me, current.ll, scene ? sceneIcon(scene) : vehicleIcon, key, scene ? scene.label : 'Blå Honda Accord Tourer CW2 med sort hardshell-tagtelt og gult surfboard');
@@ -426,8 +427,8 @@
     karstenChip.querySelector('small').textContent = 'NZ ' + nzTime + ' · ' + (scenes.labels[current.scene] || 'på tur');
     helenaChip.hidden = helena.phase === 'joined';
     if (helena.phase !== 'joined') {
-      var hscene = helena.phase === 'flight' ? scenes.flight() : scenes.render(helena.scene, {helena:true,small:mobile.matches});
-      helenaMarker = makeMarker(helenaMarker, helena.ll, sceneIcon(hscene), helena.scene + ':' + helena.phase + ':' + mobile.matches, hscene.label);
+      var hscene = helena.phase === 'flight' ? scenes.flight() : scenes.render(helena.scene, {helena:true,small:compactWorld});
+      helenaMarker = makeMarker(helenaMarker, helena.ll, sceneIcon(hscene), helena.scene + ':' + helena.phase + ':' + compactWorld, hscene.label);
       helenaChip.querySelector('small').textContent = helena.phase === 'flight' ? 'Flyver til NZ · anslået' : helena.phase === 'airport' ? 'Brisbane lufthavn' : 'Brisbane ' + helena.localTime + ' · ' + (scenes.labels[helena.scene] || 'i byen');
       if (helena.phase === 'flight' && !flightPath && worldReady) {
         var points = [];
@@ -471,6 +472,7 @@
     refreshWorld();
   });
   map.on('zoomend', refreshWorld);
+  map.on('resize', refreshWorld);
   mobile.addEventListener('change', refreshWorld);
   function resumeWorld() {
     refreshWorld();
