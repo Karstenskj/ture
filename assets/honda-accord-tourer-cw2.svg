@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 136" role="img" aria-labelledby="title">
+  <title id="title">Blå Honda Accord Tourer CW2 med tagtelt og gult surfboard, set oppefra</title>
+  <style>
+    :root { --paint: #2466a5; --paint-light: #4b8bc2; --outline: #152b3b; --glass: #172b3a; --tent: #171d23; --tent-edge: #87918e; --board: #f5ce3e; --halo: #fffaf0; --headlamp: #eaf4f7; --tail-lamp: #b74435; }
+    .body { fill: var(--paint); stroke: var(--outline); stroke-width: 1.8; }
+    .glass { fill: var(--glass); stroke: var(--paint-light); stroke-width: 1; }
+    .trim { fill: none; stroke: var(--outline); stroke-width: 1.5; }
+  </style>
+  <!-- Long estate body, shallow bonnet and squared rear of the CW2 Tourer. -->
+  <path d="M25 9 Q36 4 47 9 Q54 14 55 28 L56 44 L62 47 L62 54 L56 53 L56 111 Q56 124 49 128 L23 128 Q16 124 16 111 L16 53 L10 54 L10 47 L16 44 L17 28 Q18 14 25 9Z" fill="var(--halo)" stroke="var(--halo)" stroke-width="6" stroke-linejoin="round"/>
+  <g fill="var(--outline)">
+    <rect x="12" y="27" width="6" height="20" rx="2"/>
+    <rect x="54" y="27" width="6" height="20" rx="2"/>
+    <rect x="12" y="99" width="6" height="19" rx="2"/>
+    <rect x="54" y="99" width="6" height="19" rx="2"/>
+  </g>
+  <path class="body" d="M25 9 Q36 4 47 9 Q54 14 55 28 L56 111 Q56 124 49 128 L23 128 Q16 124 16 111 L17 28 Q18 14 25 9Z"/>
+  <path d="M24 14 Q36 9 48 14 L51 31 Q36 27 21 31Z" fill="var(--paint-light)" opacity=".55"/>
+  <path class="glass" d="M21 33 Q36 28 51 33 L47 48 L25 48Z"/>
+  <path class="glass" d="M22 52 L26 54 L26 99 L21 108Z"/>
+  <path class="glass" d="M50 52 L46 54 L46 99 L51 108Z"/>
+  <path class="glass" d="M24 108 L48 108 L50 119 Q36 124 22 119Z"/>
+  <path class="body" d="M17 44 L10 47 L10 52 L17 51 M55 44 L62 47 L62 52 L55 51"/>
+  <path class="trim" d="M21 22 Q36 18 51 22 M21 124 L51 124"/>
+  <path d="M20 17 L28 13 L28 17 L20 22Z M52 17 L44 13 L44 17 L52 22Z" fill="var(--headlamp)"/>
+  <path d="M18 113 L23 115 L23 123 L19 120Z M54 113 L49 115 L49 123 L53 120Z" fill="var(--tail-lamp)"/>
+  <!-- Roof rails and crossbars, with a packed black hardshell rooftop tent on the left. -->
+  <path d="M23 47 L23 106 M49 47 L49 106" stroke="var(--tent-edge)" stroke-width="2"/>
+  <path d="M19 57 H53 M19 93 H53" stroke="var(--outline)" stroke-width="3"/>
+  <rect x="24" y="49" width="23" height="52" rx="3" fill="var(--tent)" stroke="var(--outline)" stroke-width="1.8"/>
+  <path d="M28 54 H43 V95 H28Z" fill="none" stroke="var(--tent-edge)" stroke-width="1"/>
+  <path d="M25 62 H46 M25 89 H46" stroke="var(--outline)" stroke-width="2"/>
+  <!-- Yellow surfboard beside the tent: pointed nose, rounded tail and straps. -->
+  <path d="M52 26 C61 41 61 80 55 109 Q52 115 49 109 C43 80 43 41 52 26Z" fill="var(--board)" stroke="var(--outline)" stroke-width="1.6"/>
+  <path d="M52 32 V107" stroke="var(--halo)" stroke-width="1" opacity=".8"/>
+  <path d="M46 57 H58 M46 93 H58" stroke="var(--outline)" stroke-width="2.5"/>
+</svg>
