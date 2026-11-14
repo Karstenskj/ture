@@ -7,7 +7,7 @@
     beach: 'nyder stranden', city: 'går en tur i byen', walk: 'er ude at opleve', vista: 'nyder udsigten',
     airport: 'mødes i lufthavnen', ferry: 'sejler mod Wellington', swim: 'nyder vandet', kayak: 'er på vandet',
     helena: 'er i Brisbane', flight: 'flyver mod Christchurch', drive: 'er på farten',
-    packing: 'pakker bilen', work: 'arbejder ved bilen', food: 'spiser god mad', beer: 'nyder en øl i campingstolen',
+    packing: 'pakker bilen', work: 'arbejder ved bilen', 'cafe-work': 'arbejder på en café', food: 'spiser god mad', beer: 'nyder en øl i campingstolen',
     'solo-surf': 'surfer', 'helena-run': 'løber en tur', 'helena-coffee': 'går tur med en iskaffe',
     'helena-shop': 'kigger i butikker', 'helena-food': 'spiser god mad', 'helena-tv': 'ser serie i lejligheden', 'helena-sleep': 'sover i Brisbane' };
   var cells = { packing: 0, work: 1, 'solo-surf': 2, food: 3, beer: 4,
@@ -85,6 +85,7 @@
     return '<svg class="world-backdrop ' + (extra || '') + '" viewBox="0 0 240 180" aria-hidden="true" fill="none" stroke="#213440" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">' + content + '</svg>';
   }
   function backdrop(type) {
+    if (type === 'cafe-work') return svg('<path d="M12 150V40h216v110Z" fill="#e7e4d9"/><path d="M12 40h216l-13-23H25Z" fill="#486b63"/><path d="M27 58h79v75H27Zm107 0h77v75h-77Z" fill="#b8d4dc"/><path d="M13 147h214" stroke="#486b63" stroke-width="7"/>');
     if (type === 'city' || type === 'helena') return svg('<path d="M17 151V87h30v64m7 0V57h32v94m8 0V77h31v74m10 0V38h35v113m8 0V70h37v81" fill="#d8e6e6"/><path d="M62 67h16m-16 13h16m-16 13h16m65-40h18m-18 15h18m-18 15h18m-18 15h18" stroke="#849da4"/><path d="M10 155h219" stroke="#477c66" stroke-width="8"/>');
     if (type === 'airport') return svg('<path d="M12 146V85l55-23h102l59 23v61Z" fill="#d7e5e9"/><path d="M23 95h193v42H23Z" fill="#91bacb"/><path d="M43 95v42m31-42v42m31-42v42m31-42v42m31-42v42m31-42v42"/><path d="m95 40 17-8 5-21h8l2 21 28 8v7l-29-3-2 15h-7l-4-15-18 3Z" fill="#f8f7f2"/>');
     if (type === 'waterfall') return svg('<path d="M35 143 53 30h57l12 49 17-42h48l23 108Z" fill="#abc5ae"/><path d="M101 37h28l-1 79q-14 18-30 0Z" fill="#69c9ed"/><path class="world-water" d="M108 45v65m12-63v68" stroke="#f8ffff" stroke-width="4" stroke-dasharray="9 7"/><ellipse cx="117" cy="137" rx="83" ry="17" fill="#8cdbed" stroke="#387d99"/>');
@@ -117,6 +118,7 @@
     } else {
       var person = options.helena ? 'helena' : options.solo ? 'karsten' : 'couple';
       content = backdrop(type) + people(person);
+      if (type === 'cafe-work') content += svg('<path d="M37 136h174v10H37Z" fill="#c7a67a"/><path d="M50 147v29m147-29v29"/><path d="m111 134-5-41h60l6 41Z" fill="#527b8b"/><path d="M101 136h77" stroke="#294a5a" stroke-width="4"/><path d="M181 115h16v18h-16Zm16 3c16-3 16 13 0 10" fill="#faf6e8"/>','world-cafe-table');
       if (type === 'ferry') content = backdrop(type) + '<div class="world-deck-people">' + people(person) + '</div>';
       if (type === 'swim') content = backdrop(type) + '<div class="world-swimmers">' + people(person) + '</div>';
     }

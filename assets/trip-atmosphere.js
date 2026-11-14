@@ -158,8 +158,6 @@
       var sourceLabel = main.weather ? 'Open-Meteo · ' + (main.weather.source === 'model' ? 'modeldata' : 'prognose') : 'beregnet dagslys';
       badge.innerHTML = weatherIcon(main) + '<span>' + safe(description) + '<small>' + safe(display.label + ' · ' + hh(at,display.zone,true)) + ' · ' + sourceLabel + '</small></span>';
       badge.title = description + '. ' + (main.weather ? 'Områdets vejrmodel og prognose, ikke en måling på stedet.' : 'Vejreffekter vises kun, når data er tilgængelige.');
-      var storyWeather = box.querySelector('.rk-story-weather');
-      if (storyWeather) {storyWeather.hidden = !main.enabled;storyWeather.innerHTML = weatherIcon(main) + '<span>' + safe(description + (main.weather ? main.weather.source === 'model' ? ' · modeldata' : ' · prognose' : '')) + '</span>'; storyWeather.title = badge.title;}
       renderCanvas(reduced.matches ? 0 : performance.now()/1000);syncMotion();
       return currentEnvs;
     }

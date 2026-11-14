@@ -1,0 +1,25 @@
+/* A small date-by-date forecast, matching the existing camp colours and type. */
+.camp-weather { color:var(--ink); margin:12px 0 4px; }
+.camp-weather h4 { margin:0 0 10px; font:600 16px/1.4 var(--body); }
+.camp-wx-day { padding:11px 0; border-top:1px solid var(--line); }
+.camp-wx-date { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:7px; font-size:13px; }
+.camp-wx-date > span { color:var(--ink-2); font-size:12px; }
+.camp-wx-condition { display:flex; align-items:center; gap:8px; font-size:14px; }
+.camp-wx-condition > svg { width:28px; height:28px; flex:none; color:var(--alpine); }
+.camp-wx-condition > strong { margin-left:auto; white-space:nowrap; font-size:24px; line-height:1.2; }
+.camp-wx-condition > strong > small { font-size:15px; color:var(--ink-2); font-weight:400; }
+.camp-wx-metrics { display:grid; grid-template-columns:1fr 1fr; gap:5px 14px; margin-top:8px; font-size:12px; color:var(--ink-2); }
+.camp-wx-metrics b { color:var(--ink); font-weight:500; white-space:nowrap; }
+.camp-wx-updated { display:block; margin-top:8px; color:var(--ink-2); font-size:10px; }
+.camp-wx-note { margin:10px 0 0; color:var(--ink-2); font-size:11px; line-height:1.5; }
+.camp-wx-booking { display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-size:13px; color:var(--ink-2); }
+.camp-weather [data-wx-state="future"] .chip, .camp-weather [data-wx-state="missing"] .chip { white-space:normal; line-height:1.5; }
+.camp-more { margin-top:14px; border-top:1px solid var(--line); }
+.camp-more > summary { padding:13px 0; min-height:44px; font-size:14px; font-weight:600; cursor:pointer; }
+.camp-more:focus-within { outline-offset:4px; }
+.rk-camp-detail > h3 { margin-bottom:8px; }
+@media (max-width:360px) {
+  .camp-wx-metrics { gap:5px 8px; font-size:11px; }
+  .camp-wx-condition { font-size:13px; }
+  .camp-wx-condition > strong { font-size:22px; }
+}

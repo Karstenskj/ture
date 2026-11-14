@@ -33,9 +33,21 @@ test('public start, Buxton, Harris pies, conditional Mangamaunu, A1 and Point Ke
   assert.match(at('2026-11-16T09:30:00+13:00').name,/Point Kean/);
   assert.match(at('2026-11-16T09:30:00+13:00').note,/ikke observationer/);
   assert.equal(at('2026-11-16T11:00:00+13:00').scene,'drive');
-  assert.match(at('2026-11-16T15:30:00+13:00').name,/Godley Head/);
+  assert.match(at('2026-11-16T15:30:00+13:00').name,/Sumner/);
+  assert.equal(at('2026-11-16T15:30:00+13:00').scene,'cafe-work');
   assert.equal(at('2026-11-16T19:30:00+13:00').scene,'beer');
   assert.equal(at('2026-11-16T23:00:00+13:00').scene,'solo-sleep');
+});
+test('both Sumner days keep surfing conditional and leave time for the known airport arrival',()=>{
+  for(const day of ['16','17']) {
+    const beach=at(`2026-11-${day}T${day==='16'?'14':'11'}:00:00+13:00`);
+    assert.match(beach.name,/Sumner/);assert.equal(beach.scene,'beach');assert.match(beach.note,/gode bølger/);
+    const work=at(`2026-11-${day}T15:30:00+13:00`);assert.equal(work.scene,'cafe-work');assert.match(work.name,/café/);
+  }
+  assert.equal(at('2026-11-17T16:30:00+13:00').scene,'drive');
+  assert.equal(at('2026-11-17T17:30:00+13:00').scene,'airport');
+  assert.equal(data.locationPlan.days[2].stay.name,'Awaroa/Godley Head Campsite');
+  assert.equal(data.locationPlan.days[3].stay.name,'Route79 Holiday Park');
 });
 test('estimated flight starts in Brisbane and joins at known Christchurch arrival',()=>{
   assert.equal(P.helenaState(data,new Date('2026-11-17T10:30:00+10:00')).phase,'airport');

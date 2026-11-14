@@ -27,6 +27,7 @@ for index, base in enumerate(data["bases"]):
 activities = {
     "s-airport": ("airport", 50), "s-cheviot-pies": ("food", 45),
     "s-mangamaunu": ("beach", 90), "s-kaikoura-whales": ("vista", 60),
+    "s-sumner": ("beach", 90),
     "s2": ("hike", 180), "s47": ("hike", 45),
     "s48": ("hike", 60), "s41": ("walk", 25), "s42": ("waterfall", 60),
     "s49": ("vista", 20), "s50": ("waterfall", 30), "s45": ("hike", 60),
@@ -150,18 +151,39 @@ solo_day(2, max(840, days[2]["segments"][-1]["to"]))
 days[1]["note"] = "Pies hos Harris Farms, derefter Mangamaunu og booket A1 Kaikoura. Surf kun ved gode bølger og andre surfere i vandet; kortet viser en anslået kystpause og bekræfter ikke, at Karsten surfer. Øvrige aktiviteter og tider er illustreret."
 days[2]["note"] = "Et anslået forsøg på at spotte hvaler fra Point Kean før Godley Head. Hvalerne på kortet er illustrationer, ikke observationer. Ophold og tider er anslået."
 
+# Sumner is a conditional surf/cafe day, not a confirmed surfing session.
+sumner = spots["s-sumner"]["ll"]
+cafe = [-43.5703, 172.7590]  # Approximate village point; no specific cafe chosen.
+sumner_in = progress_at(data["legs"][23]["pts"], sumner)
+kean_in = progress_at(data["legs"][23]["pts"], spots["s-kaikoura-whales"]["ll"])
+days[2]["segments"] = [
+    {"from": 540, "to": 550, "leg": 23, "portion": [0, kean_in], "name": "på vej til Point Kean"},
+    {"from": 550, "to": 610, "point": spots["s-kaikoura-whales"]["ll"], "activity": "vista", "name": "Point Kean · spot hvaler fra kysten"},
+    {"from": 610, "to": 810, "leg": 23, "portion": [kean_in, sumner_in], "name": "på vej til Sumner"},
+    {"from": 810, "to": 900, "point": sumner, "activity": "beach", "name": "Sumner · tjek bølgerne, muligt surf"},
+    {"from": 900, "to": 1020, "point": cafe, "activity": "cafe-work", "name": "Sumner · arbejde på en café"},
+    {"from": 1020, "to": 1040, "leg": 23, "portion": [sumner_in, 1], "name": "på vej til Godley Head"},
+    {"from": 1040, "to": 1080, "point": days[2]["stay"]["ll"], "activity": "camp", "name": "Godley Head · slår tagteltet op"},
+    {"from": 1080, "to": 1140, "point": days[2]["stay"]["ll"], "activity": "food", "name": "Godley Head · aftensmad"},
+    {"from": 1140, "to": 1320, "point": days[2]["stay"]["ll"], "activity": "beer", "name": "Godley Head · hygger i campingstolen"},
+]
+days[2]["note"] = "Point Kean og derefter Sumner til muligt surf ved gode bølger og caféarbejde, før booket Godley Head. Tider og caféplacering er anslået; ingen café er valgt. Kortet bekræfter ikke en surfsession. Hvalerne er illustrationer, ikke observationer."
+
 # The arrival evening and ferry have their own known/assumed time windows.
 airport = spots["s-airport"]["ll"]
 airport_progress = progress_at(data["legs"][1]["pts"], airport)
+sumner_out = progress_at(data["legs"][1]["pts"], sumner)
 days[3]["segments"] = [
     {"from": 480, "to": 540, "point": data["bases"][19]["ll"], "activity": "food", "name": "Godley Head · morgenmad"},
-    {"from": 540, "to": 600, "point": data["bases"][19]["ll"], "activity": "packing", "name": "Godley Head · pakker sammen før check-out kl. 10"},
-    {"from": 600, "to": 640, "leg": 1, "portion": [0, airport_progress * .25], "name": "på vej mod Christchurch"},
-    {"from": 640, "to": 960, "point": data["legs"][1]["pts"][max(1, len(data["legs"][1]["pts"]) // 10)], "activity": "work", "name": "Christchurch · arbejde og frokost før afhentning"},
-    {"from": 960, "to": 1035, "leg": 1, "portion": [airport_progress * .25, airport_progress], "name": "på vej til Christchurch lufthavn"},
+    {"from": 540, "to": 585, "point": data["bases"][19]["ll"], "activity": "packing", "name": "Godley Head · pakker sammen før check-out kl. 10"},
+    {"from": 585, "to": 610, "leg": 1, "portion": [0, sumner_out], "name": "på vej til Sumner"},
+    {"from": 610, "to": 700, "point": sumner, "activity": "beach", "name": "Sumner · tjek bølgerne, muligt surf"},
+    {"from": 700, "to": 975, "point": cafe, "activity": "cafe-work", "name": "Sumner · arbejde på en café"},
+    {"from": 975, "to": 1035, "leg": 1, "portion": [sumner_out, airport_progress], "name": "på vej fra Sumner til Christchurch lufthavn"},
     {"from": 1035, "to": 1140, "point": airport, "activity": "airport", "name": "Henter Helena i Christchurch kl. 18.10"},
     {"from": 1140, "to": 1290, "leg": 1, "portion": [airport_progress, 1], "name": "på vej til Route79"},
 ]
+days[3]["note"] = "Sumner om dagen: surf kun ved gode bølger, ellers caféarbejde. Café og tider er anslået. Afgang mod lufthavnen cirka kl. 16.15; Helena lander kl. 18.10. Booket nat på Route79."
 days[8]["segments"] = [
     {"from": 480, "to": 495, "leg": 6, "portion": [0, .5], "name": "på vej til Alex Knob"},
     {"from": 495, "to": 975, "point": spots["s59"]["ll"], "activity": "hike", "name": "Alex Knob"},

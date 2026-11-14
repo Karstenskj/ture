@@ -20,9 +20,7 @@
 .rk-weather-status { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink); font: 600 11px/1.4 var(--body); text-align: left; cursor: pointer; box-shadow: 0 1px 5px var(--scrim); }
 .rk-weather-status > svg { width: 23px; height: 23px; flex: none; }
 .rk-weather-status small { display: block; color: var(--ink-2); font-size: 9px; font-weight: 400; }
-.rk-story-weather { display: flex; align-items: center; gap: 6px; min-height: 24px; color: var(--story-secondary); font-size: 10px; line-height: 1.3; margin-top: 5px; }
-.rk-story-weather > svg { width: 17px; height: 17px; flex: none; }
-.rk-weather-status[hidden], .rk-story-weather[hidden], .rk-flight-route[hidden] { display: none; }
+.rk-weather-status[hidden], .rk-flight-route[hidden] { display: none; }
 .rk-flight-label { background: var(--card); border: 1px solid var(--map-orange, #f28c28); color: var(--ink); font: 600 10px/1.4 var(--body); box-shadow: none; }
 .rk-weather-ready [data-weather-phase] .world-composite, .rk-weather-ready [data-weather-phase] .world-people, .rk-weather-ready [data-weather-phase] .world-backdrop { filter: brightness(var(--actor-brightness, 1)); transition: filter 1.6s linear; }
 .world-tent-light { opacity: var(--tent-light, 0); transition: opacity 1.6s linear; }

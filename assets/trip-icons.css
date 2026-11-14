@@ -1,0 +1,17 @@
+/* Activity and campsite symbols; no playback UI. */
+.rk-camp-marker .rk-night { left:50%; top:50%; }
+.rk-phone .rk-camp-marker::before { left:50%; top:50%; transform:translate(-50%,-50%); }
+.rk-symbol-marker .rk-pin { left: 50%; top: 50%; }
+.rk-symbol-marker svg { display: none; width: 18px; height: 18px; }
+.rk-symbol-marker .rk-pin-number:empty + svg { display: block; }
+.rk-names .rk-symbol-marker .rk-pin { width: 30px; height: 30px; }
+.rk-names .rk-symbol-marker svg { display: block; }
+.rk-names .rk-pin-number:not(:empty) { position: absolute; right: -5px; top: -6px; padding: 1px 3px; border-radius: 7px; font: 700 8px/1.2 var(--body); color: #fff; background: var(--map-blue); border: 1px solid var(--card, #fcfdfb); }
+.rk-spot-marker.rk-symbol-marker::before { left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.rk-night > svg { display: inline-block; width: 16px; height: 16px; vertical-align: -3px; margin-right: 5px; }
+.rk-booked-mark { display: inline-grid; place-items: center; width: 15px; height: 15px; margin-left: 5px; border: 1px solid currentColor; border-radius: 50%; font-size: 10px; }
+.rk-night.rk-night--optional { color: var(--camp-purple, #8951d4); background: var(--card, #fcfdfb); border-color: var(--camp-purple, #8951d4); border-style: dashed; }
+.rk-optional-key { display: inline-block; width: 13px; height: 13px; border: 2px dashed var(--camp-purple, #8951d4); border-radius: 50%; background: var(--card, #fcfdfb); }
+.rk-overview .rk-night > svg, .rk-overview .rk-booked-mark,
+.rk-phone.rk-quiet .rk-night > svg, .rk-phone.rk-quiet .rk-booked-mark,
+.rk-phone.rk-quiet .rk-symbol-marker svg { display: none; }

@@ -148,11 +148,11 @@
     map.panBy(window.innerWidth >= 720 ? [sheet.offsetWidth / 2, 0] : [0, sheet.offsetHeight / 2], { animate: !reducedMotion.matches });
   }
   function open(html, ll) {
-    if (storyController && storyController.isOpen()) storyController.close(false);
     setQuiet(false);
     lastTrigger = document.activeElement;
     selectedPoint = ll || null;
     inner.innerHTML = html;
+    if (window.TripForecast) window.TripForecast.mount();
     sheet.hidden = false;
     sheet.classList.remove('expanded');
     expand.setAttribute('aria-expanded', 'false');
@@ -204,9 +204,9 @@
   }
 
   function icon(cls, text, activity) {
-    var symbol = activity && window.TripStory ? window.TripStory.icon(activity) : '';
+    var symbol = activity && window.TripIcons ? window.TripIcons.icon(activity) : '';
     return L.divIcon({ className: cls.indexOf('rk-pin') === 0 ? 'rk-spot-marker' + (symbol ? ' rk-symbol-marker' : '') : cls.indexOf('rk-night') === 0 ? 'rk-camp-marker' : '',
-      iconSize: symbol ? [30,30] : null, iconAnchor: symbol ? [15,15] : null,
+      iconSize: symbol || cls.indexOf('rk-night') === 0 ? [30,30] : null, iconAnchor: symbol || cls.indexOf('rk-night') === 0 ? [15,15] : null,
       html: '<div class="' + cls + '">' + (symbol ? '<span class="rk-pin-number">' + text + '</span>' + symbol : text) + '</div>' });
   }
 
@@ -258,7 +258,7 @@
     }
   });
   (D.bases || []).forEach(function (x) {
-    var campLabel = (window.TripStory ? window.TripStory.icon('camp') : '') + safe(x.label) + (x.booking ? '<span class="rk-booked-mark" aria-hidden="true">✓</span>' : '');
+    var campLabel = (window.TripIcons ? window.TripIcons.icon('camp') : '') + safe(x.label) + (x.booking ? '<span class="rk-booked-mark" aria-hidden="true">✓</span>' : '');
     var m = tap(L.marker(x.ll, { icon: icon('rk-night' + (x.optional ? ' rk-night--optional' : ''), campLabel), title: x.name || x.label, zIndexOffset: x.optional ? 80 : 200 }).addTo(map), x.html, x.ll);
     if (x.optional && m.getElement()) m.getElement().setAttribute('aria-label', 'Måske · ' + x.name);
     if (x.name) {
@@ -385,8 +385,7 @@
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-      if (storyController && storyController.isOpen()) storyController.close();
-      else if (!sheet.hidden) close();
+      if (!sheet.hidden) close();
       else if (phoneView.matches && !quietMap) setQuiet(true);
       else if (box.classList.contains('full')) setFull(false);
     }
@@ -408,7 +407,7 @@
   var me = null, helenaMarker = null, flightPath = null;
   var position = window.TripPosition, scenes = window.TripScenes;
   var gps = null, gpsReason = 'Placering hentes', current = null, helena = null;
-  var previewTime = null, storyController = null, atmosphere = null;
+  var atmosphere = null;
   var centerOnFix = false, worldTimer = null, focusedTraveller = 'karsten';
   var vehicleIcon = L.icon({ iconUrl: '../assets/honda-accord-tourer-cw2.svg', iconSize: [42,80], iconAnchor: [21,40], className: 'rk-vehicle-marker' });
   var locateBtn = btns.querySelector('[data-a="me"]');
@@ -460,12 +459,6 @@
   }
   function updatePositionStatus() {
     if (!current) return;
-    if (previewTime) {
-      status.dataset.source = 'plan';
-      status.textContent = 'Rejseplan · ' + current.clock.date + ' · ' + current.name;
-      status.title = 'Forhåndsvisning af en anslået dag. ' + current.note;
-      return;
-    }
     if (focusedTraveller === 'helena' && helena && helena.phase !== 'joined') {
       status.dataset.source = 'plan';
       status.textContent = helena.phase === 'flight' ? 'Helenas flyrejse · anslået position' : 'Helena · Brisbane · aktiviteter illustreret';
@@ -511,8 +504,8 @@
   function refreshWorld() {
     if (smoothZooming) return;
     if (!position || !scenes || !D.locationPlan) return;
-    var now = previewTime || new Date();
-    var validGPS = !previewTime && gps && +now - gps.timestamp < 120000 ? gps : null;
+    var now = new Date();
+    var validGPS = gps && +now - gps.timestamp < 120000 ? gps : null;
     current = position.state(D, now, validGPS);
     helena = position.helenaState(D, now);
     if (!current) return;
@@ -522,8 +515,7 @@
     var scene = current.scene === 'drive' ? null : scenes.render(current.scene, opts);
     var key = current.scene + ':' + current.solo + ':' + current.coastal + ':' + opts.small + ':' + current.source;
     var car = {html:'<img class="world-car-image" src="../assets/honda-accord-tourer-cw2.svg" alt="">',size:[42,80],anchor:[21,40]};
-    var sourceLabel = previewTime ? 'Rejseplan · ' + String(current.clock.minutes / 60 | 0).padStart(2,'0') + ':' + String(current.clock.minutes % 60).padStart(2,'0') : current.source === 'gps' ? 'GPS · denne enhed' : 'Ca. position';
-    key += ':' + (previewTime ? sourceLabel : 'now');
+    var sourceLabel = current.source === 'gps' ? 'GPS · denne enhed' : 'Ca. position';
     me = makeMarker(me, current.ll, sceneIcon(scene || car,sourceLabel), key, scene ? scene.label : 'Blå Honda Accord Tourer CW2 med sort hardshell-tagtelt og gult surfboard');
     if (atmosphere) atmosphere.paintActor(me.getElement(),env.primary);
     var nzTime = String(current.clock.minutes / 60 | 0).padStart(2,'0') + ':' + String(current.clock.minutes % 60).padStart(2,'0');
@@ -556,7 +548,6 @@
   }
   function locateDone() { locateBtn.disabled = false; locateBtn.textContent = 'Find os'; }
   function startLocate(shouldCenter) {
-    if (storyController && storyController.isOpen()) storyController.close(false);
     refreshWorld();
     if (shouldCenter !== false) focusPerson('karsten');
     centerOnFix = shouldCenter !== false;
@@ -574,7 +565,7 @@
     gpsReason = position && !position.inNewZealand(ll) ? 'Enheden er uden for New Zealand' : '';
     refreshWorld();
     if (!position) me = makeMarker(me,ll,vehicleIcon,'drive','Jeres position');
-    if (centerOnFix && !previewTime) {centerOnFix=false; if (current) focusPerson('karsten'); else map.setView(ll,14);}
+    if (centerOnFix) {centerOnFix=false; if (current) focusPerson('karsten'); else map.setView(ll,14);}
   });
   map.on('locationerror', function (e) {
     locateDone();
@@ -586,13 +577,6 @@
   map.on('zoomend', refreshWorld);
   map.on('resize', refreshWorld);
   mobile.addEventListener('change', refreshWorld);
-  if (window.TripStory && position && D.locationPlan) {
-    storyController = window.TripStory.mount({data:D, map:map, box:box, L:L, toolbar:topbar, reducedMotion:reducedMotion,
-      open:open, closeSheet:close, setQuiet:setQuiet,
-      preview:function (now) { previewTime = now; refreshWorld(); return current; },
-      restore:function (center) { previewTime = null; refreshWorld(); if (center) focusPerson('karsten'); }
-    });
-  }
   if (window.TripAtmosphere && position && D.locationPlan) {
     atmosphere = window.TripAtmosphere.create({map:map,box:box,hud:hud,open:open,reducedMotion:reducedMotion,onChange:refreshWorld});
   }
