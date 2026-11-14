@@ -19,7 +19,7 @@ document = html.fromstring(source)
 match = re.search(r'(<script\b[^>]*\bid="rk-data"[^>]*>)(.*?)(</script>)', source, re.S)
 data = json.loads(match[2])
 
-coastal = {0, 6, 8, 9, 10, 12, 13, 16, 17, 19, 20}
+coastal = {0, 6, 8, 9, 10, 12, 13, 16, 17, 19, 20, 21, 22}
 for index, base in enumerate(data["bases"]):
     base["camp"] = index not in {11, 18}
     base["coastal"] = index in coastal
@@ -174,7 +174,7 @@ days[17]["segments"] = [
     {"from": 690, "to": 700, "leg": 13, "name": "på vej til Wellington"},
     {"from": 780, "to": 960, "point": spots["s10"]["ll"], "activity": "city", "name": "Wellington"},
 ]
-days[17]["note"] = "Færgens afgang er endnu ikke ombooket. Positionen bruger foreløbigt den gamle afgangstid som et skøn."
+days[17]["note"] = "Færgen er ombooket og bekræftet til tir 1 dec kl. 07.45, Picton → Wellington. Sejltiden på cirka 3½ timer og ankomsttiden er anslået. Terminal og check-in-frist følger den nye billet."
 days[22]["segments"] = [{"from": 450, "to": 930, "point": spots["s15"]["ll"], "activity": "hike", "name": "Tongariro Alpine Crossing"}]
 manu = data["activityTargets"][0]
 days[26]["segments"] = [{"from": 600, "to": 810, "point": manu["ll"], "activity": "surf", "name": "Muligt surfbesøg · Manu Bay"}]
