@@ -1,6 +1,10 @@
 // Bekræftede bookinger. Tilføj kun ophold, brugeren har bekræftet.
 // Fra/til er ankomst og afrejse. Ingen bookingnumre eller personoplysninger her.
 window.tripBookings = {
+  'c-a1-kaikoura': {
+    base: 20, from: '2026-11-15', until: '2026-11-16',
+    task: 'book-a1-20261115', adults: 1, total: 45
+  },
   'camp-godley': {
     base: 19, from: '2026-11-16', until: '2026-11-17',
     task: 'book-godley-20261116', adults: 1, total: 18

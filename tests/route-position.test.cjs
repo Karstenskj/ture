@@ -13,19 +13,26 @@ test('NZ clock and independent Brisbane clock do not follow visitor timezone',()
   assert.equal(P.helenaState(data,new Date('2026-11-13T22:00:00+10:00')).scene,'helena-sleep');
   assert.equal(P.helenaState(data,new Date('2026-11-14T08:00:00+10:00')).scene,'helena-run');
 });
-test('approximate public start, Hurunui, Cheviot lunch, Gore Bay and booked Godley Head',()=>{
+test('public start, Buxton, Harris pies, conditional Mangamaunu, A1 and Point Kean before Godley',()=>{
   assert.deepEqual(at('2026-11-13T16:00:00+13:00').ll,[-43.53016,172.73651]);
   assert.equal(at('2026-11-13T16:00:00+13:00').scene,'packing');
   assert.equal(at('2026-11-14T06:30:00+13:00').scene,'packing');
   assert.equal(at('2026-11-14T08:00:00+13:00').scene,'drive');
   assert.equal(at('2026-11-14T20:00:00+13:00').scene,'beer');
   assert.equal(at('2026-11-14T22:00:00+13:00').scene,'solo-sleep');
-  assert.equal(at('2026-11-15T06:00:00+13:00').name,'Hurunui River Mouth Reserve Camping Ground');
-  assert.match(at('2026-11-15T12:00:00+13:00').name,/pies.*Cheviot/);
-  assert.equal(at('2026-11-15T12:00:00+13:00').scene,'food');
-  assert.equal(at('2026-11-15T13:30:00+13:00').scene,'solo-surf');
-  assert.match(at('2026-11-16T06:30:00+13:00').name,/Gore Bay/);
-  assert.equal(at('2026-11-16T10:00:00+13:00').scene,'drive');
+  assert.equal(at('2026-11-15T06:00:00+13:00').name,'Buxton Camp · Gore Bay');
+  assert.match(at('2026-11-15T10:30:00+13:00').name,/Harris Farms.*pies.*Cheviot/);
+  assert.equal(at('2026-11-15T10:30:00+13:00').scene,'food');
+  const surf=at('2026-11-15T13:00:00+13:00');
+  assert.match(surf.name,/Mangamaunu/);
+  assert.equal(surf.scene,'beach'); // Conditions and other surfers cannot be inferred from a clock.
+  assert.match(surf.note,/gode bølger og andre surfere/);
+  assert.match(at('2026-11-15T15:30:00+13:00').name,/A1 Kaikoura/);
+  assert.match(at('2026-11-16T06:30:00+13:00').name,/A1 Kaikoura/);
+  assert.equal(at('2026-11-16T09:30:00+13:00').scene,'vista');
+  assert.match(at('2026-11-16T09:30:00+13:00').name,/Point Kean/);
+  assert.match(at('2026-11-16T09:30:00+13:00').note,/ikke observationer/);
+  assert.equal(at('2026-11-16T11:00:00+13:00').scene,'drive');
   assert.match(at('2026-11-16T15:30:00+13:00').name,/Godley Head/);
   assert.equal(at('2026-11-16T19:30:00+13:00').scene,'beer');
   assert.equal(at('2026-11-16T23:00:00+13:00').scene,'solo-sleep');
@@ -65,7 +72,8 @@ test('all approximate days have ordered non-overlapping segments on valid routes
  assert.equal(data.locationPlan.days.length,28);
  for(const d of data.locationPlan.days){let end=0;for(const s of d.segments){assert.ok(s.to>s.from);assert.ok(s.from>=end,`${d.date}: overlaps`);assert.ok(s.to<=1440);end=s.to;if(s.leg!=null)assert.ok(data.legs[s.leg].pts.length>1);}}
  assert.equal(data.bases[15].label,'man 7 dec');
- assert.equal(data.bases[20].provisional,true);
+ assert.equal(data.bases[20].name,'A1 Kaikoura Motel & Holiday Park');
+ assert.ok(!data.bases[20].provisional);
  assert.equal(data.bases[19].name,'Awaroa/Godley Head Campsite');
  assert.ok(!data.spots.some(s=>/Napier/i.test(s.name)));
 });
