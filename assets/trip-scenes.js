@@ -38,10 +38,15 @@
     var lighting = gains[0]+' 0 0 0 0 0 '+gains[1]+' 0 0 0 0 0 '+gains[2]+' 0 0 0 0 0 1 0';
     return '<g class="world-registered-face" data-face-id="'+poseId+'" data-source-landmarks="'+JSON.stringify(registration.source[pose.kind])+'" data-target-landmarks="'+JSON.stringify(pose.points)+'" transform="matrix('+pose.matrix.join(' ')+')"><defs><filter id="'+id+'-feather" filterUnits="userSpaceOnUse" '+bounds+'><feGaussianBlur stdDeviation="2.5"/></filter><filter id="'+id+'-light" filterUnits="userSpaceOnUse" '+bounds+'><feColorMatrix values="'+lighting+'"/></filter><mask id="'+id+'-mask" maskUnits="userSpaceOnUse" '+bounds+'><path d="'+contour+'" fill="white" filter="url(#'+id+'-feather)"/></mask></defs><g mask="url(#'+id+'-mask)" filter="url(#'+id+'-light)"><image href="'+assets+'characters-base.webp" width="1024" height="1536"/>'+(poseId==='helena-day-5'?closedEyes(pose.kind,id):'')+'</g></g>';
   }
+  function tentLight() {
+    var id = 'tent-light-' + (++identityId);
+    // Illuminate the opening without changing any original equipment or faces.
+    return '<defs><radialGradient id="' + id + '-lamp"><stop offset="0" stop-color="var(--weather-lamp,#ffcf77)" stop-opacity=".75"/><stop offset="1" stop-color="var(--weather-lamp,#ffcf77)" stop-opacity="0"/></radialGradient><clipPath id="' + id + '-window"><path d="M742 177Q716 210 734 279H1014V190Q894 160 742 177Z"/></clipPath></defs><g class="world-tent-light"><ellipse cx="979" cy="204" rx="245" ry="145" fill="url(#' + id + '-lamp)" clip-path="url(#' + id + '-window)"/><path d="M993 175v16" stroke="#cbaa6b" stroke-width="4"/><rect x="982" y="191" width="22" height="29" rx="5" fill="var(--weather-lamp,#ffcf77)" stroke="#cbaa6b" stroke-width="3"/></g>';
+  }
   function equipmentImage() {
     // The far-side rain awning projects behind the hard shell; the large near
     // side opening and awning are in the immutable equipment image itself.
-    return '<path d="M477 88 368 162 659 154 695 94Z" fill="#7d8290" stroke="#26313b" stroke-width="6"/><path d="M371 164 455 307M652 155 695 309" fill="none" stroke="#26313b" stroke-width="5"/><image href="' + assets + 'equipment.webp" width="1536" height="1024"/>';
+    return '<path d="M477 88 368 162 659 154 695 94Z" fill="#7d8290" stroke="#26313b" stroke-width="6"/><path d="M371 164 455 307M652 155 695 309" fill="none" stroke="#26313b" stroke-width="5"/><image href="' + assets + 'equipment.webp" width="1536" height="1024"/>' + tentLight();
   }
   function sleepingHead(kind, x, y, width, height, angle) {
     var k = kind === 'k', id = 'sleep-face-' + (++identityId);
@@ -51,10 +56,11 @@
   function equipmentCamp(solo, asleep) {
     var id = 'camp-people-' + (++identityId);
     var result = '<svg class="world-composite" viewBox="0 0 1536 1024" aria-hidden="true">' + equipmentImage();
+
     if (asleep) {
       result += sleepingHead('k',solo?820:770,152,105,148,-8);
       if (!solo) result += sleepingHead('h',876,171,103,127,12);
-      result += '<path d="M732 253q54-34 130 0t155-5v32H732Z" fill="#3b4965" stroke="#1c293f" stroke-width="5"/><path d="M746 262q71-10 136 5t122-5" fill="none" stroke="#566681" stroke-width="4"/><path d="M1268 58q-30 48 15 76-66 8-66-47 1-22 18-38 4 19 33 9Z" fill="#ffe8a8" stroke="#4e5354" stroke-width="3"/>';
+      result += '<path d="M732 253q54-34 130 0t155-5v32H732Z" fill="#3b4965" stroke="#1c293f" stroke-width="5"/><path d="M746 262q71-10 136 5t122-5" fill="none" stroke="#566681" stroke-width="4"/><path class="world-sleep-moon" d="M1268 58q-30 48 15 76-66 8-66-47 1-22 18-38 4 19 33 9Z" fill="#ffe8a8" stroke="#4e5354" stroke-width="3"/>';
     } else {
       var karsten = 'M506 342C450 340 420 375 426 435L445 485 395 487 352 538 325 595 320 660 356 702 375 780 330 900 316 980 337 1024 570 1024 568 970 520 935 488 882 560 969 637 995 706 968 701 934 658 902 636 845 621 746 628 694 690 660 755 633 765 601 741 566 655 526 598 512 604 478 621 433 609 383 570 353Z';
       var helena = 'M960 364C889 354 865 409 877 465L895 508 865 534 843 594 862 653 884 681 876 741 924 826 949 910 915 932 911 994 978 1024 1060 1024 1055 960 1045 913 1060 1024 1179 1024 1180 980 1141 941 1099 910 1096 815 1139 756 1153 709 1119 652 1091 622 1078 558 1046 532 1014 511 1059 458 1049 404 1004 372Z';

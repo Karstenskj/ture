@@ -88,6 +88,22 @@ Research: Polarsteps og FindPenguins knytter fotoopslag til kortets steder; Mapb
 
 Kontrol: `node --test tests/*.test.cjs`, `node --check assets/rutekort.js` og `node --check assets/trip-scenes.js`. Browserkontrol bruger lokale fixtures med simuleret GPS, aldrig computerens virkelige position.
 
+### Vejr, dagslys og flyrute
+
+`assets/trip-weather.js` beregner solhøjde, solopgang og solnedgang lokalt med den fastlåste SunCalc 1.9.0 (`assets/vendor/suncalc-1.9.0.js`, BSD-2-Clause, original licens i samme mappe). Kilden er npm-pakken `suncalc@1.9.0` fra jsDelivr; denne versions vinkler er i radianer. Morgen, skumring og nat følger solhøjden ved sted og dato, ikke faste klokkeslæt. Søvn og aktiviteter beholder deres eksisterende tidsplan.
+
+`assets/trip-atmosphere.js`/`.css` tegner stemningen på NZ-kortet: sol, bløde skyer, regn, sne, tåge og vind, dæmpet nat, stjerner ved kendt klart mørke og gradvist lys i tagteltet. Lyset er et SVG-lag over det eksisterende udstyr; person- og billedfilerne er uændrede. Ingen nye vejreffekter i Australien eller på flyet, efter brugerens præcisering. Helenas aktiviteter og Brisbane-klokke bevares. Flyruten er stiplet og mærket planlagt allerede før afgang; knappen Flyrute viser hele strækningen. Figuren bliver i Brisbane indtil den anslåede afgang, og ruten fjernes efter ankomsten.
+
+Vejret kommer fra Open-Meteos aktuelle model og timeprognose (temperatur, skydække, nedbør, sne, WMO-kode, vindretning, vind og vindstød). GMT/Unix-tider matches til præcis det valgte UTC-timeinterval, også i Rejs med. Aktuelle modeldata bruges kun i deres eget interval. Fremtid uden prognose og netfejl viser beregnet dagslys uden opdigtede skyer, regn eller stjerner. Kilden mærkes modeldata/prognose; det er ikke en måling ved bilen. Open-Meteo krediteres i vejrdetaljerne. Solopgang/-nedgang er omtrentlige og tager ikke højde for lokale bjerge.
+
+Præcis GPS bliver på enheden. Før vejrkald afrundes koordinater til 0,05° (omkring 5 km); kun NZ-områder forespørges. Der er højst 36 hukommelsesposter, 20 minutters genopfriskning, 30 minutters udløb, 15 sekunders global pause mellem kald, 60 sekunders pause efter fejl og 8 sekunders timeout. Ingen persistent vejr- eller GPS-lagring. Animation er højst 24 fps og DPR 1,5, stopper i skjult fane, ved kortoverblik og reduced motion, og blokerer ikke kortets berøring.
+
+### Retur til bilen ved envejsture
+
+Escarpment Track 2 december: parkér ved Paekākāriki station, tag Kāpiti Line sydpå til Pukerua Bay først og gå nordpå tilbage til bilen. Dagens afgange, billetpris og evt. erstatningsbus tjekkes hos Metlink. Te Araroa anbefaler stationsparkering; undgå Ames Street/Muri Road.
+
+Tongariro 6 december: nemmest fra de valgte nætter er Tongariro Crossing Shuttles retur fra Mangahuia-stoppet på SH47, så bil og telt bliver på campen. Offentlig pris NZ$75 pr. person retur/NZ$150 for to. Køreplanen viser 05.55/07.25/08.40 fra Mangahuia og 13.30/14.45/16.00/17.15–17.30 fra Ketetahi; alle tider, præcist stoppested og retur til Mangahuia skal bekræftes ved booking. Alternativet er Tongariro Expeditions' Park & Ride nær Ketetahi med morgenshuttle og gang tilbage til bilen (fra NZ$65 pr. person). Sommerens parkeringssted er et andet end lavsæsonens. Gratis DOC-track-booking kræves til shuttle. Dette er transportforslag undersøgt 14 november 2026, ikke bookinger eller bekræftet ledighed. Kilder og bookinglinks er i begge stedkort på kortet og i Program.
+
 ## Sådan lægges en ny tur ind
 
 1. **Opret filen** `trips/ÅÅÅÅ-MM-sted.html`, fx `trips/2026-12-nordoeen.html`.

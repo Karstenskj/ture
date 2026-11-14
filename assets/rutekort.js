@@ -167,6 +167,7 @@
       positionPoint();
       sheet.querySelector('.rk-close').focus({ preventScroll: true });
     });
+    if (atmosphere) refreshWorld();
   }
   function close() {
     if (sheet.hidden) return;
@@ -176,6 +177,7 @@
     if (lastTrigger && document.contains(lastTrigger)) lastTrigger.focus({ preventScroll: true });
     selectedPoint = null;
     lastTrigger = null;
+    if (atmosphere) refreshWorld();
   }
   expand.addEventListener('click', function () {
     var expanded = sheet.classList.toggle('expanded');
@@ -184,7 +186,9 @@
     positionPoint();
   });
   sheet.querySelector('.rk-close').addEventListener('click', close);
-  map.on('click', function () {
+  map.on('click', function (event) {
+    var target = event.originalEvent && event.originalEvent.target;
+    if (target && target.closest && target.closest('.rk-world-hud')) return;
     if (!sheet.hidden) {close();return;}
     if (phoneView.matches) setQuiet(!quietMap);
   });
@@ -404,7 +408,7 @@
   var me = null, helenaMarker = null, flightPath = null;
   var position = window.TripPosition, scenes = window.TripScenes;
   var gps = null, gpsReason = 'Placering hentes', current = null, helena = null;
-  var previewTime = null, storyController = null;
+  var previewTime = null, storyController = null, atmosphere = null;
   var centerOnFix = false, worldTimer = null, focusedTraveller = 'karsten';
   var vehicleIcon = L.icon({ iconUrl: '../assets/honda-accord-tourer-cw2.svg', iconSize: [42,80], iconAnchor: [21,40], className: 'rk-vehicle-marker' });
   var locateBtn = btns.querySelector('[data-a="me"]');
@@ -417,6 +421,18 @@
   var karstenChip = hud.querySelector('[data-person="karsten"]');
   var helenaChip = hud.querySelector('[data-person="helena"]');
   var status = hud.querySelector('.rk-position-status');
+  var flightButton = document.createElement('button');
+  flightButton.type = 'button';flightButton.className = 'rk-flight-route rk-position-status';
+  flightButton.textContent = 'Flyrute · Brisbane → Christchurch · 17 nov';
+  flightButton.title = 'Planlagt flyrute. Ankomst 18.10 i NZ; afgang og flyets position er anslået.';
+  flightButton.hidden = true;hud.appendChild(flightButton);
+  flightButton.addEventListener('click',function () {
+    if (!flightPath) return;
+    close();focusedTraveller = 'helena';
+    karstenChip.setAttribute('aria-pressed','false');helenaChip.setAttribute('aria-pressed','true');
+    var size = map.getSize();
+    map.fitBounds(flightPath.getBounds(),{paddingTopLeft:[105,Math.min(280,size.y*.34)],paddingBottomRight:[110,Math.min(150,size.y*.18)],animate:!reducedMotion.matches});refreshWorld();
+  });
   if (!position || !scenes || !D.locationPlan) hud.hidden = true;
   function sceneIcon(scene, sourceLabel) {
     return L.divIcon({ className: 'rk-world-marker', html: scene.html + (sourceLabel ? '<span class="rk-location-tag">' + safe(sourceLabel) + '</span>' : ''), iconSize: scene.size, iconAnchor: scene.anchor });
@@ -425,6 +441,8 @@
     if (!marker) marker = L.marker(ll, { icon: markerIcon, alt: title, title: title, keyboard: false, interactive: false, zIndexOffset: 1100 }).addTo(map);
     else { marker.setLatLng(ll); if (marker._worldKey !== key) marker.setIcon(markerIcon); }
     marker._worldKey = key;
+    var element = marker.getElement();
+    if (element) {element.setAttribute('title',title);element.setAttribute('aria-label',title);}
     return marker;
   }
   function focusPerson(person) {
@@ -438,6 +456,7 @@
     karstenChip.setAttribute('aria-pressed', String(person === 'karsten'));
     helenaChip.setAttribute('aria-pressed', String(person === 'helena'));
     updatePositionStatus();
+    if (atmosphere) refreshWorld();
   }
   function updatePositionStatus() {
     if (!current) return;
@@ -465,7 +484,7 @@
     var heading = isHelena ? target.name : (current.solo ? 'Karsten' : 'Karsten & Helena') + ' · ' + current.name;
     var source = isHelena ? (target.phase === 'flight' || target.phase === 'airport' ? D.helenaFlight.note : 'Brisbane CBD. Dagens aktiviteter og lejligheden er illustrationer efter lokal tid, ikke live oplysninger.') : current.note;
     var time = isHelena && target.localTime ? target.localTime + ' i Brisbane' : String(current.clock.minutes / 60 | 0).padStart(2, '0') + ':' + String(current.clock.minutes % 60).padStart(2, '0') + ' i New Zealand';
-    open('<div class="rk-body"><div class="rk-world-detail">' + scene.html + '</div><h3>' + safe(heading) + '</h3><p class="spot-sum">' + safe(scene.label) + ' · ' + safe(time) + '</p><p>' + safe(source) + '</p><p class="note">' + (isHelena ? 'Ankomst til Christchurch tir 17 nov kl. 18.10. Flyets afgang og position er anslået.' : current.source === 'gps' ? 'GPS fra denne enhed. Aktiviteten er en illustration ud fra sted, tidspunkt og planen. Andre besøgende ser et skøn fra rejseplanen.' : 'Ca. position fra rejseplanen. Hverdagsscenerne viser, hvad vi sandsynligvis laver, og er ikke en live opdatering.') + '</p></div>', target.ll);
+    open('<div class="rk-body"><div class="rk-world-detail" data-weather-person="' + (isHelena ? 'helena' : 'karsten') + '">' + scene.html + '</div><h3>' + safe(heading) + '</h3><p class="spot-sum">' + safe(scene.label) + ' · ' + safe(time) + '</p><p>' + safe(source) + '</p><p class="note">' + (isHelena ? 'Ankomst til Christchurch tir 17 nov kl. 18.10. Flyets afgang og position er anslået.' : current.source === 'gps' ? 'GPS fra denne enhed. Aktiviteten er en illustration ud fra sted, tidspunkt og planen. Andre besøgende ser et skøn fra rejseplanen.' : 'Ca. position fra rejseplanen. Hverdagsscenerne viser, hvad vi sandsynligvis laver, og er ikke en live opdatering.') + '</p></div>', target.ll);
   }
   karstenChip.addEventListener('click', function () { focusPerson('karsten'); });
   helenaChip.addEventListener('click', function () { focusPerson('helena'); });
@@ -497,6 +516,7 @@
     current = position.state(D, now, validGPS);
     helena = position.helenaState(D, now);
     if (!current) return;
+    var env = atmosphere ? atmosphere.update({at:now,current:current,helena:helena,focused:focusedTraveller,point:selectedPoint}) : {};
     var compactWorld = mobile.matches || map.getSize().y < 500;
     var opts = {solo:current.solo,coastal:current.coastal,small:compactWorld || map.getZoom() < 8};
     var scene = current.scene === 'drive' ? null : scenes.render(current.scene, opts);
@@ -505,6 +525,7 @@
     var sourceLabel = previewTime ? 'Rejseplan · ' + String(current.clock.minutes / 60 | 0).padStart(2,'0') + ':' + String(current.clock.minutes % 60).padStart(2,'0') : current.source === 'gps' ? 'GPS · denne enhed' : 'Ca. position';
     key += ':' + (previewTime ? sourceLabel : 'now');
     me = makeMarker(me, current.ll, sceneIcon(scene || car,sourceLabel), key, scene ? scene.label : 'Blå Honda Accord Tourer CW2 med sort hardshell-tagtelt og gult surfboard');
+    if (atmosphere) atmosphere.paintActor(me.getElement(),env.primary);
     var nzTime = String(current.clock.minutes / 60 | 0).padStart(2,'0') + ':' + String(current.clock.minutes % 60).padStart(2,'0');
     karstenChip.querySelector('b').textContent = current.solo ? 'Karsten' : 'Karsten & Helena';
     karstenChip.querySelector('small').textContent = 'NZ ' + nzTime + ' · ' + (scenes.labels[current.scene] || 'på tur');
@@ -512,17 +533,24 @@
     if (helena.phase !== 'joined') {
       var hscene = helena.phase === 'flight' ? scenes.flight() : scenes.render(helena.scene, {helena:true,small:compactWorld});
       helenaMarker = makeMarker(helenaMarker, helena.ll, sceneIcon(hscene,'Ca. position'), helena.scene + ':' + helena.phase + ':' + compactWorld, hscene.label);
+      if (atmosphere) atmosphere.paintActor(helenaMarker.getElement(),env.secondary);
       helenaChip.querySelector('small').textContent = helena.phase === 'flight' ? 'Flyver til NZ · anslået' : helena.phase === 'airport' ? 'Brisbane lufthavn' : 'Brisbane ' + helena.localTime + ' · ' + (scenes.labels[helena.scene] || 'i byen');
-      if (helena.phase === 'flight' && !flightPath && worldReady) {
+      if (!flightPath && worldReady) {
         var points = [];
         for (var i=0;i<=50;i++) points.push(position.greatCircle(D.helenaFlight.from,D.helenaFlight.to,i/50));
         flightPath = L.polyline(points, {color:'#f28c28',weight:2,dashArray:'6 9',interactive:false}).addTo(map);
+        flightPath.bindTooltip('Planlagt flyrute · 17 nov',{permanent:true,direction:'center',className:'rk-flight-label'});
       }
     } else {
       if (helenaMarker) {helenaMarker.remove();helenaMarker=null;}
       if (focusedTraveller === 'helena') focusedTraveller = 'karsten';
     }
-    if (flightPath && helena.phase !== 'flight') {flightPath.remove();flightPath=null;}
+    flightButton.hidden = helena.phase === 'joined';
+    if (flightPath && helena.phase === 'joined') {flightPath.remove();flightPath=null;}
+    if (atmosphere) {
+      var worldDetail = inner.querySelector('.rk-world-detail');
+      if (worldDetail) atmosphere.paintActor(worldDetail,worldDetail.dataset.weatherPerson === 'helena' ? env.secondary : env.primary);
+    }
     updatePositionStatus();
     showAnimals();
   }
@@ -564,6 +592,9 @@
       preview:function (now) { previewTime = now; refreshWorld(); return current; },
       restore:function (center) { previewTime = null; refreshWorld(); if (center) focusPerson('karsten'); }
     });
+  }
+  if (window.TripAtmosphere && position && D.locationPlan) {
+    atmosphere = window.TripAtmosphere.create({map:map,box:box,hud:hud,open:open,reducedMotion:reducedMotion,onChange:refreshWorld});
   }
   function resumeWorld() {
     refreshWorld();

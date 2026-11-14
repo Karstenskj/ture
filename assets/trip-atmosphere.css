@@ -1,0 +1,35 @@
+/* Weather stays below controls and sheets; map gestures always pass through. */
+.rk {
+  --weather-night: #0b1932;
+  --weather-night-ground: #152b46;
+  --weather-morning: #ffe3a8;
+  --weather-evening: #e8a379;
+  --weather-cloud: #6d8596;
+  --weather-fog: #d8e5e9;
+  --weather-lamp: #ffcf77;
+}
+.rk-atmosphere { position: absolute; inset: 0; z-index: 550; overflow: hidden; pointer-events: none; }
+.rk-atmosphere[hidden] { display: none; }
+.rk-atmosphere > div, .rk-atmosphere > canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.rk-atmosphere > div { transition: opacity 1.6s linear; }
+.rk-weather-night { background: linear-gradient(180deg, var(--weather-night), var(--weather-night-ground)); opacity: calc(var(--night-strength, 0) * .48); }
+.rk-weather-golden { background: linear-gradient(125deg, var(--weather-morning), transparent 80%); opacity: var(--golden-strength, 0); }
+.rk-atmosphere[data-phase="evening"] .rk-weather-golden, .rk-atmosphere[data-phase="dusk"] .rk-weather-golden { background: linear-gradient(245deg, var(--weather-evening), transparent 80%); }
+.rk-weather-cloudshade { background: var(--weather-cloud); opacity: var(--cloud-strength, 0); }
+.rk-weather-fog { background: linear-gradient(180deg,transparent 25%,var(--weather-fog) 90%); opacity: var(--fog-strength, 0); }
+.rk-weather-status { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink); font: 600 11px/1.4 var(--body); text-align: left; cursor: pointer; box-shadow: 0 1px 5px var(--scrim); }
+.rk-weather-status > svg { width: 23px; height: 23px; flex: none; }
+.rk-weather-status small { display: block; color: var(--ink-2); font-size: 9px; font-weight: 400; }
+.rk-story-weather { display: flex; align-items: center; gap: 6px; min-height: 24px; color: var(--story-secondary); font-size: 10px; line-height: 1.3; margin-top: 5px; }
+.rk-story-weather > svg { width: 17px; height: 17px; flex: none; }
+.rk-weather-status[hidden], .rk-story-weather[hidden], .rk-flight-route[hidden] { display: none; }
+.rk-flight-label { background: var(--card); border: 1px solid var(--map-orange, #f28c28); color: var(--ink); font: 600 10px/1.4 var(--body); box-shadow: none; }
+.rk-weather-ready [data-weather-phase] .world-composite, .rk-weather-ready [data-weather-phase] .world-people, .rk-weather-ready [data-weather-phase] .world-backdrop { filter: brightness(var(--actor-brightness, 1)); transition: filter 1.6s linear; }
+.world-tent-light { opacity: var(--tent-light, 0); transition: opacity 1.6s linear; }
+.rk-weather-ready .world-sleep-moon { display: none; }
+.rk-weather-ready [data-weather-phase] .world-wetsuit { animation-name: weather-wetsuit-dry; animation-duration: var(--breeze-duration, 5s); }
+@keyframes weather-wetsuit-dry { 0%,100% { transform: rotate(calc(var(--breeze-angle, 0deg) * -1)); } 50% { transform: rotate(var(--breeze-angle, 0deg)); } }
+@media (prefers-reduced-motion: reduce) {
+  .rk-atmosphere > div, .world-tent-light, .rk-weather-ready [data-weather-phase] .world-composite { transition: none; }
+  .rk-weather-ready [data-weather-phase] .world-wetsuit { animation: none !important; }
+}
