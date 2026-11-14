@@ -21,9 +21,9 @@
   function escape(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function block(base,entry,F){
     var labels={arrival:'Ankomst',stay:'Ophold',possible:'Mulig nat',departure:'Afrejse'};
-    return '<section class="camp-weather" aria-label="Vejret under opholdet"><h4>Vejret på jeres datoer</h4>'+entry.days.map(function(day){
-      return '<div class="camp-wx-day"><div class="camp-wx-date"><b>'+F.formatDate(day.date)+'</b><span>'+labels[day.kind]+'</span></div><div data-wx="'+escape(base.ll.join(','))+'" data-date="'+day.date+'" data-wx-detailed>Henter prognose…</div></div>';
-    }).join('')+'<p class="camp-wx-note">Dagens maks./min. temperatur. <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a> · prognose, ikke målt vejr. Opdateres automatisk hver halve time. Nye datoer kommer med op til 16 dage frem.</p></section>';
+    return '<section class="camp-weather" aria-label="Vejret under opholdet"><h4>Vejr fra MetService</h4><div class="metservice-stay-dates">'+entry.days.map(function(day){
+      return '<span><b>'+F.formatDate(day.date)+'</b> · '+labels[day.kind]+'</span>';
+    }).join('')+'</div>'+F.panel(F.forCamp(entry.index),entry.days.map(function(day){return day.date;}))+'</section>';
   }
   function start(win){
     var source=win.document.getElementById('rk-data'),F=win.TripForecast;if(!source || !F)return;

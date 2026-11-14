@@ -152,7 +152,7 @@
     lastTrigger = document.activeElement;
     selectedPoint = ll || null;
     inner.innerHTML = html;
-    if (window.TripForecast) window.TripForecast.mount();
+    if (window.TripForecast) requestAnimationFrame(window.TripForecast.mount);
     sheet.hidden = false;
     sheet.classList.remove('expanded');
     expand.setAttribute('aria-expanded', 'false');
