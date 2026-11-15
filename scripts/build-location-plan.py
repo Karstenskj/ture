@@ -27,7 +27,7 @@ for index, base in enumerate(data["bases"]):
 activities = {
     "s-airport": ("airport", 50), "s-cheviot-pies": ("food", 45),
     "s-mangamaunu": ("beach", 90), "s-kaikoura-whales": ("vista", 60),
-    "s-sumner": ("beach", 90),
+    "s-sumner": ("beach", 90), "s-challenge-opawa": ("fuel", 20), "s-npd-brougham": ("fuel", 10),
     "s2": ("hike", 180), "s47": ("hike", 45),
     "s48": ("hike", 60), "s41": ("walk", 25), "s42": ("waterfall", 60),
     "s49": ("vista", 20), "s50": ("waterfall", 30), "s45": ("hike", 60),
@@ -173,17 +173,24 @@ days[2]["note"] = "Point Kean og derefter Sumner til muligt surf ved gode bølge
 airport = spots["s-airport"]["ll"]
 airport_progress = progress_at(data["legs"][1]["pts"], airport)
 sumner_out = progress_at(data["legs"][1]["pts"], sumner)
+opawa_progress = progress_at(data["legs"][1]["pts"], spots["s-challenge-opawa"]["ll"])
+npd_progress = progress_at(data["legs"][1]["pts"], spots["s-npd-brougham"]["ll"])
+assert sumner_out < opawa_progress < npd_progress < airport_progress
 days[3]["segments"] = [
     {"from": 480, "to": 540, "point": data["bases"][19]["ll"], "activity": "food", "name": "Godley Head · morgenmad"},
     {"from": 540, "to": 585, "point": data["bases"][19]["ll"], "activity": "packing", "name": "Godley Head · pakker sammen før check-out kl. 10"},
     {"from": 585, "to": 610, "leg": 1, "portion": [0, sumner_out], "name": "på vej til Sumner"},
     {"from": 610, "to": 700, "point": sumner, "activity": "beach", "name": "Sumner · tjek bølgerne, muligt surf"},
-    {"from": 700, "to": 975, "point": cafe, "activity": "cafe-work", "name": "Sumner · arbejde på en café"},
-    {"from": 975, "to": 1035, "leg": 1, "portion": [sumner_out, airport_progress], "name": "på vej fra Sumner til Christchurch lufthavn"},
+    {"from": 700, "to": 945, "point": cafe, "activity": "cafe-work", "name": "Sumner · arbejde på en café"},
+    {"from": 945, "to": 970, "leg": 1, "portion": [sumner_out, opawa_progress], "name": "på vej til Challenge Opawa"},
+    {"from": 970, "to": 990, "point": spots["s-challenge-opawa"]["ll"], "activity": "fuel", "name": "Challenge Opawa · fylder gas og tjekker dæk"},
+    {"from": 990, "to": 995, "leg": 1, "portion": [opawa_progress, npd_progress], "name": "på vej til NPD Brougham St"},
+    {"from": 995, "to": 1005, "point": spots["s-npd-brougham"]["ll"], "activity": "fuel", "name": "NPD Brougham St · tanker bilen"},
+    {"from": 1005, "to": 1035, "leg": 1, "portion": [npd_progress, airport_progress], "name": "på vej til Christchurch lufthavn"},
     {"from": 1035, "to": 1140, "point": airport, "activity": "airport", "name": "Henter Helena i Christchurch kl. 18.10"},
     {"from": 1140, "to": 1290, "leg": 1, "portion": [airport_progress, 1], "name": "på vej til Route79"},
 ]
-days[3]["note"] = "Sumner om dagen: surf kun ved gode bølger, ellers caféarbejde. Café og tider er anslået. Afgang mod lufthavnen cirka kl. 16.15; Helena lander kl. 18.10. Booket nat på Route79."
+days[3]["note"] = "Sumner om dagen: caféarbejde og surf kun ved gode bølger. Café og tider er anslået. Afgang fra Sumner cirka kl. 15.45 med gas og luft ved Challenge Opawa og tank ved NPD Brougham St; Helena lander kl. 18.10. Booket nat på Route79."
 days[8]["segments"] = [
     {"from": 480, "to": 495, "leg": 6, "portion": [0, .5], "name": "på vej til Alex Knob"},
     {"from": 495, "to": 975, "point": spots["s59"]["ll"], "activity": "hike", "name": "Alex Knob"},

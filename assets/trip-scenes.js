@@ -6,7 +6,7 @@
     surf: 'surfer', cave: 'går på opdagelse i en grotte', waterfall: 'besøger et vandfald',
     beach: 'nyder stranden', city: 'går en tur i byen', walk: 'er ude at opleve', vista: 'nyder udsigten',
     airport: 'mødes i lufthavnen', ferry: 'sejler mod Wellington', swim: 'nyder vandet', kayak: 'er på vandet',
-    helena: 'er i Brisbane', flight: 'flyver mod Christchurch', drive: 'er på farten',
+    helena: 'er i Brisbane', flight: 'flyver mod Christchurch', drive: 'er på farten', fuel: 'tanker op',
     packing: 'pakker bilen', work: 'arbejder ved bilen', 'cafe-work': 'arbejder på en café', food: 'spiser god mad', beer: 'nyder en øl i campingstolen',
     'solo-surf': 'surfer', 'helena-run': 'løber en tur', 'helena-coffee': 'går tur med en iskaffe',
     'helena-shop': 'kigger i butikker', 'helena-food': 'spiser god mad', 'helena-tv': 'ser serie i lejligheden', 'helena-sleep': 'sover i Brisbane' };

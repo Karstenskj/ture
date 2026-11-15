@@ -13,6 +13,7 @@
     city: '<path d="M3 21V9h6V3h8v10h4v8H3Zm6 0V9m8 12v-8M5 12h1m-1 4h1m6-10h2m-2 4h2m-2 4h2m-2 4h2"/>',
     ferry: '<path d="m2 14 4 6h13l3-6H2Zm4 0V7h12v7M9 7V3h6v4M2 23c3-2 6-2 10 0s7 2 10 0"/>',
     walk: '<path d="M7 21c-5-3-3-6 2-8s6-5 1-8M14 21c-2-3 0-5 4-7s4-4 1-7"/>',
+    fuel: '<path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M3 21h12M6 9h6m2 4h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0V9l-3-3"/>',
     check: '<path d="m5 12 5 5L20 6"/>'
   };
   function icon(activity) {

@@ -49,6 +49,13 @@ test('both Sumner days keep surfing conditional and leave time for the known air
   assert.equal(data.locationPlan.days[2].stay.name,'Awaroa/Godley Head Campsite');
   assert.equal(data.locationPlan.days[3].stay.name,'Route79 Holiday Park');
 });
+test('17 Nov keeps cafe work until 15.45, then gas at Challenge Opawa and fuel at NPD before the airport',()=>{
+  assert.equal(at('2026-11-17T15:44:00+13:00').scene,'cafe-work');
+  const gas=at('2026-11-17T16:15:00+13:00');assert.match(gas.name,/Challenge Opawa/);assert.equal(gas.scene,'fuel');
+  const fuel=at('2026-11-17T16:38:00+13:00');assert.match(fuel.name,/NPD/);assert.equal(fuel.scene,'fuel');
+  assert.ok(data.spots.some(s=>s.anchor==='s-challenge-opawa'&&s.activity==='fuel'));
+  assert.ok(data.spots.some(s=>s.anchor==='s-npd-brougham'&&s.activity==='fuel'));
+});
 test('estimated flight starts in Brisbane and joins at known Christchurch arrival',()=>{
   assert.equal(P.helenaState(data,new Date('2026-11-17T10:30:00+10:00')).phase,'airport');
   const h=P.helenaState(data,new Date('2026-11-17T13:25:00+10:00'));
