@@ -123,8 +123,8 @@
   }, {passive:false});
 
   var osm = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-  // Fliser hentes også mens fingeren trækker, men ikke for hvert halve zoomtrin i et knib.
-  function tiles(options) { return L.extend({ updateWhenIdle: false, updateWhenZooming: false, keepBuffer: 4 }, options); }
+  // Fliser hentes også mens fingeren trækker (ikke først når den slipper), og flere bliver liggende.
+  function tiles(options) { return L.extend({ updateWhenIdle: false, keepBuffer: 4 }, options); }
   var layers = {
     'Kort': L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', tiles({ maxZoom: 19, attribution: osm })),
     'Terræn': L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', tiles({ maxZoom: 19, maxNativeZoom: 17, attribution: osm + ', <a href="https://opentopomap.org">OpenTopoMap</a> (CC BY-SA)' })),
