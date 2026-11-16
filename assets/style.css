@@ -1278,6 +1278,7 @@ body.rk-lock { position: fixed; width: 100%; overscroll-behavior: none; }
 }
 /* Tidsetiketterne på ruten får et fingerstort trykfelt på telefonen. */
 .rk-phone .rk-time-marker::before { content: ''; position: absolute; width: 44px; height: 44px; left: -22px; top: -22px; }
+.rk-phone.rk-quiet .rk-time-marker::before { display: none; }
 /* Scenerne og dyrene: skygge på jorden i stedet for et filter, der skal tegnes om ved hver animation. */
 .rk-world-marker { filter: none; }
 .rk-world-marker::after { content: ''; position: absolute; left: 22%; right: 22%; bottom: 3%; height: 9%; border-radius: 50%; background: radial-gradient(closest-side, var(--scrim), transparent); z-index: -1; pointer-events: none; }
