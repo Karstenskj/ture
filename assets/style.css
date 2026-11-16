@@ -1238,3 +1238,28 @@ body.rk-lock { position: fixed; width: 100%; overscroll-behavior: none; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .gas-reminder { color: #ffaba4; background: #351f20; }
 }
+
+/* Kort 16 nov */
+/* Stednavne ligger inde i markøren (rutekort.js), ikke som Leaflet-tooltips; samme skrift og side som før. */
+.rk-spot-marker .rk-label, .rk-camp-marker .rk-label, .rk-photo-marker .rk-label { display: none; position: absolute; top: 50%; left: calc(100% + 8px); right: auto; transform: translateY(-50%); width: max-content; white-space: nowrap; pointer-events: none; font-family: var(--body); font-size: 12px; font-style: normal; font-weight: 600; line-height: 1.5; letter-spacing: normal; text-align: left; text-transform: none; color: var(--map-ink); text-shadow: 0 0 3px var(--map-halo), 0 0 3px var(--map-halo), 0 0 2px var(--map-halo); }
+.rk-camp-marker .rk-label { left: calc(100% + 14px); }
+.rk-photo-marker .rk-label { left: calc(100% + 6px); }
+.rk-label-left .rk-label { left: auto; right: calc(100% + 10px); }
+.rk-label-left.rk-photo-marker .rk-label { right: calc(100% + 6px); }
+.rk-names .rk-label { display: block; }
+.rk-phone.rk-quiet .rk-label { visibility: hidden; }
+@media (max-width: 719px) {
+  .rk-camp-names .rk-camp-marker .rk-camp-label { display: block; font-size: 11px; max-width: 170px; white-space: normal; line-height: 1.2; }
+}
+/* Tidsetiketterne på ruten får et fingerstort trykfelt på telefonen. */
+.rk-phone .rk-time-marker::before { content: ''; position: absolute; width: 44px; height: 44px; left: -22px; top: -22px; }
+/* Scenerne og dyrene: skygge på jorden i stedet for et filter, der skal tegnes om ved hver animation. */
+.rk-world-marker { filter: none; }
+.rk-world-marker::after { content: ''; position: absolute; left: 22%; right: 22%; bottom: 3%; height: 9%; border-radius: 50%; background: radial-gradient(closest-side, var(--scrim), transparent); z-index: -1; pointer-events: none; }
+/* Mens kortet trækkes eller zoomes, står animationerne stille. */
+.rk-moving .rk-world-marker, .rk-moving .rk-world-marker *, .rk-moving .rk-world-hud * { animation-play-state: paused !important; }
+/* Arket glider både op og ned. */
+.rk-sheet { transition: transform .28s cubic-bezier(.2, .8, .2, 1); }
+@media (prefers-reduced-motion: reduce) { .rk-sheet { transition: none; } }
+/* Kortet har fuld skærm fra første billede, når ingen anden sektion er valgt, så siden ikke hopper (rutekort.js sætter .rk-booted). */
+body:not(:has(:target:not(#kort))) .rk:not(.rk-booted) { position: fixed; inset: 0; z-index: 2000; height: auto; min-height: 0; border-radius: 0; border: 0; }

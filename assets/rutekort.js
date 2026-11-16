@@ -25,7 +25,7 @@
 (function () {
   var box = document.getElementById('rk');
   var src = document.getElementById('rk-data');
-  if (!box || !src || !window.L) return;
+  if (!box || !src || !window.L) { if (box) box.classList.add('rk-booted'); return; }
   var D = JSON.parse(src.textContent);
   var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 
@@ -40,6 +40,8 @@
   var map = L.map('rk-map', {
     zoomControl: false, dragging: !touch, tap: false,
     minZoom: 3,
+    // bredere SVG-flade, så ruten ikke klippes ved kanten midt i et træk
+    renderer: L.svg({ padding: 0.5 }),
     zoomSnap: 0, zoomDelta: 0.5,
     wheelPxPerZoomLevel: 90, wheelDebounceTime: 20,
     zoomAnimation: !reducedMotion.matches,
@@ -119,10 +121,12 @@
   }, {passive:false});
 
   var osm = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+  // Fliser hentes også mens fingeren trækker, men ikke for hvert halve zoomtrin i et knib.
+  function tiles(options) { return L.extend({ updateWhenIdle: false, updateWhenZooming: false, keepBuffer: 4 }, options); }
   var layers = {
-    'Kort': L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: osm }),
-    'Terræn': L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { maxZoom: 17, attribution: osm + ', <a href="https://opentopomap.org">OpenTopoMap</a> (CC BY-SA)' }),
-    'Satellit': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Esri, Maxar, Earthstar Geographics' })
+    'Kort': L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', tiles({ maxZoom: 19, attribution: osm })),
+    'Terræn': L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', tiles({ maxZoom: 19, maxNativeZoom: 17, attribution: osm + ', <a href="https://opentopomap.org">OpenTopoMap</a> (CC BY-SA)' })),
+    'Satellit': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', tiles({ maxZoom: 19, attribution: 'Esri, Maxar, Earthstar Geographics' }))
   };
   layers['Satellit'].addTo(map);
   L.control.layers(layers, null, { position: 'topright' }).addTo(map);
@@ -141,28 +145,44 @@
 
   var lastTrigger = null;
   var selectedPoint = null;
+  var sheetOpen = false, sheetToken = 0, quietBeforeSheet = false, userTouched = false;
   var expand = sheet.querySelector('.rk-expand');
-  function positionPoint() {
-    if (!selectedPoint || sheet.hidden) return;
-    map.panTo(selectedPoint, { animate: false });
-    map.panBy(window.innerWidth >= 720 ? [sheet.offsetWidth / 2, 0] : [0, sheet.offsetHeight / 2], { animate: !reducedMotion.matches });
+  // Flyt kun kortet, hvis stedet ellers ville ligge under arket, og så i én glidende bevægelse.
+  function positionPoint(animate) {
+    if (!selectedPoint || !sheetOpen || map.getZoom() == null) return;
+    var size = map.getSize(), wide = window.innerWidth >= 720;
+    var cover = wide ? sheet.offsetWidth + 10 : sheet.offsetHeight;
+    var point = map.latLngToContainerPoint(selectedPoint);
+    var minX = wide ? 40 : 30, maxX = wide ? size.x - cover - 40 : size.x - 30;
+    var minY = wide ? 70 : 120, maxY = wide ? size.y - 40 : size.y - cover - 24;
+    if (point.x >= minX && point.x <= maxX && point.y >= minY && point.y <= maxY) return;
+    var target = wide ? L.point((size.x - cover) / 2, size.y / 2) : L.point(size.x / 2, Math.max((size.y - cover) / 2, Math.min(120, size.y - cover - 30)));
+    map.stop();
+    map.panBy(point.subtract(target), { animate: animate !== false && !reducedMotion.matches, duration: .35, easeLinearity: .25 });
   }
   function open(html, ll) {
+    var wasOpen = sheetOpen;
+    sheetToken++;
+    sheetOpen = true;
+    userTouched = true;
+    if (!wasOpen) quietBeforeSheet = quietMap;
     setQuiet(false);
     lastTrigger = document.activeElement;
     selectedPoint = ll || null;
     inner.innerHTML = html;
     if (window.TripForecast) requestAnimationFrame(window.TripForecast.mount);
     sheet.hidden = false;
-    sheet.classList.remove('expanded');
-    expand.setAttribute('aria-expanded', 'false');
-    expand.textContent = 'Udvid detaljer';
+    if (!wasOpen) {
+      sheet.classList.remove('expanded');
+      expand.setAttribute('aria-expanded', 'false');
+      expand.textContent = 'Udvid detaljer';
+    }
     sheet.scrollTop = 0;
     box.classList.add('rk-sheet-open');
     box.classList.remove('rk-legend-open');
     if (legendBtn) legendBtn.setAttribute('aria-expanded', 'false');
     requestAnimationFrame(function () {
-      if (sheet.hidden) return;
+      if (!sheetOpen) return;
       sheet.classList.add('open');
       positionPoint();
       sheet.querySelector('.rk-close').focus({ preventScroll: true });
@@ -170,10 +190,21 @@
     if (atmosphere) refreshWorld();
   }
   function close() {
-    if (sheet.hidden) return;
+    if (!sheetOpen) return;
+    sheetOpen = false;
+    var token = ++sheetToken;
     sheet.classList.remove('open', 'expanded');
-    sheet.hidden = true;
     box.classList.remove('rk-sheet-open');
+    // Arket glider ned og skjules først, når bevægelsen er færdig.
+    function done(event) {
+      if (event && event.target !== sheet) return;
+      sheet.removeEventListener('transitionend', done);
+      if (token === sheetToken && !sheetOpen) sheet.hidden = true;
+    }
+    if (reducedMotion.matches) done();
+    else { sheet.addEventListener('transitionend', done); setTimeout(done, 340); }
+    if (quietBeforeSheet && phoneView.matches) setQuiet(true);
+    quietBeforeSheet = false;
     if (lastTrigger && document.contains(lastTrigger)) lastTrigger.focus({ preventScroll: true });
     selectedPoint = null;
     lastTrigger = null;
@@ -189,7 +220,7 @@
   map.on('click', function (event) {
     var target = event.originalEvent && event.originalEvent.target;
     if (target && target.closest && target.closest('.rk-world-hud')) return;
-    if (!sheet.hidden) {close();return;}
+    if (sheetOpen) {close();return;}
     if (phoneView.matches) setQuiet(!quietMap);
   });
   map.getContainer().addEventListener('keydown', function (event) {
@@ -203,22 +234,25 @@
     return layer;
   }
 
-  function icon(cls, text, activity) {
+  // Navnet ligger inde i markøren, så det flytter med uden en Leaflet-tooltip pr. sted.
+  function icon(cls, text, activity, label) {
     var symbol = activity && window.TripIcons ? window.TripIcons.icon(activity) : '';
-    return L.divIcon({ className: cls.indexOf('rk-pin') === 0 ? 'rk-spot-marker' + (symbol ? ' rk-symbol-marker' : '') : cls.indexOf('rk-night') === 0 ? 'rk-camp-marker' : '',
-      iconSize: symbol || cls.indexOf('rk-night') === 0 ? [30,30] : null, iconAnchor: symbol || cls.indexOf('rk-night') === 0 ? [15,15] : null,
-      html: '<div class="' + cls + '">' + (symbol ? '<span class="rk-pin-number">' + text + '</span>' + symbol : text) + '</div>' });
+    var camp = cls.indexOf('rk-night') === 0;
+    return L.divIcon({ className: cls.indexOf('rk-pin') === 0 ? 'rk-spot-marker' + (symbol ? ' rk-symbol-marker' : '') : camp ? 'rk-camp-marker' : cls.indexOf('rk-time') === 0 ? 'rk-time-marker' : '',
+      iconSize: symbol || camp ? [30,30] : null, iconAnchor: symbol || camp ? [15,15] : null,
+      html: '<div class="' + cls + '">' + (symbol ? '<span class="rk-pin-number">' + text + '</span>' + symbol : text) +
+        (label ? '<span class="rk-label' + (camp ? ' rk-camp-label' : '') + '">' + safe(label) + '</span>' : '') + '</div>' });
   }
 
   var all = [];
   var spotLabels = [];
   (D.extras || []).forEach(function (x) {
-    L.polyline(x.pts, { className: 'rk-case', weight: 7, dashArray: '8 8', interactive: false }).addTo(map);
-    tap(L.polyline(x.pts, { className: 'rk-extra', weight: 4, dashArray: '8 8', bubblingMouseEvents: false }).addTo(map), x.html);
+    L.polyline(x.pts, { className: 'rk-case', weight: 7, dashArray: '8 8', interactive: false, smoothFactor: 1.5 }).addTo(map);
+    tap(L.polyline(x.pts, { className: 'rk-extra', weight: 4, dashArray: '8 8', bubblingMouseEvents: false, smoothFactor: 1.5 }).addTo(map), x.html);
   });
   (D.after || []).forEach(function (x) {
-    L.polyline(x.pts, { className: 'rk-case', weight: 7, dashArray: '8 8', interactive: false }).addTo(map);
-    tap(L.polyline(x.pts, { className: x.maybe ? 'rk-maybe' : 'rk-after', weight: 4, dashArray: '8 8', bubblingMouseEvents: false }).addTo(map), x.html);
+    L.polyline(x.pts, { className: 'rk-case', weight: 7, dashArray: '8 8', interactive: false, smoothFactor: 1.5 }).addTo(map);
+    tap(L.polyline(x.pts, { className: x.maybe ? 'rk-maybe' : 'rk-after', weight: 4, dashArray: '8 8', bubblingMouseEvents: false, smoothFactor: 1.5 }).addTo(map), x.html);
   });
   (D.ferries || []).forEach(function (x) {
     tap(L.polyline(x.pts, { className: 'rk-ferry', weight: 3, dashArray: '6 8', bubblingMouseEvents: false }).addTo(map), x.html);
@@ -227,10 +261,10 @@
   var times = L.layerGroup();
   (D.legs || []).forEach(function (x) {
     // bred usynlig linje under, så den er nem at ramme med en finger
-    tap(L.polyline(x.pts, { weight: 22, opacity: 0, bubblingMouseEvents: false }).addTo(map), x.html);
+    tap(L.polyline(x.pts, { weight: 22, opacity: 0, bubblingMouseEvents: false, smoothFactor: 4 }).addTo(map), x.html);
     // mørk kant under en lys linje, så ruten ses på både kort, terræn og satellit
-    L.polyline(x.pts, { className: 'rk-case', weight: 9, interactive: false }).addTo(map);
-    L.polyline(x.pts, { className: 'rk-leg', weight: 5, interactive: false }).addTo(map);
+    L.polyline(x.pts, { className: 'rk-case', weight: 9, interactive: false, smoothFactor: 1.5 }).addTo(map);
+    L.polyline(x.pts, { className: 'rk-leg', weight: 5, interactive: false, smoothFactor: 1.5 }).addTo(map);
     all = all.concat(x.pts);
     if (x.label) tap(L.marker(x.mid, { icon: icon('rk-time', x.label), keyboard: false }), x.html, x.mid).addTo(times);
   });
@@ -249,63 +283,78 @@
 
   (D.spots || []).forEach(function (x) {
     var cls = 'rk-pin' + (x.k ? ' k' : '') + (x.st ? ' ' + x.st : '');
-    var normalIcon = icon(cls, x.st === 'out' ? '' : (x.n || ''), x.activity);
+    var normalIcon = icon(cls, x.st === 'out' ? '' : (x.n || ''), x.activity, x.name);
     var m = tap(L.marker(x.ll, { icon: normalIcon, title: x.name || String(x.n), zIndexOffset: 100 }).addTo(map), x.html, x.ll);
     if (x.name) {
-      m.bindTooltip(x.name, { permanent: true, direction: x.left ? 'left' : 'right', offset: [x.left ? -10 : 10, 0], opacity: 1, className: 'rk-label' });
       var imageMatch = x.html && x.html.match(/<img[^>]+src="([^"]+)"/);
-      spotLabels.push({ marker: m, data: x, normalIcon: normalIcon, photo: imageMatch && imageMatch[1], showingPhoto: false });
+      // Markøren får først sit element, når kortet har en visning; siden sættes derfor ved 'add'.
+      var entry = { marker: m, data: x, normalIcon: normalIcon, photo: imageMatch && imageMatch[1], showingPhoto: false, left: !!x.left };
+      spotLabels.push(entry);
+      m.on('add', function () { applySide(entry); });
+      applySide(entry);
     }
   });
   (D.bases || []).forEach(function (x) {
     var campLabel = (window.TripIcons ? window.TripIcons.icon('camp') : '') + safe(x.label) + (x.booking ? '<span class="rk-booked-mark" aria-hidden="true">✓</span>' : '');
-    var m = tap(L.marker(x.ll, { icon: icon('rk-night' + (x.optional ? ' rk-night--optional' : ''), campLabel), title: x.name || x.label, zIndexOffset: x.optional ? 80 : 200 }).addTo(map), x.html, x.ll);
+    var m = tap(L.marker(x.ll, { icon: icon('rk-night' + (x.optional ? ' rk-night--optional' : ''), campLabel, null, x.name), title: x.name || x.label, zIndexOffset: x.optional ? 80 : 200 }).addTo(map), x.html, x.ll);
     if (x.optional && m.getElement()) m.getElement().setAttribute('aria-label', 'Måske · ' + x.name);
-    if (x.name) {
-      function showName() {
-        var el = m.getElement();
-        if (!el) return;
-        var badge = el.querySelector('.rk-night');
-        var offset = badge ? badge.offsetWidth / 2 + 6 : 32;
-        m.bindTooltip(x.name, { permanent: true, direction: 'right', offset: [offset, 0], opacity: 1, className: 'rk-label rk-camp-label' });
-      }
-      m.on('add', showName);
-      showName();
-    }
   });
 
   // Ved nærliggende campingpladser lægges stednavnet på modsatte side på mobil.
+  function applySide(entry) {
+    var element = entry.marker.getElement();
+    if (element) element.classList.toggle('rk-label-left', !!entry.left);
+  }
   function layoutLabels() {
+    if (map.getZoom() == null) return;
+    var camps = mobile.matches ? (D.bases || []).map(function (camp) { return map.latLngToContainerPoint(camp.ll); }) : null;
     spotLabels.forEach(function (entry) {
-      var point = map.latLngToContainerPoint(entry.data.ll);
-      var nearCamp = mobile.matches && (D.bases || []).some(function (camp) {
-        return point.distanceTo(map.latLngToContainerPoint(camp.ll)) < 70;
-      });
-      var left = nearCamp || entry.data.left;
-      var tooltip = entry.marker.getTooltip();
-      tooltip.options.direction = left ? 'left' : 'right';
-      tooltip.options.offset = L.point(left ? -18 : 10, 0);
-      tooltip.update();
+      var left = !!entry.data.left;
+      if (camps && !left) {
+        var point = map.latLngToContainerPoint(entry.data.ll);
+        left = camps.some(function (camp) { var dx = point.x - camp.x, dy = point.y - camp.y; return dx * dx + dy * dy < 4900; });
+      }
+      if (left === entry.left) return;
+      entry.left = left;
+      applySide(entry);
     });
     updatePhotos();
   }
   function safe(value) { return String(value == null ? '' : value).replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  // Fotomarkøren viser et lille miniaturebillede; mangler det, hentes det store billede.
+  function photoIcon(entry) {
+    if (entry.photoIcon) return entry.photoIcon;
+    var full = safe(entry.photo), thumb = safe(entry.photo.replace('/2026-11-nz-rundtur/', '/2026-11-nz-rundtur/thumb/'));
+    entry.photoIcon = L.divIcon({ className: 'rk-photo-marker', iconSize: [58,48], iconAnchor: [29,24],
+      html: '<span class="rk-photo ' + safe(entry.data.st || '') + '"><img src="' + thumb + '"' + (thumb !== full ? ' data-full="' + full + '" onerror="this.onerror=null;this.src=this.getAttribute(\'data-full\')"' : '') + ' alt="" width="58" height="48" decoding="async" fetchpriority="low"><b>' + safe(entry.data.n || '') + '</b></span>' +
+        (entry.data.name ? '<span class="rk-label">' + safe(entry.data.name) + '</span>' : '') });
+    return entry.photoIcon;
+  }
+  var photosShown = 0;
   function updatePhotos() {
     if (smoothZooming) return;
-    if (map.getZoom() == null) return;
-    var occupied = [];
+    var zoom = map.getZoom();
+    if (zoom == null || (zoom < 9 && !photosShown)) return;
+    var bounds = map.getBounds(), occupied = [];
+    photosShown = 0;
     spotLabels.forEach(function (entry) {
-      var point = map.latLngToContainerPoint(entry.data.ll);
-      var show = !!entry.photo && map.getZoom() >= 9 && map.getBounds().contains(entry.data.ll) &&
-        !occupied.some(function (other) { return point.distanceTo(other) < 70; });
-      if (show) occupied.push(point);
+      var show = false, point = null;
+      if (entry.photo && zoom >= 9 && bounds.contains(entry.data.ll)) {
+        point = map.latLngToContainerPoint(entry.data.ll);
+        show = !occupied.some(function (other) { return point.distanceTo(other) < 70; });
+      }
+      if (show) { occupied.push(point); photosShown++; }
       if (show === entry.showingPhoto) return;
       entry.showingPhoto = show;
-      entry.marker.setIcon(show ? L.divIcon({ className: 'rk-photo-marker', iconSize: [58,48], iconAnchor: [29,24],
-        html: '<span class="rk-photo ' + safe(entry.data.st || '') + '"><img src="' + safe(entry.photo) + '" alt="" decoding="async"><b>' + safe(entry.data.n || '') + '</b></span>' }) : entry.normalIcon);
+      entry.marker.setIcon(show ? photoIcon(entry) : entry.normalIcon);
+      applySide(entry);
     });
   }
   map.on('moveend', updatePhotos);
+  // Under træk og zoom står scenerne og dyrene stille, så hvert billede kun flytter kortet.
+  var movingTimer = null;
+  map.on('movestart zoomstart', function () { clearTimeout(movingTimer); box.classList.add('rk-moving'); });
+  map.on('moveend zoomend', function () { clearTimeout(movingTimer); movingTimer = setTimeout(function () { box.classList.remove('rk-moving'); }, 150); });
 
   // forklaringen på farverne står i bunden, under kortet
   if (D.legend) {
@@ -357,6 +406,8 @@
     else map.dragging.disable();
   }
   function setFull(on) {
+    // Fra nu af styrer .full fuld skærm; CSS-reglen til første billede slipper.
+    box.classList.add('rk-booted');
     if (on === box.classList.contains('full')) return;
     if (on) savedScroll = window.scrollY;
     box.classList.toggle('full', on);
@@ -373,10 +424,25 @@
     var links = [].slice.call(document.querySelectorAll('.tabs a')).filter(function (link) {return link.getAttribute('href') !== '#kort';});
     open('<div class="rk-body"><h3>Turmenu</h3><nav class="rk-menu-links" aria-label="Turens sider">' + links.map(function (link) {return '<a href="' + safe(link.getAttribute('href')) + '">' + safe(link.textContent) + '</a>';}).join('') + '</nav></div>');
   });
+  // Store kameraskift flyver som i en kortapp; små skift glider; uden bevægelse springer de.
+  function moveTo(ll, zoom, instant) {
+    map.stop();
+    if (instant || reducedMotion.matches || map.getZoom() == null) { map.setView(ll, zoom, { animate: false }); return; }
+    var far = Math.abs(map.getZoom() - zoom) > 2 || !map.getBounds().pad(.5).contains(ll);
+    if (far) map.flyTo(ll, zoom, { duration: .9, easeLinearity: .25 });
+    else map.setView(ll, zoom, { animate: true });
+  }
+  function moveToBounds(bounds, options) {
+    map.stop();
+    if (reducedMotion.matches || map.getZoom() == null) map.fitBounds(bounds, L.extend({ animate: false }, options));
+    else map.flyToBounds(bounds, L.extend({ duration: .9, easeLinearity: .25 }, options));
+  }
+  var routeBounds = null;
   btns.querySelector('[data-a="route"]').addEventListener('click', function () {
     close();
     resizeMap();
-    map.fitBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]], { padding: mobile.matches ? [36, 72] : [28, 48], animate: !reducedMotion.matches });
+    if (!routeBounds) routeBounds = L.latLngBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]]);
+    moveToBounds(routeBounds, { padding: mobile.matches ? [36, 72] : [28, 48] });
   });
   var legendBtn = btns.querySelector('[data-a="legend"]');
   if (legendBtn) legendBtn.addEventListener('click', function () {
@@ -385,7 +451,7 @@
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-      if (!sheet.hidden) close();
+      if (sheetOpen) close();
       else if (phoneView.matches && !quietMap) setQuiet(true);
       else if (box.classList.contains('full')) setFull(false);
     }
@@ -430,7 +496,7 @@
     close();focusedTraveller = 'helena';
     karstenChip.setAttribute('aria-pressed','false');helenaChip.setAttribute('aria-pressed','true');
     var size = map.getSize();
-    map.fitBounds(flightPath.getBounds(),{paddingTopLeft:[105,Math.min(280,size.y*.34)],paddingBottomRight:[110,Math.min(150,size.y*.18)],animate:!reducedMotion.matches});refreshWorld();
+    moveToBounds(flightPath.getBounds(),{paddingTopLeft:[105,Math.min(280,size.y*.34)],paddingBottomRight:[110,Math.min(150,size.y*.18)]});refreshWorld();
   });
   if (!position || !scenes || !D.locationPlan) hud.hidden = true;
   function sceneIcon(scene, sourceLabel) {
@@ -444,14 +510,13 @@
     if (element) {element.setAttribute('title',title);element.setAttribute('aria-label',title);}
     return marker;
   }
-  function focusPerson(person) {
+  function focusPerson(person, instant) {
     focusedTraveller = person;
     var target = person === 'helena' && helena && helena.phase !== 'joined' ? helena : current;
     if (!target) return;
     close();
-    map.stop();
     var nearKaikoura = position && D.bases[19] && position.distance(target.ll,D.bases[19].ll) < 15000;
-    map.setView(target.ll, target.phase === 'flight' ? 5 : nearKaikoura ? 11.5 : 12, { animate: !reducedMotion.matches });
+    moveTo(target.ll, target.phase === 'flight' ? 5 : nearKaikoura ? 11.5 : 12, instant);
     karstenChip.setAttribute('aria-pressed', String(person === 'karsten'));
     helenaChip.setAttribute('aria-pressed', String(person === 'helena'));
     updatePositionStatus();
@@ -547,9 +612,9 @@
     showAnimals();
   }
   function locateDone() { locateBtn.disabled = false; locateBtn.textContent = 'Find os'; }
-  function startLocate(shouldCenter) {
+  function startLocate(shouldCenter, instant) {
     refreshWorld();
-    if (shouldCenter !== false) focusPerson('karsten');
+    if (shouldCenter !== false) focusPerson('karsten', instant);
     centerOnFix = shouldCenter !== false;
     locateBtn.disabled = true;
     locateBtn.textContent = 'Finder…';
@@ -557,15 +622,25 @@
     map.stopLocate();
     map.locate({watch:true,setView:false,timeout:12000,maximumAge:10000,enableHighAccuracy:true});
   }
-  locateBtn.addEventListener('click', startLocate);
+  locateBtn.addEventListener('click', function () { userTouched = false; startLocate(true); });
+  // Et tryk eller træk på kortet betyder, at den besøgende selv styrer; et sent GPS-svar flytter så ikke kortet.
+  map.getContainer().addEventListener('pointerdown', function () { userTouched = true; }, { passive: true });
+  var lastGpsRefresh = 0;
   map.on('locationfound', function (e) {
-    locateDone();
+    if (locateBtn.disabled) locateDone();
     var ll = [e.latlng.lat,e.latlng.lng];
-    gps = {ll:ll,timestamp:e.timestamp || Date.now()};
+    var previous = gps, now = Date.now();
+    gps = {ll:ll,timestamp:e.timestamp || now};
     gpsReason = position && !position.inNewZealand(ll) ? 'Enheden er uden for New Zealand' : '';
-    refreshWorld();
+    var small = previous && position && position.distance(previous.ll,ll) < 30 && now - lastGpsRefresh < 20000;
+    if (!small || centerOnFix) { lastGpsRefresh = now; refreshWorld(); }
     if (!position) me = makeMarker(me,ll,vehicleIcon,'drive','Jeres position');
-    if (centerOnFix) {centerOnFix=false; if (current) focusPerson('karsten'); else map.setView(ll,14);}
+    if (centerOnFix) {
+      centerOnFix = false;
+      if (!userTouched && !sheetOpen && map.getZoom() != null && map.distance(map.getCenter(),ll) > 300) {
+        if (current) focusPerson('karsten'); else moveTo(ll,14);
+      }
+    }
   });
   map.on('locationerror', function (e) {
     locateDone();
@@ -587,10 +662,10 @@
   function startMap() {
     resumeWorld();
     syncPhoneView();
-    if (location.hash && location.hash !== '#kort') return;
+    if (location.hash && location.hash !== '#kort') { box.classList.add('rk-booted'); return; }
     setFull(true);
     fitted=false;
-    requestAnimationFrame(function () {fit();startLocate();});
+    requestAnimationFrame(function () {fit();startLocate(true,true);});
   }
   map.whenReady(function () {worldReady=true;refreshWorld();});
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',startMap,{once:true});
