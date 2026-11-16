@@ -275,3 +275,5 @@ Feedet giver **ikke** tal på vinden, kun Beaufort-ord. Omregning:
 Karstens satser pr. person pr. dag: morgenmad $5, frokost $10, aftensmad $20, øl eller drink $15. Benzin regnes på bilens 11 km/L og den aktuelle literpris. Camping og aktiviteter skal verificeres på udbyderens egen side, og hvis prisen kun findes hos tredjepart, skal det stå i siden med et telefonnummer.
 
 Bekræftede bookinger i Opgaver markeres med `data-confirmed="true" checked disabled`, så ældre lokal afkrydsning ikke får dem til at se ubookede ud. Bevar de historiske campsite-ankre, også når deres dagnummer flyttes.
+
+**Tilføjet 17 nov:** Fre 20 nov kl. 08–09 NZ-tid: "Snak med Frederik om CBS" på Lake Pearson, hvor Karsten vågner efter natten 19.–20. Påmindelsen er rød på campingkortet i Program og kortets ark samt først i fredagens dagsprogram. Det separate CBS-møde kl. 21.30 på Hans Bay er bevaret. Navn og emne i morgenpunktet er udtrykkeligt valgt af Karsten.
