@@ -221,6 +221,34 @@ Når et nyt sted tilføjes, skal det have et foto af selve stedet både i stedli
 
 `assets/rutekort.js` tegner ruten på et rigtigt kort med Leaflet 1.9.4 fra cdnjs og tre baggrunde: OpenStreetMap, OpenTopoMap (terræn) og Esri (satellit). Al data ligger i `<script type="application/json" id="rk-data">` på tursiden: køredage (`legs`), det der ikke er med (`extras`), det efter turen (`after`, orange, også med `maybe`), færger (`ferries`), pladser (`bases`), nummererede steder (`spots`) og forklaringen på farverne i bunden (`legend`), hver med færdig, escapet html til arket der glider op ved tryk. Se kommentaren øverst i filen. Kortet får fuld skærm med en CSS-klasse, så det også virker på iPhone, og på telefonen kan det flyttes med én finger i kortfanen og fuld skærm. Den gamle SVG-tegning med `assets/map.js` bruges stadig af de ældre ture.
 
+### Opgradering 16 nov, glattere kort og bedre program
+
+Kortet ligger i `assets/rutekort.js` og i blokken `/* Kort 16 nov */` sidst i `assets/style.css`.
+
+- Navnene på steder og pladser står inde i selve markøren (`.rk-label`) i stedet for 93 faste Leaflet-tooltips. Venstre side sættes med klassen `rk-label-left`, som sættes igen ved markørens `add` og efter hver `setIcon`, fordi Leaflet nulstiller `className`. Kun flyrutens navn er stadig en tooltip.
+- Ruten tegnes med SVG-renderer og `padding: 0.5`, så den ikke klippes midt i et træk. `smoothFactor` er 1.5 på kant og linje og 4 på den usynlige trykflade.
+- Fliserne hentes, mens kortet trækkes (`updateWhenIdle: false`, `keepBuffer: 4`). Terræn går til zoom 19 med `maxNativeZoom` 17.
+- Kameraet flytter med `moveTo()`. Det flyver med `flyTo` ved store spring og bruger ellers en animeret `setView`, og ved `prefers-reduced-motion` springer det direkte. "Vis ruten" og flyknappen bruger `flyToBounds`.
+- Arket glider ned, når det lukkes, og skjules først ved `transitionend` eller efter 340 ms. Det valgte sted flyttes kun fri af arket, når det ellers ville ligge under arket eller HUD'en, også efter en drejning af telefonen.
+- GPS flytter ikke kortet, når den besøgende allerede har rørt kortet. "Find os" centrerer stadig.
+- Klassen `rk-moving` sætter scenens, dyrenes og HUD'ens animationer på pause, mens kortet bevæger sig.
+- Fotomarkørerne henter 180 px miniaturer fra `trips/img/2026-11-nz-rundtur/thumb/` med samme filnavn og falder tilbage til det fulde foto, hvis miniaturen mangler.
+- Kortet har sin fuldskærmsform fra første maling, og JS sætter `rk-booted`, så siden ikke hopper på desktop. Dybe links som `#program` virker som før.
+
+Data og fotos
+
+- `scripts/simplify-route.py` udtynder køredagenes rutepunkter med Ramer-Douglas-Peucker på 3 m og runder til 5 decimaler. Første og sidste punkt og hver etapes `mid` bevares, så tidsmærkerne ikke flytter sig. Kør altid `scripts/build-location-plan.py` bagefter. Begge scripts kan køres igen uden at ændre noget.
+- `scripts/build-photos.py` kræver macOS `sips`. Det gør JPEG over 300 KB højst 900 px brede, når det sparer mindst 10 procent, og skriver miniaturerne til `thumb/`. Kør det, når der kommer nye fotos.
+- `<head>` har preconnect til Esri-fliserne, dns-prefetch til OpenStreetMap og preload af Leaflet 1.9.4 fra cdnjs.
+- Siden fylder nu cirka 870 KB mod 1,07 MB før, og køredagene har 11.322 punkter mod 19.252 før.
+
+Program og kalender
+
+- Kalenderen åbner på dagens dato i NZ-tid (Pacific/Auckland) mellem 14 nov og 11 dec og ellers på første dag. Dagen i dag får `is-today` og passerede dage `is-past`. Dybe links som `#dag5` vinder stadig. Testen ligger i `tests/trip-calendar.test.cjs`.
+- Planændringer, priser og valget mellem Barn og Wharariki står ordret i den lukkede boks "Planændringer og priser" over kalenderen.
+- Alle seks faner passer på en telefon. Tilbage og dagknapperne har 44 px trykflade, fotokreditter og lange links ombrydes, og `--shout` er mørkere i det lyse tema (#B3261E) af hensyn til kontrasten.
+- Assets der ændres i samme runde, får samme `?v=` i tursiden. Denne runde er `?v=20261116-upgrade-v1`.
+
 ## Vejrdata
 
 **Live i siden.** `assets/forecast.js` henter vejr og bølger fra Open-Meteo i browseren, hver gang siden åbnes. Sæt `<span class="ov-wx" data-wx="lat,lon" data-date="ÅÅÅÅ-MM-DD"></span>` ind, fx i en række i overblikket, og `data-sea="lat,lon"` med et punkt lidt ude i vandet for bølger. Prognosen rækker 16 dage frem, dage længere ude viser hvornår vejret kommer. MetService kan ikke hentes fra browseren (den tillader kun about.metservice.com), og Surfline har ingen åbne data, så link til deres sider i stedet.
