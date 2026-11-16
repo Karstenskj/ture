@@ -233,7 +233,7 @@ Kortet ligger i `assets/rutekort.js` og i blokken `/* Kort 16 nov */` sidst i `a
 - GPS flytter ikke kortet, når den besøgende allerede har rørt kortet. "Find os" centrerer stadig.
 - Klassen `rk-moving` sætter scenens, dyrenes og HUD'ens animationer på pause, mens kortet bevæger sig.
 - Fotomarkørerne henter 180 px miniaturer fra `trips/img/2026-11-nz-rundtur/thumb/` med samme filnavn og falder tilbage til det fulde foto, hvis miniaturen mangler.
-- Kortet har sin fuldskærmsform fra første maling, og JS sætter `rk-booted`, så siden ikke hopper på desktop. Dybe links som `#program` virker som før.
+- Kortet har sin fuldskærmsform fra første maling, og JS sætter `rk-booted`, så siden ikke hopper på desktop. Dybe links som `#program` virker som før. Kommer `rutekort.js` eller Leaflet ikke igennem, sætter fanescriptet i bunden af tursiden `rk-booted` ved `DOMContentLoaded`, så resten af siden stadig kan bruges.
 
 Data og fotos
 
