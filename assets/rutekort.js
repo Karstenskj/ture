@@ -66,6 +66,8 @@
     map.invalidateSize({pan:false,animate:false});
     if (view) map.setView(view.center,view.zoom,{animate:false});
     resizingMap = false;
+    // Efter en drejning af telefonen må det valgte sted ikke ende under arket.
+    if (sheetOpen && selectedPoint) positionPoint(false);
   }
   function setQuiet(on) {
     quietMap = !!on && phoneView.matches;
