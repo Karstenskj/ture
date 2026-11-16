@@ -1,13 +1,13 @@
 """Thin the inline route lines in rk-data so the map draws and zooms lighter.
 
-Runs Ramer-Douglas-Peucker in local metres on every road leg, extra trip and
+Runs Ramer-Douglas-Peucker (3 m) in local metres on every road leg, extra trip and
 "after" line, keeps each line's first and last point exactly (so legs still
 meet the camps), and rounds the other points to 5 decimals (about 1 m).
 The vertex a leg's time label sits on (mid) is always kept, so labels stay put.
 
 Idempotent: a second run keeps the same points. Run build-location-plan.py
 afterwards, because the position plan is computed from these points.
-Usage: python3 scripts/simplify-route.py [tolerance in metres, default 5]
+Usage: python3 scripts/simplify-route.py [tolerance in metres, default 3]
 """
 from math import cos, hypot, radians
 from pathlib import Path
@@ -17,7 +17,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGE = ROOT / "trips/2026-11-nz-rundtur.html"
-EPS = float(sys.argv[1]) if len(sys.argv) > 1 else 5.0
+EPS = float(sys.argv[1]) if len(sys.argv) > 1 else 3.0
 
 
 def project(pts):
