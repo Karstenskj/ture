@@ -7,8 +7,17 @@
   var dates = Array.from(program.querySelectorAll('[data-calendar-day]'));
   var label = document.getElementById('calendar-selected-label');
   var steps = Array.from(program.querySelectorAll('[data-calendar-step]'));
+  var scroller = program.querySelector('.calendar-scroll');
   var selected = 0;
   if (!days.length) return;
+  // I dag efter NZ-tid: dagen markeres, og kalenderen åbner på den. Før og efter turen åbner den på første dag.
+  var today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Pacific/Auckland' }).format(new Date());
+  var todayIndex = dates.findIndex(function (link) {
+    var t = link.querySelector('time');
+    if (t && t.dateTime < today) link.classList.add('is-past');
+    return !!t && t.dateTime === today;
+  });
+  if (todayIndex >= 0) dates[todayIndex].classList.add('is-today');
   var firstDate = dates[0] && dates[0].querySelector('time');
   var firstWeekday = firstDate ? new Date(firstDate.dateTime + 'T00:00:00Z').getUTCDay() : 1;
   var startOffset = (firstWeekday + 6) % 7;
@@ -25,6 +34,16 @@
       var offset = Number(button.dataset.calendarStep);
       button.disabled = selected + offset < 0 || selected + offset >= days.length;
     });
+    reveal(dates[selected]);
+  }
+
+  // Ruller kun kalenderen vandret, og kun når den valgte dag ligger uden for synet, så siden aldrig hopper lodret.
+  function reveal(cell) {
+    if (!scroller || !cell) return;
+    var box = scroller.getBoundingClientRect();
+    var rect = cell.getBoundingClientRect();
+    if (!box.width || (rect.left >= box.left && rect.right <= box.right)) return;
+    scroller.scrollLeft = Math.max(0, rect.left - box.left + scroller.scrollLeft - 12);
   }
 
   window.tripCalendar = {
@@ -56,5 +75,5 @@
       }
     });
   });
-  select(0);
+  select(todayIndex >= 0 ? todayIndex : 0);
 })();
