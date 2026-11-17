@@ -33,13 +33,19 @@
       var card=base.anchor && win.document.getElementById(base.anchor);
       if(!card)card=cards.find(function(c){var h=c.querySelector('h3');return h && h.textContent.trim()===base.name;});
       if(card && !card.querySelector('.camp-weather')) {
-        var title=card.querySelector('h3');if(title)title.insertAdjacentHTML('afterend',weather);
+        var body=card.querySelector('.spot-body');if(body)body.insertAdjacentHTML('beforeend','<details class="camp-more"><summary>Vejr under opholdet</summary>'+weather+'</details>');
       }
       var old=win.document.createElement('div');old.innerHTML=base.html;
       var price=Array.from(old.querySelectorAll('dt')).find(function(d){return /^Pris/.test(d.textContent.trim());});
       price=price && price.parentElement.querySelector('dd');
       var status=base.optional?'Måske':base.booking?'Booket':base.bookingRequired===false?'Gratis':'På ruten';
-      base.html='<div class="rk-body rk-camp-detail"><span class="rk-sub">'+escape(base.label)+'</span><h3>'+escape(base.name)+'</h3><div class="camp-wx-booking"><span class="tag'+(base.booking?' k':'')+'">'+status+'</span>'+(price && price.textContent.length<75?'<span>'+escape(price.textContent)+'</span>':'')+'</div>'+weather+'<details class="camp-more"><summary>Billeder, faciliteter og booking</summary>'+base.html+'</details></div>';
+      var photos=Array.from(old.querySelectorAll('figure')).map(function(figure){var html=figure.outerHTML;figure.remove();return html;}).join('');
+      var content=old.querySelector('.rk-body') || old;
+      Array.from(content.querySelectorAll('h3, .rk-sub, .sl')).forEach(function(el){el.remove();});
+      Array.from(content.querySelectorAll('.booking-status')).forEach(function(el){var parent=el.parentElement;el.remove();if(!parent.textContent.trim())parent.remove();});
+      var priceText=price && price.textContent.length<75?price.textContent:'';
+      if(priceText)price.parentElement.remove();
+      base.html='<div class="rk-body rk-camp-detail"><span class="rk-sub">'+escape(base.label)+'</span><h3>'+escape(base.name)+'</h3><div class="camp-wx-booking"><span class="tag'+(base.booking?' k':'')+'">'+status+'</span>'+(priceText?'<span>'+escape(priceText)+'</span>':'')+(base.shower===true?'<span class="camp-shower-label">'+(win.TripIcons?win.TripIcons.icon('shower'):'')+'Brusebad</span>':'')+'</div><div class="camp-summary">'+content.innerHTML+'</div><details class="camp-more"><summary>Vejr under opholdet</summary>'+weather+'</details>'+(photos?'<details class="camp-more"><summary>Billeder</summary>'+photos+'</details>':'')+'</div>';
     });
     source.textContent=JSON.stringify(data);F.mount();
   }

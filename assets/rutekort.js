@@ -297,9 +297,19 @@
     }
   });
   (D.bases || []).forEach(function (x) {
-    var campLabel = (window.TripIcons ? window.TripIcons.icon('camp') : '') + safe(x.label) + (x.booking ? '<span class="rk-booked-mark" aria-hidden="true">✓</span>' : '');
-    var m = tap(L.marker(x.ll, { icon: icon('rk-night' + (x.optional ? ' rk-night--optional' : ''), campLabel, null, x.name), title: x.name || x.label, zIndexOffset: x.optional ? 80 : 200 }).addTo(map), x.html, x.ll);
-    if (x.optional && m.getElement()) m.getElement().setAttribute('aria-label', 'Måske · ' + x.name);
+    var campLabel = (window.TripIcons ? window.TripIcons.icon(x.shower === true ? 'shower' : 'camp') : '') + safe(x.label) + (x.booking ? '<span class="rk-booked-mark" aria-hidden="true">✓</span>' : '');
+    var campTitle = (x.name || x.label) + (x.shower === true ? ' · Brusebad på campingpladsen' : '');
+    var m = tap(L.marker(x.ll, { icon: icon('rk-night' + (x.optional ? ' rk-night--optional' : '') + (x.shower === true ? ' rk-night--shower' : ''), campLabel, null, x.name), title: campTitle, alt: campTitle, zIndexOffset: x.optional ? 80 : 200 }).addTo(map), x.html, x.ll);
+    if (x.optional && m.getElement()) m.getElement().setAttribute('aria-label', 'Måske · ' + campTitle);
+  });
+
+  // Badepunkter ændrer ikke ruten. Et søbad ved en camp står ved siden af natmarkøren.
+  (D.bathing || []).forEach(function (x) {
+    var title = x.name + (x.uncertain ? ' · Forhold/adgang skal bekræftes' : '');
+    var symbol = window.TripIcons ? window.TripIcons.icon(x.type) : '';
+    var badge = L.divIcon({className:'rk-bathing-marker'+(x.atCamp != null?' rk-bathing-marker--camp':''),iconSize:[28,28],iconAnchor:x.atCamp != null ? [14,-20] : [14,14],
+      html:'<span class="rk-bathing rk-bathing--'+safe(x.type)+(x.uncertain?' rk-bathing--uncertain':'')+'">'+symbol+(x.uncertain?'<b class="rk-bathing-question">?</b>':'')+'<span class="rk-label">'+safe(title)+'</span></span>'});
+    tap(L.marker(x.ll,{icon:badge,title:title,alt:title,zIndexOffset:260}).addTo(map),x.html,x.ll);
   });
 
   // Ved nærliggende campingpladser lægges stednavnet på modsatte side på mobil.
@@ -364,6 +374,9 @@
     legend.className = 'rk-legend';
     legend.id = 'rk-legend';
     legend.innerHTML = D.legend;
+    if ((D.bathing || []).length && window.TripIcons) {
+      legend.insertAdjacentHTML('beforeend','<span><span class="rk-bathing rk-bathing--shower">'+window.TripIcons.icon('shower')+'</span>Turkis camp · brusebad</span><span><span class="rk-bathing">'+window.TripIcons.icon('swim')+'</span>Søbad · tjek vandet</span><span><span class="rk-bathing rk-bathing--uncertain">?</span>Forhold/adgang skal bekræftes</span>');
+    }
     box.appendChild(legend);
   }
 

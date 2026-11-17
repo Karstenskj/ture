@@ -15,3 +15,23 @@
 .rk-overview .rk-night > svg, .rk-overview .rk-booked-mark,
 .rk-phone.rk-quiet .rk-night > svg, .rk-phone.rk-quiet .rk-booked-mark,
 .rk-phone.rk-quiet .rk-symbol-marker svg { display: none; }
+
+/* Brusebad = dyb turkis; søbad = blå svømmer. Symbolerne virker også uden farvesyn. */
+.rk { --map-shower:#006c72; --map-swim:#0b6787; }
+.theme-cpha .rk-night.rk-night--shower, .rk-night.rk-night--shower { background:var(--map-shower); color:#fff; border-color:#fff; }
+.theme-cpha .rk-night.rk-night--shower.rk-night--optional, .rk-night.rk-night--shower.rk-night--optional { background:var(--card); color:var(--map-shower); border-color:var(--map-shower); }
+.rk-overview .rk-night.rk-night--shower, .rk-mobile-overview .rk-night.rk-night--shower, .rk-phone.rk-quiet .rk-night.rk-night--shower { width:24px; height:24px; display:grid; place-items:center; }
+.rk-overview .rk-night.rk-night--shower > svg, .rk-mobile-overview .rk-night.rk-night--shower > svg, .rk-phone.rk-quiet .rk-night.rk-night--shower > svg { display:block; width:17px; height:17px; margin:0; }
+.rk-bathing { position:absolute; inset:0; display:grid; place-items:center; border:2px solid #fff; border-radius:50%; background:var(--map-swim); color:#fff; box-shadow:0 1px 5px #0008; cursor:pointer; }
+.rk-bathing--shower { background:var(--map-shower); }
+.rk-bathing > svg { display:block; width:19px; height:19px; }
+.rk-bathing--uncertain { border-style:dashed; }
+.rk-bathing-question { position:absolute; top:-6px; right:-5px; width:14px; height:14px; display:grid; place-items:center; background:var(--card); color:var(--ink); border:1px solid currentColor; border-radius:50%; font:700 10px/1 var(--body); }
+.rk-bathing-marker::before { content:''; position:absolute; width:44px; height:44px; left:-8px; top:-8px; }
+.rk-phone.rk-quiet .rk-bathing .rk-label { display:none; }
+.rk-legend .rk-bathing { position:relative; inset:auto; width:22px; height:22px; flex:none; box-shadow:none; }
+.rk-legend .rk-bathing > svg { width:16px; height:16px; }
+.camp-shower-label { display:inline-flex; align-items:center; gap:5px; color:var(--ink); font-weight:600; }
+.camp-shower-label > svg { width:16px; height:16px; }
+.rk-bathing-marker .rk-label { display:none; position:absolute; left:calc(100% + 8px); top:50%; transform:translateY(-50%); width:max-content; white-space:nowrap; pointer-events:none; color:var(--map-ink); font:600 12px/1.5 var(--body); text-shadow:0 0 3px var(--map-halo),0 0 3px var(--map-halo); }
+.rk-names .rk-bathing-marker:not(.rk-bathing-marker--camp) .rk-label { display:block; }

@@ -14,10 +14,12 @@
     ferry: '<path d="m2 14 4 6h13l3-6H2Zm4 0V7h12v7M9 7V3h6v4M2 23c3-2 6-2 10 0s7 2 10 0"/>',
     walk: '<path d="M7 21c-5-3-3-6 2-8s6-5 1-8M14 21c-2-3 0-5 4-7s4-4 1-7"/>',
     fuel: '<path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M3 21h12M6 9h6m2 4h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0V9l-3-3"/>',
+    shower: '<path d="M5 21V7a4 4 0 0 1 8 0v1m-4 3a4 4 0 0 1 8 0H9Zm1 4v1m3-1v1m3-1v1m-6 3v1m3-1v1m3-1v1"/>',
+    swim: '<circle cx="17" cy="6" r="2"/><path d="m4 13 5-5 5 3 3 3M9 8l3-4M2 17c2-2 3-2 5 0s3 2 5 0 3-2 5 0 3 2 5 0M2 21c2-2 3-2 5 0s3 2 5 0 3-2 5 0 3 2 5 0"/>',
     check: '<path d="m5 12 5 5L20 6"/>'
   };
   function icon(activity) {
-    var kind = /surf/.test(activity) ? 'surf' : /beach|swim|kayak/.test(activity) ? 'surf' : paths[activity] ? activity : 'walk';
+    var kind = paths[activity] ? activity : /surf|beach|kayak/.test(activity) ? 'surf' : 'walk';
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + paths[kind] + '</svg>';
   }
   root.TripIcons={icon:icon};
