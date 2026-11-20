@@ -15,7 +15,7 @@
      after:   [{pts, html, maybe}]                                                efter turen, stiplet orange
      ferries: [{pts, html}]                                                       færger, stiplet grå
      bases:   [{ll: [lat, lon], label: "tir 17 nov", name, html}]                  hvor I sover
-     spots:   [{ll, n, name, left, k: egen ønske, st: out/after/maybe, html}]     nummererede steder, navnet fra zoom 8
+     spots:   [{ll, n, name, left, k: egen ønske, st: out/after/maybe/idea, html}] nummererede steder, navnet fra zoom 8
      legend:  "<span>…</span>"                                                    forklaringen på farverne i bunden af kortet
 
    Et tryk åbner et kort nedefra med alt om stedet, som i en kortapp.
@@ -283,6 +283,8 @@
   }
   map.on('zoomend', showTimes);
 
+  // Lyserøde forslag fra turens egen fil vises som steder med st 'idea'.
+  if (window.TripIdeas) D.spots = (D.spots || []).concat(window.TripIdeas.spots());
   (D.spots || []).forEach(function (x) {
     var cls = 'rk-pin' + (x.k ? ' k' : '') + (x.st ? ' ' + x.st : '');
     var normalIcon = icon(cls, x.st === 'out' ? '' : (x.n || ''), x.activity, x.name);
@@ -377,6 +379,8 @@
     if ((D.bathing || []).length && window.TripIcons) {
       legend.insertAdjacentHTML('beforeend','<span><span class="rk-bathing rk-bathing--shower">'+window.TripIcons.icon('shower')+'</span>Turkis camp · brusebad</span><span><span class="rk-bathing">'+window.TripIcons.icon('swim')+'</span>Søbad · tjek vandet</span><span><span class="rk-bathing rk-bathing--uncertain">?</span>Forhold/adgang skal bekræftes</span>');
     }
+    if (window.TripIdeas && window.TripIdeas.spots().length) legend.insertAdjacentHTML('beforeend','<span><span class="rk-pin idea"></span>Lyserød · sjovt I kan vælge til</span>' +
+      (window.TripIdeas.hasVoucher ? '<span><span class="rk-pin idea voucher"></span>Gul · her kan gavekort eller Viator-kredit bruges</span>' : ''));
     box.appendChild(legend);
   }
 

@@ -16,7 +16,12 @@
     fuel: '<path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M3 21h12M6 9h6m2 4h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0V9l-3-3"/>',
     shower: '<path d="M5 21V7a4 4 0 0 1 8 0v1m-4 3a4 4 0 0 1 8 0H9Zm1 4v1m3-1v1m3-1v1m-6 3v1m3-1v1m3-1v1"/>',
     swim: '<circle cx="17" cy="6" r="2"/><path d="m4 13 5-5 5 3 3 3M9 8l3-4M2 17c2-2 3-2 5 0s3 2 5 0 3-2 5 0 3 2 5 0M2 21c2-2 3-2 5 0s3 2 5 0 3-2 5 0 3 2 5 0"/>',
-    check: '<path d="m5 12 5 5L20 6"/>'
+    check: '<path d="m5 12 5 5L20 6"/>',
+    hot: '<path d="M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0M8 10c-2-2 2-4 0-7m4 7c-2-2 2-4 0-7m4 7c-2-2 2-4 0-7"/>',
+    paw: '<circle cx="6" cy="10" r="2"/><circle cx="10" cy="5" r="2"/><circle cx="15" cy="5" r="2"/><circle cx="19" cy="10" r="2"/><path d="M12.5 11c-3 0-6 3-6 6 0 2 1.5 3 3 3 1.2 0 2-.5 3-.5s1.8.5 3 .5c1.5 0 3-1 3-3 0-3-3-6-6-6Z"/>',
+    bike: '<circle cx="5.5" cy="16" r="3.5"/><circle cx="18.5" cy="16" r="3.5"/><path d="m5.5 16 4-8h6l3 8M9.5 8l5 8M8 5h3m4 3-1-3"/>',
+    drink: '<path d="M6 3h12l-1.5 9a4.5 4.5 0 0 1-9 0L6 3Zm6 13.500V21m-4 0h8M7 8h10"/>',
+    star: '<path d="m12 3 2.7 5.6 6.1.800-4.5 4.3 1.1 6.1-5.4-3-5.4 3 1.1-6.1-4.5-4.3 6.1-.800L12 3Z"/>'
   };
   function icon(activity) {
     var kind = paths[activity] ? activity : /surf|beach|kayak/.test(activity) ? 'surf' : 'walk';
