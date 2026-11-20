@@ -30,7 +30,7 @@
   // Samme kort bruges i kortets ark og under dagen i programmet.
   function card(x, inProgramme) {
     var pay = x.vouchers || [];
-    var tags = pay.map(function (v) { return '<span class="tag voucher">' + safe(v.kind) + ' kan bruges</span>'; }).join('') +
+    var tags = pay.map(function (v) { return '<span class="tag voucher">' + safe(v.kind) + ' · tjek prisen</span>'; }).join('') +
       '<span class="tag idea">Forslag</span>' + (x.top ? '<span class="tag k">Bedste bud</span>' : '') +
       '<span class="tag">' + price(x) + '</span>' + (x.walk ? '<span class="tag">Til fods fra pladsen</span>' : '') +
       (x.conf === 'low' ? '<span class="tag">Ikke bekræftet</span>' : '');

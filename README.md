@@ -287,3 +287,15 @@ Bekræftede bookinger i Opgaver markeres med `data-confirmed="true" checked disa
 **Badesymboler 17 nov:** `bases[].shower === true` giver en turkis natmarkør med bruser. Flaget er eksplicit, aldrig udledt af omtale af bad andre steder. 13 pladser: Buxton, Route79, Punakaiki, Kerr Bay, The Barn, Wharariki, Mistletoe, Opunake, Motutere, Marokopa, Te Kopua, A1 og Momorangi (sidste er fortsat et alternativ). Opunake og A1 er nu tjekket på operatørernes egne sider. `bathing` tilføjer uafhængige kortpunkter for Hokitika-poolens shower-only, KiwiCamp (adgang ubekræftet), og søbad ved Pearson (forbehold), Kaniere, Mapourika, Rotoiti/Kerr Bay og Taupo/Motutere. Søsymboler er ikke en vandkvalitetsgaranti; alle henviser til dagsaktuel kontrol. Poaka er ikke markeret som anbefalet badested. Bruse-/svømmesymbolerne bliver synlige på mobil også i den rolige kortvisning. Koordinater for Hokitika-poolen: OSM way 290383679 (-42.7191171,170.9640671); KiwiCamp fra Rankers; søsymbolerne bruger den eksisterende camps koordinat med pixelafstand til natmarkøren. Rute og overnatninger er uændrede.
 
 **CBS-møde opdateret 17 nov efter skærmbillede:** Beskeden angiver fre 20 nov kl. 09.00/09.30 dansk tid. Europe/Copenhagen er UTC+1 og Pacific/Auckland UTC+13 den dag, så start er kl. 21.00 eller 21.30 NZ-tid samme fredag på Hans Bay. Starttidspunktet er ikke entydigt bekræftet. Kalender, fredagens program og Hans Bay-campingkort i Program og kortets panel er opdateret. Den separate Frederik-samtale kl. 08–09 NZ-tid på Lake Pearson er bevaret. Ingen navne eller mailmodtagere fra skærmbilledet er tilføjet.
+
+### Lyserøde forslag og gule punkter (20 nov)
+
+`trips/2026-11-nz-ideas.js` holder `window.tripIdeas` og `window.tripIdeaNotes`. Det er sjove ting uden vandring til højst $200 pr. person, undersøgt fre 20 nov; vinturen fra Auckland må koste mere. `assets/trip-ideas.js` gør dem til lyserøde punkter på kortet (`st: 'idea'`) og til en liste under hver dag i Program. Forslag efter 11 dec står i fanen Efter. `tripIdeaNotes` har én note pr. dato og `after` for dagene i Auckland.
+
+Gule punkter er forslag med feltet `vouchers`: Helenas Gifting Owl-gavekort ($83 AUD) og Viator-kredit ($60 AUD, højst $120 AUD for to i alt). Begge sider afviser automatiske opslag, så priserne dér er ikke læst, og mærket siger "tjek prisen". Viator-kreditten bruges på én booking, og en rest går tabt.
+
+Fjern et forslag ved at slette dets blok i datafilen. Forslagene har ingen fotos. Intet er booket.
+
+Ledighedstjekket fra 20 nov står i campingkortenes række Ledighed og øverst i Opgaver. DOC's bookingside afviser automatiske tjek, og det må ikke omgås; Kerr Bay og Mangahuia er derfor kun vurderet ud fra størrelse og ugedag.
+
+Ikke færdigt 20 nov: priser hos Gifting Owl og Viator, begivenheder på datoerne 5 til 11 dec, overnatning i Auckland fra 11 dec, og en del åbningstider, som står markeret "Ikke bekræftet" på kortene.

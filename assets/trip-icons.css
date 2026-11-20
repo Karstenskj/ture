@@ -48,3 +48,5 @@
 :root { --voucher: #ffd23f; }
 .theme-cpha .rk-pin.idea.voucher, .rk-pin.idea.voucher { --pc: var(--voucher); background: var(--voucher); }
 .tag.voucher { background: var(--voucher); color: var(--on-idea); border-color: var(--voucher); }
+.book-order { margin: 0 0 12px; padding-left: 22px; display: grid; gap: 10px; }
+.book-order .pin { margin-left: 4px; }

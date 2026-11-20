@@ -113,7 +113,14 @@ window.tripIdeas = [
   "phone": "+64 3 755 5562",
   "checked": "fre 20 nov",
   "conf": "high",
-  "top": "2026-11-21"
+  "top": "2026-11-21",
+  "vouchers": [
+   {
+    "kind": "Viator",
+    "text": "Gælder trætopstien alene, uden zipline. To personer koster $86 NZD hos stedet selv, ca. $71 AUD. Tager Viator det samme, dækker kreditten $60 AUD, og I betaler ca. $11 AUD. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://www.viator.com/en-AU/tours/Greymouth/West-Coast-Tree-Top-Walk-Experience/d34195-44762P1"
+   }
+  ]
  },
  {
   "id": "mapourika-kayak-hire",
@@ -325,7 +332,14 @@ window.tripIdeas = [
   ],
   "phone": "+64 3 752 0600",
   "checked": "fre 20 nov",
-  "conf": "high"
+  "conf": "high",
+  "vouchers": [
+   {
+    "kind": "Viator",
+    "text": "Viators pris kunne ikke læses fre 20 nov. Stedets egen pris for to er $142.14 NZD, ca. $117 AUD. Tager Viator samme pris, dækker kreditten $60 AUD, og I betaler ca. $57 AUD selv. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://www.viator.com/en-AU/tours/Franz-Josef-and-Fox-Glacier/Franz-Josef-Wildlife-Centre-Admission-with-Backstage-Pass-Option/d757-47570P1"
+   }
+  ]
  },
  {
   "id": "franz-alice-may-whitebait",
@@ -517,46 +531,2584 @@ window.tripIdeas = [
   "conf": "high"
  },
  {
-  "id": "greymouth-monteiths-museum",
-  "name": "Monteith's bryggerimuseum i Greymouth",
-  "maker": "Monteith's Brewery Museum",
+  "id": "bonz-n-stonz-carve",
+  "name": "Skær dit eget smykke i Hokitika",
+  "maker": "Bonz 'n' Stonz · Carve Your Own",
+  "area": "Hokitika",
+  "ll": [
+   -42.71823,
+   170.96122
+  ],
+  "cat": "craft_workshop",
+  "dates": [
+   "2026-11-23"
+  ],
+  "when": "man 23 nov om formiddagen, hvis de har en tid",
+  "price": 120,
+  "priceText": "$120 i ben, $100 i paua, $200 i jade, med værktøj, lærer og snor",
+  "priceSource": "operator",
+  "duration": "2 til 3 timer",
+  "detour": 3,
+  "open": "Ugedage og ledige tider står ikke på siden. Mandag er ikke bekræftet Ikke bekræftet for datoen.",
+  "booking": "Ring først, $40 depositum online",
+  "weather": "Indendørs",
+  "sum": "I sliber selv et vedhæng under vejledning og tager det med hjem. Et ægte minde fra Vestkysten.",
+  "note": "Mandag er ikke bekræftet, ring 03 755 6504. Gør mandagen lang med 2 til 3 timer i Hokitika.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.bonznstonz.nz/pages/carve-your-own"
+   ]
+  ],
+  "phone": "+64 3 755 6504",
+  "checked": "fre 20 nov",
+  "conf": "low"
+ },
+ {
+  "id": "monteiths-brewery-tour",
+  "name": "Bryggeritur hos Monteith's i Greymouth",
+  "maker": "Monteith's Brewery (thebrewery.co.nz) · Full Brewery Tour",
   "area": "Greymouth",
   "ll": [
    -42.45398,
    171.20684
   ],
-  "cat": "museum",
+  "cat": "brewery_winery",
   "dates": [
    "2026-11-23"
   ],
-  "when": "Man 23 nov fra kl. 11, realistisk ca. kl. 13.45 efter Hokitika. Det er museet, ikke den guidede tur kl. 16.",
-  "price": 0,
-  "priceText": "Museet er gratis ifølge operatørens forside. Et smagebræt eller mad koster ekstra, og en aktuel pris for smagebrættet er ikke verificeret.",
-  "priceSource": "free",
-  "duration": "Sæt ca. 20 til 30 min af til et kort besøg",
+  "when": "man 23 nov kl. 16.00, sidste stop før Punakaiki",
+  "price": 40,
+  "priceText": "$40 pr. person med tur, to smagsprøver og en 6-pak til at tage med. Kun smagning uden tur: 3 glas for $20",
+  "priceSource": "operator",
+  "duration": "45 min til 1 time",
   "detour": 3,
-  "open": "Dagligt kl. 11 til 21. Kun juledag, 2. juledag og nytårsdag nævnes som lukkedage. Guidede ture kl. 16 er en anden aktivitet.",
-  "booking": "Gå ind til museet. FAQ byder walk-ins velkommen og siger også, at smagebræt kan bestilles uden booking. Ingen reservation nødvendig for dette korte stop. 60 Herbert Street.",
-  "weather": "Indendørs og egnet som kort regnvejrsstop.",
-  "sum": "Et kort gratis kig på den lokale ølhistorie, mens I passerer Greymouth. Hvis I vil købe et smagebræt, så spørg først om prisen.",
-  "note": "Øllet brygges nu et andet sted. Forvent derfor et historisk bryggerimiljø, ikke aktiv produktion. Den betalte rundvisning går først kl. 16 og passer ikke til den ønskede formiddag. Føreren kan vælge museet uden alkohol.",
+  "open": "Én tur dagligt kl. 16.00. Baren har åbent alle dage kl. 11 til 21",
+  "booking": "Book online samme dag eller dagen før, walk-in går også",
+  "weather": "Indendørs, virker i alt vejr",
+  "sum": "Rundvisning i det gamle bryggeri med smagning og en 6-pak med hjem. Passer lige efter Brunner Mine, og der er ca. 45 min til Punakaiki bagefter.",
+  "note": "Turen går kun kl. 16. Museet og baren er gratis fra kl. 11, hvis I ikke vil vente. Øllet brygges fre 20 nov et andet sted.",
   "links": [
    [
     "Udbyder",
-    "https://www.thebrewery.co.nz/"
+    "https://api.nowbookit.com/bookings/get-schedule/venue/11957?date=2026-11-23&numofpeople=2"
    ],
    [
     "Book",
-    "https://www.thebrewery.co.nz/book"
+    "https://www.thebrewery.co.nz/brewery-experience"
    ]
   ],
   "phone": "+64 27 444 9985",
   "checked": "fre 20 nov",
   "conf": "high"
+ },
+ {
+  "id": "shantytown",
+  "name": "Guldgraverby og tog ved Greymouth",
+  "maker": "Shantytown Heritage Park",
+  "area": "Paroa, syd for Greymouth",
+  "ll": [
+   -42.53549,
+   171.18207
+  ],
+  "cat": "museum",
+  "dates": [
+   "2026-11-23"
+  ],
+  "when": "man 23 nov, kom senest ca. kl. 12.30",
+  "price": 45,
+  "priceText": "$45 pr. person med togtur og teater. Guldvask koster $15 ekstra pr. pande",
+  "priceSource": "operator",
+  "duration": "ca. 1,5 til 2 timer",
+  "detour": 10,
+  "open": "Åbent dagligt. Lukketid står forskelligt på deres egne sider (kl. 15, 16 eller 17). Tog kl. 11, 12.30 og 14",
+  "booking": "Køb i døren, online lukker 24 timer før",
+  "weather": "Mest indendørs eller under tag, god regnvejrsplan",
+  "sum": "Genopbygget guldgraverby fra 1800-tallet med tog, guldvask og gamle butikker. Lidt turistet, men sjov hvis det regner.",
+  "note": "Toget er pt. et diesellokomotiv, ikke damp. Lukketiden er uklar, så kom før kl. 12.30.",
+  "links": [
+   [
+    "Udbyder",
+    "https://shantytown.co.nz/about/"
+   ],
+   [
+    "Book",
+    "https://shantytown.co.nz/"
+   ]
+  ],
+  "phone": "+64 3 762 6634",
+  "checked": "fre 20 nov",
+  "conf": "high",
+  "vouchers": [
+   {
+    "kind": "Viator",
+    "text": "Viators pris kunne ikke læses fre 20 nov. Stedets egen pris for to er $90 NZD, ca. $74 AUD. Tager Viator samme pris, dækker kreditten $60 AUD, og I betaler ca. $14 AUD selv. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://www.viator.com/en-AU/tours/Greymouth/Shantytown-Heritage-Park-Experience/d34195-56965P1"
+   }
+  ]
+ },
+ {
+  "id": "paparoa-experience",
+  "name": "Maorihistorie og huler i Punakaiki",
+  "maker": "Paparoa Experience, Punangairi Visitor Centre",
+  "area": "Punakaiki",
+  "ll": [
+   -42.11587,
+   171.33017
+  ],
+  "cat": "rainy_day",
+  "dates": [
+   "2026-11-23",
+   "2026-11-24"
+  ],
+  "when": "tir 24 nov kl. 9, 10 eller 15 med bookme, regnvejrsplanen",
+  "price": 39,
+  "priceText": "$39 pr. person, $19.50 via bookme på udvalgte tider",
+  "priceSource": "third_party",
+  "bookme": "BookMe har set $19.5 pr. person",
+  "duration": "ca. 1 time",
+  "walk": true,
+  "open": "Åbent dagligt fra kl. 9, sidste booking kl. 15. Ledige tider kl. 9 til 16 tir 24 nov i deres FareHarbor",
+  "booking": "Book på bookme aftenen før for halv pris",
+  "weather": "Indendørs, den bedste plan hvis det regner hele dagen",
+  "sum": "Interaktiv udstilling drevet af Ngati Waewae om jade, kalkstenshuler og blæsehullerne. Ligger ca. 1 km fra campen.",
+  "note": "Fuldprisen $39 er kun læst på bookme og newzealand.com, ikke på udbyderens egen side. Mest for familier, men god i regnvejr.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.bookme.co.nz/things-to-do/new-zealand/activity/paparoa-experience-mori-cultural-experience-punakaiki-pancake-rocks/72886"
+   ]
+  ],
+  "phone": "0800 7272 762",
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "paddle-n-carve-pororari",
+  "name": "Kajak og SUP på Pororari River",
+  "maker": "Paddle 'N Carve · Pororari River 2 Hr Freedom Hire",
+  "area": "Punakaiki",
+  "ll": [
+   -42.10656,
+   171.33655
+  ],
+  "cat": "kayak",
+  "dates": [
+   "2026-11-24"
+  ],
+  "when": "tir 24 nov, briefing kl. 9, 13 eller 15.30",
+  "price": 30,
+  "priceText": "Fra $30 pr. person for 2 timer, redningsvest, sko og tørpose med. Prisen pr. bådtype står ikke på forsiden",
+  "priceSource": "operator",
+  "duration": "2 timer",
+  "walk": true,
+  "open": "Åbent dagligt nov til april kl. 9 til 17.30",
+  "booking": "Book dagen før, pladserne er begrænsede",
+  "weather": "Floden stiger hurtigt ved kraftig regn",
+  "sum": "Basen ligger på jeres egen camp, så bilen bliver stående. I padler op ad en smaragdgrøn flod mellem kalkklipper og nikaupalmer.",
+  "note": "Kun fra-prisen er læst, prisen for dobbeltkajak eller SUP er ikke bekræftet. Sandfluer ved floden. Den nederste del er tidevandspåvirket.",
+  "links": [
+   [
+    "Udbyder",
+    "https://paddlencarve.com/"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "medium",
+  "top": "2026-11-24"
+ },
+ {
+  "id": "buller-whitewater-rafting",
+  "name": "Rafting på Buller River, Murchison",
+  "maker": "Ultimate Descents Aotearoa (Wild Rivers Rafting) · Buller Whitewater",
+  "area": "Murchison",
+  "ll": [
+   -41.79503,
+   172.33872
+  ],
+  "cat": "raft_jet",
+  "dates": [
+   "2026-11-25"
+  ],
+  "when": "ons 25 nov kl. 13.30 fra Murchison",
+  "price": 180,
+  "priceText": "$180 pr. person for grad 3. Familietur i grad 2 koster $150",
+  "priceSource": "operator",
+  "duration": "4 timer i alt, ca. 2 timer på floden",
+  "open": "Kører dagligt okt til apr kl. 9.30 og 13.30. Begge ture bookbare ons 25 nov med 70 ledige pladser",
+  "booking": "Book 1 til 3 dage før online",
+  "weather": "Kører i regn. Ved højvande skiftes til en anden flod",
+  "sum": "Ægte hvidvandsrafting i grad 3 på Buller. Dagens adrenalin, og I er tilbage kl. 17.30 med 1 time til St Arnaud.",
+  "note": "Kræver at I er i Murchison kl. 13.15. Forlad campen ca. kl. 7.30 og hold stoppene korte, ellers må Truman Track eller svingbroen vige. Minimum antal deltagere står ikke nogen steder.",
+  "links": [
+   [
+    "Udbyder",
+    "https://rivers.co.nz/daily-tours"
+   ],
+   [
+    "Book",
+    "https://riverside.checkfront.com/reserve/?category_id=6"
+   ]
+  ],
+  "phone": "0800 748 377",
+  "checked": "fre 20 nov",
+  "conf": "high",
+  "top": "2026-11-25"
+ },
+ {
+  "id": "buller-canyon-jet",
+  "name": "Jetbåd i Buller Gorge",
+  "maker": "Buller Canyon Jet Ltd",
+  "area": "Buller Gorge",
+  "ll": [
+   -41.76759,
+   172.19303
+  ],
+  "cat": "raft_jet",
+  "dates": [
+   "2026-11-25"
+  ],
+  "when": "ons 25 nov ved svingbroen, afgange hver time kl. 10 til 16",
+  "price": 125,
+  "priceText": "$125 pr. person, min. 2 personer, broadgang med ved online booking",
+  "priceSource": "operator",
+  "duration": "30 til 40 min",
+  "open": "Sæson 2026 er ikke bekræftet, forsiden nævner stadig 2024/25 Ikke bekræftet for datoen.",
+  "booking": "Ring dagen før",
+  "weather": "Aflyses ved høj vandstand",
+  "sum": "Jetbåd gennem Buller-kløften fra svingbroen.",
+  "note": "Kunne ikke bekræfte at de sejler i 2026 eller at der er tider ons 25 nov. Ring før.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.bullercanyonjet.co.nz/"
+   ]
+  ],
+  "phone": "+64 3 523 9883",
+  "checked": "fre 20 nov",
+  "conf": "low"
+ },
+ {
+  "id": "tauranga-bay-surf",
+  "name": "Surf i Tauranga Bay ved sælerne",
+  "maker": "Tauranga Bay",
+  "area": "Cape Foulwind",
+  "ll": [
+   -41.7752,
+   171.45607
+  ],
+  "cat": "surf",
+  "dates": [
+   "2026-11-25"
+  ],
+  "when": "ons 25 nov om morgenen ved sælkolonien",
+  "price": 0,
+  "priceText": "Gratis",
+  "priceSource": "free",
+  "duration": "1 til 2 timer",
+  "open": "Altid åbent",
+  "booking": "Ingen booking",
+  "weather": "Bedst ved vind fra ØSØ og dønning fra VSV",
+  "tide": "Westport ons 25 nov: lavvande kl. 5.29 og 17.51, højvande kl. 11.41. Spottet virker på alle tidevand",
+  "sum": "Strand og pointbreak lige ved parkeringen til sælkolonien, som I alligevel besøger. Tag brædderne med i vandet.",
+  "note": "Hurtig og kraftig bølge over sand og sten, og en stærk strøm til venstre. Kun på små dage, og se de lokale an først.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.surf-forecast.com/breaks/Tauranga-Bay-Westport"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "comet-line",
+  "name": "Svævebane over Buller Gorge",
+  "maker": "Buller Gorge Swingbridge Adventure & Heritage Park · Comet Line",
+  "area": "Buller Gorge",
+  "ll": [
+   -41.76759,
+   172.19303
+  ],
+  "cat": "adrenaline",
+  "dates": [
+   "2026-11-25"
+  ],
+  "when": "ons 25 nov ved svingbroen",
+  "price": 40,
+  "priceText": "$40 pr. person, broadgang $12.50 kommer oveni",
+  "priceSource": "operator",
+  "duration": "ca. 15 min",
+  "open": "Parken har åbent dagligt kl. 9 til 17 undtagen juledag",
+  "booking": "Ingen booking, betal i kassen",
+  "sum": "160 m siddende svævebane hen over kløften, kan tages to sammen. Nem tilføjelse til svingbroen, som I alligevel besøger.",
+  "note": "Priserne på siden står som gældende fra okt 2023. Bookme viser $30 men har ingen tider. Max 170 kg ved tandem.",
+  "links": [
+   [
+    "Udbyder",
+    "https://bullergorge.co.nz/comet-line/"
+   ]
+  ],
+  "phone": "+64 3 523 9809",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "rotoiti-kayak-hire",
+  "name": "Kajak og kano på Lake Rotoiti",
+  "maker": "Rotoiti Water Taxis · Kayak Hire",
+  "area": "St Arnaud, Kerr Bay",
+  "ll": [
+   -41.80692,
+   172.84686
+  ],
+  "cat": "kayak",
+  "dates": [
+   "2026-11-25",
+   "2026-11-26"
+  ],
+  "when": "ons 25 nov om aftenen eller tor 26 nov om morgenen",
+  "price": 20,
+  "priceText": "$40 i timen for en dobbeltkajak eller kano, dvs. $20 pr. person",
+  "priceSource": "operator",
+  "duration": "1 time",
+  "walk": true,
+  "open": "Udlejning fra søbredden okt til apr. Daglige åbningstider står ikke på siden Ikke bekræftet for datoen.",
+  "booking": "Sms til skipperen dagen før på 021 702 278",
+  "weather": "Søen bliver hurtigt urolig i vind",
+  "sum": "Lej en kano lige ved jeres camp og padl ud på den stille bjergsø. Billigste og nemmeste vandoplevelse på strækningen.",
+  "note": "Åbent på datoerne er ikke bekræftet. Søen har invasiv lake snow, så våde ting skal tørre i 48 timer før andre søer.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.rotoitiwatertaxis.co.nz/Kayak_Hire.php"
+   ]
+  ],
+  "phone": "+64 21 702 278",
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "kerr-bay-jetty-eels",
+  "name": "Ål og badning ved Kerr Bay-molen",
+  "maker": "Kerr Bay jetty",
+  "area": "St Arnaud, Kerr Bay",
+  "ll": [
+   -41.80912,
+   172.84485
+  ],
+  "cat": "wild_swim",
+  "dates": [
+   "2026-11-25",
+   "2026-11-26"
+  ],
+  "when": "ons 25 nov i skumringen, med lygte",
+  "price": 0,
+  "priceText": "Gratis",
+  "priceSource": "free",
+  "duration": "30 min",
+  "walk": true,
+  "open": "Altid åbent",
+  "booking": "Ingen booking",
+  "sum": "Store langfinnede ål holder til under molen og ses med en lygte efter mørke. Om morgenen kan I hoppe i fra molen.",
+  "note": "Koldt vand. Ingen officiel regel om fodring fundet, så lad være. Mange sandfluer. Fuldmåne 25 nov, så stjernerne bliver svage.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.tripideas.nz/place/kerr-bay"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "nile-rainforest-train",
+  "name": "Regnskovstog i Charleston",
+  "maker": "Underworld Adventures (Norwest Adventures) · Nile River Rainforest Train",
+  "area": "Charleston",
+  "ll": [
+   -41.90519,
+   171.43907
+  ],
+  "cat": "quirky",
+  "dates": [
+   "2026-11-25"
+  ],
+  "when": "ons 25 nov kl. 11.30",
+  "price": 35,
+  "priceText": "$35 pr. person",
+  "priceSource": "operator",
+  "duration": "ca. 1,5 time",
+  "open": "Én afgang ons 25 nov kl. 11.30 med 29 ledige pladser",
+  "booking": "Book online senest 2 dage før, ellers ring",
+  "sum": "Lille smalsporet tog ind i regnskoven langs Nile River. Skævt og lokalt, men kl. 11.30 passer dårligt med rafting kl. 13.30.",
+  "note": "Huletur er ikke med. Kan ikke kombineres med rafting samme dag.",
+  "links": [
+   [
+    "Udbyder",
+    "https://caverafting.rezdy.com/calendarWidget/115659"
+   ]
+  ],
+  "phone": "0800 11 6686",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "shortjaw-brewing",
+  "name": "Bryghus og ølsmagning i Westport",
+  "maker": "Shortjaw Brewing",
+  "area": "Westport",
+  "ll": [
+   -41.75347,
+   171.59896
+  ],
+  "cat": "brewery_winery",
+  "dates": [
+   "2026-11-25"
+  ],
+  "when": "ons 25 nov fra kl. 12",
+  "price": null,
+  "priceText": "Pris på smagebræt står ikke på siden",
+  "priceSource": "unknown",
+  "duration": "ca. 1 time",
+  "detour": 3,
+  "open": "Ons kl. 12 til 19",
+  "booking": "Ingen booking",
+  "sum": "Lokalt bryghus hvor Kiwi Dark blev kåret som NZ's bedste mørke øl i 2025. Madvogn ved siden af.",
+  "note": "Åbner først kl. 12, hvilket passer dårligt med rafting kl. 13.30 i Murchison.",
+  "links": [
+   [
+    "Udbyder",
+    "https://shortjaw.co.nz/"
+   ]
+  ],
+  "phone": "+64 3 789 4079",
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "wilsons-vista-happy-hour-cruise",
+  "name": "Happy hour-sejlads fra Kaiteriteri",
+  "maker": "Wilsons Abel Tasman · Vista Happy Hour Cruise",
+  "area": "Kaiteriteri (Kaiteretere)",
+  "ll": [
+   -41.03705,
+   173.01705
+  ],
+  "cat": "boat",
+  "dates": [
+   "2026-11-26"
+  ],
+  "when": "tor 26 nov kl. 15.45 til 17.30 fra Kaiteriteri, efter via ferrataen og før I slår teltet op i Mārahau",
+  "price": 74,
+  "priceText": "Fra $74 pr. person på Wilsons egen side. Drikkevarer fra baren til happy hour-pris betales ekstra",
+  "priceSource": "operator",
+  "duration": "1 t 45 min",
+  "detour": 10,
+  "open": "Afgang kl. 15.45, retur kl. 17.30, Wilsons skriver året rundt. Ikke tjekket i deres bookingkalender for tor 26 nov Ikke bekræftet for datoen.",
+  "booking": "Book på Wilsons side dagen før. Check in på kontoret i Kaiteriteri 20 min før",
+  "weather": "Båden sejler i det meste vejr, men det er kedeligt i regn og blæst",
+  "sum": "Eftermiddagssejlads med bar om bord fra Kaiteriteri til Medlands Beach, forbi Split Apple Rock og sælerne ved Adele Island. Nem måde at se kysten på efter klatringen.",
+  "note": "Prisen er \"fra\", så tjek den endelige pris når I booker. Om sommeren kan der være parkeringsafgift i Kaiteriteri.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.abeltasman.co.nz/trips/day-trips/scenic-cruises/vista-happy-hour-cruise/"
+   ]
+  ],
+  "phone": "+64 3 528 2027",
+  "checked": "fre 20 nov",
+  "conf": "low",
+  "top": "2026-11-26"
+ },
+ {
+  "id": "ngarua-caves",
+  "name": "Grottetur på Tākaka Hill",
+  "maker": "Ngarua Caves",
+  "area": "Tākaka Hill",
+  "ll": [
+   -41.01915,
+   172.9028
+  ],
+  "cat": "cave",
+  "dates": [
+   "2026-11-26"
+  ],
+  "when": "tor 26 nov, når I alligevel henter via ferrata-udstyr på Tākaka Hill",
+  "price": 30,
+  "priceText": "$30 pr. voksen for grotteturen. Via ferrata-udstyr er separat ($10 for op til 4 timer, handsker $5, ifølge via ferrata-foreningen)",
+  "priceSource": "operator",
+  "duration": "ca. 45 min plus ventetid til næste hele time",
+  "open": "Operatøren skriver åbent dagligt hele sommeren, ture hver hele time kl. 10 til 16. Der er ingen dateret kalender, så tor 26 nov er ikke bekræftet Ikke bekræftet for datoen.",
+  "booking": "Ingen booking om sommeren. Skriv eller ring til Janet på 027 268 2115 dagen før og spørg både om turen og om to sæt via ferrata-udstyr",
+  "weather": "Fin ved regn, grotten er tør. Via ferrataen er ikke sjov i regn, så grotten er plan B",
+  "sum": "Kort guidet tur i en kalkstensgrotte med drypsten og moa-knogler. Den ligger lige der, hvor I henter klatreudstyret.",
+  "note": "Åbning tor 26 nov er ikke bekræftet i en kalender. Kun med guide. Grusvej det sidste stykke fra SH60. Ring først.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.ngaruacaves.co.nz/"
+   ]
+  ],
+  "phone": "+64 27 268 2115",
+  "checked": "fre 20 nov",
+  "conf": "low"
+ },
+ {
+  "id": "kahu-kayaks-freedom-day",
+  "name": "Kajakleje for en dag i Mārahau",
+  "maker": "Kahu Kayaks 1 Day Freedom Rental",
+  "area": "Mārahau",
+  "ll": [
+   -40.99818,
+   173.00333
+  ],
+  "cat": "kayak",
+  "dates": [
+   "2026-11-27"
+  ],
+  "when": "fre 27 nov, hvis I bliver en dag mere i Mārahau",
+  "price": 110,
+  "priceText": "$110 pr. person på Kahus egen side (for to eller flere), dobbeltkajak, redningsvest, spraydæk og kort med. Bookme har fre 27 nov kl. 8.30 til $83 og kl. 10.30 til $92",
+  "priceSource": "operator",
+  "bookme": "BookMe har set $83 pr. person",
+  "duration": "hele dagen, start kl. 8.30 eller 10.30, kajakken skal være tilbage kl. 16",
+  "walk": true,
+  "open": "Bookme viser ledige afgange kl. 8.30 og kl. 10.30 fre 27 nov",
+  "booking": "Book på Bookme, når I har besluttet jer for fredagen. Prisen kan stige, når de billige pladser er væk",
+  "weather": "Kræver rolig sø. Ved stærk vind flytter eller aflyser de og giver besked på briefingen",
+  "sum": "I padler selv op langs kysten til Split Apple-området, Adele Island og de gyldne bugter med pæle og sæler, og holder frokost på en strand. Mest frihed for pengene i Abel Tasman.",
+  "note": "Mindst to personer, I får en dobbeltkajak. Fra 14 år. Briefingen tager tid, så I er på vandet ca. 1 time efter start. Ingen sælkoloni ved Tonga Island på en dagstur herfra, den ligger for langt nordpå.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.kahukayaks.co.nz/freedom-tours"
+   ],
+   [
+    "Book",
+    "https://www.bookme.co.nz/things-to-do/new-zealand/activity/kahu-kayaks-1-day-freedom-rental/7273"
+   ]
+  ],
+  "phone": "+64 3 527 8300",
+  "checked": "fre 20 nov",
+  "conf": "high",
+  "top": "2026-11-27",
+  "vouchers": [
+   {
+    "kind": "Gifting Owl",
+    "text": "Gifting Owl har Kahu Kayaks' guidede tur Southern Blend (kajak og gåtur) fra Mārahau. Hos Kahu koster den $199 NZD pr. person, og BookMe havde $139 fre 27 nov. Gavekortet er ca. $101 NZD værd. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://giftingowl.com/nz/nelson/tasman/southern-blend--kayak-and-walk-1/"
+   }
+  ]
+ },
+ {
+  "id": "golden-bay-kayaks-tata",
+  "name": "Kajak og SUP fra Tata Beach",
+  "maker": "Golden Bay Kayaks freedom rental",
+  "area": "Tata Beach",
+  "ll": [
+   -40.80928,
+   172.91681
+  ],
+  "cat": "kayak",
+  "dates": [
+   "2026-11-27"
+  ],
+  "when": "fre 27 nov, hvis I kører til Golden Bay en dag tidligt",
+  "price": 90,
+  "priceText": "Halv dag i dobbelt havkajak $90 pr. person, hel dag $120. Sit-on-top kajak $50 for 1 time, $60 for 2 timer. SUP $30 for 1 time, $50 for 2 timer (prisliste 2026/2027)",
+  "priceSource": "operator",
+  "duration": "halv dag ca. 4 timer, eller 1 til 2 timer med sit-on-top eller SUP",
+  "detour": 20,
+  "open": "Prislisten gælder 2026/2027, men siden viser ikke åbningsdage. Ikke bekræftet for fre 27 nov Ikke bekræftet for datoen.",
+  "booking": "Ring eller book online dagen før. 48 timer før er der ingen refusion, ved dårligt vejr kun 5 pct. gebyr",
+  "weather": "Aflyses ved hård vind, og så får I pengene tilbage minus 5 pct.",
+  "sum": "Den stille nordlige ende af Abel Tasman, med granitøer og tomme strande lige ud for Tata Beach. Langt færre både end ved Mārahau.",
+  "note": "Halvdagsleje kræver mindst to i dobbeltkajak og lidt kajakerfaring. Ligger ca. 20 min øst for Tākaka, modsat retning af Wharariki. Åbent på datoen er ikke bekræftet.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.goldenbaykayaks.co.nz/s/GBK_Prices_and_Cancellation_Policy-2026-2027.pdf"
+   ],
+   [
+    "Book",
+    "https://www.goldenbaykayaks.co.nz/independent-kayak-rental"
+   ]
+  ],
+  "phone": "+64 3 525 9095",
+  "checked": "fre 20 nov",
+  "conf": "low"
+ },
+ {
+  "id": "wilsons-split-apple-kayak",
+  "name": "Kajak til Split Apple Rock",
+  "maker": "Wilsons Abel Tasman · Split Apple Kayak",
+  "area": "Kaiteriteri (Kaiteretere)",
+  "ll": [
+   -41.03705,
+   173.01705
+  ],
+  "cat": "kayak",
+  "dates": [
+   "2026-11-27",
+   "2026-11-26"
+  ],
+  "when": "fre 27 nov om morgenen, eller tor 26 nov kl. 13.15 hvis I klarer via ferrataen tidligt",
+  "price": 105,
+  "priceText": "$105 pr. person på Wilsons side. Bookme har tor 26 og fre 27 nov til $61.08. Dobbeltkajak, spraytrøje, redningsvest og tørsæk med",
+  "priceSource": "operator",
+  "bookme": "BookMe har set $61.08 pr. person",
+  "duration": "ca. 3 timer, heraf ca. 1,5 time padling med guide",
+  "detour": 10,
+  "open": "Bookme viser ledige afgange tor 26 nov kl. 13.15 og fre 27 nov kl. 9.20 og 13.15. Wilsons side skriver afgang kl. 9 og 13, hele året",
+  "booking": "Book på Bookme for den lave pris. Mød 20 min før ved Wilsons kontor i Kaiteriteri",
+  "weather": "Guiden vælger rute efter vind. Ved hård vind aflyses og I får pengene tilbage eller ny tid",
+  "sum": "Kort guidet padletur rundt om Split Apple Rock og langs granitkysten. Billigt via Bookme og et godt alternativ, hvis I ikke vil bruge hele dagen i kajak.",
+  "note": "Mindst to deltagere for at turen kører. Fra 10 år. Bookme og Wilsons siger forskellige starttider, så læs bookingbekræftelsen.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.abeltasman.co.nz/trips/day-trips/kayak/split-apple-kayak/"
+   ],
+   [
+    "Book",
+    "https://www.bookme.co.nz/things-to-do/new-zealand/activity/wilsons-abel-tasman-split-apple-paddle-half-day-kayak-tour/2032"
+   ]
+  ],
+  "phone": "+64 3 528 2027",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "anatoki-salmon",
+  "name": "Fang selv laks ved Tākaka",
+  "maker": "Anatoki Salmon Fishing & Cafe",
+  "area": "Tākaka",
+  "ll": [
+   -40.88368,
+   172.7676
+  ],
+  "cat": "fishing",
+  "dates": [
+   "2026-11-27",
+   "2026-11-28"
+  ],
+  "when": "fre 27 nov hvis I kører til Golden Bay, ellers lør 28 nov på vej gennem Tākaka",
+  "price": 38,
+  "priceText": "Gratis adgang og fiskegrej. I betaler $40 pr. kg fisk I fanger, og en laks vejer i snit ca. 1,9 kg, altså ca. $76 pr. fisk eller ca. $38 hver, hvis I deler en. Røget på stedet $12 for første fisk, sashimi af en hel fisk $12. Ål-foder $3",
+  "priceSource": "operator",
+  "duration": "ca. 1 til 1,5 time med frokost",
+  "detour": 10,
+  "open": "Åbent alle dage kl. 9.30 til 16.30, sidste indgang kl. 16",
+  "booking": "Ingen booking, bare mød op",
+  "weather": "Kører i al slags vejr",
+  "sum": "Fang jeres egen laks i en dam, få den røget eller skåret som sashimi med det samme og spis den på terrassen. Bagefter fodrer I de gamle langfinnede ål for $3.",
+  "note": "Alt hvad I fanger skal købes, så stop efter en fisk. Ingen egne fiskestænger.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.anatokisalmon.co.nz/eat-your-catch"
+   ]
+  ],
+  "phone": "+64 800 262 865",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "paynes-ford-swim",
+  "name": "Badehuller ved Paynes Ford",
+  "maker": "Paynes Ford (Paines Ford) swimming holes",
+  "area": "Tākaka",
+  "ll": [
+   -40.88484,
+   172.81155
+  ],
+  "cat": "wild_swim",
+  "dates": [
+   "2026-11-27",
+   "2026-11-28"
+  ],
+  "when": "fre 27 eller lør 28 nov, 3 km syd for Tākaka på SH60",
+  "price": 0,
+  "priceText": "Gratis",
+  "priceSource": "free",
+  "duration": "ca. 1 time, 5 til 15 min gang til de bedste huller",
+  "detour": 2,
+  "open": "Altid åbent. Parkering, picnicplads og toilet ved broen",
+  "booking": "Ingen booking",
+  "weather": "Farlig ved høj vandstand efter regn. Tjek vandkvalitet på LAWA efter kraftig regn",
+  "sum": "Klart grønt flodvand under kalkklipper, med sten I kan springe fra ned i dybt vand. Det mest populære badested i Golden Bay og ligger lige ved vejen.",
+  "note": "Koldt vand sidst i november. Klatrere på klipperne over jer. Spring kun hvor I har set dybden.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/nelson-tasman/places/takaka-area/things-to-do/tracks/paines-ford-tramline-track/"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "te-waikoropupu-springs",
+  "name": "Klare kilder ved Tākaka",
+  "maker": "Te Waikoropupū Springs",
+  "area": "Tākaka",
+  "ll": [
+   -40.84786,
+   172.76869
+  ],
+  "cat": "quirky",
+  "dates": [
+   "2026-11-27",
+   "2026-11-28"
+  ],
+  "when": "fre 27 eller lør 28 nov, 7 km nord for Tākaka",
+  "price": 0,
+  "priceText": "Gratis",
+  "priceSource": "free",
+  "duration": "ca. 45 min på en flad 1 km løkke på gangbro",
+  "detour": 10,
+  "open": "Altid åbent, ingen DOC-advarsel på siden fre 20 nov",
+  "booking": "Ingen booking",
+  "weather": "Går i alt vejr, men flottest i sol, når man ser ned i vandet",
+  "sum": "New Zealands største kilder med noget af det klareste vand, der er målt. Fra platformen ser I sandet koge på bunden og planter i mange meters dybde.",
+  "note": "Vandet må ikke røres, ingen badning. Det er en kort gåtur, ikke en aktivitet, så kombinér den med Anatoki eller Paynes Ford.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/nelson-tasman/places/takaka-area/things-to-do/tracks/te-waikoropupu-springs-walk/"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "wharariki-seal-pools-low-tide",
+  "name": "Sæler ved lavvande på Wharariki",
+  "maker": "Wharariki Beach seal pools and Archway Islands at low tide",
+  "area": "Wharariki",
+  "ll": [
+   -40.50275,
+   172.67886
+  ],
+  "cat": "wildlife",
+  "dates": [
+   "2026-11-28"
+  ],
+  "when": "lør 28 nov om aftenen fra campingpladsen, lavvande ca. kl. 19.25 og solnedgang kl. 20.40",
+  "price": 0,
+  "priceText": "Gratis",
+  "priceSource": "free",
+  "duration": "ca. 2 timer inkl. ca. 20 min gåtur hver vej over klitterne",
+  "walk": true,
+  "open": "Altid åbent. Puponga Farm Park lukker nogle spor i lammesæsonen, men stranden er åben",
+  "booking": "Ingen booking",
+  "weather": "Stærk vind og sandflugt er normalt. Ingen svømning, stærk strøm",
+  "tide": "Lavvande ved Whanganui Inlet, nærmeste havn på vestkysten (LINZ Westport 2026 minus 1 t 5 min, LINZ kalder tallene omtrentlige): fre 27 nov ca. kl. 6.05 og 18.30, lør 28 nov ca. kl. 6.55 og 19.25, søn 29 nov ca. kl. 7.50. Højvande lør 28 nov ca. kl. 13.10. Det passer inden for ca. 10 min med Tarakohe i Golden Bay. Solnedgang ved Wharariki fre 27 nov kl. 20.38, lør 28 nov kl. 20.40 (timeanddate). Gå derud fra ca. 2 timer før til 1 time efter lavvande, altså lør 28 nov ca. kl. 17.30 til 20.30.",
+  "sum": "Ved lavvande kan man gå ud mellem klipperne under Archway Islands, hvor sælunger leger i tidevandsbassinerne. Med solnedgang ca. en time efter lavvande lørdag er det aftenens bedste gratis oplevelse.",
+  "note": "Ungerne i bassinerne ses mest om efteråret og vinteren ifølge flere kilder. Sidst i november er der sæler, men ikke sikkert unger i bassinerne. Hold 20 m afstand. Ingen svømning. Fredag aften passer lavvande kl. ca. 18.30 også, hvis I er der.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/nelson-tasman/places/farewell-spit-and-puponga-farm-park/things-to-do/tracks/wharariki-beach-track/"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "medium",
+  "top": "2026-11-28"
+ },
+ {
+  "id": "mussel-inn-just-janie-28-nov",
+  "name": "Koncert på Mussel Inn, Onekaka",
+  "maker": "Just Janie & Band at The Mussel Inn",
+  "area": "Onekaka",
+  "ll": [
+   -40.75964,
+   172.70359
+  ],
+  "cat": "event",
+  "dates": [
+   "2026-11-28"
+  ],
+  "when": "lør 28 nov om aftenen, sommerkoncerter starter normalt kl. 20.30 til 21",
+  "price": 15,
+  "priceText": "$15 i døren",
+  "priceSource": "operator",
+  "duration": "en aften",
+  "detour": 40,
+  "open": "Mussel Inn har åbent fra kl. 11 alle dage. Koncerten står i gig-guiden for lør 28 nov. Fre 27 nov er der intet program",
+  "booking": "Betal i døren. Ret til ændringer, skriv til haveabeer@musselinn.co.nz for at bekræfte",
+  "weather": "Indendørs",
+  "sum": "Golden Bays kendte træ-pub med eget bryggeri, hjemmebrygget øl og livemusik. Lørdag spiller Just Janie & Band.",
+  "note": "Ca. 40 min kørsel tilbage til Wharariki i mørke, så den der kører, drikker ikke. Søn 29 nov er der albumrelease med Gareth Thomas ($30), men I kører den dag. Man 30 nov er der fællessang om klaveret.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.musselinn.co.nz/Entertainment/entertainment.html"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "dancing-sands-tasting",
+  "name": "Gratis gin-smagning i Tākaka",
+  "maker": "Dancing Sands Distillery cellar door",
+  "area": "Tākaka",
+  "ll": [
+   -40.85889,
+   172.80675
+  ],
+  "cat": "brewery_winery",
+  "dates": [
+   "2026-11-28"
+  ],
+  "when": "lør 28 nov kl. 11 til 16, når I kører gennem Tākaka",
+  "price": 0,
+  "priceText": "Gratis smagning af gin, rom, vodka og likør",
+  "priceSource": "operator",
+  "duration": "ca. 30 min",
+  "open": "Man til tor kl. 10 til 16 og lør kl. 11 til 16. Ikke fredag og søndag ifølge deres side. Lør 28 nov passer",
+  "booking": "Ingen booking for to personer",
+  "weather": "Indendørs, godt regnvejrsstop",
+  "sum": "Lille destilleri bag The Wholemeal Café, hvor de skænker smagsprøver og forklarer hvordan ginen laves med kildevand fra Golden Bay. Tag kaffe og kage i caféen bagefter.",
+  "note": "Den der kører, smager ikke. Lukket fredag, så det virker kun lørdag. Siden beder jer tjekke Google for helligdage.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.dancingsands.com/pages/visit-us"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "village-theatre-takaka",
+  "name": "Biograf i Tākaka",
+  "maker": "The Village Theatre Society",
+  "area": "Tākaka",
+  "ll": [
+   -40.85941,
+   172.80626
+  ],
+  "cat": "rainy_day",
+  "dates": [
+   "2026-11-28",
+   "2026-11-27"
+  ],
+  "when": "lør 28 nov kl. 16 Blue Heron, eller fre 27 nov kl. 20 Pan's Labyrinth i 20-års udgave",
+  "price": 15,
+  "priceText": "$15 pr. voksen, $13 for studerende med kort",
+  "priceSource": "operator",
+  "duration": "ca. 2 timer",
+  "open": "Program nov/dec 2026: fre 27 nov kl. 16 Disney's Hexed (PG) og kl. 20 Pan's Labyrinth (R16). Lør 28 nov kl. 16 Blue Heron (M) og kl. 20 The Hunger Games: Sunrise on the Reaping (M)",
+  "booking": "Køb billet på nettet via Veezi eller i døren",
+  "weather": "Plan B ved regn",
+  "sum": "Lille non-profit landsbybiograf drevet af folk fra Golden Bay. Lørdag kl. 16 passer med at køre videre til Wharariki før lavvande om aftenen.",
+  "note": "Aftenforestillinger betyder ca. 55 min kørsel i mørke tilbage til Wharariki. Programmet kan ændres.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.flicks.co.nz/cinema/the-village-theatre/"
+   ],
+   [
+    "Book",
+    "https://ticketing.oz.veezi.com/sessions/?siteToken=mqq6pq934wz8j8zq26x07wpjwm"
+   ]
+  ],
+  "phone": "+64 3 525 8453",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "takaka-village-market-28-nov",
+  "name": "Lørdagsmarked i Tākaka",
+  "maker": "Tākaka Saturday Village Market",
+  "area": "Tākaka",
+  "ll": [
+   -40.85892,
+   172.80506
+  ],
+  "cat": "market",
+  "dates": [
+   "2026-11-28"
+  ],
+  "when": "lør 28 nov kl. 9 til 13.30, når I kommer over bakken fra Mārahau",
+  "price": 0,
+  "priceText": "Gratis adgang",
+  "priceSource": "free",
+  "duration": "ca. 45 min",
+  "open": "Hver lørdag kl. 9 til 13.30, også i regn, på 3 Junction Street (bibliotekets parkeringsplads)",
+  "booking": "Ingen booking",
+  "weather": "Holder åbent i regn",
+  "sum": "Golden Bays hippie-marked med frisk mad, musik og kunsthåndværk siden 2007. Godt brunchstop lørdag formiddag.",
+  "note": "Oplysningerne er fra markedets egen tekst på Nelson Tasmans side. Koordinaten er biblioteket på samme adresse.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.nelsontasman.nz/activities-day-trips/takaka-saturday-village-market/"
+   ]
+  ],
+  "phone": "+64 27 256 0566",
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "pelorus-bridge-swim",
+  "name": "Badning ved Pelorus Bridge",
+  "maker": "Pelorus Bridge Scenic Reserve river pools",
+  "area": "Pelorus Bridge",
+  "ll": [
+   -41.29902,
+   173.57185
+  ],
+  "cat": "wild_swim",
+  "dates": [
+   "2026-11-29"
+  ],
+  "when": "søn 29 nov, midt på den lange køredag mellem Nelson og Havelock",
+  "price": 0,
+  "priceText": "Gratis",
+  "priceSource": "free",
+  "duration": "30 til 60 min",
+  "open": "Altid åbent. DOC viser ingen aktuelle advarsler eller lukninger",
+  "booking": "Ingen booking",
+  "weather": "Pas på efter regn, når floden stiger. DOC advarer om oversvømmet flod og glatte stier",
+  "sum": "Klar grøn flod med dybe badehuller lige under broen på SH6, der hvor dværgene flød i tønder i The Hobbit. Et koldt dyp midt på dagen og en café ved parkeringen.",
+  "note": "Koldt vand. Ingen hunde. Kig efter dybden før I springer. Parkeringen ligger lige ved SH6.",
+  "links": [
+   [
+    "Udbyder",
+    "https://marlboroughnz.com/explore-marlborough/plan-stay/camping-leisure/pelorus-bridge-scenic-reserve"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "high",
+  "top": "2026-11-29"
+ },
+ {
+  "id": "mussel-pot-havelock",
+  "name": "Muslinger i Havelock",
+  "maker": "The Mussel Pot",
+  "area": "Havelock",
+  "ll": [
+   -41.27841,
+   173.76662
+  ],
+  "cat": "food_drink",
+  "dates": [
+   "2026-11-29"
+  ],
+  "when": "søn 29 nov, frokost eller tidlig aftensmad på vej til Mistletoe Bay",
+  "price": 30,
+  "priceText": "1 kg grønlæbede muslinger i egen gryde $29 (naturel) eller $30 (fløde, hvidvin, hvidløg). Muslingesuppe $28.50, smageplatte til to $64",
+  "priceSource": "operator",
+  "duration": "ca. 1 time",
+  "open": "Onsdag til søndag, frokost kl. 12 til 15 (sidste bestilling kl. 14.30), aften kl. 17 til 20. Lukket mandag og tirsdag, så søndag er den eneste chance",
+  "booking": "Restauranten skriver at booking er nødvendig. Book bord dagen før via deres side eller ring",
+  "weather": "Inde og ude, kører i alt vejr",
+  "sum": "Havelock er verdens muslingehovedstad, og her får I et kilo lokale grønlæbede muslinger i en gryde for $29. Godt stop efter Pelorus Bridge.",
+  "note": "Lukket mandag, så I kan ikke tage tilbage hertil på hviledagen. Kommer I efter kl. 14.30, er det aftenåbningen kl. 17.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.themusselpot.co.nz/pages/lunch-menu"
+   ],
+   [
+    "Book",
+    "https://www.themusselpot.co.nz/pages/reservation"
+   ]
+  ],
+  "phone": "+64 3 574 2824",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "mistletoe-bay-glowworms",
+  "name": "Gløde-orme og morild i Mistletoe Bay",
+  "maker": "Glow worms and phosphorescence, Mistletoe Bay Eco Village",
+  "area": "Mistletoe Bay",
+  "ll": [
+   -41.22323,
+   173.97284
+  ],
+  "cat": "glowworm",
+  "dates": [
+   "2026-11-29",
+   "2026-11-30"
+  ],
+  "when": "søn 29 eller man 30 nov efter mørkets frembrud, ca. kl. 21.30",
+  "price": 0,
+  "priceText": "Gratis for gæster",
+  "priceSource": "free",
+  "duration": "ca. 30 min",
+  "walk": true,
+  "open": "Hver aften efter mørkets frembrud",
+  "booking": "Ingen booking",
+  "weather": "Bedst i mørke, tørre nætter uden måne. Morild ses bedst i helt mørke",
+  "sum": "Indkørslen til campingpladsen lyser op af hundredvis af gløde-orme, og ved molen kan I røre vandet og se morild. Lige uden for teltet.",
+  "note": "Søndag er bedst, fordi I skal op kl. ca. 4.15 tirsdag. Sluk lygten tæt på ormene. Morild er der ikke hver aften.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.mistletoebay.co.nz/activities/"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "motueka-sunday-market-29-nov",
+  "name": "Søndagsmarked i Motueka",
+  "maker": "Motueka Sunday Market",
+  "area": "Motueka",
+  "ll": [
+   -41.11125,
+   173.01306
+  ],
+  "cat": "market",
+  "dates": [
+   "2026-11-29"
+  ],
+  "when": "søn 29 nov kl. 8 til 13, på vej fra Wharariki mod Nelson",
+  "price": 0,
+  "priceText": "Gratis adgang, mad fra boderne",
+  "priceSource": "free",
+  "duration": "ca. 45 min",
+  "detour": 2,
+  "open": "Hver søndag kl. 8 til 13 på Decks Reserve parkeringsplads, Wallace Street, bag i-SITE. Kun lukket påskedag og juledag",
+  "booking": "Ingen booking",
+  "weather": "Holder åbent i regn, men færre boder",
+  "sum": "Lokalt søndagsmarked med street food, argentinsk grill, surdejsbrød, ost, kaffe og gademusikanter. Godt brunchstop på den lange søndag.",
+  "note": "Fra Wharariki til Motueka er der ca. 2 timer, så I skal køre kl. ca. 9.30 for at nå det med god tid før kl. 13. Ingen hunde.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.motuekasundaymarket.co.nz/"
+   ]
+  ],
+  "phone": "+64 27 278 8806",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "go-nelson-skywire",
+  "name": "Skywire svævebane ved Nelson",
+  "maker": "Cable Bay Adventure Park · Skywire Experience",
+  "area": "Hira, Nelson",
+  "ll": [
+   -41.20083,
+   173.42963
+  ],
+  "cat": "adrenaline",
+  "dates": [
+   "2026-11-29"
+  ],
+  "when": "søn 29 nov på den lange dag fra Wharariki, lige efter Nelson på vej mod Pelorus Bridge. Åbent kl. 9 til 16.",
+  "price": 115,
+  "priceText": "Hos udbyderen selv ca. $115 NZD pr. person.",
+  "priceSource": "operator",
+  "booking": "Ukendt.",
+  "sum": "Fire kilometer svævebane i en stol over skoven ved Cable Bay, op til 100 km/t. Hele turen tager 1 til 1,5 time.",
+  "note": "Lægger ca. 1,5 time til en dag, der i forvejen er 4 t 36 bag rattet. Omvejen fra hovedvejen er ikke målt. Telefon +64 3 545 0304. Uklart. Den ene pris svarer til direkte, den anden er ca. $19 NZD dyrere pr. person.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.nelsontasman.nz/activities-day-trips/cable-bay-adventure-park-the-skywire/"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "low",
+  "vouchers": [
+   {
+    "kind": "Gifting Owl",
+    "text": "Direkte ca. $115 NZD pr. person, $230 NZD for to. Gavekortet dækker ca. $101 NZD, så I betaler ca. $129 NZD selv, hvis Gifting Owl tager samme pris. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://giftingowl.com/nz/nelson/hira/skywire-experience-1/"
+   }
+  ]
+ },
+ {
+  "id": "mistletoe-bay-kayak-sup",
+  "name": "Kajak og paddleboard i Mistletoe Bay",
+  "maker": "Mistletoe Bay Eco Village · Kayak and paddle board hire, Mistletoe Bay",
+  "area": "Mistletoe Bay",
+  "ll": [
+   -41.22323,
+   173.97284
+  ],
+  "cat": "kayak",
+  "dates": [
+   "2026-11-30"
+  ],
+  "when": "man 30 nov, hviledagen i Mistletoe Bay",
+  "price": 20,
+  "priceText": "Kajak $15 pr. person for 1 time eller $20 for 2 timer. Paddleboard $20 pr. person for 1 time. Redningsvest med",
+  "priceSource": "operator",
+  "duration": "1 til 2 timer",
+  "walk": true,
+  "open": "Udlejes ikke mellem kl. 18 og 9. Lukker hvis vinden blæser ud af bugten eller vandet er uroligt Ikke bekræftet for datoen.",
+  "booking": "Spørg i receptionen på dagen",
+  "weather": "Kun i roligt vejr, de hiver bådene ind ved vind ud af bugten",
+  "sum": "Billigste vandtur på hele ruten. Padl rundt i bugten og ud langs kysten mod Onahau, med snorkel eller fiskestang hvis I har.",
+  "note": "Siden siger ikke, om udlejningen er bemandet en mandag. Sit-on-top kajakker, ikke havkajakker, så hold jer i bugten.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.mistletoebay.co.nz/activities/"
+   ]
+  ],
+  "phone": "+64 21 131 8283",
+  "checked": "fre 20 nov",
+  "conf": "low",
+  "top": "2026-11-30"
+ },
+ {
+  "id": "weta",
+  "name": "Wētā Workshop-tur i Miramar",
+  "maker": "Wētā Workshop Experiences Tour",
+  "area": "Wellington, Miramar",
+  "ll": [
+   -41.30635,
+   174.82425
+  ],
+  "cat": "culture",
+  "dates": [
+   "2026-12-01"
+  ],
+  "when": "tir 1 dec om eftermiddagen, fx kl. 14.00 eller kl. 15.00. Ons 2 dec kl. 8.40 eller 9.00 kan også lade sig gøre før turen nordpå",
+  "price": 63,
+  "priceText": "$63 pr. voksen ved køb på nettet i december ($59 i november). Ved skranken koster det mere",
+  "priceSource": "operator",
+  "duration": "ca. 1½ time plus 20 min kørsel fra centrum",
+  "open": "Åbent alle dage undtagen juledag. Ture hvert 20. minut fra kl. 8.40 til kl. 17.00",
+  "booking": "Book på nettet et par dage før. Tir 1 dec havde mange ledige tider om eftermiddagen fre 20 nov, kl. 10.00 var udsolgt",
+  "weather": "Indendørs, fint i regn",
+  "sum": "Guidet tur i værkstedet bag Ringenes Herre og Avatar, hvor I ser rekvisitter, våben og masker tæt på og hører hvordan de bliver lavet. Byens sjoveste indendørs ting, hvis I kan lide film og håndværk.",
+  "note": "Ligger i Miramar ca. 20 min i bil fra centrum. Parkering ved Wētā Cave. Fotografering er begrænset inde på touren.",
+  "links": [
+   [
+    "Udbyder",
+    "https://bookings.wetaworkshop.com/BookingCat/Availability/?&category=CT&date=01/12/2026"
+   ],
+   [
+    "Book",
+    "https://www.wetaworkshop.com/tours/wellington/experiences/tour"
+   ]
+  ],
+  "phone": "+64 4 909 4035",
+  "checked": "fre 20 nov",
+  "conf": "high",
+  "top": "2026-12-01",
+  "vouchers": [
+   {
+    "kind": "Gifting Owl",
+    "text": "Hvis prisen stadig er ca. $49 AUD pr. person, koster to billetter ca. $98 AUD. Gavekortet dækker $83 AUD, og I betaler ca. $15 AUD selv. Ikke tjekket fre 20 nov. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://giftingowl.com/nz/wellington/weta-workshop-experiences-tour-wellington"
+   },
+   {
+    "kind": "Viator",
+    "text": "Viators pris kunne ikke læses fre 20 nov. Stedets egen pris for to er $126 NZD, ca. $104 AUD. Tager Viator samme pris, dækker kreditten $60 AUD, og I betaler ca. $44 AUD selv. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://www.viator.com/en-AU/tours/Wellington/Weta-Workshop-Experience/d399-6611P26"
+   }
+  ]
+ },
+ {
+  "id": "te-papa",
+  "name": "Nationalmuseet Te Papa i Wellington",
+  "maker": "Museum of New Zealand Te Papa Tongarewa",
+  "area": "Wellington",
+  "ll": [
+   -41.29033,
+   174.78193
+  ],
+  "cat": "museum",
+  "dates": [
+   "2026-12-01",
+   "2026-12-02"
+  ],
+  "when": "tir 1 dec efter færgen, eller ons 2 dec kl. 10.00 før turen nordpå",
+  "price": 35,
+  "priceText": "$35 for internationale voksne. Særudstillinger kan koste ekstra.",
+  "priceSource": "operator",
+  "duration": "ca. 2 timer tirsdag eller 1 time onsdag",
+  "open": "Dagligt kl. 10.00 til 18.00, kun lukket juledag.",
+  "booking": "Køb entré online eller ved ankomst. Mød ved 55 Cable Street.",
+  "weather": "Indendørs og godt i regn.",
+  "sum": "Se natur, kunst og Māori og Stillehavets kultur samlet ved havnen. Et nemt indendørs stop efter den tidlige færge.",
+  "note": "Ikke gratis for internationale besøgende. Onsdagens sene åbning presser køreturen og Escarpment Track. Game Worlds åbner først 12 dec.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.tepapa.govt.nz/visit/tickets-international-visitor-museum-entry"
+   ]
+  ],
+  "phone": "+64 4 381 7000",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "cable-car",
+  "name": "Kabelbane og planetarium, Wellington",
+  "maker": "Wellington Cable Car og Experience Wellington · Wellington Cable Car og Space Place",
+  "area": "Wellington",
+  "ll": [
+   -41.28426,
+   174.7748
+  ],
+  "cat": "gondola",
+  "dates": [
+   "2026-12-01"
+  ],
+  "when": "tir 1 dec fra kl. 17.00, hvor Space Place åbner. Space Place er lukket onsdag formiddag",
+  "price": 29,
+  "priceText": "$29 samlet: Cable Car retur $13 og Space Place $16.",
+  "priceSource": "operator",
+  "duration": "ca. 1½ til 2 timer",
+  "open": "Cable Car tirsdag kl. 7.30 til 20.00 hvert 10. minut. Space Place tirsdag kl. 17.00 til 22.30 i perioden 13 okt til 13 dec.",
+  "booking": "Start ved Cable Car Lane, 280 Lambton Quay. Køb to billetter. Vælg et tidligt planetarieshow og kom ned med banen før kl. 20.00.",
+  "weather": "Planetariet fungerer i regn. Kikkertkig kræver klar himmel.",
+  "sum": "Tag den røde kabelbane op over byen og se sydhimlen i planetariet. En billig aftenaktivitet med udsigt og kort gang mellem banen og observatoriet.",
+  "note": "Returprisen kræver nedtur før banens lukning kl. 20.00. Planetariets præcise show og pladser 1 dec er ikke verificeret. Space Place ligger på 40 Salamanca Road.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.wellingtoncablecar.co.nz/timetable-fares"
+   ],
+   [
+    "Book",
+    "https://www.museumswellington.org.nz/space-place/"
+   ]
+  ],
+  "phone": "+64 4 910 3140",
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "somes-island",
+  "name": "Sejltur til Somes Island",
+  "maker": "East by West Ferries · Mātiu/Somes Island day trip",
+  "area": "Wellington, havnen",
+  "ll": [
+   -41.28409,
+   174.77917
+  ],
+  "cat": "wildlife",
+  "dates": [
+   "2026-12-01",
+   "2026-12-02"
+  ],
+  "when": "tir 1 dec med båden kl. 12.00 fra Queens Wharf, hjem ca. kl. 15.40. Eller ons 2 dec kl. 10.00",
+  "price": 42,
+  "priceText": "$42 retur pr. voksen inkl. $6 i besøgsafgift",
+  "priceSource": "operator",
+  "duration": "ca. 3½ time inkl. sejlturen",
+  "open": "Dagsture tir 1 og ons 2 dec kl. 10.00 og kl. 12.00 fra Queens Wharf, begge åbne for booking fre 20 nov",
+  "booking": "Book på nettet hos East by West. Mød ved Queens Wharf. I skal tilbage med den afgang der står på billetten",
+  "weather": "Sejler ikke i hård storm. Øen er åben og blæsende",
+  "sum": "Rovdyrfri ø midt i havnen med tuatara, kākāriki og gamle karantænebygninger. Kort sejltur, og øen er lille nok til at gå rundt i roligt tempo.",
+  "note": "Kl. 12.00 tir 1 dec er stramt efter færgen kl. 11.15, fordi bilen skal af båden og parkeres. Ons kl. 10.00 er nemmere, men skubber køreturen nordpå. Biosikkerhedstjek af tasker og sko før I går i land. Ingen butik på øen.",
+  "links": [
+   [
+    "Udbyder",
+    "https://eastbywest.co.nz/ferry-services/matiu-somes-island/"
+   ],
+   [
+    "Book",
+    "https://fareharbor.com/embeds/book/eastbywest/items/585498/"
+   ]
+  ],
+  "phone": "+64 4 499 1282",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "garage-project-leeds",
+  "name": "Garage Project i Hannahs Laneway",
+  "maker": "Garage Project Leeds St",
+  "area": "Wellington, Hannahs Laneway",
+  "ll": [
+   -41.29304,
+   174.77673
+  ],
+  "cat": "brewery_winery",
+  "dates": [
+   "2026-12-01"
+  ],
+  "when": "tir 1 dec fra kl. 14.00 til 22.00",
+  "price": null,
+  "priceText": "Gratis at gå ind. Priser på øl står ikke på siden",
+  "priceSource": "unknown",
+  "duration": "ca. 1 til 2 timer",
+  "open": "Leeds St tir kl. 14.00 til 22.00. Taproom på 91 Aro St tir kl. 15.00 til 21.00",
+  "booking": "Ingen booking nødvendig for to",
+  "weather": "Indendørs med terrasse",
+  "sum": "Wellingtons mest skøre bryggeri med 32 haner, fx syltede agurk-øl, i den lille gade Hannahs Laneway. Wellington Chocolate Factory ligger lige om hjørnet.",
+  "note": "Bryggeriets rundvisning i Wild Workshop er kun lørdage, så den kan I ikke nå. Gå-afstand fra Cuba Street og Courtenay Place.",
+  "links": [
+   [
+    "Udbyder",
+    "https://garageproject.co.nz/locations/leeds-street"
+   ]
+  ],
+  "phone": "+64 4 389 8693",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "wcf",
+  "name": "Lav din egen chokolade i Wellington",
+  "maker": "Wellington Chocolate Factory · Original Chocolatier Experience",
+  "area": "Wellington, Eva Street",
+  "ll": [
+   -41.29259,
+   174.77721
+  ],
+  "cat": "food_drink",
+  "dates": [
+   "2026-12-01"
+  ],
+  "when": "tir 1 dec om eftermiddagen, hvis der er et hold",
+  "price": 65,
+  "priceText": "$65 pr. person: tre chokoladebarer I selv laver, smagsprøver, varm kakao og 20 % rabat i butikken",
+  "priceSource": "operator",
+  "duration": "ca. 1½ time",
+  "open": "Fabrik og café åben 7 dage kl. 10.00 til 16.00. Hvilke dage og tider holdene kører, kunne ikke læses fre 20 nov Ikke bekræftet for datoen.",
+  "booking": "Book på nettet. Tjek først om der er et hold tir 1 dec",
+  "weather": "Indendørs, godt i regn",
+  "sum": "Lær hvordan chokolade laves fra bønne til bar og lav tre barer med jeres egne smage. Fabrikken ligger i Hannahs Laneway ved siden af Garage Project.",
+  "note": "Bookingsiden blokerede fre 20 nov, så jeg kunne ikke se om der er hold tirsdag. Ældre omtaler siger at turene mest kørte lørdage. Ikke for under 12 år.",
+  "links": [
+   [
+    "Udbyder",
+    "https://wcf.co.nz/pages/chocolate-experience-wellington"
+   ],
+   [
+    "Book",
+    "https://wcf.co.nz/products/chocolatier-for-the-day"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "low"
+ },
+ {
+  "id": "three-sisters-quiz",
+  "name": "Pubquiz på bryggeri i Wellington",
+  "maker": "Quiz Night at Three Sisters Brewery",
+  "area": "Wellington, Te Aro",
+  "ll": [
+   -41.2933,
+   174.78338
+  ],
+  "cat": "event",
+  "dates": [
+   "2026-12-01"
+  ],
+  "when": "tir 1 dec kl. 18.30 til 20.30",
+  "price": 0,
+  "priceText": "Gratis at deltage, I betaler for øl og mad",
+  "priceSource": "third_party",
+  "duration": "ca. 2 timer",
+  "open": "Fast quiz hver tirsdag kl. 18.30 hele 2026, også tir 1 dec ifølge Eventfinda",
+  "booking": "Kom i god tid og få et bord. Ingen tilmelding nævnt",
+  "weather": "Indendørs",
+  "sum": "Pubquiz på et lille bryggeri på Blair Street tæt på Courtenay Place, gå-afstand fra et hotel i centrum. God aften med lokale øl.",
+  "note": "Quizzen er på engelsk og fuld af lokale spørgsmål. Datoen er læst på Eventfinda, ikke på bryggeriets egen side. Andre gratis tirsdagsquizzer samme aften: Kelburn Village Pub kl. 19.00 og Amador på Willis Street kl. 18.30.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.eventfinda.co.nz/2026/quiz-night/wellington-region"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "mt-vic",
+  "name": "Udsigt fra Mount Victoria",
+  "maker": "Mount Victoria Lookout",
+  "area": "Wellington",
+  "ll": [
+   -41.29604,
+   174.79432
+  ],
+  "cat": "other",
+  "dates": [
+   "2026-12-01"
+  ],
+  "when": "tir 1 dec ved solnedgang",
+  "price": 0,
+  "priceText": "Gratis",
+  "priceSource": "free",
+  "duration": "ca. 30 min",
+  "open": "Vej helt op til toppen ad Lookout Road. Åbningstid ikke bekræftet Ikke bekræftet for datoen.",
+  "booking": "Ingen booking",
+  "weather": "Kun værd i klart vejr. Meget blæsende",
+  "sum": "Kør op på byens udsigtspunkt og se havnen, lufthavnen og hele Wellington fra oven. Godt som afslutning på tirsdagen.",
+  "note": "Vejadgang og eventuel lukketid er ikke tjekket på en officiel side fre 20 nov. Smalle snoede veje og få p-pladser ved toppen.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.openstreetmap.org/node/170485240"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "southward",
+  "name": "Bilmuseum i Paraparaumu",
+  "maker": "Southward Car Museum Trust",
+  "area": "Paraparaumu, Kāpiti Coast",
+  "ll": [
+   -40.89414,
+   175.02871
+  ],
+  "cat": "museum",
+  "dates": [
+   "2026-12-02"
+  ],
+  "when": "ons 2 dec, efter Escarpment Track på vej nordpå",
+  "price": 23,
+  "priceText": "$23 pr. voksen",
+  "priceSource": "operator",
+  "duration": "ca. 1 til 1½ time",
+  "detour": 5,
+  "open": "Åbent dagligt kl. 9.00 til 16.30, sidste indgang kl. 16.00. Kun lukket langfredag og juledag",
+  "booking": "Ingen booking, betal ved døren",
+  "weather": "Indendørs, godt i regn",
+  "sum": "Kæmpe privat samling af gamle biler, motorcykler og sjove kuriositeter som en Cadillac fra en gangsterfilm og en lille biograf i art deco. Ligger lige ved motorvejen.",
+  "note": "Mest for jer hvis I kan lide biler. Sidste indgang kl. 16.00, så kom før, hvis I går Escarpment Track først. Telefonnummer ikke fundet på siden.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.southwardcarmuseum.co.nz/admission"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "glassworks",
+  "name": "Glaspustere i Whanganui",
+  "maker": "New Zealand Glassworks (Te Whare Tūhua o Te Ao)",
+  "area": "Whanganui",
+  "ll": [
+   -39.93332,
+   175.0559
+  ],
+  "cat": "craft_workshop",
+  "dates": [
+   "2026-12-02"
+  ],
+  "when": "ons 2 dec om eftermiddagen på vej gennem Whanganui, før kl. 16.30",
+  "price": 0,
+  "priceText": "Gratis at kigge på glaspusterne. Egne workshops koster $160 til $200, men der er ingen i ugen I er der",
+  "priceSource": "operator",
+  "duration": "ca. 30 til 45 min",
+  "detour": 5,
+  "open": "Åbent alle dage kl. 10.00 til 16.30, lukket på helligdage",
+  "booking": "Ingen booking for at se på",
+  "weather": "Indendørs",
+  "sum": "Åbent glasværksted hvor I står tæt på ovnene og ser kunstnerne puste glas. Gratis og ligger 2 min fra Sarjeant Gallery.",
+  "note": "Det er ikke sikkert at der blæses glas præcis når I kommer. Næste lav-selv-workshop er en tumbler-workshop lør 12 dec til $200, altså ikke på jeres dato.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.nzglassworks.com/"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "high",
+  "top": "2026-12-02"
+ },
+ {
+  "id": "sarjeant",
+  "name": "Gratis kunstmuseum i Whanganui",
+  "maker": "Te Whare o Rehua Sarjeant Gallery",
+  "area": "Whanganui",
+  "ll": [
+   -39.93103,
+   175.05361
+  ],
+  "cat": "museum",
+  "dates": [
+   "2026-12-02"
+  ],
+  "when": "ons 2 dec om eftermiddagen i Whanganui",
+  "price": 0,
+  "priceText": "Gratis, donation er velkommen",
+  "priceSource": "operator",
+  "duration": "ca. 1 time",
+  "detour": 5,
+  "open": "Åbent alle dage kl. 10.00 til 17.00, café til kl. 16.00. Kun lukket juledag og langfredag",
+  "booking": "Ingen booking",
+  "weather": "Indendørs",
+  "sum": "Nyrenoveret kunstmuseum på bakken over byen med en flot ny fløj i træ. Gratis, og kombinerer godt med Glassworks lige nedenfor.",
+  "note": "Kunstmuseum, så det er en rolig stop. Udstillingerne i december er ikke tjekket.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.sarjeant.org.nz/visit"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "kds-elvis",
+  "name": "Elvis-museum i en garage i Hāwera",
+  "maker": "Kevin \"KD\" Wasley · KD's Elvis Presley Private Museum",
+  "area": "Hāwera",
+  "ll": [
+   -39.58679,
+   174.27925
+  ],
+  "cat": "quirky",
+  "dates": [
+   "2026-12-03",
+   "2026-12-04"
+  ],
+  "when": "tor 3 dec når I kører gennem Hāwera, ring dagen før",
+  "price": null,
+  "priceText": "Gratis eller donation ifølge ældre omtaler. Ikke bekræftet",
+  "priceSource": "third_party",
+  "duration": "ca. 45 min",
+  "open": "De fleste dage efter aftale ifølge Venture Taranaki. Ingen faste åbningstider Ikke bekræftet for datoen.",
+  "booking": "Ring til KD og aftal en tid, gerne dagen før",
+  "weather": "Indendørs",
+  "sum": "En lokal mands garage fyldt fra gulv til loft med Elvis-ting, og han fortæller gerne historier om kongen. Så lokalt og skævt som det bliver.",
+  "note": "Privat hjem, så det kræver at han tager telefonen og er hjemme. Pris og åbningstider er kun fra regionens turistside og avisartikler, ikke bekræftet for december 2026.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.taranaki.co.nz/explore/listing/kds-elvis-presley-private-museum"
+   ]
+  ],
+  "phone": "+64 6 278 7624",
+  "checked": "fre 20 nov",
+  "conf": "low"
+ },
+ {
+  "id": "waiinu-beach",
+  "name": "Strandtur og ventifakter ved Waiinu",
+  "maker": "Waiinu Beach",
+  "area": "Waiinu Beach, ved campingpladsen",
+  "ll": [
+   -39.86345,
+   174.74658
+  ],
+  "cat": "other",
+  "dates": [
+   "2026-12-03"
+  ],
+  "when": "tor 3 dec om morgenen på faldende vand, og ons 2 dec til solnedgang når I er kommet frem",
+  "price": 0,
+  "priceText": "Gratis",
+  "priceSource": "free",
+  "duration": "1 til 2 timer",
+  "walk": true,
+  "open": "Offentlig strand, altid åben",
+  "booking": "Ingen",
+  "weather": "Blæsende vestkyst. Brug ikke tid på det i storm",
+  "tide": "Port Taranaki (LINZ): ons 2 dec højvande kl. 17.19, lavvande kl. 23.36. Tor 3 dec højvande kl. 5.51, lavvande kl. 12.03, højvande kl. 18.22. Gå langs stranden på faldende vand, tor ca. kl. 9.00 til 12.00. Ons aften er stranden smal omkring højvande. Waiinu ligger ca. 100 km fra Port Taranaki, så tiderne kan afvige lidt",
+  "sum": "Gå mod nord fra campingpladsen og find ventifakter, sten som vind og sand har slebet blanke og spidse, og ferskvandskilder der løber ud på stranden. Sort sand, klipper og solnedgang over Tasmanhavet lige ved teltet.",
+  "note": "Ikke en badestrand, der er ingen livredning og stærk strøm. Hold afstand til klinterne, de kan styrte. Fossiler er ikke beskrevet for selve Waiinu i kilderne, kun for nabostrandene.",
+  "links": [
+   [
+    "Udbyder",
+    "https://nzmcd.co.nz/stories/guides/8-great-taranaki-beaches"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "medium",
+  "top": "2026-12-03"
+ },
+ {
+  "id": "tawhiti",
+  "name": "Tawhiti Museum og bådtur, Hāwera",
+  "maker": "Tawhiti Museum (Nigel Ogle) · Tawhiti Museum og Traders & Whalers",
+  "area": "Hāwera",
+  "ll": [
+   -39.56833,
+   174.31167
+  ],
+  "cat": "museum",
+  "dates": [
+   "2026-12-04"
+  ],
+  "when": "fre 4 dec, fx i regnvejr i stedet for New Plymouth. Lukket tor 3 dec og lør 5 dec er for lang en køredag",
+  "price": 40,
+  "priceText": "$40 pr. voksen for begge: museum $20 og Traders & Whalers $20",
+  "priceSource": "operator",
+  "duration": "ca. 2½ til 3 timer for begge dele",
+  "detour": 35,
+  "open": "Fra september til 24 dec åbent fredag til mandag kl. 10.00 til 16.00. Lukket tirsdag, onsdag og torsdag",
+  "booking": "Ingen booking, betal ved døren",
+  "weather": "Indendørs, det bedste regnvejrsvalg i Taranaki",
+  "sum": "Skørt og meget roste privatmuseum hvor én mand har bygget tusindvis af figurer og store dioramaer af Taranakis historie. Traders & Whalers er en mørk bådtur på en underjordisk flod gennem scener fra hvalfangertiden.",
+  "note": "Kun åbent fre til man, så tor 3 dec går ikke. Fra Ōpunake er det ca. 45 km og ca. 35 min hver vej. Siden kalder Traders & Whalers en attraktion om Dicky Barrett og nævner ikke båden direkte fre 20 nov.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.tawhitimuseum.co.nz/"
+   ]
+  ],
+  "phone": "+64 6 278 6837",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "len-lye",
+  "name": "Len Lye kinetisk kunst, New Plymouth",
+  "maker": "New Plymouth District Council · Govett-Brewster Art Gallery og Len Lye Centre",
+  "area": "New Plymouth",
+  "ll": [
+   -39.05865,
+   174.07002
+  ],
+  "cat": "museum",
+  "dates": [
+   "2026-12-04"
+  ],
+  "when": "fre 4 dec i New Plymouth",
+  "price": 17,
+  "priceText": "$17 for besøgende udefra",
+  "priceSource": "operator",
+  "duration": "ca. 1 til 1½ time",
+  "open": "Åbent alle dage kl. 10.00 til 17.00. Kun lukket juledag, 2. juledag og nytårsdag",
+  "booking": "Ingen booking",
+  "weather": "Indendørs, godt i regn",
+  "sum": "Spejlblank bygning med Len Lyes bevægelige stålskulpturer, der svinger, buldrer og synger når de kører. Mere sjovt end et almindeligt kunstmuseum.",
+  "note": "Skulpturerne kører med mellemrum, og der er ingen faste tider på siden, så spørg i skranken. Wind Wand ved havnefronten er gratis at se.",
+  "links": [
+   [
+    "Udbyder",
+    "https://govettbrewster.com/visit"
+   ]
+  ],
+  "phone": "+64 6 759 6060",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "coastal-walkway-ebike",
+  "name": "Elcykel på Coastal Walkway, New Plymouth",
+  "maker": "Cycle Inn · Electric Bike hire, Coastal Walkway",
+  "area": "New Plymouth",
+  "ll": [
+   -39.05637,
+   174.07813
+  ],
+  "cat": "bike",
+  "dates": [
+   "2026-12-04"
+  ],
+  "when": "fre 4 dec, lej før kl. 15.00 så I har to timer inden butikken lukker kl. 17.00",
+  "price": 40,
+  "priceText": "$40 pr. elcykel for 2 timer, $60 for hele dagen. Almindelig cykel $20 for 2 timer. Hjelm og kort med",
+  "priceSource": "operator",
+  "duration": "2 timer, fx til Te Rewa Rewa Bridge og tilbage",
+  "open": "Butikken har åbent man til fre kl. 8.30 til 17.00",
+  "booking": "Kan ikke bookes. Kom forbi butikken på 133 Devon St East, først til mølle",
+  "weather": "Ikke sjovt i kraftig vestenvind eller regn",
+  "sum": "Cykl langs havet på den 13 km lange Coastal Walkway til den hvide bue-bro Te Rewa Rewa, hvor Taranaki står i rammen på en klar dag. Hurtigere og sjovere end at gå den.",
+  "note": "Elcykler kan ikke lejes over natten og der er minimum 2 timer. Chaddy’s Charters i havnen lejer også cykler fra $15, men pris for 2 timer er ikke bekræftet.",
+  "links": [
+   [
+    "Udbyder",
+    "https://cycleinn.co.nz/pages/bike-hire"
+   ]
+  ],
+  "phone": "+64 6 758 7418",
+  "checked": "fre 20 nov",
+  "conf": "high",
+  "top": "2026-12-04"
+ },
+ {
+  "id": "thermal-spa",
+  "name": "Privat mineralbad i New Plymouth",
+  "maker": "Taranaki Thermal Spa, private mineral pool",
+  "area": "New Plymouth, Moturoa",
+  "ll": [
+   -39.06172,
+   174.05385
+  ],
+  "cat": "hot_pool",
+  "dates": [
+   "2026-12-04"
+  ],
+  "when": "fre 4 dec, fx efter surf ved Back Beach eller sidst på dagen før turen hjem til Ōpunake",
+  "price": 28,
+  "priceText": "$55 for en privat pool til to i 30 min, altså $27.50 pr. person. Håndklæde $4",
+  "priceSource": "operator",
+  "duration": "30 min i poolen",
+  "open": "Åbningstider står ikke på hjemmesiden og bookingsystemet virkede ikke fre 20 nov Ikke bekræftet for datoen.",
+  "booking": "Ring og book en tid, eller prøv bookingsiden. Gerne dagen før",
+  "weather": "Fint i regn",
+  "sum": "Lille privat tub med varmt mineralvand fra en gammel boring ved havnen, kun for jer to. Billigt og ikke et stort badeland.",
+  "note": "Åbningstider for fre 4 dec er ikke bekræftet, så ring først. Det er et lille spa i et villakvarter, ikke en naturlig kilde.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.thermalspa.co.nz/pages/thermal-pools"
+   ],
+   [
+    "Book",
+    "https://apps.kitomba.com/bookings/taranakithermal"
+   ]
+  ],
+  "phone": "+64 6 759 1666",
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "shining-peak",
+  "name": "Bryggeripub i New Plymouth",
+  "maker": "Shining Peak Brewing, New Plymouth Brew Pub",
+  "area": "New Plymouth",
+  "ll": [
+   -39.05581,
+   174.07692
+  ],
+  "cat": "brewery_winery",
+  "dates": [
+   "2026-12-04"
+  ],
+  "when": "fre 4 dec til frokost eller tidlig aftensmad før turen hjem",
+  "price": null,
+  "priceText": "Priser på øl og mad i pubben står ikke på siden",
+  "priceSource": "unknown",
+  "duration": "ca. 1 til 1½ time",
+  "open": "Åbent 7 dage. Man til fre kl. 11.30 til sent",
+  "booking": "Bord kan bookes på siden, men er sjældent nødvendigt en fredag eftermiddag",
+  "weather": "Indendørs",
+  "sum": "Prisvindende lokalbryggeri med pub og eget køkken, der giver 5 procent af omsætningen til lokale formål. Bedste sted at smage Taranaki-øl.",
+  "note": "Den der kører hjem til Ōpunake (ca. 50 min) må holde sig til smagsprøver.",
+  "links": [
+   [
+    "Udbyder",
+    "https://shiningpeakbrewing.com/"
+   ]
+  ],
+  "phone": "+64 6 927 3133",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "whangamomona-hotel",
+  "name": "Frokost og passtempel, Whangamōmona",
+  "maker": "Whangamomona Hotel · Whangamōmona Hotel, frokost og republikkens passtempel",
+  "area": "Whangamōmona",
+  "ll": [
+   -39.14484,
+   174.73588
+  ],
+  "cat": "food_drink",
+  "dates": [
+   "2026-12-05"
+  ],
+  "when": "lør 5 dec til frokost midt på Forgotten World Highway",
+  "price": 29,
+  "priceText": "Burger med chips $29, toast $15 (kl. 10.00 til 17.30). Passtemplet koster en lille donation, beløbet er ikke bekræftet",
+  "priceSource": "operator",
+  "duration": "ca. 1 time",
+  "open": "Åbent 7 dage fra kl. 10.00 til sent",
+  "booking": "Ingen booking til frokost",
+  "weather": "Indendørs",
+  "sum": "Gammel landkro i den selverklærede Republikken Whangamōmona. Få et stempel i passet, spis en burger og hør historien om byen der erklærede sig selvstændig i 1989.",
+  "note": "Byen er allerede på jeres plan, dette er bare hvad der kan fås på kroen. Pasprisen er ikke på hotellets side. Hotellet tilbyder også ATV-ture til Bridge to Somewhere, men prisen står ikke online og turen tager for lang tid på jeres køredag.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.whangamomonahotel.co.nz/eat-and-drink"
+   ]
+  ],
+  "phone": "+64 6 762 5823",
+  "checked": "fre 20 nov",
+  "conf": "medium",
+  "top": "2026-12-05"
+ },
+ {
+  "id": "kiwi-mtb-old-coach-road",
+  "name": "Cykeltur Old Coach Road, National Park",
+  "maker": "Kiwi Mountain Bikes · ½ Day Hire (Fishers Track/Old Coach Road) + Pick-up",
+  "area": "National Park Village",
+  "ll": [
+   -39.17158,
+   175.39473
+  ],
+  "cat": "bike",
+  "dates": [
+   "2026-12-06"
+  ],
+  "when": "søn 6 dec, plan B hvis Crossing aflyses",
+  "price": 75,
+  "priceText": "$40 cykelleje plus $35 afhentning = $75 pr. person, mindst 2 personer",
+  "priceSource": "operator",
+  "duration": "halv dag",
+  "detour": 8,
+  "open": "Ikke bekræftet for søn 6 dec. Prissiden er fra 2021, sidefoden siger 2026 Ikke bekræftet for datoen.",
+  "booking": "Ring dagen før på +64 27 678 6461",
+  "weather": "Fishers Track og Old Coach Road ligger lavt og kan køres i let regn og blæst, hvor Crossing aflyses",
+  "sum": "Lang, nem nedkørsel på grusvej gennem farmland og regnskov med gamle viadukter. Sjov dag på hjul når bjerget er lukket.",
+  "note": "Pris og drift er ikke bekræftet for 2026, ring først. Guidet tur $99 kræver 3 personer",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.kiwimountainbikes.co.nz/services/"
+   ],
+   [
+    "Book",
+    "https://www.kiwimountainbikes.co.nz/contact-us/"
+   ]
+  ],
+  "phone": "+64 27 678 6461",
+  "checked": "fre 20 nov",
+  "conf": "low",
+  "top": "2026-12-06"
+ },
+ {
+  "id": "sky-waka",
+  "name": "Gondol op ad Ruapehu, Whakapapa",
+  "maker": "Whakapapa · Sky Waka Gondola",
+  "area": "Whakapapa",
+  "ll": [
+   -39.23719,
+   175.55773
+  ],
+  "cat": "gondola",
+  "dates": [
+   "2026-12-06",
+   "2026-12-07"
+  ],
+  "when": "søn 6 dec hvis vejret er klart, ellers man 7 dec efter Taranaki Falls",
+  "price": 39,
+  "priceText": "$39 for voksenpas om sommeren. Mad og glaskabine koster ekstra.",
+  "priceSource": "operator",
+  "duration": "ca. 1 til 2 timer med ophold på toppen",
+  "detour": 15,
+  "open": "Sommeren 2026/27 er åbnet. Dagens driftsrapport siger kl. 10 til 16, sidste tur op kl. 15.30.",
+  "booking": "Køb på dagen efter kontrol af driftsrapporten. Mød ved bundstationen øverst på Bruce Road.",
+  "weather": "Vind og dårligt vejr kan lukke liften. Vælg den kun ved udsigt, og brug den ikke som sikker stormplan.",
+  "sum": "Tag liften over lava og vandfald til udsigten ved Knoll Ridge Chalet. En kort pause fra alle vandreturene.",
+  "note": "Drift på selve dagen afhænger af vejr. $29 er en lokalrabat, som I ikke skal regne med. Ca. 15 minutters ekstra kørsel fra Whakapapa Village.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.whakapapa.com/summer/summer-sightseeing"
+   ],
+   [
+    "Book",
+    "https://buy.whakapapa.com/"
+   ]
+  ],
+  "phone": "+64 7 808 6151",
+  "checked": "fre 20 nov",
+  "conf": "high",
+  "vouchers": [
+   {
+    "kind": "Viator",
+    "text": "Viators pris kunne ikke læses fre 20 nov. Stedets egen pris for to er $78 NZD, ca. $64 AUD. Tager Viator samme pris, dækker kreditten $60 AUD, og I betaler ca. $4 AUD selv. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://www.viator.com/en-AU/tours/Tongariro-National-Park/Mt-Ruapehu-Whakapapa-Sky-Waka-Gondola-return-trip/d33378-41075P14"
+   }
+  ]
+ },
+ {
+  "id": "tokaanu-private-pools",
+  "name": "Privat varmt kar i Tokaanu",
+  "maker": "Tokaanu Thermal Pools, private pools",
+  "area": "Tokaanu, Tūrangi",
+  "ll": [
+   -38.96715,
+   175.76429
+  ],
+  "cat": "hot_pool",
+  "dates": [
+   "2026-12-06",
+   "2026-12-07"
+  ],
+  "when": "man 7 dec på vej mod Taupō, eller søn 6 dec som regnvejrsplan",
+  "price": null,
+  "priceText": "Ca. $12 til $14 pr. voksen for privat kar ifølge turistsider, ikke bekræftet hos stedet",
+  "priceSource": "third_party",
+  "duration": "20 min i privat kar",
+  "detour": 5,
+  "open": "Turistsider siger kl. 10 til 20 alle dage undtagen juledag. Ikke bekræftet for 2026 Ikke bekræftet for datoen.",
+  "booking": "Ingen booking, betal ved lugen. Ring først på +64 7 386 8575",
+  "weather": "Godt i regnvejr",
+  "sum": "Små private kar med naturligt mineralvand på 39 til 41 grader, gammeldags og billigt. Lige ved vejen fra Tūrangi.",
+  "note": "Pris og åbningstid kun fra tredjepart, ring først. Det store offentlige bassin var lukket i 2025, de private kar er en anden del",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.lovetaupo.com/en/operators/tokaanu-thermal-pools/"
+   ]
+  ],
+  "phone": "+64 7 386 8575",
+  "checked": "fre 20 nov",
+  "conf": "low"
+ },
+ {
+  "id": "sail-barbary",
+  "name": "Sejltur til maoriudskæring, Taupō",
+  "maker": "Sail Barbary Eco Sailing to the Maori Rock Carvings",
+  "area": "Taupō",
+  "ll": [
+   -38.68648,
+   176.06529
+  ],
+  "cat": "boat",
+  "dates": [
+   "2026-12-07"
+  ],
+  "when": "man 7 dec kl. 14, efter køreturen fra Whakapapa",
+  "price": 65,
+  "priceText": "$65 pr. person til fuld pris. Bookme har $45 kl. 14 man 7 dec. Te, kaffe og kakao med, tag selv mad og øl med",
+  "priceSource": "third_party",
+  "bookme": "BookMe har set $45 pr. person",
+  "duration": "2,5 timer",
+  "detour": 36,
+  "open": "Daglige ture kl. 10.30 og 14, aftentur kl. 17 om sommeren. Bookme har ledige pladser man 7 og tir 8 dec",
+  "booking": "Book på Bookme et par dage før for at få rabatprisen. Mød ved båden i Taupō havn",
+  "weather": "Kan aflyses ved hård vind på søen. Ring om morgenen",
+  "sum": "Sejltur på en gammel kauri-yacht med elmotor ud til den 14 meter høje maoriudskæring ved Mine Bay, som kun kan ses fra vandet. Man må hoppe i søen og have sin egen mad og drikke med.",
+  "note": "Prisen kunne jeg ikke læse på deres eget bookingsystem, kun på Bookme, derfor tredjepart. Telefonnummeret er 0800 ECO SAIL fra deres hjemmeside omsat til tal, tjek det. Ca. 36 min fra Motutere til Taupō, så I kører frem og tilbage. Billigere alternativ er Chris Jolly katamaranen til $29.25 på Bookme kl. 13 eller 15",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.bookme.co.nz/things-to-do/new-zealand/activity/sail-barbary-eco-sailing-to-the-maori-rock-carvings/569"
+   ]
+  ],
+  "phone": "0800 326 724",
+  "checked": "fre 20 nov",
+  "conf": "medium",
+  "top": "2026-12-07"
+ },
+ {
+  "id": "aratiatia-release",
+  "name": "Dæmningsudløb ved Aratiatia",
+  "maker": "Aratiatia Rapids dam release",
+  "area": "Aratiatia, Taupō",
+  "ll": [
+   -38.61775,
+   176.14124
+  ],
+  "cat": "quirky",
+  "dates": [
+   "2026-12-07",
+   "2026-12-08"
+  ],
+  "when": "tir 8 dec kl. 10 på vej nordpå, eller man 7 dec kl. 16",
+  "price": 0,
+  "priceText": "Gratis",
+  "priceSource": "free",
+  "duration": "ca. 30 min, selve udløbet varer ca. 15 min",
+  "detour": 12,
+  "open": "Sommerudløb (okt til mar) kl. 10, 12, 14 og 16 hver dag ifølge Mercury, der driver dæmningen",
+  "booking": "Ingen booking. Vær der 10 min før",
+  "weather": "Sker i al slags vejr",
+  "sum": "Mercury åbner sluserne, og den tørre kløft bliver på få minutter til et brusende strømfald. Se det fra dæmningen og løb så ned til det øverste udsigtspunkt.",
+  "note": "Tiderne er planlagte men ikke garanteret. Gå aldrig ned i flodlejet, sluserne kan åbne uden varsel. Kombinér med AWA Manutaki jetbåden kl. 10.30 lige ved siden af",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.mercury.co.nz/about-us/renewable-energy/hydro-generation/aratiatia-hydro-station"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "wairakei-terraces",
+  "name": "Termiske bassiner, Wairakei",
+  "maker": "Wairakei Terraces Thermal Hot Pools",
+  "area": "Wairakei, Taupō",
+  "ll": [
+   -38.61612,
+   176.08392
+  ],
+  "cat": "hot_pool",
+  "dates": [
+   "2026-12-07",
+   "2026-12-08"
+  ],
+  "when": "man 7 dec om aftenen efter sejlturen, eller tir 8 dec kl. 8",
+  "price": 27,
+  "priceText": "$27 pr. person, $17.50 på Bookme",
+  "priceSource": "operator",
+  "bookme": "BookMe har set $17.5 pr. person",
+  "duration": "1 til 2 timer",
+  "detour": 40,
+  "open": "Fre til ons kl. 8 til 21, tor kl. 8 til 19. Mandag og tirsdag er derfor åbne til kl. 21",
+  "booking": "Køb billet på Bookme dagen før",
+  "weather": "Godt i regnvejr",
+  "sum": "Fire naturlige silica-bassiner med hver sin temperatur under kalkterrasser og damp, kun for voksne. Lille og roligt, ikke et badeland.",
+  "note": "Kun over 14 år. Ca. 40 min fra Motutere, så det passer bedst med sejlturen i Taupō. Gratis alternativ er Otumuheke-bækken i Taupō",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.wairakeiterraces.co.nz/buy-online"
+   ],
+   [
+    "Book",
+    "https://www.bookme.co.nz/things-to-do/new-zealand/activity/wairakei-terraces-thermal-hot-pools/1542"
+   ]
+  ],
+  "phone": "+64 7 378 0913",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "go-taupo-rock-carvings-cruise",
+  "name": "Bådtur til klippeudskæringer, Taupō",
+  "maker": "Chris Jolly Outdoors · Scenic Summer Cocktail Cruise To The Maori Rock Carvings",
+  "area": "Taupō",
+  "ll": [
+   -38.68462,
+   176.06591
+  ],
+  "cat": "boat",
+  "dates": [
+   "2026-12-07"
+  ],
+  "when": "man 7 dec kl. 17.00 fra havnen i Taupō, 30 km fra Motutere. Sommersejladsen kl. 17 kører dagligt fra december til marts.",
+  "price": 65,
+  "priceText": "Hos udbyderen selv ca. $65 NZD pr. person.",
+  "priceSource": "operator",
+  "booking": "Ukendt. Book senest fre 4 dec, så der er tid til at rette op.",
+  "sum": "90 minutter med katamaran ud til de udskårne klippeansigter ved Mine Bay. Sommerturen kl. 17 har en drink med ved ombordstigning og åben bar.",
+  "note": "Ikke en varm kilde. Pris og drink er læst i et søgeresultat, ikke på siden fre 20 nov. Chris Jolly telefon 07 378 0623. Gifting Owl ser ca. $5 NZD billigere ud end normalprisen på $65 NZD. Bookme havde tilbud på $29,25 og $45,50 NZD i starten af december, men kalenderen gik kun til tor 3 dec.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.bookme.co.nz/things-to-do/rotorua-taupo/activity/scenic-mori-rock-carving-cruise-chris-jolly-outdoors/7958"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "low",
+  "vouchers": [
+   {
+    "kind": "Gifting Owl",
+    "text": "Hvis prisen stadig er ca. $50 AUD pr. person, koster to billetter ca. $100 AUD. Gavekortet dækker $83 AUD, og I betaler ca. $17 AUD selv. Ikke tjekket fre 20 nov. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://giftingowl.com/nz/waikato/taupo/scenic-summer-cocktail-cruise-to-the-maori-rock-carvings/"
+   },
+   {
+    "kind": "Viator",
+    "text": "Damperen Ernest Kemp sejler samme tur. To personer koster $118 NZD hos rederiet, ca. $97 AUD. Tager Viator det samme, dækker kreditten $60 AUD, og I betaler ca. $37 AUD. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den."
+   }
+  ]
+ },
+ {
+  "id": "go-rotorua-hells-gate-mud-bath",
+  "name": "Mudderbad og svovlbad, Rotorua",
+  "maker": "Hell's Gate (Tikitere) · Hells Gate in Rotorua: 1-Hour Mud Bath and Sulfur Spa",
+  "area": "Tikitere, Rotorua",
+  "ll": [
+   -38.06532,
+   176.3606
+  ],
+  "cat": "hot_pool",
+  "dates": [
+   "2026-12-07",
+   "2026-12-08"
+  ],
+  "when": "kun med en omvej. Man 7 dec fra Taupō eller tir 8 dec før Waitomo.",
+  "price": 90,
+  "priceText": "Hos udbyderen selv ca. $90 NZD pr. person.",
+  "priceSource": "operator",
+  "booking": "Ukendt.",
+  "sum": "En time i varmt mudder og bagefter svovlbad i et termisk område. Håndklæde og badetøj kan lejes.",
+  "note": "Lugter kraftigt af svovl. Den eneste varme kilde jeg fandt i Gifting Owls katalog i nærheden af ruten, og den kræver en lang omvej. Gifting Owl er ca. $6 NZD dyrere pr. person end direkte ($90 NZD).",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.hellsgate.co.nz/book"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "low",
+  "vouchers": [
+   {
+    "kind": "Gifting Owl",
+    "text": "Gavekortet dækker næsten én billet. To billetter koster ca. $158 AUD, så I betaler ca. $75 AUD selv. Ikke tjekket fre 20 nov. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://giftingowl.com/nz/bay-of-plenty/rotorua/hells-gate-in-rotorua-1-hour-mud-bath-and-sulfur-spa/"
+   }
+  ]
+ },
+ {
+  "id": "black-labyrinth",
+  "name": "Black water rafting i Waitomo",
+  "maker": "Discover Waitomo (Legendary Black Water Rafting Co.) · Legendary Black Water Rafting Co. Black Labyrinth",
+  "area": "Waitomo Caves",
+  "ll": [
+   -38.26393,
+   175.12584
+  ],
+  "cat": "cave",
+  "dates": [
+   "2026-12-08"
+  ],
+  "when": "tir 8 dec, eftermiddag i Waitomo på vej til Marokopa",
+  "price": 199,
+  "priceText": "$199 pr. person. Våddragt, hjelm, støvler og bildæk er med",
+  "priceSource": "operator",
+  "duration": "3 timer, mød 30 min før",
+  "open": "Åbent alle dage undtagen juledag. Bookingsystemet viser ingen lukkede dage fra 21 nov til 21 dec, og starttider hver halve time mellem kl. 8.30 og 16.30",
+  "booking": "Book på nettet nogle dage før. Vælg start kl. 15.00 eller 15.30, så I når frem fra Blue Spring. Kontaktløs betaling, stedet tager ikke kontanter",
+  "weather": "Kører i regn. Ved meget kraftig regn kan floden i hulen stige, så ringer de og flytter jer",
+  "sum": "I flyder i et bildæk ned ad en underjordisk flod i Ruakuri-hulen, hopper baglæns ned ad små vandfald og ligger til sidst og kigger op på et loft af glødeorme. Den sjoveste af hulerne i Waitomo for to der vil være våde og have fart på.",
+  "note": "Ligger lige på loftet af budgettet. Mindst 45 kg. Vandet er koldt, ca. 10 grader. Bringe badetøj og håndklæde. Bookingsystemet viser kun at dagen er åben, ikke hvor mange pladser der er tilbage på et bestemt klokkeslæt, så book i god tid. Ca. 50 min på snoet vej videre til Marokopa bagefter",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.waitomo.com/black-water-rafting/legendary-black-water-rafting-co-black-labyrinth"
+   ],
+   [
+    "Book",
+    "https://waitomo.zaui.net/booking/web/#/default/activity/6?"
+   ]
+  ],
+  "phone": "0800 228 464",
+  "checked": "fre 20 nov",
+  "conf": "high",
+  "top": "2026-12-08"
+ },
+ {
+  "id": "awa-manutaki",
+  "name": "Jetbåd i Aratiatia-strømfaldet",
+  "maker": "AWA Manutaki (previously Rapids Jet)",
+  "area": "Aratiatia, Taupō",
+  "ll": [
+   -38.61518,
+   176.17028
+  ],
+  "cat": "raft_jet",
+  "dates": [
+   "2026-12-08"
+  ],
+  "when": "tir 8 dec kl. 10.30, lige efter dæmningen ved Aratiatia åbner",
+  "price": 159,
+  "priceText": "$159 pr. person til fuld pris, $119 på Bookme",
+  "priceSource": "operator",
+  "bookme": "BookMe har set $119 pr. person",
+  "duration": "35 min på vandet",
+  "detour": 15,
+  "open": "Sommer kl. 9 til 17 fra 1 okt. Bookme viser afgange tir 8 dec",
+  "booking": "Book på Bookme, men regn med at I kan blive sat på venteliste til båden er fuld nok",
+  "weather": "Kører i regn. Aflyses kun ved meget høj vandstand",
+  "sum": "Jetbåd med 360 graders spins gennem Aratiatia-strømfaldet og den smalleste kløft på Waikato-floden, hvor tøndescenen i Hobbit blev filmet. Billigere og vildere vand end Huka Falls Jet.",
+  "note": "$119 kræver 6 i båden, ellers venteliste. Fuld pris kræver 4. Samme dag som black water rafting bliver det dyrt. 25 trin ned til bådebroen",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.awa-jet.com/"
+   ],
+   [
+    "Book",
+    "https://www.bookme.co.nz/things-to-do/new-zealand/activity/awa-manutaki-previously-rapids-jet/567"
+   ]
+  ],
+  "phone": "+64 7 374 8066",
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "spellbound",
+  "name": "Glødeorme i lille gruppe, Waitomo",
+  "maker": "Spellbound Glowworm and Cave Explorer",
+  "area": "Oparure, Waitomo",
+  "ll": [
+   -38.26032,
+   175.10726
+  ],
+  "cat": "glowworm",
+  "dates": [
+   "2026-12-08"
+  ],
+  "when": "tir 8 dec, alternativ til black water rafting",
+  "price": 109,
+  "priceText": "$109 pr. person for to huler med båd. Kortere tur med én hule koster $85",
+  "priceSource": "operator",
+  "duration": "ca. 2,5 timer",
+  "detour": 15,
+  "open": "Åbent alle dage, op til 6 ture om dagen. Afgangstider for tir 8 dec kunne jeg ikke se, bookingsiden blokerer automatisk læsning Ikke bekræftet for datoen.",
+  "booking": "Ring på 0800 773 552 eller book på nettet. Mød 15 til 20 min før, minibussen kører præcis",
+  "weather": "Kører normalt i regn. Aflyses kun hvis floden går over sine bredder",
+  "sum": "Lille gruppe på højst 12, en stille bådtur under tusindvis af glødeorme og bagefter en tør hule med fossiler. Roligere og mere personlig end den store Glowworm Cave.",
+  "note": "Afgangstider og ledige pladser 8 dec er ikke bekræftet. Forsiden viser stadig $99 og $79, men selve tursiden siger $109 og $85, regn med de høje. Mødestedet ligger 15 km fra Waitomo Village, ikke i landsbyen Kortpunktet er Waitomo Village Road. Det præcise mødested står i bookingen.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.glowworm.co.nz/tour/glowworm-and-cave-explorer"
+   ],
+   [
+    "Book",
+    "https://spellbound.rezdy.com/"
+   ]
+  ],
+  "phone": "0800 773 552",
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "go-waitomo-ruakuri-cave",
+  "name": "Ruakuri grotten med glowworms, Waitomo",
+  "maker": "Discover Waitomo (waitomo.com) · Waitomo Ruakuri Cave Tour",
+  "area": "Waitomo",
+  "ll": [
+   -38.26816,
+   175.07837
+  ],
+  "cat": "glowworm",
+  "dates": [
+   "2026-12-08"
+  ],
+  "when": "tir 8 dec på vej til Marokopa. Ture fra kl. 10 til kl. 15.30, check in 30 min før.",
+  "price": 122,
+  "priceText": "Hos udbyderen selv ca. $122 NZD pr. person.",
+  "priceSource": "operator",
+  "booking": "Ukendt. Waitomo skriver at forudbestilling er nødvendig. Book senest lør 5 dec.",
+  "sum": "Ca. 2 timers guidet gåtur i New Zealands længste guidede grotte med glowworms tæt på.",
+  "note": "Grotten er bygget om til gangbroer og kørestole, så den er mere tur end eventyr. Discover Waitomo telefon 0800 456 922. Kan ikke sammenlignes, Gifting Owls pris kunne ikke læses fre 20 nov.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.waitomo.com/glowworms-and-caves/ruakuri-cave"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "low",
+  "vouchers": [
+   {
+    "kind": "Gifting Owl",
+    "text": "Direkte koster den $122 NZD pr. person, $244 NZD for to. Gavekortet dækker ca. $101 NZD, så I betaler ca. $143 NZD selv, hvis Gifting Owl tager samme pris. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://giftingowl.com/nz/waikato/waitomo-district/waitomo-ruakuri-cave-tour-1/"
+   }
+  ]
+ },
+ {
+  "id": "waitomo-glowworm-caves",
+  "name": "Glowworm Caves med båd, Waitomo",
+  "maker": "Discover Waitomo · Waitomo Glowworm Caves",
+  "area": "Waitomo Caves",
+  "ll": [
+   -38.26087,
+   175.10354
+  ],
+  "cat": "glowworm",
+  "dates": [
+   "2026-12-08"
+  ],
+  "when": "tir 8 dec, den billige og hurtige løsning",
+  "price": 85,
+  "priceText": "$85 pr. person. Med Ruakuri-hulen som kombi $179",
+  "priceSource": "operator",
+  "duration": "45 min, mød 30 min før",
+  "open": "Alle dage. Bookingsystemet har ture hvert 10. minut fra kl. 8.30 til 18 tir 8 dec",
+  "booking": "Book på nettet dagen før eller samme morgen",
+  "weather": "Kører i al slags vejr",
+  "sum": "Den klassiske tur med en kort gåtur gennem hulen og en bådtur i mørket under glødeormene. Billigste og hurtigste måde at se glødeorme i Waitomo, men den er stor og turistet.",
+  "note": "Store grupper og mange busser midt på dagen. Ingen fotografering inde i hulen. I ser også glødeorme gratis ved Mangapohue og Marokopa om aftenen, så denne er kun værd at tage hvis I springer black water rafting over",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.waitomo.com/glowworms-and-caves/waitomo-glowworm-caves"
+   ],
+   [
+    "Book",
+    "https://waitomo.zaui.net/booking/web/#/default/"
+   ]
+  ],
+  "phone": "0800 456 922",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "raglan-limestone-express",
+  "name": "Guidet kajak ved kalkklipper, Raglan",
+  "maker": "Raglan Kayak & Paddleboard · The Limestone Express Guided Kayak Adventure",
+  "area": "Raglan",
+  "ll": [
+   -37.79977,
+   174.86825
+  ],
+  "cat": "kayak",
+  "dates": [
+   "2026-12-10",
+   "2026-12-11"
+  ],
+  "when": "tor 10 dec kl. 10.30, eller fre 11 dec kl. 10.30 før Auckland",
+  "price": 109,
+  "priceText": "$109 pr. person. Bookme $86.99 ons 9 og fre 11 dec, ingen rabat tor 10 dec",
+  "priceSource": "third_party",
+  "bookme": "BookMe har set $86.99 pr. person",
+  "duration": "ca. 2 timer",
+  "detour": 5,
+  "open": "Bookme viser ture kl. 10.30 og 13.30 ons 9, tor 10 og fre 11 dec",
+  "booking": "Book på Bookme nogle dage før",
+  "weather": "Aflyses ved hård vind i havnen",
+  "tide": "Højvande Raglan tor 10 dec kl. 11.50 og fre 11 dec kl. 12.26 (LINZ), så turen kl. 10.30 er på stigende vand",
+  "sum": "Guidet kajaktur langs kalkstensklipperne i Raglan-havnen med små grotter og pandekagesten. God hviledagsaktivitet på vandet.",
+  "note": "Pris kun set på Bookme, ikke på operatørens egen side. Mødested og telefon ikke bekræftet. Fre 11 dec kan I tage turen kl. 10.30 og stadig være i Auckland ca. kl. 15 Kortpunktet er Raglan by. Det præcise mødested står i bookingen.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.bookme.co.nz/things-to-do/new-zealand/activity/the-limestone-express-guided-kayak-adventure-raglan/10321"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "medium",
+  "top": "2026-12-10"
+ },
+ {
+  "id": "raglan-footbridge-jump",
+  "name": "Brohop ved højvande, Raglan",
+  "maker": "Kopua Footbridge jump",
+  "area": "Raglan",
+  "ll": [
+   -37.80054,
+   174.86606
+  ],
+  "cat": "wild_swim",
+  "dates": [
+   "2026-12-10"
+  ],
+  "when": "tor 10 dec ca. kl. 11 til 12.30",
+  "price": 0,
+  "priceText": "Gratis",
+  "priceSource": "free",
+  "duration": "ca. 1 time",
+  "walk": true,
+  "open": "Altid",
+  "booking": "Ingen booking",
+  "weather": "Kun ved højvande og roligt vand",
+  "tide": "LINZ Raglan: ons 9 dec højvande kl. 11.12 og 23.27, lavvande kl. 17.12. Tor 10 dec højvande kl. 11.50, lavvande kl. 5.26 og 17.50. Hop ca. kl. 11 til 12.30 tor 10 dec. Ons 9 dec er I først i Raglan om aftenen, og kl. 23.27 er for mørkt",
+  "sum": "Hop fra gangbroen ved campingpladsen ned i havnens strøm ved højvande, som de lokale gør. Gåafstand fra Te Kopua.",
+  "note": "Kun ved højvande, ved lavvande er det for lavt. Stærk strøm når vandet vender. Se dybden og de lokale først",
+  "links": [
+   [
+    "Udbyder",
+    "https://static.charts.linz.govt.nz/tide-tables/maj-ports/csv/Raglan%202026.csv"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "waiheke-island-wine-tours-premium",
+  "name": "Vintur på Waiheke, 3 vingårde",
+  "maker": "Waiheke Island Wine Tours · Premium Waiheke Wine Tour",
+  "area": "Waiheke Island (Mātiatia)",
+  "ll": [
+   -36.78049,
+   174.99205
+  ],
+  "cat": "brewery_winery",
+  "dates": [
+   "2026-12-12",
+   "2026-12-13",
+   "2026-12-14",
+   "2026-12-15",
+   "2026-12-16"
+  ],
+  "when": "alle dage lør 12 til ons 16 dec",
+  "price": 243,
+  "priceText": "$179 pr. person med smagegebyr på tre vingårde. Færgen er ikke med. Island Direct koster $64 retur (læst fre 20 nov), Fullers ca. $62 til $65 (kunne ikke tjekkes, siden blokerer). Frokost ikke med. Samlet ca. $243 pr. person plus frokost.",
+  "priceSource": "operator",
+  "duration": "ca. 6 timer, tilbage ved færgen kl. 15.45",
+  "open": "Dagligt, start kl. 10.00 i bookingsystemet. Siden nævner også færgerne kl. 9.00 (Fullers) og kl. 9.15 (Island Direct)",
+  "booking": "Book direkte på deres FareHarbor. Tir 15 dec havde kun 4 pladser tilbage og lør 12 dec 5",
+  "weather": "Kører i regn, bil mellem vingårdene",
+  "sum": "Tre butiksvingårde med smagegebyr betalt og en lokal guide, max 11 i bilen. Frokost ved Mudbrick eller i Oneroa sidst på turen.",
+  "note": "Kun tre vingårde, og frokosten kommer oveni. Mindst 18 år. Spørg hvilken færge de vil have jer på, siden og bookingsystemet siger kl. 9 og kl. 10.",
+  "links": [
+   [
+    "Udbyder",
+    "https://waihekeislandwinetours.co.nz/"
+   ],
+   [
+    "Book",
+    "https://fareharbor.com/embeds/book/waihekeislandwinetours-nz/items/554136/"
+   ]
+  ],
+  "phone": "+64 21 565 680",
+  "checked": "fre 20 nov",
+  "conf": "high"
+ },
+ {
+  "id": "twtc-best-cellar-tour",
+  "name": "Best Cellar vintur på Waiheke",
+  "maker": "The Wine Tasting Company · Full Day Waiheke Wine Tour - Best Cellar Tour",
+  "area": "Waiheke Island (Mātiatia)",
+  "ll": [
+   -36.78049,
+   174.99205
+  ],
+  "cat": "brewery_winery",
+  "dates": [
+   "2026-12-12",
+   "2026-12-13",
+   "2026-12-14",
+   "2026-12-15",
+   "2026-12-16"
+  ],
+  "when": "alle dage lør 12 til ons 16 dec, billigst tir 15 dec",
+  "price": 226,
+  "priceText": "$189 pr. person på bookme, $161.99 tir 15 dec og $169.99 søn 13 dec. Færgen er ikke med. Island Direct koster $64 retur (læst fre 20 nov), Fullers ca. $62 til $65 (kunne ikke tjekkes, siden blokerer). Frokost ikke med. Samlet ca. $226 tir 15 dec.",
+  "priceSource": "third_party",
+  "bookme": "BookMe har set $161.99 pr. person",
+  "duration": "kl. 10.40 til ca. 15.45 i Mātiatia",
+  "open": "Afgang kl. 10.40 fra Mātiatia alle fem dage på bookme",
+  "booking": "Book på bookme. Egen booking hos Rezdy blokerede for automatisk adgang, så prisen er ikke set hos operatøren",
+  "weather": "Kører i regn",
+  "sum": "Tre vingårde og 10 til 15 vine i alt med en lokal guide. Godt alternativ hvis Enjoi er fuld.",
+  "note": "Kun 50 procent retur ved afbud 7 dage til 24 timer før, intet under 24 timer. Telefonnummer ikke fundet, spørg via bookme. Mindst 18 år.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.bookme.co.nz/things-to-do/auckland/activity/full-day-waiheke-wine-tour-best-cellar-tour/10072"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "diy-waiheke-ferry-bus-wineries",
+  "name": "Vin på egen hånd på Waiheke",
+  "maker": "Waiheke på egen hånd: færge, bus og fire vingårde",
+  "area": "Waiheke Island (Oneroa og Onetangi Road)",
+  "ll": [
+   -36.79224,
+   175.00024
+  ],
+  "cat": "brewery_winery",
+  "dates": [
+   "2026-12-12",
+   "2026-12-13",
+   "2026-12-14",
+   "2026-12-15",
+   "2026-12-16"
+  ],
+  "when": "alle dage, helst man 14 til ons 16 dec hvor der er færrest julefester",
+  "price": 185,
+  "priceText": "Ca. $185 pr. person: Island Direct $64 retur, bus højst $20 (dagsloft med kontaktløst kort), Mudbrick $31, Tantalus $25, Stonyridge $35 og Cable Bay ca. $10 (Cable Bays pris kun set hos tredjepart). Plus frokost.",
+  "priceSource": "operator",
+  "duration": "kl. 9.15 til 16.15 eller 18.15",
+  "open": "Mudbrick dagligt kl. 10 til 17. Cable Bay dagligt kl. 11 til 17. Tantalus dagligt kl. 11 til 17. Stonyridge kl. 11 til 16 (lør til 17). Ingen af dem nævner særlige decembertider",
+  "booking": "Book Cable Bay og Stonyridge på nettet et par dage før, især i weekenden. Mudbrick og Tantalus kan klares uden booking for 2",
+  "weather": "Virker i regn, men gåturen fra Mātiatia til Mudbrick (ca. 15 min op ad bakke) og ventetid på bussen er våd",
+  "sum": "Tag færgen kl. 9.15, gå til Mudbrick og Cable Bay ved havnen, og tag bus 50 til Onetangi Road, hvor Tantalus, Stonyridge og Wild Estate ligger få hundrede meter fra hinanden. Ca. 16 smagninger i alt, I bestemmer selv tempoet.",
+  "note": "Bustider er ikke bekræftet fre 20 nov, tjek AT Mobile. Busserne kører ca. hver halve time ifølge tredjepart. Ingen guide, og I skal selv holde styr på tiden til færgen. Island Direct sidste færge hjem kl. 23.15 man til lør, kl. 20.45 søn.",
+  "links": [
+   [
+    "Udbyder",
+    "https://mudbrick.co.nz/tours-tasting/"
+   ],
+   [
+    "Book",
+    "https://stonyridge.com/pages/wine-tasting"
+   ]
+  ],
+  "phone": "+64 9 372 9050",
+  "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "vi-auckland-sky-tower",
+  "name": "Sky Tower i Auckland",
+  "maker": "SkyCity Auckland · Auckland Sky Tower General Admission Ticket",
+  "area": "Auckland centrum",
+  "ll": [
+   -36.84846,
+   174.76218
+  ],
+  "cat": "other",
+  "dates": [
+   "2026-12-12",
+   "2026-12-13",
+   "2026-12-14",
+   "2026-12-15",
+   "2026-12-16"
+  ],
+  "when": "en af dagene i Auckland 12 til 16 dec, gerne ved solnedgang",
+  "price": null,
+  "priceSource": "unknown",
+  "duration": "ca. 1 time",
+  "sum": "Udsigtsdæk i 220 meters højde midt i byen. Turistet, men en nem måde at bruge kreditten de sidste dage, hvis den ikke er brugt før.",
+  "note": "Direkte pris ikke læst fre 20 nov. Mindre sjovt end resten af listen, mest en reserve. SkyCitys egen side afviste automatisk adgang. Et søgeudklip af deres side viser $47 pr. voksen, ikke bekræftet fre 20 nov. Ring +64 9 363 6000 eller tjek på stedet. Søgeudklip af Viator viser ca. US$30 pr. person.",
+  "links": [
+   [
+    "Udbyder",
+    "https://skycityauckland.co.nz/sky-tower/admissions"
+   ]
+  ],
+  "checked": "fre 20 nov",
+  "conf": "low",
+  "vouchers": [
+   {
+    "kind": "Viator",
+    "text": "Viators pris kunne ikke læses fre 20 nov. Stedets egen pris (ikke læst fre 20 nov, se kilder) for to er $94 NZD, ca. $77 AUD. Tager Viator samme pris, dækker kreditten $60 AUD, og I betaler ca. $17 AUD selv. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
+    "url": "https://www.viator.com/en-AU/tours/Auckland/Sky-Tower-General-Admission/d391-61969P1"
+   }
+  ]
+ },
+ {
+  "id": "enjoi-premium-waiheke-wine-tour",
+  "name": "Vintur på Waiheke med Enjoi",
+  "maker": "Enjoi NZ (Enjoi Waiheke) · Premium Full Day Waiheke Wine Tour",
+  "area": "Waiheke Island (Mātiatia)",
+  "ll": [
+   -36.78049,
+   174.99205
+  ],
+  "cat": "brewery_winery",
+  "dates": [
+   "2026-12-14",
+   "2026-12-12",
+   "2026-12-13",
+   "2026-12-16"
+  ],
+  "when": "Bedst man 14 dec, hvor BookMe har den til $122 og vingårdene er roligere end i weekenden. Lør 12 dec koster det samme. Søn 13 og ons 16 dec $133.",
+  "price": 186,
+  "priceText": "$185 pr. person på Enjois egen side, på bookme $122 (lør 12 og man 14 dec) eller $133 (søn 13 og ons 16 dec). Færgen er ikke med. Island Direct koster $64 retur (læst fre 20 nov), Fullers ca. $62 til $65 (kunne ikke tjekkes, siden blokerer). Frokost betaler I selv. Samlet med bookme og Island Direct ca. $186 til $197 pr. person plus frokost.",
+  "priceSource": "operator",
+  "bookme": "BookMe har set $122 pr. person",
+  "duration": "ca. kl. 10.00 til 16.15 inkl. færge",
+  "open": "Kører dagligt ifølge Enjoi. Guiden møder færgen fra kl. 10.00 i Mātiatia med et Enjoi-skilt",
+  "booking": "Book på bookme snart, kun 5 til 11 pladser til tilbudsprisen pr. dag. Køb færgebillet til kl. 10.00 fra Downtown eller Island Direct kl. 9.15",
+  "weather": "Kører i regn, I er mest indendørs i smagerummene. Operatøren kan aflyse ved for få deltagere eller dårligt vejr",
+  "sum": "Op til fire vingårde med 3 til 5 gratis smagninger hver, så det er den tur med mest vin for pengene. Lille minibus med 12 pladser og frokostpause på en vingård.",
+  "note": "Mindst 2 personer, ellers kan turen aflyses. Afbud koster $30 pr. person, intet retur under 24 timer, og bookme tager 10 procent. En anmelder syntes, det var mere transport end guidning. Husk pas til ID.",
+  "links": [
+   [
+    "Udbyder",
+    "https://enjoi.nz/tour/waiheke-wine-tour"
+   ],
+   [
+    "Book",
+    "https://www.bookme.co.nz/things-to-do/auckland/activity/premium-full-day-waiheke-wine-tour-enjoi-waiheke/3084"
+   ]
+  ],
+  "phone": "+64 508 236 564",
+  "checked": "fre 20 nov",
+  "conf": "high",
+  "top": "2026-12-14"
  }
 ];
 window.tripIdeaNotes = {
  "2026-11-21": "MetService fredag aften: tørt, skyer der letter til en fin eftermiddag ved kysten, svag vind og 17 grader. Enkelte byger i bjergene sidst på formiddagen. Zipline kl. 13 eller 14 passer med kørslen. Hejreturen kl. 15 kræver et opkald om morgenen.",
  "2026-11-22": "Alex Knob giver kun mening i klart vejr. MetService for Hokitika siger fint om morgenen og skyer om eftermiddagen, så gå tidligt. Er bjerget lukket inde, så er kajak på Ōkārito-lagunen kl. 8 eller kiwierne i Franz Josef gode bytter. Efter vandreturen er et privat varmt kar kl. 17.30 det oplagte.",
- "2026-11-23": "Morgenen er roligst på søen, så kajakleje kl. 9 passer før turen nordpå. Guldvask i Ross og frokost i Hokitika ligger på vejen."
+ "2026-11-23": "Morgenen er roligst på søen, så kajakleje kl. 9 passer før turen nordpå. Guldvask i Ross og frokost i Hokitika ligger på vejen.",
+ "2026-11-24": "Højvande kl. 10.54 (LINZ, Westport). Blæsehullerne ved Pancake Rocks virker bedst omkring højvande med dønning. Kajak og SUP lejes på jeres egen camp fra $30. Regner det, koster Paparoa Experience $19,50 på BookMe.",
+ "2026-11-25": "Højvande kl. 11.41, så Pancake Rocks kan nås om formiddagen. Rafting på Buller kl. 13.30 kræver afgang ca. kl. 7.30. Det rolige valg er kano på Lake Rotoiti for ca. $20 pr. person.",
+ "2026-11-27": "Bliver I i Mārahau, er det turens bedste dag på vandet: egen kajak for $83 på BookMe kl. 8.30 eller guidet tur til Split Apple Rock for $61, uden at pakke teltet. Kører I til Golden Bay i stedet, bliver det en dag med små stop: fang selv laks ved Anatoki, bad ved Paynes Ford og kajak fra Tata Beach. Rådet er Mārahau fredag og Golden Bay lørdag.",
+ "2026-11-28": "Lavvande ved Wharariki ca. kl. 19.25 og solnedgang kl. 20.40. Det er ved lavvande, sælerne ligger i klippebassinerne.",
+ "2026-11-29": "Lang køredag. Bad ved Pelorus Bridge og muslinger i Havelock er de to stop, der er værd at tage. Mussel Pot har lukket mandag og tirsdag og vil have bordbestilling.",
+ "2026-12-01": "Wētā Workshop om eftermiddagen ($63) og gratis quiz på Three Sisters Brewery fra kl. 18.30.",
+ "2026-12-03": "Tawhiti Museum i Hāwera har kun åbent fredag til mandag, så det er lukket torsdag. Det kan nås fredag fra Opunake.",
+ "2026-12-06": "Aflyses Crossing: cykel på Old Coach Road eller Fishers Track ($75, ring først), Tawhai Falls, privat varmt kar i Tokaanu og minigolf og øl på Schnapps. Sky Waka kun i klart vejr.",
+ "2026-12-08": "Black water rafting ($199, start kl. 15 eller 15.30) er den eneste huletur med fart på. Billigere: Spellbound $109 i lille gruppe eller Glowworm Caves $85. Hobbiton har kun plads kl. 16.20 og 16.50 og koster jer hulerne.",
+ "2026-12-09": "Lavvande i Kāwhia kl. 17.02 (LINZ). Grav efter varmt vand i sandet ca. kl. 15 til 19.",
+ "2026-12-10": "Højvande i Raglan kl. 11.50. Det er der, man hopper fra gangbroen.",
+ "after": "Vinturen: Enjois heldagstur på Waiheke man 14 dec koster $122 på BookMe plus færge $64, i alt $186 pr. person plus frokost. Op til fire vingårde med 3 til 5 smagninger hver. Der var 7 pladser til den pris fre 20 nov. Gavekort og Viator: priserne på Gifting Owl og Viator kunne ikke læses, fordi begge sider afviser automatiske opslag. De gule punkter viser, hvor de efter alt at dømme kan bruges. Tjek prisen i appen, før I regner med den."
 };

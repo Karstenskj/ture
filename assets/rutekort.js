@@ -380,7 +380,7 @@
       legend.insertAdjacentHTML('beforeend','<span><span class="rk-bathing rk-bathing--shower">'+window.TripIcons.icon('shower')+'</span>Turkis camp · brusebad</span><span><span class="rk-bathing">'+window.TripIcons.icon('swim')+'</span>Søbad · tjek vandet</span><span><span class="rk-bathing rk-bathing--uncertain">?</span>Forhold/adgang skal bekræftes</span>');
     }
     if (window.TripIdeas && window.TripIdeas.spots().length) legend.insertAdjacentHTML('beforeend','<span><span class="rk-pin idea"></span>Lyserød · sjovt I kan vælge til</span>' +
-      (window.TripIdeas.hasVoucher ? '<span><span class="rk-pin idea voucher"></span>Gul · her kan gavekort eller Viator-kredit bruges</span>' : ''));
+      (window.TripIdeas.hasVoucher ? '<span><span class="rk-pin idea voucher"></span>Gul · gavekort eller Viator-kredit, tjek prisen</span>' : ''));
     box.appendChild(legend);
   }
 
