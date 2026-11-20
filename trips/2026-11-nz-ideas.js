@@ -33,7 +33,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 753 4120",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium"
  },
  {
@@ -72,7 +72,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 22 024 1332",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "low"
  },
  {
@@ -111,7 +111,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 755 5562",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high",
   "top": "2026-11-21",
   "vouchers": [
@@ -204,7 +204,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 752 0230",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -331,7 +331,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 752 0600",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high",
   "vouchers": [
    {
@@ -377,7 +377,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 752 0740",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -412,7 +412,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 755 4077",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium"
  },
  {
@@ -456,7 +456,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 755 5251",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -491,7 +491,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 731 1895",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium"
  },
  {
@@ -529,6 +529,41 @@ window.tripIdeas = [
   "phone": "+64 3 753 4014",
   "checked": "fre 20 nov",
   "conf": "high"
+ },
+ {
+  "id": "punakaiki-cavern-self-guided",
+  "name": "Gratis glowworms nær campen",
+  "maker": "Punakaiki Cavern",
+  "area": "Punakaiki",
+  "ll": [
+   -42.11243,
+   171.33257
+  ],
+  "cat": "glowworm",
+  "dates": [
+   "2026-11-23",
+   "2026-11-24"
+  ],
+  "when": "man 23 eller tir 24 nov efter mørkets frembrud",
+  "price": 0,
+  "priceText": "Gratis.",
+  "priceSource": "free",
+  "duration": "Et par minutter fra vejen til indgangen. Sæt 20 til 30 min af i hulen.",
+  "walk": true,
+  "open": "DOC beskriver fri adgang og 130 m passager. Ingen dateret bekræftelse af forholdene den 23 eller 24 nov. Ikke bekræftet for datoen.",
+  "booking": "Ingen booking. Spørg campen om adgang samme aften.",
+  "weather": "Vådt og glat gulv. Undlad at gå ind ved oversvømmelse.",
+  "sum": "Lille hule med glowworms og drypsten. Indgangen er skiltet på østsiden af SH6, 500 m nord for besøgscentret.",
+  "note": "Gå fra Owen Street mod hulens kortnål syd for campen. En ældre lokal artikel siger fejlagtigt nordpå. Samlet gangtid fra teltet er ikke verificeret. Tag to lygter og pas på trafikken ved SH6. Sluk lyset, når I ser efter glowworms.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/west-coast/places/paparoa-national-park/things-to-do/tracks/punakaiki-cavern/"
+   ]
+  ],
+  "phone": "+64 3 731 1895",
+  "checked": "lør 21 nov",
+  "conf": "medium"
  },
  {
   "id": "bonz-n-stonz-carve",
@@ -599,7 +634,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 27 444 9985",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -668,7 +703,7 @@ window.tripIdeas = [
   "bookme": "BookMe har set $19.5 pr. person",
   "duration": "ca. 1 time",
   "walk": true,
-  "open": "Åbent dagligt fra kl. 9, sidste booking kl. 15. Ledige tider kl. 9 til 16 tir 24 nov i deres FareHarbor",
+  "open": "Åbner kl. 9.30, sidste booking kl. 15, lukker kl. 16. Gælder også man 23 og tir 24 nov efter den offentliggjorte ugeplan.",
   "booking": "Book på bookme aftenen før for halv pris",
   "weather": "Indendørs, den bedste plan hvis det regner hele dagen",
   "sum": "Interaktiv udstilling drevet af Ngati Waewae om jade, kalkstenshuler og blæsehullerne. Ligger ca. 1 km fra campen.",
@@ -680,7 +715,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "0800 7272 762",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium"
  },
  {
@@ -697,8 +732,8 @@ window.tripIdeas = [
    "2026-11-24"
   ],
   "when": "tir 24 nov, briefing kl. 9, 13 eller 15.30",
-  "price": 30,
-  "priceText": "Fra $30 pr. person for 2 timer, redningsvest, sko og tørpose med. Prisen pr. bådtype står ikke på forsiden",
+  "price": 50,
+  "priceText": "$50 pr. voksen for 2 timers kajak eller SUP. En dobbeltkajak til to voksne koster $100 i alt. Prisen fra $30 gælder børn. Efterprøvet lør 21 nov.",
   "priceSource": "operator",
   "duration": "2 timer",
   "walk": true,
@@ -713,9 +748,43 @@ window.tripIdeas = [
     "https://paddlencarve.com/"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium",
   "top": "2026-11-24"
+ },
+ {
+  "id": "pororari-lower-swimming-hole",
+  "name": "Dukkert i Pororari River",
+  "maker": "Pororari River lower swimming hole",
+  "area": "Punakaiki",
+  "ll": [
+   -42.10769,
+   171.34083
+  ],
+  "cat": "wild_swim",
+  "dates": [
+   "2026-11-24"
+  ],
+  "when": "tir 24 nov i tørt vejr",
+  "price": 0,
+  "priceText": "Gratis.",
+  "priceSource": "free",
+  "duration": "15 min hver vej fra SH6-broen ifølge campingguiden. Gang fra teltet kommer oveni.",
+  "walk": true,
+  "open": "Flodstien er beskrevet på den aktuelle turistside. Vandstand og badevand er ikke verificeret for tir 24 nov. Ikke bekræftet for datoen.",
+  "booking": "Spørg campen om det nederste badehul og vandstanden.",
+  "weather": "Kun ved lavt, klart vand. Floden kan stige hurtigt efter regn.",
+  "sum": "Følg Pororari River Track opstrøms fra parkeringen ved SH6-broen til det nederste badehul. Det er en badetur med kort adgang.",
+  "note": "Kortnålen viser adgangsstien, ikke et opmålt badehul. 15 min til badestedet kommer fra en tredjepart. Hullet ved den øvre hængebro kræver væsentligt længere gang og passer dårligere. Undgå flodmundingen og havet.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.newzealand.com/nz/feature/pororari-river-track/"
+   ]
+  ],
+  "phone": "+64 3 731 1894",
+  "checked": "lør 21 nov",
+  "conf": "low"
  },
  {
   "id": "buller-whitewater-rafting",
@@ -818,7 +887,7 @@ window.tripIdeas = [
     "https://www.surf-forecast.com/breaks/Tauranga-Bay-Westport"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium"
  },
  {
@@ -918,7 +987,7 @@ window.tripIdeas = [
     "https://www.tripideas.nz/place/kerr-bay"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium"
  },
  {
@@ -983,7 +1052,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 789 4079",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium"
  },
  {
@@ -1017,7 +1086,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 528 2027",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "low",
   "top": "2026-11-26"
  },
@@ -1051,7 +1120,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 27 268 2115",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "low"
  },
  {
@@ -1124,7 +1193,7 @@ window.tripIdeas = [
   "booking": "Ring eller book online dagen før. 48 timer før er der ingen refusion, ved dårligt vejr kun 5 pct. gebyr",
   "weather": "Aflyses ved hård vind, og så får I pengene tilbage minus 5 pct.",
   "sum": "Den stille nordlige ende af Abel Tasman, med granitøer og tomme strande lige ud for Tata Beach. Langt færre både end ved Mārahau.",
-  "note": "Halvdagsleje kræver mindst to i dobbeltkajak og lidt kajakerfaring. Ligger ca. 20 min øst for Tākaka, modsat retning af Wharariki. Åbent på datoen er ikke bekræftet.",
+  "note": "Halvdagsleje kræver mindst to i dobbeltkajak og lidt kajakerfaring. Ligger ca. 20 min øst for Tākaka, modsat retning af Wharariki. Åbent på datoen er ikke bekræftet. Prislisten for 2026/27 siger $90, men udbyderens webside siger $85. Ring 03 525 9095 og få prisen.",
   "links": [
    [
     "Udbyder",
@@ -1176,7 +1245,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 528 2027",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1211,7 +1280,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 800 262 865",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1245,7 +1314,7 @@ window.tripIdeas = [
     "https://www.doc.govt.nz/parks-and-recreation/places-to-go/nelson-tasman/places/takaka-area/things-to-do/tracks/paines-ford-tramline-track/"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1279,7 +1348,7 @@ window.tripIdeas = [
     "https://www.doc.govt.nz/parks-and-recreation/places-to-go/nelson-tasman/places/takaka-area/things-to-do/tracks/te-waikoropupu-springs-walk/"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1313,7 +1382,7 @@ window.tripIdeas = [
     "https://www.doc.govt.nz/parks-and-recreation/places-to-go/nelson-tasman/places/farewell-spit-and-puponga-farm-park/things-to-do/tracks/wharariki-beach-track/"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium",
   "top": "2026-11-28"
  },
@@ -1347,7 +1416,7 @@ window.tripIdeas = [
     "https://www.musselinn.co.nz/Entertainment/entertainment.html"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1379,7 +1448,7 @@ window.tripIdeas = [
     "https://www.dancingsands.com/pages/visit-us"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1397,8 +1466,8 @@ window.tripIdeas = [
    "2026-11-27"
   ],
   "when": "lør 28 nov kl. 16 Blue Heron, eller fre 27 nov kl. 20 Pan's Labyrinth i 20-års udgave",
-  "price": 15,
-  "priceText": "$15 pr. voksen, $13 for studerende med kort",
+  "price": 19,
+  "priceText": "$19 pr. voksen, $17 med studiekort. Efterprøvet i biografens egen prisliste lør 21 nov.",
   "priceSource": "operator",
   "duration": "ca. 2 timer",
   "open": "Program nov/dec 2026: fre 27 nov kl. 16 Disney's Hexed (PG) og kl. 20 Pan's Labyrinth (R16). Lør 28 nov kl. 16 Blue Heron (M) og kl. 20 The Hunger Games: Sunrise on the Reaping (M)",
@@ -1417,7 +1486,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 525 8453",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1450,7 +1519,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 27 256 0566",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium"
  },
  {
@@ -1482,7 +1551,7 @@ window.tripIdeas = [
     "https://marlboroughnz.com/explore-marlborough/plan-stay/camping-leisure/pelorus-bridge-scenic-reserve"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high",
   "top": "2026-11-29"
  },
@@ -1504,7 +1573,7 @@ window.tripIdeas = [
   "priceText": "1 kg grønlæbede muslinger i egen gryde $29 (naturel) eller $30 (fløde, hvidvin, hvidløg). Muslingesuppe $28.50, smageplatte til to $64",
   "priceSource": "operator",
   "duration": "ca. 1 time",
-  "open": "Onsdag til søndag, frokost kl. 12 til 15 (sidste bestilling kl. 14.30), aften kl. 17 til 20. Lukket mandag og tirsdag, så søndag er den eneste chance",
+  "open": "Søn 29 nov: frokost kl. 11 til 15 med sidste bestilling kl. 14.30, aften kl. 17 til 19.30 med sidste bestilling kl. 19. Lukket mandag og tirsdag. Bestil bord.",
   "booking": "Restauranten skriver at booking er nødvendig. Book bord dagen før via deres side eller ring",
   "weather": "Inde og ude, kører i alt vejr",
   "sum": "Havelock er verdens muslingehovedstad, og her får I et kilo lokale grønlæbede muslinger i en gryde for $29. Godt stop efter Pelorus Bridge.",
@@ -1520,7 +1589,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 3 574 2824",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1554,7 +1623,7 @@ window.tripIdeas = [
     "https://www.mistletoebay.co.nz/activities/"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1588,7 +1657,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 27 278 8806",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1696,7 +1765,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 4 909 4035",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high",
   "top": "2026-12-01",
   "vouchers": [
@@ -1743,7 +1812,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 4 381 7000",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1768,7 +1837,7 @@ window.tripIdeas = [
   "booking": "Start ved Cable Car Lane, 280 Lambton Quay. Køb to billetter. Vælg et tidligt planetarieshow og kom ned med banen før kl. 20.00.",
   "weather": "Planetariet fungerer i regn. Kikkertkig kræver klar himmel.",
   "sum": "Tag den røde kabelbane op over byen og se sydhimlen i planetariet. En billig aftenaktivitet med udsigt og kort gang mellem banen og observatoriet.",
-  "note": "Returprisen kræver nedtur før banens lukning kl. 20.00. Planetariets præcise show og pladser 1 dec er ikke verificeret. Space Place ligger på 40 Salamanca Road.",
+  "note": "Returprisen kræver nedtur før banens lukning kl. 20.00. Planetariets præcise show og pladser 1 dec er ikke verificeret. Space Place ligger på 40 Salamanca Road. Kun selve banens pris på $13 er efterprøvet. Den samlede pris med Space Place er ikke bekræftet.",
   "links": [
    [
     "Udbyder",
@@ -1851,7 +1920,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 4 389 8693",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -1984,7 +2053,7 @@ window.tripIdeas = [
     "https://www.southwardcarmuseum.co.nz/admission"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -2017,7 +2086,7 @@ window.tripIdeas = [
     "https://www.nzglassworks.com/"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high",
   "top": "2026-12-02"
  },
@@ -2051,7 +2120,7 @@ window.tripIdeas = [
     "https://www.sarjeant.org.nz/visit"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -2119,9 +2188,42 @@ window.tripIdeas = [
     "https://nzmcd.co.nz/stories/guides/8-great-taranaki-beaches"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium",
   "top": "2026-12-03"
+ },
+ {
+  "id": "patea-aotea-utanganui",
+  "name": "Gratis museum og waka i Pātea",
+  "maker": "South Taranaki District Council · Aotea Utanganui Museum of South Taranaki",
+  "area": "Pātea",
+  "ll": [
+   -39.75426,
+   174.47201
+  ],
+  "cat": "museum",
+  "dates": [
+   "2026-12-03"
+  ],
+  "when": "tor 3 dec på vej nordpå fra Waiinu",
+  "price": 0,
+  "priceText": "Gratis, frivillig koha.",
+  "priceSource": "free",
+  "duration": "Sæt 30 til 45 min af plus et kort kig på Aotea Waka Memorial.",
+  "open": "Kommunen siger man til lør kl. 10 til 16. Tor 3 dec følger planen. Ingen særændring for dagen verificeret. Ikke bekræftet for datoen.",
+  "booking": "Ingen booking til almindeligt museumsbesøg. 127 Egmont Street.",
+  "weather": "Museet passer i regn.",
+  "sum": "Lille lokalmuseum med områdets historie. Aotea-kanoens mindesmærke giver også mening som et helt kort stop.",
+  "note": "Pātea er på torsdagsruten, så gem ikke stoppet til fredagens New Plymouth-tur. Kommunens Pātea-side har en usikker årstalsangivelse for Poi E, som ikke er gentaget her.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.southtaranaki.com/our-facilities/aotea-utanganui-museum-of-south-taranaki"
+   ]
+  ],
+  "phone": "+64 6 273 8354",
+  "checked": "lør 21 nov",
+  "conf": "medium"
  },
  {
   "id": "tawhiti",
@@ -2154,8 +2256,40 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 6 278 6837",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
+ },
+ {
+  "id": "paritutu-rock-scramble",
+  "name": "Kort klatring på Paritutu Rock",
+  "maker": "Paritūtū / Paritutu Rock",
+  "area": "New Plymouth",
+  "ll": [
+   -39.05951,
+   174.02342
+  ],
+  "cat": "adrenaline",
+  "dates": [
+   "2026-12-04"
+  ],
+  "when": "fre 4 dec på dagsturen til New Plymouth",
+  "price": 0,
+  "priceText": "Gratis.",
+  "priceSource": "free",
+  "duration": "Ca. 15 min op ifølge Taranakis turistkontor. Sæt ca. 45 min af med nedtur og udsigt.",
+  "open": "Aktuel turistlisting beskriver adgang fra Centennial Drive. Ingen 2026-lukning fundet ved søgning, men rejsedagens adgang er ikke bekræftet. Ikke bekræftet for datoen.",
+  "booking": "Ingen booking. Parkér ved foden af klippen på Centennial Drive.",
+  "weather": "Vælg tørre og rolige forhold. Vend om, hvis klippen er våd eller vinden kraftig.",
+  "sum": "Kort, stejl klatring med kædegreb og udsigt over kysten. Mere fysisk end den korte tid antyder.",
+  "note": "Kræver begge hænder og sko med greb. Det er en udsat klippepassage. Tidsbuddet på 45 min er vores planlægningsforslag. Torsdag 3 dec passer dårligere til deres sydlige rute.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.taranaki.co.nz/visit/everything-to-see-and-do/adventure-sport-and-recreation/listing/paritutu"
+   ]
+  ],
+  "checked": "lør 21 nov",
+  "conf": "medium"
  },
  {
   "id": "len-lye",
@@ -2187,7 +2321,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 6 759 6060",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -2220,9 +2354,41 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 6 758 7418",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high",
   "top": "2026-12-04"
+ },
+ {
+  "id": "back-beach-scenic-stop",
+  "name": "Sort sand ved Back Beach",
+  "maker": "Back Beach",
+  "area": "New Plymouth",
+  "ll": [
+   -39.0617,
+   174.02047
+  ],
+  "cat": "other",
+  "dates": [
+   "2026-12-04"
+  ],
+  "when": "fre 4 dec sammen med Paritutu Rock",
+  "price": 0,
+  "priceText": "Gratis.",
+  "priceSource": "free",
+  "duration": "Sæt 20 til 30 min af ved udsigten eller stranden.",
+  "open": "Aktuel turistlisting beskriver parkering øverst og nederst ved stranden. Ingen særskilt datobekræftelse for fre 4 dec. Ikke bekræftet for datoen.",
+  "booking": "Ingen booking. Adgang fra Centennial Drive.",
+  "weather": "Se bølgerne fra land ved stor sø. Tjek forholdene lokalt.",
+  "sum": "Sort sand, stor klit og udsigt mod Sugar Loaf Islands. Et let kyststop efter klippen.",
+  "note": "Beskrivelsen er et stop på land, ikke en anbefaling om badning eller et tidevindue til surf. Ingen tur ud på klipper eller øer. Toiletfaciliteter og badestatus er ikke verificeret.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.taranaki.co.nz/explore/listing/back-beach"
+   ]
+  ],
+  "checked": "lør 21 nov",
+  "conf": "medium"
  },
  {
   "id": "thermal-spa",
@@ -2291,7 +2457,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 6 927 3133",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -2327,6 +2493,42 @@ window.tripIdeas = [
   "checked": "fre 20 nov",
   "conf": "medium",
   "top": "2026-12-05"
+ },
+ {
+  "id": "turangi-twilight-christmas-5-dec-2026",
+  "name": "Julefest i Tūrangi bymidte",
+  "maker": "Tūrangi Community Events · Turangi Twilight Christmas",
+  "area": "Tūrangi",
+  "ll": [
+   -38.98935,
+   175.80863
+  ],
+  "cat": "event",
+  "dates": [
+   "2026-12-05"
+  ],
+  "when": "lør 5 dec kl. 16 til 20",
+  "price": 0,
+  "priceText": "Gratis adgang. Mad købes separat.",
+  "priceSource": "free",
+  "duration": "Arrangementet varer 4 timer. Et kort besøg er muligt.",
+  "open": "Aktuel 2026-listing bekræfter lør 5 dec kl. 16 til 20.",
+  "booking": "Ingen billet angivet som nødvendig. Bekræft stedet hos arrangøren via LoveTurangi før I kører.",
+  "weather": "Udendørs. Tjek arrangørens opslag ved dårligt vejr.",
+  "sum": "Madboder, musik og en lokal julefejring med pyntede cykler og små aktiviteter.",
+  "note": "Den nyere listing og lokalavis siger Town Centre, mens en anden siger Te Kapua Park. Bekræft mødestedet. Det er en eventoplysning til en eventuel omlægning af dagen, ikke en anbefalet ekstra tur fra Mangahuia efter lørdagens lange køredag. Hold dagens kørsel under 350 km.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.lovetaupo.com/en/events/957717"
+   ],
+   [
+    "Book",
+    "https://www.facebook.com/weloveturangi"
+   ]
+  ],
+  "checked": "lør 21 nov",
+  "conf": "medium"
  },
  {
   "id": "kiwi-mtb-old-coach-road",
@@ -2387,7 +2589,7 @@ window.tripIdeas = [
   "priceSource": "operator",
   "duration": "ca. 1 til 2 timer med ophold på toppen",
   "detour": 15,
-  "open": "Sommeren 2026/27 er åbnet. Dagens driftsrapport siger kl. 10 til 16, sidste tur op kl. 15.30.",
+  "open": "Driftsrapporten lør 21 nov siger kl. 9 til 16 med sidste tur op kl. 15.30. Tjek rapporten igen samme morgen, før I kører derop.",
   "booking": "Køb på dagen efter kontrol af driftsrapporten. Mød ved bundstationen øverst på Bruce Road.",
   "weather": "Vind og dårligt vejr kan lukke liften. Vælg den kun ved udsigt, og brug den ikke som sikker stormplan.",
   "sum": "Tag liften over lava og vandfald til udsigten ved Knoll Ridge Chalet. En kort pause fra alle vandreturene.",
@@ -2403,7 +2605,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 7 808 6151",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high",
   "vouchers": [
    {
@@ -2414,39 +2616,38 @@ window.tripIdeas = [
   ]
  },
  {
-  "id": "tokaanu-private-pools",
-  "name": "Privat varmt kar i Tokaanu",
-  "maker": "Tokaanu Thermal Pools, private pools",
-  "area": "Tokaanu, Tūrangi",
+  "id": "otumuheke-stream-free-hot-river",
+  "name": "Gratis varm flod i Taupō",
+  "maker": "Taupō District Council · Otumuheke Stream",
+  "area": "Spa Thermal Park, Taupō",
   "ll": [
-   -38.96715,
-   175.76429
+   -38.66952,
+   176.08678
   ],
   "cat": "hot_pool",
   "dates": [
-   "2026-12-06",
-   "2026-12-07"
+   "2026-12-07",
+   "2026-12-08"
   ],
-  "when": "man 7 dec på vej mod Taupō, eller søn 6 dec som regnvejrsplan",
-  "price": null,
-  "priceText": "Ca. $12 til $14 pr. voksen for privat kar ifølge turistsider, ikke bekræftet hos stedet",
-  "priceSource": "third_party",
-  "duration": "20 min i privat kar",
-  "detour": 5,
-  "open": "Turistsider siger kl. 10 til 20 alle dage undtagen juledag. Ikke bekræftet for 2026 Ikke bekræftet for datoen.",
-  "booking": "Ingen booking, betal ved lugen. Ring først på +64 7 386 8575",
-  "weather": "Godt i regnvejr",
-  "sum": "Små private kar med naturligt mineralvand på 39 til 41 grader, gammeldags og billigt. Lige ved vejen fra Tūrangi.",
-  "note": "Pris og åbningstid kun fra tredjepart, ring først. Det store offentlige bassin var lukket i 2025, de private kar er en anden del",
+  "when": "man 7 dec kræver tur nordpå fra Motutere. Tir 8 dec ligger på ruten.",
+  "price": 0,
+  "priceText": "Gratis adgang og parkering.",
+  "priceSource": "free",
+  "duration": "500 m og ca. 10 min hver vej fra parkeringen. Sæt 30 til 60 min af til badet.",
+  "open": "Turistkontoret skriver åbent dagligt. Bilporten er åben kl. 7 til 20 ifølge kommunen. Ingen særlig 2026-lukning fundet ved søgning i kommunens sider og Health NZs aktuelle varsler. Det bekræfter ikke badevandet på rejsedagen. Ikke bekræftet for datoen.",
+  "booking": "Parkér ved Spa Thermal Park, County Avenue fra Spa Road. Følg skiltene ned til Otumuheke Stream.",
+  "weather": "Tjek skiltning og aktuelle badevarsler. Hold jer i de rolige varme bassiner væk fra Waikato-flodens strøm.",
+  "sum": "Varmt kildevand møder koldt flodvand i små naturlige bassiner. Et gratis bad med kort gang fra bilen.",
+  "note": "Hold hovedet over vandet på grund af risikoen i ubehandlet geotermisk vand. Ingen spring eller dyk. Kortnålen viser åen, ikke bilparkeringen. Turistsidens tekst siger Country Road, men adressefeltet og parkbeskrivelsen siger County Avenue.",
   "links": [
    [
     "Udbyder",
-    "https://www.lovetaupo.com/en/operators/tokaanu-thermal-pools/"
+    "https://www.lovetaupo.com/en/scenic-attractions/otumuheke-stream/"
    ]
   ],
-  "phone": "+64 7 386 8575",
-  "checked": "fre 20 nov",
-  "conf": "low"
+  "phone": "+64 7 376 0027",
+  "checked": "lør 21 nov",
+  "conf": "medium"
  },
  {
   "id": "sail-barbary",
@@ -2485,6 +2686,107 @@ window.tripIdeas = [
   "top": "2026-12-07"
  },
  {
+  "id": "tokaanu-private-pools",
+  "name": "Privat varmt kar i Tokaanu",
+  "maker": "Tokaanu Thermal Pools",
+  "area": "Tokaanu ved Tūrangi",
+  "ll": [
+   -38.96715,
+   175.76429
+  ],
+  "cat": "hot_pool",
+  "dates": [
+   "2026-12-07"
+  ],
+  "when": "man 7 dec på vej fra National Park til Motutere",
+  "price": 14,
+  "priceText": "Tredjeparten NZHotpools viser $14 pr. voksen, $28 for to. Love Taupō viser $12. Ingen pris kunne bekræftes hos udbyderen.",
+  "priceSource": "third_party",
+  "duration": "Privat bad omtales som 20 min af en tredjepart. Bekræft ved opkald.",
+  "detour": 5,
+  "open": "Aktuel turistlisting siger åbent dagligt undtagen jul og nytår. NZHotpools-søgeresultatet siger private kar kl. 10 til 20. Drift man 7 dec 2026 er ikke bekræftet hos udbyderen. Ikke bekræftet for datoen.",
+  "booking": "Ring før omvejen om private kar, pris, sessionstid og sidste indgang.",
+  "weather": "Private mineralbassiner kan passe i køligt vejr.",
+  "sum": "Et privat mineralbad nær ruten. Opdatering af det eksisterende kortforslag.",
+  "note": "could not be checked: NZHotpools gav 403 ved åbning. Søgeresultatets pris og timer er tredjepartsoplysninger. En ældre lukning gjaldt det store offentlige bassin og dokumenterer ikke lukning af private kar. Hold hovedet over vandet.",
+  "links": [
+   [
+    "Udbyder",
+    "https://nzhotpools.co.nz/hot-pools/tokaanu-thermal-pools/"
+   ]
+  ],
+  "phone": "+64 7 386 8575",
+  "checked": "fre 20 nov",
+  "conf": "low"
+ },
+ {
+  "id": "taupo-hole-in-one-classic",
+  "name": "Golf mod en flydende green",
+  "maker": "Lake Taupō Hole in One Challenge",
+  "area": "Taupō lakefront",
+  "ll": [
+   -38.6924,
+   176.07163
+  ],
+  "cat": "games",
+  "dates": [
+   "2026-12-07",
+   "2026-12-08"
+  ],
+  "when": "man 7 eller tir 8 dec, bedst på vej gennem Taupō tirsdag",
+  "price": null,
+  "priceText": "Classic annonceres fra $25 hos udbyderen. Antal bolde og endelig pakkepris er ikke bekræftet.",
+  "priceSource": "operator",
+  "duration": "Egen side har en 10 min-produktetiket, men nævner også ca. 30 min. Sæt ca. 30 min af.",
+  "open": "Kontakt- og forsiden siger man og tir kl. 7 til 19. Andre undersider viser tidligere lukning. Ingen særlig kalenderbekræftelse for 7 eller 8 dec. Ikke bekræftet for datoen.",
+  "booking": "Kom forbi 61 Lake Terrace eller ring om dagens tider og boldpakker.",
+  "weather": "Vejrafhængigt ifølge udbyderens forside.",
+  "sum": "Slå golfbolde fra søbredden mod en flydende green. Et kort stop, også hvis I ikke spiller golf.",
+  "note": "Fra-pris er ikke en bekræftet fast pakkepris. Brug den aktuelle kontakttelefon frem for det gamle nummer i turistguiden.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.holein1.co.nz/play/hole-in-one-classic/"
+   ]
+  ],
+  "phone": "+64 27 225 1865",
+  "checked": "lør 21 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "taupo-monday-quiz-7-dec-2026",
+  "name": "Gratis pubquiz i Taupō",
+  "maker": "Taupō Pub Quiz / Cobb & Co. · Every Monday Night Pub Quiz - Believe It Or Not",
+  "area": "Taupō",
+  "ll": [
+   -38.68835,
+   176.06932
+  ],
+  "cat": "event",
+  "dates": [
+   "2026-12-07"
+  ],
+  "when": "man 7 dec kl. 18.30 til 20.30",
+  "price": 0,
+  "priceText": "Gratis quiz. Mad og drikke ekstra.",
+  "priceSource": "free",
+  "duration": "2 timer.",
+  "open": "Den aktuelle 2026-listing har en særskilt session man 7 dec kl. 18.30 til 20.30. Quizudbyderen bekræfter Cobb & Co. mandag kl. 18.30.",
+  "booking": "Ring om bord til to på 29 Tongariro Street. Små hold er velkomne.",
+  "weather": "Indendørs.",
+  "sum": "Gratis storskærmsquiz med lokale hold. Et konkret socialt aftenvalg i Taupō.",
+  "note": "R18. Campen er i Motutere syd for byen, så I skal tilbage i bil. Den der kører, skal kunne køre hjem efter quizzen.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.lovetaupo.com/en/events/934780"
+   ]
+  ],
+  "phone": "+64 7 377 1112",
+  "checked": "lør 21 nov",
+  "conf": "high"
+ },
+ {
   "id": "aratiatia-release",
   "name": "Dæmningsudløb ved Aratiatia",
   "maker": "Aratiatia Rapids dam release",
@@ -2515,7 +2817,7 @@ window.tripIdeas = [
     "https://www.mercury.co.nz/about-us/renewable-energy/hydro-generation/aratiatia-hydro-station"
    ]
   ],
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -2555,7 +2857,7 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 7 378 0913",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "high"
  },
  {
@@ -2674,6 +2976,44 @@ window.tripIdeas = [
   "top": "2026-12-08"
  },
  {
+  "id": "spellbound",
+  "name": "Spellbound: pris og afgangstjek",
+  "maker": "Spellbound Glowworm Tours",
+  "area": "Oparure ved Te Kūiti",
+  "ll": [
+   -38.31289,
+   175.08128
+  ],
+  "cat": "glowworm",
+  "dates": [
+   "2026-12-08"
+  ],
+  "when": "tir 8 dec, kun når en afgang er bekræftet",
+  "price": 85,
+  "priceText": "Essential med én hule koster $85 pr. voksen. Explorer med to huler koster $109. Begge priser er læst hos udbyderen lør 21 nov.",
+  "priceSource": "operator",
+  "duration": "Essential ca. 90 min. Explorer ca. 150 min.",
+  "detour": 15,
+  "open": "Udbyderen siger daglige ture, op til seks afgange. Afgangstider og ledige pladser tir 8 dec kunne ikke bekræftes, fordi Rezdy afviste opslaget med 405. Ikke bekræftet for datoen.",
+  "booking": "Ring på +64 27 419 1644 eller 0800 773 552 i NZ om dagens afgange. Mød 20 min før ved 334 Boddies Road, Oparure. Det er ikke Waitomo Village.",
+  "weather": "Kører normalt i regn, men aflyses ved oversvømmelse.",
+  "sum": "Opdatering af det eksisterende Spellbound-forslag. Essential giver bådturen blandt glowworms uden den ekstra tørre hule.",
+  "note": "could not be checked: bookingkalenderen var utilgængelig. Ingen afgangstid er gættet. Hjemmesiden nævner op til 45 min rolig gang fordelt på turen og enkelte korte stejle stykker. Tirsdagen er allerede lang. Turene afgår fra 334 Boddies Road i Oparure ved Te Kūiti, ikke fra Waitomo Village. Kør efter adressen og mød 20 min før.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.glowworm.co.nz/tour/the-essential-glowworm-tour"
+   ],
+   [
+    "Book",
+    "https://www.glowworm.co.nz/book-now"
+   ]
+  ],
+  "phone": "+64 27 419 1644",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
+  "conf": "medium"
+ },
+ {
   "id": "awa-manutaki",
   "name": "Jetbåd i Aratiatia-strømfaldet",
   "maker": "AWA Manutaki (previously Rapids Jet)",
@@ -2693,7 +3033,7 @@ window.tripIdeas = [
   "bookme": "BookMe har set $119 pr. person",
   "duration": "35 min på vandet",
   "detour": 15,
-  "open": "Sommer kl. 9 til 17 fra 1 okt. Bookme viser afgange tir 8 dec",
+  "open": "Bådene sejler normalt mellem kl. 9 og 16. Kontoret har åbent til kl. 17. Få en konkret afgang tir 8 dec bekræftet.",
   "booking": "Book på Bookme, men regn med at I kan blive sat på venteliste til båden er fuld nok",
   "weather": "Kører i regn. Aflyses kun ved meget høj vandstand",
   "sum": "Jetbåd med 360 graders spins gennem Aratiatia-strømfaldet og den smalleste kløft på Waikato-floden, hvor tøndescenen i Hobbit blev filmet. Billigere og vildere vand end Huka Falls Jet.",
@@ -2709,45 +3049,73 @@ window.tripIdeas = [
    ]
   ],
   "phone": "+64 7 374 8066",
-  "checked": "fre 20 nov",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium"
  },
  {
-  "id": "spellbound",
-  "name": "Glødeorme i lille gruppe, Waitomo",
-  "maker": "Spellbound Glowworm and Cave Explorer",
-  "area": "Oparure, Waitomo",
+  "id": "marokopa-falls-viewpoint",
+  "name": "Kort stop ved Marokopa Falls",
+  "maker": "Marokopa Falls",
+  "area": "Te Anga Road mod Marokopa",
   "ll": [
-   -38.26032,
-   175.10726
+   -38.26164,
+   174.85196
   ],
-  "cat": "glowworm",
+  "cat": "other",
   "dates": [
    "2026-12-08"
   ],
-  "when": "tir 8 dec, alternativ til black water rafting",
-  "price": 109,
-  "priceText": "$109 pr. person for to huler med båd. Kortere tur med én hule koster $85",
-  "priceSource": "operator",
-  "duration": "ca. 2,5 timer",
-  "detour": 15,
-  "open": "Åbent alle dage, op til 6 ture om dagen. Afgangstider for tir 8 dec kunne jeg ikke se, bookingsiden blokerer automatisk læsning Ikke bekræftet for datoen.",
-  "booking": "Ring på 0800 773 552 eller book på nettet. Mød 15 til 20 min før, minibussen kører præcis",
-  "weather": "Kører normalt i regn. Aflyses kun hvis floden går over sine bredder",
-  "sum": "Lille gruppe på højst 12, en stille bådtur under tusindvis af glødeorme og bagefter en tør hule med fossiler. Roligere og mere personlig end den store Glowworm Cave.",
-  "note": "Afgangstider og ledige pladser 8 dec er ikke bekræftet. Forsiden viser stadig $99 og $79, men selve tursiden siger $109 og $85, regn med de høje. Mødestedet ligger 15 km fra Waitomo Village, ikke i landsbyen Kortpunktet er Waitomo Village Road. Det præcise mødested står i bookingen.",
+  "when": "tir 8 dec på vej til campen i Marokopa",
+  "price": 0,
+  "priceText": "Gratis.",
+  "priceSource": "free",
+  "duration": "DOC angiver 20 min på områdesiden. Kommunen siger 30 min retur. Sæt 30 min af.",
+  "open": "Ingen lukning vist i den læste DOC-tekst. Dynamiske varsler og adgang tir 8 dec kunne ikke bekræftes. Ikke bekræftet for datoen.",
+  "booking": "Ingen booking. Parkér ved den lille parkering på Te Anga Road.",
+  "weather": "Stien kan være mudret efter regn.",
+  "sum": "Kort adgang til et udsigtspunkt over et 35 m højt vandfald. Ligger på deres vej mod Marokopa.",
+  "note": "Bliv på de markerede udsigtspunkter og gå ikke forbi hegn. Kortnålen er selve vandfaldet, ikke parkeringen. En kort udsigtsadgang, ikke en ekstra vandredag.",
   "links": [
    [
     "Udbyder",
-    "https://www.glowworm.co.nz/tour/glowworm-and-cave-explorer"
-   ],
-   [
-    "Book",
-    "https://spellbound.rezdy.com/"
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/waitomo-area/"
    ]
   ],
-  "phone": "0800 773 552",
-  "checked": "fre 20 nov",
+  "phone": "0800 275 362 (NZ)",
+  "checked": "lør 21 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "piripiri-cave-roadside",
+  "name": "Gratis hule ved Te Anga Road",
+  "maker": "Piripiri Cave",
+  "area": "Te Anga Road mod Marokopa",
+  "ll": [
+   -38.25576,
+   174.86221
+  ],
+  "cat": "cave",
+  "dates": [
+   "2026-12-08"
+  ],
+  "when": "tir 8 dec før Marokopa Falls",
+  "price": 0,
+  "priceText": "Gratis.",
+  "priceSource": "free",
+  "duration": "300 m retur. DOC angiver 5 min gang. Sæt ekstra tid af på platformen.",
+  "open": "DOC omtaler hulen som åben for offentligheden. Ingen lukning fundet i den læste tekst. Dynamiske varsler og adgang tir 8 dec kunne ikke bekræftes. Ikke bekræftet for datoen.",
+  "booking": "Ingen booking. Skiltet adgang 29 km vest for Waitomo på Te Anga Road.",
+  "weather": "Våde, glatte trapper. Tag sko med greb.",
+  "sum": "Gå ned ad trapper til en platform i en mørk kalkstenshule. Et lille gratis stop på køredagen.",
+  "note": "Tag lygte og reserve. Ingen installeret belysning. Glowworms er ikke lovet af DOC. Lukninger for Piripiri Campsite i Manawatū gælder et helt andet sted.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/waitomo-area/tracks/piripiri-cave-walk/"
+   ]
+  ],
+  "phone": "0800 275 362 (NZ)",
+  "checked": "lør 21 nov",
   "conf": "medium"
  },
  {
@@ -2825,40 +3193,75 @@ window.tripIdeas = [
  },
  {
   "id": "raglan-limestone-express",
-  "name": "Guidet kajak ved kalkklipper, Raglan",
-  "maker": "Raglan Kayak & Paddleboard · The Limestone Express Guided Kayak Adventure",
+  "name": "Kajak: mød ved Bow Street Jetty",
+  "maker": "Raglan Kayak · The Limestone Express",
   "area": "Raglan",
   "ll": [
-   -37.79977,
-   174.86825
+   -37.80003,
+   174.87007
   ],
   "cat": "kayak",
   "dates": [
-   "2026-12-10",
-   "2026-12-11"
+   "2026-12-09",
+   "2026-12-10"
   ],
-  "when": "tor 10 dec kl. 10.30, eller fre 11 dec kl. 10.30 før Auckland",
+  "when": "helst tor 10 dec på hviledagen, når starttid er bekræftet",
   "price": 109,
-  "priceText": "$109 pr. person. Bookme $86.99 ons 9 og fre 11 dec, ingen rabat tor 10 dec",
-  "priceSource": "third_party",
-  "bookme": "BookMe har set $86.99 pr. person",
-  "duration": "ca. 2 timer",
+  "priceText": "$109 pr. voksen for 2 timer, læst hos udbyderen lør 21 nov. Et bookinggebyr kan komme oveni. BookMe viste $86,99 fre 11 dec.",
+  "priceSource": "operator",
+  "duration": "2 timer.",
   "detour": 5,
-  "open": "Bookme viser ture kl. 10.30 og 13.30 ons 9, tor 10 og fre 11 dec",
-  "booking": "Book på Bookme nogle dage før",
-  "weather": "Aflyses ved hård vind i havnen",
-  "tide": "Højvande Raglan tor 10 dec kl. 11.50 og fre 11 dec kl. 12.26 (LINZ), så turen kl. 10.30 er på stigende vand",
-  "sum": "Guidet kajaktur langs kalkstensklipperne i Raglan-havnen med små grotter og pandekagesten. God hviledagsaktivitet på vandet.",
-  "note": "Pris kun set på Bookme, ikke på operatørens egen side. Mødested og telefon ikke bekræftet. Fre 11 dec kan I tage turen kl. 10.30 og stadig være i Auckland ca. kl. 15 Kortpunktet er Raglan by. Det præcise mødested står i bookingen.",
+  "walk": true,
+  "open": "Udbyderen annoncerer daglig drift oktober til maj og viser 2026-omtale. FareHarbor indlæste kun en JavaScript-skal, så afgange og to pladser ons 9 og tor 10 dec kunne ikke bekræftes. Ikke bekræftet for datoen.",
+  "booking": "Mød ved Bow Street Jetty ved vandet for enden af Bow Street. 8 Uenuku Avenue er en ældre kontaktadresse, ikke det aktuelle mødested. Ring om starttid, mødetid og samlet pris.",
+  "weather": "Aflyses ved forhold uden for udbyderens grænser. Almindelig vind og regn kan være acceptabelt.",
+  "tide": "LINZ Raglan i NZDT: ons 9 dec lavvande kl. 4.47 og 17.12, højvande kl. 11.12 og 23.27. Tor 10 dec lavvande kl. 5.26 og 17.50, højvande kl. 11.50. Bed guiden bekræfte en tur sidst på formiddagen omkring højvandet. Det er et planlægningsforslag, ikke en verificeret afgang eller sejlbarhedsgrænse.",
+  "sum": "Opdatering af kortets eksisterende kajaktur. Guidet tur mellem kalkklipper og små bugter fra centrum.",
+  "note": "Mindst to deltagere. Kortnålen er Nominatims punkt på Bow Street, ikke en præcis opmåling af jettyen. Navigér efter mødestedets navn. Gebyret gør den fulde pris ukendt. Privat tur koster $589 for to og overskrider loftet. Mød ved Bow Street Jetty for enden af Bow Street. Mindst to deltagere.",
   "links": [
    [
     "Udbyder",
-    "https://www.bookme.co.nz/things-to-do/new-zealand/activity/the-limestone-express-guided-kayak-adventure-raglan/10321"
+    "https://www.raglankayak.co.nz/tours"
    ]
   ],
-  "checked": "fre 20 nov",
+  "phone": "+64 21 186 0521",
+  "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium",
   "top": "2026-12-10"
+ },
+ {
+  "id": "waireinga-upper-viewpoints",
+  "name": "Bridal Veil Falls: øvre udsigt",
+  "maker": "Wairēinga / Bridal Veil Falls",
+  "area": "Te Mata ved Raglan",
+  "ll": [
+   -37.9086,
+   174.89667
+  ],
+  "cat": "other",
+  "dates": [
+   "2026-12-09",
+   "2026-12-10"
+  ],
+  "when": "ons 9 dec på vej til Raglan eller tor 10 dec",
+  "price": 0,
+  "priceText": "Gratis.",
+  "priceSource": "free",
+  "duration": "10 min hver vej til de øvre udsigtspunkter. Yderligere 10 min ned til bunden plus opstigning.",
+  "open": "Ingen total lukning i den læste DOC-tekst. Stien er beskadiget og ikke egnet til kørestole. Datoernes adgang og dynamiske varsler er ikke bekræftet. Ikke bekræftet for datoen.",
+  "booking": "Ingen booking. Adgang fra Te Mata Road via Kawhia Road til skiltet parkering.",
+  "weather": "Våde trapper kan være glatte.",
+  "sum": "De øvre platforme giver vandfaldsudsigt efter en kort adgang gennem skoven. Stop her, hvis I vil spare trapperne.",
+  "note": "Ingen badning, vandkvaliteten opfylder ikke badekrav. Wairēinga ved Raglan er et andet vandfald end Wairere ved Matamata, som har haft en 2026-lukning. Kortnålen viser vandfaldet.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.doc.govt.nz/parks-and-recreation/places-to-go/waikato/places/raglan-area/tracks/waireinga-bridal-veil-falls/"
+   ]
+  ],
+  "phone": "0800 275 362 (NZ)",
+  "checked": "lør 21 nov",
+  "conf": "medium"
  },
  {
   "id": "raglan-footbridge-jump",
@@ -2884,7 +3287,7 @@ window.tripIdeas = [
   "weather": "Kun ved højvande og roligt vand",
   "tide": "LINZ Raglan: ons 9 dec højvande kl. 11.12 og 23.27, lavvande kl. 17.12. Tor 10 dec højvande kl. 11.50, lavvande kl. 5.26 og 17.50. Hop ca. kl. 11 til 12.30 tor 10 dec. Ons 9 dec er I først i Raglan om aftenen, og kl. 23.27 er for mørkt",
   "sum": "Hop fra gangbroen ved campingpladsen ned i havnens strøm ved højvande, som de lokale gør. Gåafstand fra Te Kopua.",
-  "note": "Kun ved højvande, ved lavvande er det for lavt. Stærk strøm når vandet vender. Se dybden og de lokale først",
+  "note": "Kun ved højvande, ved lavvande er det for lavt. Stærk strøm når vandet vender. Se dybden og de lokale først Højvande er ikke en garanti for, at der er dybt nok. Se efter de lokale, og hop kun dér, hvor de hopper.",
   "links": [
    [
     "Udbyder",
@@ -2892,6 +3295,113 @@ window.tripIdeas = [
    ]
   ],
   "checked": "fre 20 nov",
+  "conf": "medium"
+ },
+ {
+  "id": "motat-christmas-lights-11-dec-2026",
+  "name": "MOTAT med lys og gamle sporvogne",
+  "maker": "MOTAT · Christmas Lights 2026",
+  "area": "Western Springs, Auckland",
+  "ll": [
+   -36.86724,
+   174.72759
+  ],
+  "cat": "event",
+  "dates": [
+   "2026-12-11"
+  ],
+  "when": "fre 11 dec kl. 20 til 23, sidste indgang kl. 22.30",
+  "price": 10,
+  "priceText": "$10 pr. voksen, $20 for to. Mad ekstra.",
+  "priceSource": "operator",
+  "duration": "Sæt ca. 1.5 til 2 timer af.",
+  "open": "Arrangørens 2026-program bekræfter fre 11 dec kl. 20 til 23. Ledige billetter til to kunne ikke læses i bookingrammen.",
+  "booking": "Køb den datobundne Christmas Lights-billet på egen side. Ingen dørsalg. Indgang Gate D på Stadium Road.",
+  "weather": "Gennemføres normalt også i regn.",
+  "sum": "Gamle sporvogne med lys, musik, dampmaskiner og madboder på museet efter mørkets frembrud.",
+  "note": "Kortnålen viser Great North Road-anlægget, ikke Aviation Hall. Begrænset parkering og ingen sporvognstransport fra Aviation Hall. Billetter kan blive udsolgt og kan ikke ombyttes til en anden dato.",
+  "links": [
+   [
+    "Udbyder",
+    "https://www.motat.nz/events/christmas-lights-2026/"
+   ],
+   [
+    "Book",
+    "https://my.motat.nz/overview/christmaslights2026/"
+   ]
+  ],
+  "phone": "+64 9 815 5800",
+  "checked": "lør 21 nov",
+  "conf": "high",
+  "top": "2026-12-11"
+ },
+ {
+  "id": "hamilton-gardens-enclosed",
+  "name": "Temahaver i Hamilton",
+  "maker": "Hamilton City Council · Hamilton Gardens",
+  "area": "Hamilton",
+  "ll": [
+   -37.80507,
+   175.3011
+  ],
+  "cat": "culture",
+  "dates": [
+   "2026-12-11"
+  ],
+  "when": "fre 11 dec på vej fra Raglan til Auckland",
+  "price": 28,
+  "priceText": "$27.50 pr. voksen fra 1 okt 2026, $55 for to. Ydre haver og parkering er gratis.",
+  "priceSource": "operator",
+  "duration": "Sæt ca. 2 timer af. Guidet tur varer 75 min, men er ikke nødvendig.",
+  "open": "Egen side siger dagligt kl. 10 til 18, sidste indgang kl. 17.30. Kun juledag er lukket. Fredag 11 dec følger den offentliggjorte daglige plan, men særændringer er ikke bekræftet. Ikke bekræftet for datoen.",
+  "booking": "Køb almindelig adgang ved ankomst eller via udbyderen. Parkering ved Gate 1 eller Gate 2 på Hungerford Crescent.",
+  "weather": "Udendørs. Tag regnjakke ved byger.",
+  "sum": "Gå mellem forskellige små temahaver, fra historiske haver til surrealisme. Et kulturstop på køredagen.",
+  "note": "En gammel prisknap på billetsiden viser stadig $20. Kommunens gældende takst fra 1 okt 2026 og havernes FAQ siger $27.50. Budgettér efter den nye pris. Selv en kort tur kræver gang mellem haverne.",
+  "links": [
+   [
+    "Udbyder",
+    "https://hamilton.govt.nz/your-council/fees-and-charges/hamilton-gardens/"
+   ],
+   [
+    "Book",
+    "https://hamiltongardens.co.nz/plan-your-visit-to-hamilton-gardens/tickets-and-pricing"
+   ]
+  ],
+  "checked": "lør 21 nov",
+  "conf": "high"
+ },
+ {
+  "id": "papatoetoe-friday-night-market",
+  "name": "Fredagsmarked under Kmart",
+  "maker": "Auckland Night Markets · Papatoetoe Night Market",
+  "area": "Papatoetoe, Auckland",
+  "ll": [
+   -36.971,
+   174.86023
+  ],
+  "cat": "market",
+  "dates": [
+   "2026-12-11"
+  ],
+  "when": "fre 11 dec fra kl. 17, hvis ugens marked går som planlagt",
+  "price": 0,
+  "priceText": "Gratis at kigge. Mad og drikke købes separat, priser ikke verificeret.",
+  "priceSource": "free",
+  "duration": "Sæt ca. 1 time af til mad og boder.",
+  "open": "Arrangørens aktuelle ugeplan siger fredag under Kmart fra kl. 17 til sent. Ingen særskilt listing for fre 11 dec 2026 fundet. Ikke bekræftet for datoen.",
+  "booking": "Ingen booking. Hunters Plaza ved Great South Road og Sutton Crescent, under Kmart. Kontrollér arrangørens opslag samme dag.",
+  "weather": "Marked i et parkeringsområde under Kmart.",
+  "sum": "Spis aftensmad fra små madboder ved indkørslen til Auckland. Passer godt, hvis I først bor i den sydlige del af byen.",
+  "note": "Kortnålen viser Hunters Plaza. Gå efter markedsskiltning under Kmart. Telefonen er fra regional markedslisting og kan være et ældre nummer. Ikke indsat som et særskilt bekræftet datoevent.",
+  "links": [
+   [
+    "Udbyder",
+    "https://exploreauckland.nz/auckland-markets/"
+   ]
+  ],
+  "phone": "+64 27 551 2797",
+  "checked": "lør 21 nov",
   "conf": "medium"
  },
  {
@@ -3097,9 +3607,9 @@ window.tripIdeas = [
 ];
 window.tripIdeaNotes = {
  "2026-11-21": "MetService fredag aften: tørt, skyer der letter til en fin eftermiddag ved kysten, svag vind og 17 grader. Enkelte byger i bjergene sidst på formiddagen. Zipline kl. 13 eller 14 passer med kørslen. Hejreturen kl. 15 kræver et opkald om morgenen.",
- "2026-11-22": "Alex Knob giver kun mening i klart vejr. MetService for Hokitika siger fint om morgenen og skyer om eftermiddagen, så gå tidligt. Er bjerget lukket inde, så er kajak på Ōkārito-lagunen kl. 8 eller kiwierne i Franz Josef gode bytter. Efter vandreturen er et privat varmt kar kl. 17.30 det oplagte.",
+ "2026-11-22": "MetService lør 21 nov for Franz Josef: fint om morgenen, skyer om eftermiddagen og nordvestenvind. Gå Alex Knob tidligt. Er bjerget lukket inde, så er kajak på Ōkārito-lagunen kl. 8 eller kiwierne i Franz Josef gode bytter. Efter vandreturen er et privat varmt kar kl. 17.30 det oplagte.",
  "2026-11-23": "Morgenen er roligst på søen, så kajakleje kl. 9 passer før turen nordpå. Guldvask i Ross og frokost i Hokitika ligger på vejen.",
- "2026-11-24": "Højvande kl. 10.54 (LINZ, Westport). Blæsehullerne ved Pancake Rocks virker bedst omkring højvande med dønning. Kajak og SUP lejes på jeres egen camp fra $30. Regner det, koster Paparoa Experience $19,50 på BookMe.",
+ "2026-11-24": "Højvande kl. 10.54 (LINZ, Westport). Blæsehullerne ved Pancake Rocks virker bedst omkring højvande med dønning. Kajak og SUP lejes på jeres egen camp for $50 pr. voksen i 2 timer. Regner det, koster Paparoa Experience $19,50 på BookMe. MetService lør 21 nov: nordenvind fra morgenen og vedvarende regn om aftenen, så tag vandet om formiddagen.",
  "2026-11-25": "Højvande kl. 11.41, så Pancake Rocks kan nås om formiddagen. Rafting på Buller kl. 13.30 kræver afgang ca. kl. 7.30. Det rolige valg er kano på Lake Rotoiti for ca. $20 pr. person.",
  "2026-11-27": "Bliver I i Mārahau, er det turens bedste dag på vandet: egen kajak for $83 på BookMe kl. 8.30 eller guidet tur til Split Apple Rock for $61, uden at pakke teltet. Kører I til Golden Bay i stedet, bliver det en dag med små stop: fang selv laks ved Anatoki, bad ved Paynes Ford og kajak fra Tata Beach. Rådet er Mārahau fredag og Golden Bay lørdag.",
  "2026-11-28": "Lavvande ved Wharariki ca. kl. 19.25 og solnedgang kl. 20.40. Det er ved lavvande, sælerne ligger i klippebassinerne.",
@@ -3110,5 +3620,7 @@ window.tripIdeaNotes = {
  "2026-12-08": "Black water rafting ($199, start kl. 15 eller 15.30) er den eneste huletur med fart på. Billigere: Spellbound $109 i lille gruppe eller Glowworm Caves $85. Hobbiton har kun plads kl. 16.20 og 16.50 og koster jer hulerne.",
  "2026-12-09": "Lavvande i Kāwhia kl. 17.02 (LINZ). Grav efter varmt vand i sandet ca. kl. 15 til 19.",
  "2026-12-10": "Højvande i Raglan kl. 11.50. Det er der, man hopper fra gangbroen.",
- "after": "Vinturen: Enjois heldagstur på Waiheke man 14 dec koster $122 på BookMe plus færge $64, i alt $186 pr. person plus frokost. Op til fire vingårde med 3 til 5 smagninger hver. Der var 7 pladser til den pris fre 20 nov. Gavekort og Viator: priserne på Gifting Owl og Viator kunne ikke læses, fordi begge sider afviser automatiske opslag. De gule punkter viser, hvor de efter alt at dømme kan bruges. Tjek prisen i appen, før I regner med den."
+ "after": "Vinturen: Enjois heldagstur på Waiheke man 14 dec koster $122 på BookMe plus færge $64, i alt $186 pr. person plus frokost. Op til fire vingårde med 3 til 5 smagninger hver. Der var 7 pladser til den pris fre 20 nov. Gavekort og Viator: priserne på Gifting Owl og Viator kunne ikke læses, fordi begge sider afviser automatiske opslag. De gule punkter viser, hvor de efter alt at dømme kan bruges. Tjek prisen i appen, før I regner med den. Overnatning i Auckland er ikke valgt. Touchwood i Remuera havde lør 21 nov teltplads uden strøm til $75 pr. nat og en lille hytte til $130 pr. nat, som passer, når bilen er solgt.",
+ "2026-12-07": "Otumuheke-floden i Spa Thermal Park i Taupō er et gratis varmt bad, 10 min til fods fra parkeringen. Hold hovedet over vandet. Sejlturen med Sail Barbary kl. 14 er dagens bedste køb, og der er gratis pubquiz i Taupō mandag aften.",
+ "2026-12-11": "Hamilton Gardens koster $27,50 og tager ca. 2 timer. Om aftenen har MOTAT i Auckland julelys og gamle sporvogne for $10, og fredagsmarkedet i Papatoetoe ligger ved indkørslen til byen."
 };

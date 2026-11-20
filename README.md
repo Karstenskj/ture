@@ -299,3 +299,5 @@ Fjern et forslag ved at slette dets blok i datafilen. Forslagene har ingen fotos
 Ledighedstjekket fra 20 nov står i campingkortenes række Ledighed og øverst i Opgaver. DOC's bookingside afviser automatiske tjek, og det må ikke omgås; Kerr Bay og Mangahuia er derfor kun vurderet ud fra størrelse og ugedag.
 
 Ikke færdigt 20 nov: priser hos Gifting Owl og Viator, begivenheder på datoerne 5 til 11 dec, overnatning i Auckland fra 11 dec, og en del åbningstider, som står markeret "Ikke bekræftet" på kortene.
+
+**Opdateret lør 21 nov:** Codex efterprøvede 82 forslag uafhængigt (42 bekræftet, 8 rettet, resten har rigtig pris, men ledige pladser kan kun ses ved booking) og fandt 15 nye ting, blandt andet gratis glowworms ved Punakaiki og den gratis varme flod i Taupō. Der er nu 99 forslag. Kajak ved Punakaiki koster $50 pr. voksen, ikke $30. Spellbound afgår fra 334 Boddies Road i Oparure. Forslag til overnatning i Auckland 11 til 17 dec står på Aucklands kort og i Opgaver; intet er valgt.
