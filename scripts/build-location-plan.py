@@ -33,7 +33,7 @@ activities = {
     "s49": ("vista", 20), "s50": ("waterfall", 30), "s45": ("hike", 60),
     "s59": ("hike", 480), "s6": ("hike", 360), "s51": ("walk", 45),
     "s52": ("hike", 40), "s53": ("vista", 40), "s54": ("walk", 45),
-    "s8": ("hike", 75), "s9": ("beach", 60), "s46": ("cave", 100),
+    "s8": ("hike", 210), "s9": ("beach", 60), "s46": ("cave", 100),
     "s44": ("vista", 30), "s43": ("beach", 60), "s10": ("city", 90),
     "s58": ("hike", 210), "s11": ("hike", 60), "s63": ("waterfall", 50),
     "s12": ("city", 60), "s64": ("hike", 60), "s14": ("drive", 0),
@@ -114,6 +114,9 @@ for index, link in enumerate(calendar):
     if index == 13:
         days[-1]["uncertain"] = True
         days[-1]["note"] = "Dagens overnatningssted er ikke endeligt valgt. Her vises det senest fastlagte sted."
+    if index == 10:
+        days[-1]["uncertain"] = True
+        days[-1]["note"] = "Afrejse fra Punakaiki 24. november. Ny køreetape og overnatning er endnu ikke valgt. Her vises kun det senest fastlagte sted; en ekstra nat i Punakaiki er ikke planlagt eller booket."
 
 for index, leg_index in leg_for_day.items():
     article = document.get_element_by_id(calendar[index].get("data-calendar-day"))
@@ -127,7 +130,7 @@ for index, leg_index in leg_for_day.items():
         selected.append(spots[anchor])
     if index == 14:
         selected = [spots[a] for a in ("s46", "s44", "s43")]
-    start = 420 if index in {0, 4} else 600 if index == 1 else 540
+    start = 420 if index in {0, 4} else 450 if index == 12 else 600 if index == 1 else 540
     days[index]["segments"] = road_day(index, leg_index, selected, start)
 
 def solo_day(index, start):

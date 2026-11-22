@@ -25,6 +25,10 @@ window.tripBookings = {
     base: 5, from: '2026-11-21', until: '2026-11-23',
     task: 'book-otto-franz-20261113'
   },
+  'camp-day-5': {
+    base: 6, from: '2026-11-23', until: '2026-11-24',
+    task: 't6-20261113'
+  },
   'camp-day-17': {
     base: 14, from: '2026-12-05', until: '2026-12-07',
     task: 't12-20261113', adults: 2, total: 72
