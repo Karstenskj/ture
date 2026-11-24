@@ -82,7 +82,12 @@ test('evening and overnight boundaries, hikes, and ambiguous days stay honest',(
   assert.equal(at('2026-11-25T06:59:00+13:00').scene,'sleep');
   assert.equal(at('2026-11-22T12:00:00+13:00').scene,'hike');
   assert.equal(at('2026-12-06T12:00:00+13:00').scene,'hike');
-  assert.equal(at('2026-11-27T20:00:00+13:00').phase,'uncertain');
+  assert.equal(at('2026-11-24T20:00:00+13:00').name,'Kerr Bay Campsite');
+  assert.equal(at('2026-11-25T20:00:00+13:00').name,'The Barn Cabins & Camp');
+  assert.equal(at('2026-11-26T20:00:00+13:00').name,'The Barn Cabins & Camp');
+  assert.equal(at('2026-11-27T20:00:00+13:00').name,'Wharariki Beach Holiday Park');
+  assert.equal(at('2026-11-27T20:00:00+13:00').phase,'during');
+  assert.equal(at('2026-11-28T20:00:00+13:00').phase,'uncertain');
   assert.match(at('2026-12-01T10:00:00+13:00').note,/ombooket og bekræftet/);
   assert.equal(at('2026-12-01T10:00:00+13:00').scene,'ferry');
   assert.equal(data.ferries[0].booking.departure,'2026-12-01T07:45:00+13:00');

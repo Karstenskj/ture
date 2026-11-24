@@ -541,10 +541,9 @@ window.tripIdeas = [
   ],
   "cat": "glowworm",
   "dates": [
-   "2026-11-23",
-   "2026-11-24"
+   "2026-11-23"
   ],
-  "when": "man 23 eller tir 24 nov efter mørkets frembrud",
+  "when": "Man 23 nov efter mørkets frembrud; afrejse fra Punakaiki den 24.",
   "price": 0,
   "priceText": "Gratis.",
   "priceSource": "free",
@@ -696,7 +695,7 @@ window.tripIdeas = [
    "2026-11-23",
    "2026-11-24"
   ],
-  "when": "tir 24 nov kl. 9, 10 eller 15 med bookme, regnvejrsplanen",
+  "when": "Mulighed i Punakaiki før afrejse den 24.; ikke en opholdsdag.",
   "price": 39,
   "priceText": "$39 pr. person, $19.50 via bookme på udvalgte tider",
   "priceSource": "third_party",
@@ -729,9 +728,9 @@ window.tripIdeas = [
   ],
   "cat": "kayak",
   "dates": [
-   "2026-11-24"
+   "2026-11-23"
   ],
-  "when": "tir 24 nov, briefing kl. 9, 13 eller 15.30",
+  "when": "Mulighed den 23. november; ingen surf- eller kajakdag i Punakaiki den 24.",
   "price": 50,
   "priceText": "$50 pr. voksen for 2 timers kajak eller SUP. En dobbeltkajak til to voksne koster $100 i alt. Prisen fra $30 gælder børn. Efterprøvet lør 21 nov.",
   "priceSource": "operator",
@@ -750,7 +749,7 @@ window.tripIdeas = [
   ],
   "checked": "fre 20 nov og efterprøvet lør 21 nov",
   "conf": "medium",
-  "top": "2026-11-24"
+  "top": "2026-11-23"
  },
  {
   "id": "pororari-lower-swimming-hole",
@@ -763,9 +762,9 @@ window.tripIdeas = [
   ],
   "cat": "wild_swim",
   "dates": [
-   "2026-11-24"
+   "2026-11-23"
   ],
-  "when": "tir 24 nov i tørt vejr",
+  "when": "Mulighed den 23. november i tørt vejr.",
   "price": 0,
   "priceText": "Gratis.",
   "priceSource": "free",
@@ -797,9 +796,9 @@ window.tripIdeas = [
   ],
   "cat": "raft_jet",
   "dates": [
-   "2026-11-25"
+   "2026-11-24"
   ],
-  "when": "ons 25 nov kl. 13.30 fra Murchison",
+  "when": "Mulighed på køredagen mod Kerr Bay den 24.; tur er ikke booket.",
   "price": 180,
   "priceText": "$180 pr. person for grad 3. Familietur i grad 2 koster $150",
   "priceSource": "operator",
@@ -822,7 +821,7 @@ window.tripIdeas = [
   "phone": "0800 748 377",
   "checked": "fre 20 nov",
   "conf": "high",
-  "top": "2026-11-25"
+  "top": "2026-11-24"
  },
  {
   "id": "buller-canyon-jet",
@@ -835,9 +834,9 @@ window.tripIdeas = [
   ],
   "cat": "raft_jet",
   "dates": [
-   "2026-11-25"
+   "2026-11-24"
   ],
-  "when": "ons 25 nov ved svingbroen, afgange hver time kl. 10 til 16",
+  "when": "Tir 24 nov ved svingbroen på køredagen mod Kerr Bay.",
   "price": 125,
   "priceText": "$125 pr. person, min. 2 personer, broadgang med ved online booking",
   "priceSource": "operator",
@@ -868,9 +867,9 @@ window.tripIdeas = [
   ],
   "cat": "surf",
   "dates": [
-   "2026-11-25"
+   "2026-11-24"
   ],
-  "when": "ons 25 nov om morgenen ved sælkolonien",
+  "when": "Tir 24 nov på den planlagte køreetape; ingen surfsession er bekræftet.",
   "price": 0,
   "priceText": "Gratis",
   "priceSource": "free",
@@ -901,9 +900,9 @@ window.tripIdeas = [
   ],
   "cat": "adrenaline",
   "dates": [
-   "2026-11-25"
+   "2026-11-24"
   ],
-  "when": "ons 25 nov ved svingbroen",
+  "when": "Tir 24 nov ved svingbroen på køredagen mod Kerr Bay.",
   "price": 40,
   "priceText": "$40 pr. person, broadgang $12.50 kommer oveni",
   "priceSource": "operator",
@@ -933,10 +932,10 @@ window.tripIdeas = [
   ],
   "cat": "kayak",
   "dates": [
-   "2026-11-25",
-   "2026-11-26"
+   "2026-11-24",
+   "2026-11-25"
   ],
-  "when": "ons 25 nov om aftenen eller tor 26 nov om morgenen",
+  "when": "Tir 24 nov efter ankomst eller ons 25 nov før afrejse fra Kerr Bay.",
   "price": 20,
   "priceText": "$40 i timen for en dobbeltkajak eller kano, dvs. $20 pr. person",
   "priceSource": "operator",
@@ -968,10 +967,9 @@ window.tripIdeas = [
   ],
   "cat": "wild_swim",
   "dates": [
-   "2026-11-25",
-   "2026-11-26"
+   "2026-11-24"
   ],
-  "when": "ons 25 nov i skumringen, med lygte",
+  "when": "Tir 24 nov i skumringen ved Kerr Bay.",
   "price": 0,
   "priceText": "Gratis",
   "priceSource": "free",
@@ -1001,9 +999,9 @@ window.tripIdeas = [
   ],
   "cat": "quirky",
   "dates": [
-   "2026-11-25"
+   "2026-11-24"
   ],
-  "when": "ons 25 nov kl. 11.30",
+  "when": "Mulighed i Charleston på køredagen den 24.; ikke booket.",
   "price": 35,
   "priceText": "$35 pr. person",
   "priceSource": "operator",
@@ -1033,9 +1031,9 @@ window.tripIdeas = [
   ],
   "cat": "brewery_winery",
   "dates": [
-   "2026-11-25"
+   "2026-11-24"
   ],
-  "when": "ons 25 nov fra kl. 12",
+  "when": "Mulighed i Westport på køredagen den 24.",
   "price": null,
   "priceText": "Pris på smagebræt står ikke på siden",
   "priceSource": "unknown",
@@ -1066,9 +1064,10 @@ window.tripIdeas = [
   ],
   "cat": "boat",
   "dates": [
+   "2026-11-25",
    "2026-11-26"
   ],
-  "when": "tor 26 nov kl. 15.45 til 17.30 fra Kaiteriteri, efter via ferrataen og før I slår teltet op i Mārahau",
+  "when": "Ons 25 efter ankomst eller tor 26 nov fra Kaiteriteri; bilen og teltet har base på The Barn.",
   "price": 74,
   "priceText": "Fra $74 pr. person på Wilsons egen side. Drikkevarer fra baren til happy hour-pris betales ekstra",
   "priceSource": "operator",
@@ -1101,9 +1100,9 @@ window.tripIdeas = [
   ],
   "cat": "cave",
   "dates": [
-   "2026-11-26"
+   "2026-11-27"
   ],
-  "when": "tor 26 nov, når I alligevel henter via ferrata-udstyr på Tākaka Hill",
+  "when": "Fre 27 nov på vej over Tākaka Hill, hvor via ferrata også er foreløbigt planlagt.",
   "price": 30,
   "priceText": "$30 pr. voksen for grotteturen. Via ferrata-udstyr er separat ($10 for op til 4 timer, handsker $5, ifølge via ferrata-foreningen)",
   "priceSource": "operator",
@@ -1134,9 +1133,9 @@ window.tripIdeas = [
   ],
   "cat": "kayak",
   "dates": [
-   "2026-11-27"
+   "2026-11-26"
   ],
-  "when": "fre 27 nov, hvis I bliver en dag mere i Mārahau",
+  "when": "Tor 26 nov under den hele dag i Abel Tasman; The Barn er booket til den 27.",
   "price": 110,
   "priceText": "$110 pr. person på Kahus egen side (for to eller flere), dobbeltkajak, redningsvest, spraydæk og kort med. Bookme har fre 27 nov kl. 8.30 til $83 og kl. 10.30 til $92",
   "priceSource": "operator",
@@ -1161,7 +1160,7 @@ window.tripIdeas = [
   "phone": "+64 3 527 8300",
   "checked": "fre 20 nov",
   "conf": "high",
-  "top": "2026-11-27",
+  "top": "2026-11-26",
   "vouchers": [
    {
     "kind": "Gifting Owl",
@@ -1181,9 +1180,10 @@ window.tripIdeas = [
   ],
   "cat": "kayak",
   "dates": [
-   "2026-11-27"
+   "2026-11-27",
+   "2026-11-28"
   ],
-  "when": "fre 27 nov, hvis I kører til Golden Bay en dag tidligt",
+  "when": "Mulighed fre 27 eller lør 28 nov i Golden Bay; tilpas efter via ferrata og afrejse fra Wharariki.",
   "price": 90,
   "priceText": "Halv dag i dobbelt havkajak $90 pr. person, hel dag $120. Sit-on-top kajak $50 for 1 time, $60 for 2 timer. SUP $30 for 1 time, $50 for 2 timer (prisliste 2026/2027)",
   "priceSource": "operator",
@@ -1219,10 +1219,10 @@ window.tripIdeas = [
   ],
   "cat": "kayak",
   "dates": [
-   "2026-11-27",
+   "2026-11-25",
    "2026-11-26"
   ],
-  "when": "fre 27 nov om morgenen, eller tor 26 nov kl. 13.15 hvis I klarer via ferrataen tidligt",
+  "when": "Ons 25 efter ankomst eller tor 26 nov under opholdet på The Barn.",
   "price": 105,
   "priceText": "$105 pr. person på Wilsons side. Bookme har tor 26 og fre 27 nov til $61.08. Dobbeltkajak, spraytrøje, redningsvest og tørsæk med",
   "priceSource": "operator",
@@ -1362,9 +1362,10 @@ window.tripIdeas = [
   ],
   "cat": "wildlife",
   "dates": [
+   "2026-11-27",
    "2026-11-28"
   ],
-  "when": "lør 28 nov om aftenen fra campingpladsen, lavvande ca. kl. 19.25 og solnedgang kl. 20.40",
+  "when": "Fre 27 eller lør 28 nov omkring lavvande. Tjek dagens tidevand; bookingen på Wharariki slutter den 28.",
   "price": 0,
   "priceText": "Gratis",
   "priceSource": "free",
@@ -1502,7 +1503,7 @@ window.tripIdeas = [
   "dates": [
    "2026-11-28"
   ],
-  "when": "lør 28 nov kl. 9 til 13.30, når I kommer over bakken fra Mārahau",
+  "when": "Lør 28 nov kl. 9 til 13.30, eventuelt efter afrejse fra Wharariki.",
   "price": 0,
   "priceText": "Gratis adgang",
   "priceSource": "free",
@@ -3609,10 +3610,10 @@ window.tripIdeaNotes = {
  "2026-11-21": "MetService fredag aften: tørt, skyer der letter til en fin eftermiddag ved kysten, svag vind og 17 grader. Enkelte byger i bjergene sidst på formiddagen. Zipline kl. 13 eller 14 passer med kørslen. Hejreturen kl. 15 kræver et opkald om morgenen.",
  "2026-11-22": "MetService lør 21 nov for Franz Josef: fint om morgenen, skyer om eftermiddagen og nordvestenvind. Gå Alex Knob tidligt. Er bjerget lukket inde, så er kajak på Ōkārito-lagunen kl. 8 eller kiwierne i Franz Josef gode bytter. Efter vandreturen er et privat varmt kar kl. 17.30 det oplagte.",
  "2026-11-23": "Morgenen er roligst på søen, så kajakleje kl. 9 passer før turen nordpå. Guldvask i Ross og frokost i Hokitika ligger på vejen.",
- "2026-11-24": "Højvande kl. 10.54 (LINZ, Westport). Blæsehullerne ved Pancake Rocks virker bedst omkring højvande med dønning. Kajak og SUP lejes på jeres egen camp for $50 pr. voksen i 2 timer. Regner det, koster Paparoa Experience $19,50 på BookMe. MetService lør 21 nov: nordenvind fra morgenen og vedvarende regn om aftenen, så tag vandet om formiddagen.",
- "2026-11-25": "Højvande kl. 11.41, så Pancake Rocks kan nås om formiddagen. Rafting på Buller kl. 13.30 kræver afgang ca. kl. 7.30. Det rolige valg er kano på Lake Rotoiti for ca. $20 pr. person.",
- "2026-11-27": "Bliver I i Mārahau, er det turens bedste dag på vandet: egen kajak for $83 på BookMe kl. 8.30 eller guidet tur til Split Apple Rock for $61, uden at pakke teltet. Kører I til Golden Bay i stedet, bliver det en dag med små stop: fang selv laks ved Anatoki, bad ved Paynes Ford og kajak fra Tata Beach. Rådet er Mārahau fredag og Golden Bay lørdag.",
- "2026-11-28": "Lavvande ved Wharariki ca. kl. 19.25 og solnedgang kl. 20.40. Det er ved lavvande, sælerne ligger i klippebassinerne.",
+ "2026-11-24": "Kerr Bay er booket til den 25., og I har bekræftet ankomst. Forslag undervejs er ikke bekræftede besøg.",
+ "2026-11-25": "Kør fra Kerr Bay til The Barn i Marahau. To nætter er booket til den 27.; forventet ankomst ca. kl. 15.00 og NZ$140 betales ved ankomst.",
+ "2026-11-27": "Afrejse fra The Barn. Via ferrata på Tākaka Hill er foreløbigt planlagt kl. 09.30–13.30 inklusive udstyr, afhængigt af tørre forhold. Wharariki er booket til den 28.",
+ "2026-11-28": "Afrejse fra Wharariki efter én booket nat. Ny overnatning er ikke valgt. Tjek dagens tidevand, hvis I besøger stranden før afrejse.",
  "2026-11-29": "Lang køredag. Bad ved Pelorus Bridge og muslinger i Havelock er de to stop, der er værd at tage. Mussel Pot har lukket mandag og tirsdag og vil have bordbestilling.",
  "2026-12-01": "Wētā Workshop om eftermiddagen ($63) og gratis quiz på Three Sisters Brewery fra kl. 18.30.",
  "2026-12-03": "Tawhiti Museum i Hāwera har kun åbent fredag til mandag, så det er lukket torsdag. Det kan nås fredag fra Opunake.",
@@ -3622,5 +3623,6 @@ window.tripIdeaNotes = {
  "2026-12-10": "Højvande i Raglan kl. 11.50. Det er der, man hopper fra gangbroen.",
  "after": "Vinturen: Enjois heldagstur på Waiheke man 14 dec koster $122 på BookMe plus færge $64, i alt $186 pr. person plus frokost. Op til fire vingårde med 3 til 5 smagninger hver. Der var 7 pladser til den pris fre 20 nov. Gavekort og Viator: priserne på Gifting Owl og Viator kunne ikke læses, fordi begge sider afviser automatiske opslag. De gule punkter viser, hvor de efter alt at dømme kan bruges. Tjek prisen i appen, før I regner med den. Overnatning i Auckland er ikke valgt. Touchwood i Remuera havde lør 21 nov teltplads uden strøm til $75 pr. nat og en lille hytte til $130 pr. nat, som passer, når bilen er solgt.",
  "2026-12-07": "Otumuheke-floden i Spa Thermal Park i Taupō er et gratis varmt bad, 10 min til fods fra parkeringen. Hold hovedet over vandet. Sejlturen med Sail Barbary kl. 14 er dagens bedste køb, og der er gratis pubquiz i Taupō mandag aften.",
- "2026-12-11": "Hamilton Gardens koster $27,50 og tager ca. 2 timer. Om aftenen har MOTAT i Auckland julelys og gamle sporvogne for $10, og fredagsmarkedet i Papatoetoe ligger ved indkørslen til byen."
+ "2026-12-11": "Hamilton Gardens koster $27,50 og tager ca. 2 timer. Om aftenen har MOTAT i Auckland julelys og gamle sporvogne for $10, og fredagsmarkedet i Papatoetoe ligger ved indkørslen til byen.",
+ "2026-11-26": "En hel dag i Abel Tasman med base på The Barn. Kajak eller kystvandring med vandtaxi er muligheder efter vejr og vind; aktiviteter er ikke booket."
 };
