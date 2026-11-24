@@ -65,9 +65,9 @@ data["helenaFlight"] = {
     "note": "Afgangen og flyets position er anslået ud fra 3½ timers direkte flyvning. Kun ankomsten kl. 18.10 er oplyst. Ikke flytracking."
 }
 
-stay_indexes = [0, 20, 19, 1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 9, 10, 10, 11, 12, 13, 13, 14, 14, 15, 16, 17, 17, 18]
+stay_indexes = [0, 20, 19, 1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 23, 10, 10, 11, 12, 13, 13, 14, 14, 15, 16, 17, 17, 18]
 leg_for_day = {0: 0, 1: 22, 2: 23, 4: 2, 5: 3, 6: 4, 7: 5, 9: 7, 10: 8, 11: 9, 13: 10,
-               15: 11, 18: 14, 19: 15, 20: 16, 21: 17, 23: 18, 24: 19, 25: 20, 27: 21}
+               14: 24, 15: 11, 18: 14, 19: 15, 20: 16, 21: 17, 23: 18, 24: 19, 25: 20, 27: 21}
 calendar = document.xpath('//*[@data-calendar-day]')
 days = []
 
@@ -111,9 +111,6 @@ for index, link in enumerate(calendar):
     stamp = (date(2026, 11, 14) + timedelta(days=index)).isoformat()
     assert link.find("time").get("datetime") == stamp
     days.append({"date": stamp, "stay": stay(stay_indexes[index]), "segments": []})
-    if index == 14:
-        days[-1]["uncertain"] = True
-        days[-1]["note"] = "Wharariki-bookingen slutter 28. november. Ny køreetape og overnatning er endnu ikke valgt. Her vises kun det senest fastlagte sted; en ekstra nat ved Wharariki er ikke booket."
 
 for index, leg_index in leg_for_day.items():
     article = document.get_element_by_id(calendar[index].get("data-calendar-day"))
@@ -131,6 +128,7 @@ for index, leg_index in leg_for_day.items():
 days[10]["note"] = "Ankomst til Kerr Bay 24. november og booket nat 24.–25. er bekræftet af jer. Køretider og stop undervejs er fortsat anslået, ikke bekræftede besøg."
 days[11]["note"] = "Booket The Barn 25.–27. november. Ankomst ca. kl. 15.00 er forventet; køretider og afgang er anslået."
 days[13]["note"] = "Booket Wharariki 27.–28. november. Via ferrata er foreløbig planlagt kl. 09.30–13.30 inklusive udstyr, afhængigt af tørre forhold. Øvrige stop og tider er anslået."
+days[14]["note"] = "Planlagt Nelson City TOP 10 Holiday Park 28.–29. november; ikke booket. Plads til bilen med tagtelt skal aftales før booking. Køretider og stop er anslået."
 
 def solo_day(index, start):
     base = days[index]["stay"]

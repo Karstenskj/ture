@@ -145,6 +145,13 @@
       "url": "https://www.metservice.com/mountains-and-parks/national-parks/nelson-lakes",
       "widget": false
     },
+    "nelson": {
+      "label": "Nelson",
+      "type": "urban",
+      "loc": "nelson",
+      "url": "https://www.metservice.com/towns-cities/regions/nelson/locations/nelson",
+      "widget": true
+    },
     "tongariro": {
       "label": "Tongariro National Park",
       "url": "https://www.metservice.com/mountains-and-parks/national-parks/tongariro",
@@ -174,7 +181,8 @@
     "port-hills",
     "kaikoura",
     "blenheim",
-    "blenheim"
+    "blenheim",
+    "nelson"
   ]
 };
   config.areas.christchurch={label:'Christchurch',type:'urban',loc:'christchurch',url:'https://www.metservice.com/towns-cities/regions/christchurch/locations/christchurch',widget:true};
