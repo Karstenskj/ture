@@ -203,7 +203,7 @@ days[17]["segments"] = [
     {"from": 690, "to": 700, "leg": 13, "name": "på vej til Wellington"},
     {"from": 780, "to": 960, "point": spots["s10"]["ll"], "activity": "city", "name": "Wellington"},
 ]
-days[17]["note"] = "Færgen er ombooket og bekræftet til tir 1 dec kl. 07.45, Picton → Wellington. Sejltiden på cirka 3½ timer og ankomsttiden er anslået. Terminal og check-in-frist følger den nye billet."
+days[17]["note"] = "Færgen er ombooket og bekræftet til tir 1 dec kl. 07.45, Picton → Wellington. Sejltiden på cirka 3½ timer og ankomsttiden er anslået. Terminal og check-in-frist følger den nye billet. Airbnb i Vic Central på The Terrace er booket 1.–2. december; check-in efter kl. 14, check-out før kl. 11. Parkering er separat."
 days[22]["segments"] = [{"from": 450, "to": 930, "point": spots["s15"]["ll"], "activity": "hike", "name": "Tongariro Alpine Crossing"}]
 manu = data["activityTargets"][0]
 days[26]["segments"] = [{"from": 600, "to": 810, "point": manu["ll"], "activity": "surf", "name": "Muligt surfbesøg · Manu Bay"}]

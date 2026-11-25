@@ -3607,6 +3607,7 @@ window.tripIdeas = [
  }
 ];
 window.tripIdeaNotes = {
+ "2026-11-30": "Mount Stokes kræver afklaring af passage begge veje: Kenepuru Road efter Portage er varslet lukket kl. 08–12 og 12.30–17. Parkering og rute står i Mount Stokes-kortet. Onahau Point eller bugten er et enklere valg før morgenfærgen.",
  "2026-11-21": "MetService fredag aften: tørt, skyer der letter til en fin eftermiddag ved kysten, svag vind og 17 grader. Enkelte byger i bjergene sidst på formiddagen. Zipline kl. 13 eller 14 passer med kørslen. Hejreturen kl. 15 kræver et opkald om morgenen.",
  "2026-11-22": "MetService lør 21 nov for Franz Josef: fint om morgenen, skyer om eftermiddagen og nordvestenvind. Gå Alex Knob tidligt. Er bjerget lukket inde, så er kajak på Ōkārito-lagunen kl. 8 eller kiwierne i Franz Josef gode bytter. Efter vandreturen er et privat varmt kar kl. 17.30 det oplagte.",
  "2026-11-23": "Morgenen er roligst på søen, så kajakleje kl. 9 passer før turen nordpå. Guldvask i Ross og frokost i Hokitika ligger på vejen.",
@@ -3615,7 +3616,7 @@ window.tripIdeaNotes = {
  "2026-11-27": "Afrejse fra The Barn. Via ferrata på Tākaka Hill er foreløbigt planlagt kl. 09.30–13.30 inklusive udstyr, afhængigt af tørre forhold. Wharariki er booket til den 28.",
  "2026-11-28": "Afrejse fra Wharariki efter én booket nat. Kør til Nelson City TOP 10, planlagt 28.–29. november, men ikke booket. Aftal plads til bilen med tagtelt før booking. Tjek dagens tidevand, hvis I besøger stranden før afrejse.",
  "2026-11-29": "Kør fra Nelson mod Mistletoe Bay. Bad ved Pelorus Bridge og muslinger i Havelock er de to stop, der er værd at tage. Mussel Pot har lukket mandag og tirsdag og vil have bordbestilling.",
- "2026-12-01": "Wētā Workshop om eftermiddagen ($63) og gratis quiz på Three Sisters Brewery fra kl. 18.30.",
+ "2026-12-01": "Airbnb i Vic Central på The Terrace er booket 1.–2. december. Check-in efter kl. 14, check-out før kl. 11. Parkering betales separat; Wilson Upper Willis Street er et undersøgt udendørs forslag. Wētā Workshop om eftermiddagen ($63) og gratis quiz på Three Sisters Brewery fra kl. 18.30.",
  "2026-12-03": "Tawhiti Museum i Hāwera har kun åbent fredag til mandag, så det er lukket torsdag. Det kan nås fredag fra Opunake.",
  "2026-12-06": "Aflyses Crossing: cykel på Old Coach Road eller Fishers Track ($75, ring først), Tawhai Falls, privat varmt kar i Tokaanu og minigolf og øl på Schnapps. Sky Waka kun i klart vejr.",
  "2026-12-08": "Black water rafting ($199, start kl. 15 eller 15.30) er den eneste huletur med fart på. Billigere: Spellbound $109 i lille gruppe eller Glowworm Caves $85. Hobbiton har kun plads kl. 16.20 og 16.50 og koster jer hulerne.",

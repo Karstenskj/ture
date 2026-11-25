@@ -41,6 +41,10 @@ window.tripBookings = {
     base: 9, from: '2026-11-27', until: '2026-11-28',
     task: 'book-wharariki-20261113'
   },
+  'camp-day-13': {
+    base: 11, from: '2026-12-01', until: '2026-12-02',
+    task: 't10-20261113'
+  },
   'camp-day-17': {
     base: 14, from: '2026-12-05', until: '2026-12-07',
     task: 't12-20261113', adults: 2, total: 72

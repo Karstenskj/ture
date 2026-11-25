@@ -408,6 +408,10 @@
     (D.legend ? '<button type="button" class="rk-btn" data-a="legend" aria-expanded="false" aria-controls="rk-legend">Forklaring</button>' : '');
   map.getContainer().appendChild(topbar);
   map.getContainer().appendChild(btns);
+  if (window.TripHistory) window.TripHistory.mount({
+    map: map, L: L, box: box, controls: btns, trips: D.pastTrips,
+    open: open, close: close
+  });
   var metrics = document.createElement('div');
   metrics.className = 'rk-map-metrics';
   metrics.setAttribute('role','group');

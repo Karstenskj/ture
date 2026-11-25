@@ -809,6 +809,18 @@ path.rk-case { stroke: var(--route-case, transparent); }
 path.rk-after { stroke: var(--after); }
 path.rk-maybe { stroke: var(--maybe); }
 
+.rk { --map-history-gray: #c7ccca; --route-history: var(--map-history-gray); }
+path.rk-history-case { stroke: var(--route-case, var(--ink)); stroke-opacity: .9; }
+path.rk-history-line { stroke: var(--route-history); }
+.rk-history-toggle::before { content: ''; display: inline-block; width: 20px; margin-right: 7px; border-top: 3px dashed var(--muted); vertical-align: middle; }
+.rk-history-toggle[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.rk-history-summary { position: absolute; z-index: 1040; left: 10px; bottom: 82px; max-width: calc(100% - 80px); padding: 8px 12px; min-height: 44px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); font: 600 12px var(--body); text-align: left; cursor: pointer; box-shadow: 0 1px 5px var(--scrim); }
+.rk-history-summary[hidden] { display: none; }
+.rk-history-summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.rk-sheet-open .rk-history-summary, .rk-phone.rk-quiet .rk-history-summary { visibility: hidden; }
+.rk-phone .rk-history-toggle { padding-left: 9px; padding-right: 9px; font-size: 11px; }
+.rk-phone .rk-history-summary { bottom: calc(132px + env(safe-area-inset-bottom, 0px)); }
+
 .rk-night, .rk-pin, .rk-time { position: absolute; transform: translate(-50%, -50%); box-shadow: 0 1px 4px var(--scrim); }
 .rk-night { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--card); background: var(--accent); border: 2px solid var(--card); border-radius: 999px; padding: 3px 7px; white-space: nowrap; cursor: pointer; }
 .rk-overview .rk-night { font-size: 0; padding: 0; width: 17px; height: 17px; border-width: 2px; }
