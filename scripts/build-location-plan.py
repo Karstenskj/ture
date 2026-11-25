@@ -35,8 +35,8 @@ activities = {
     "s52": ("hike", 40), "s53": ("vista", 40), "s54": ("walk", 45),
     "s8": ("hike", 210), "s9": ("beach", 60), "s46": ("cave", 100),
     "s44": ("vista", 30), "s43": ("beach", 60), "s10": ("city", 90),
-    "s58": ("hike", 210), "s11": ("hike", 60), "s63": ("waterfall", 50),
-    "s12": ("city", 60), "s64": ("hike", 60), "s14": ("drive", 0),
+    "s58": ("hike", 210), "s55": ("hike", 330),
+    "s12": ("city", 60), "s64": ("walk", 60), "s14": ("drive", 0),
     "s65": ("city", 30), "s66": ("drive", 0), "s67": ("waterfall", 60),
     "s68": ("vista", 25), "s15": ("hike", 480), "s16": ("waterfall", 120),
     "s17": ("walk", 45), "s18": ("waterfall", 45), "s20": ("swim", 45),
@@ -119,16 +119,17 @@ for index, leg_index in leg_for_day.items():
         anchor = card.get("id", "")
         if anchor not in spots or card.xpath('ancestor::details[@id="dag22"]'):
             continue
-        if spots[anchor].get("st") in {"out", "maybe", "after"}:
+        if spots[anchor].get("st") in {"out", "maybe", "after", "idea"}:
             continue
         selected.append(spots[anchor])
-    start = 420 if index in {0, 4} else 780 if index == 11 else 510 if index == 13 else 600 if index == 1 else 540
+    start = 420 if index in {0, 4, 20, 27} else 780 if index == 11 else 510 if index == 13 else 600 if index == 1 else 540
     days[index]["segments"] = road_day(index, leg_index, selected, start)
 
 days[10]["note"] = "Ankomst til Kerr Bay 24. november og booket nat 24.–25. er bekræftet af jer. Køretider og stop undervejs er fortsat anslået, ikke bekræftede besøg."
 days[11]["note"] = "Booket The Barn 25.–27. november. Ankomst ca. kl. 15.00 er forventet; køretider og afgang er anslået."
 days[13]["note"] = "Booket Wharariki 27.–28. november. Via ferrata er foreløbig planlagt kl. 09.30–13.30 inklusive udstyr, afhængigt af tørre forhold. Øvrige stop og tider er anslået."
 days[14]["note"] = "Planlagt Nelson City TOP 10 Holiday Park 28.–29. november; ikke booket. Plads til bilen med tagtelt skal aftales før booking. Køretider og stop er anslået."
+days[20]["note"] = "Pouākai Tarns via Mangorei Track er valgt til 4. december. Afgang fra Ōpunake ca. kl. 07 og cirka 5½ time til vandring og pauser er anslået. Tjek bjergvejr og sporstatus; aktiviteterne den 3. og 4. kan byttes efter vejret."
 
 def solo_day(index, start):
     base = days[index]["stay"]
