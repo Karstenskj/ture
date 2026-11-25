@@ -18,3 +18,8 @@
 .trip-choices textarea { box-sizing:border-box; width:100%; min-height:140px; margin-top:12px; font:inherit; padding:12px; }
 .trip-choices [data-group-status] { font-weight:700; }
 @media (max-width:760px) { .trip-choice-list { grid-template-columns:1fr; } .trip-choice-list label { padding:14px; } }
+/* Keep camp alternatives readable in both map themes; reuse the existing camp palette. */
+.rk-night.rk-night--choice { background:var(--map-camp,var(--accent)); color:var(--map-on-stop,var(--card)); border-color:var(--map-halo,var(--ink)); border-style:dashed; }
+.rk-night--choice .rk-label { display:none; }
+.rk-camp-options-view .rk-spot-marker, .rk-camp-options-view .rk-photo-marker, .rk-camp-options-view .rk-time-marker, .rk-camp-options-view .rk-bathing-marker { visibility:hidden; }
+.rk-camp-options-view .rk-night--choice { font-size:11px !important; width:auto; height:auto; padding:5px 9px !important; }

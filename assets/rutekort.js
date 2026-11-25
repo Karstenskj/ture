@@ -298,10 +298,10 @@
       applySide(entry);
     }
   });
-  (D.bases || []).forEach(function (x) {
+  (D.bases || []).concat(D.campOptions || []).forEach(function (x) {
     var campLabel = (window.TripIcons ? window.TripIcons.icon(x.shower === true ? 'shower' : 'camp') : '') + safe(x.label) + (x.booking ? '<span class="rk-booked-mark" aria-hidden="true">✓</span>' : '');
     var campTitle = (x.name || x.label) + (x.shower === true ? ' · Brusebad på campingpladsen' : '');
-    var m = tap(L.marker(x.ll, { icon: icon('rk-night' + (x.optional ? ' rk-night--optional' : '') + (x.shower === true ? ' rk-night--shower' : ''), campLabel, null, x.name), title: campTitle, alt: campTitle, zIndexOffset: x.optional ? 80 : 200 }).addTo(map), x.html, x.ll);
+    var m = tap(L.marker(x.ll, { icon: icon('rk-night' + (x.optional ? ' rk-night--optional' : '') + (x.choice ? ' rk-night--choice' : '') + (x.shower === true ? ' rk-night--shower' : ''), campLabel, null, x.name), title: campTitle, alt: campTitle, zIndexOffset: x.choice ? 300 : x.optional ? 80 : 200 }).addTo(map), x.html, x.ll);
     if (x.optional && m.getElement()) m.getElement().setAttribute('aria-label', 'Måske · ' + campTitle);
   });
 
@@ -405,9 +405,17 @@
   var btns = document.createElement('div');
   btns.className = 'rk-btns';
   btns.innerHTML = '<button type="button" class="rk-btn" data-a="route">Vis ruten</button><button type="button" class="rk-btn" data-a="me">Find os</button>' +
+    ((D.campOptions || []).length ? '<button type="button" class="rk-btn" data-a="camp-options">Campingforslag</button>' : '') +
     (D.legend ? '<button type="button" class="rk-btn" data-a="legend" aria-expanded="false" aria-controls="rk-legend">Forklaring</button>' : '');
   map.getContainer().appendChild(topbar);
   map.getContainer().appendChild(btns);
+  var campOptionsBtn = btns.querySelector('[data-a="camp-options"]');
+  if (campOptionsBtn) campOptionsBtn.addEventListener('click', function () {
+    close();
+    box.classList.add('rk-camp-options-view');
+    campOptionsBtn.setAttribute('aria-pressed', 'true');
+    map.fitBounds((D.campOptions || []).map(function (camp) { return camp.ll; }), {paddingTopLeft: [35, 90], paddingBottomRight: [45, 165], maxZoom: 9, animate: !reducedMotion.matches});
+  });
   if (window.TripHistory) window.TripHistory.mount({
     map: map, L: L, box: box, controls: btns, trips: D.pastTrips,
     open: open, close: close
@@ -462,6 +470,8 @@
   }
   var routeBounds = null;
   btns.querySelector('[data-a="route"]').addEventListener('click', function () {
+    box.classList.remove('rk-camp-options-view');
+    if (campOptionsBtn) campOptionsBtn.setAttribute('aria-pressed', 'false');
     close();
     resizeMap();
     if (!routeBounds) routeBounds = L.latLngBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]]);
