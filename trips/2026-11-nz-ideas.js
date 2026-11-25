@@ -2630,7 +2630,7 @@ window.tripIdeas = [
    "2026-12-07",
    "2026-12-08"
   ],
-  "when": "man 7 dec kræver tur nordpå fra Motutere. Tir 8 dec ligger på ruten.",
+  "when": "Man 7 dec: muligt ekstra stop på køreturen gennem Taupō mod Rotorua. Kerosene Creek er dagens valgte varme bad; prioritér Waimangu.",
   "price": 0,
   "priceText": "Gratis adgang og parkering.",
   "priceSource": "free",
@@ -2674,7 +2674,7 @@ window.tripIdeas = [
   "booking": "Book på Bookme et par dage før for at få rabatprisen. Mød ved båden i Taupō havn",
   "weather": "Kan aflyses ved hård vind på søen. Ring om morgenen",
   "sum": "Sejltur på en gammel kauri-yacht med elmotor ud til den 14 meter høje maoriudskæring ved Mine Bay, som kun kan ses fra vandet. Man må hoppe i søen og have sin egen mad og drikke med.",
-  "note": "Prisen kunne jeg ikke læse på deres eget bookingsystem, kun på Bookme, derfor tredjepart. Telefonnummeret er 0800 ECO SAIL fra deres hjemmeside omsat til tal, tjek det. Ca. 36 min fra Motutere til Taupō, så I kører frem og tilbage. Billigere alternativ er Chris Jolly katamaranen til $29.25 på Bookme kl. 13 eller 15",
+  "note": "Prisen kunne jeg ikke læse på deres eget bookingsystem, kun på Bookme, derfor tredjepart. Telefonnummeret er 0800 ECO SAIL fra deres hjemmeside omsat til tal, tjek det. Sejlturen er ikke med i Rotorua-dagen den 7.; den kræver omlægning. Billigere alternativ er Chris Jolly katamaranen til $29.25 på Bookme kl. 13 eller 15",
   "links": [
    [
     "Udbyder",
@@ -2699,7 +2699,7 @@ window.tripIdeas = [
   "dates": [
    "2026-12-07"
   ],
-  "when": "man 7 dec på vej fra National Park til Motutere",
+  "when": "man 7 dec på vej fra National Park mod Rotorua, kun hvis tiden tillader det",
   "price": 14,
   "priceText": "Tredjeparten NZHotpools viser $14 pr. voksen, $28 for to. Love Taupō viser $12. Ingen pris kunne bekræftes hos udbyderen.",
   "priceSource": "third_party",
@@ -2734,7 +2734,7 @@ window.tripIdeas = [
    "2026-12-07",
    "2026-12-08"
   ],
-  "when": "man 7 eller tir 8 dec, bedst på vej gennem Taupō tirsdag",
+  "when": "man 7 dec, kun som kort tilvalg på vej gennem Taupō mod Rotorua",
   "price": null,
   "priceText": "Classic annonceres fra $25 hos udbyderen. Antal bolde og endelig pakkepris er ikke bekræftet.",
   "priceSource": "operator",
@@ -2776,7 +2776,7 @@ window.tripIdeas = [
   "booking": "Ring om bord til to på 29 Tongariro Street. Små hold er velkomne.",
   "weather": "Indendørs.",
   "sum": "Gratis storskærmsquiz med lokale hold. Et konkret socialt aftenvalg i Taupō.",
-  "note": "R18. Campen er i Motutere syd for byen, så I skal tilbage i bil. Den der kører, skal kunne køre hjem efter quizzen.",
+  "note": "R18. Ikke med i den aktuelle rute: I sover ved Rotorua den 7., så quiz i Taupō kræver omlægning.",
   "links": [
    [
     "Udbyder",
@@ -2846,7 +2846,7 @@ window.tripIdeas = [
   "booking": "Køb billet på Bookme dagen før",
   "weather": "Godt i regnvejr",
   "sum": "Fire naturlige silica-bassiner med hver sin temperatur under kalkterrasser og damp, kun for voksne. Lille og roligt, ikke et badeland.",
-  "note": "Kun over 14 år. Ca. 40 min fra Motutere, så det passer bedst med sejlturen i Taupō. Gratis alternativ er Otumuheke-bækken i Taupō",
+  "note": "Kun over 14 år. Et tilvalg i Taupō-området, som kræver mere tid end den nuværende Rotorua-dag. Gratis alternativ er Otumuheke-bækken i Taupō",
   "links": [
    [
     "Udbyder",
@@ -2874,7 +2874,7 @@ window.tripIdeas = [
   "dates": [
    "2026-12-07"
   ],
-  "when": "man 7 dec kl. 17.00 fra havnen i Taupō, 30 km fra Motutere. Sommersejladsen kl. 17 kører dagligt fra december til marts.",
+  "when": "Ikke med i dagsplanen: kl. 17 fra Taupō passer ikke med Waimangu, Kerosene Creek og overnatning i Rotorua. Kræver omlægning.",
   "price": 65,
   "priceText": "Hos udbyderen selv ca. $65 NZD pr. person.",
   "priceSource": "operator",
@@ -2915,7 +2915,7 @@ window.tripIdeas = [
    "2026-12-07",
    "2026-12-08"
   ],
-  "when": "kun med en omvej. Man 7 dec fra Taupō eller tir 8 dec før Waitomo.",
+  "when": "Rotorua den 7. december. Waimangu og Kerosene Creek prioriteres; yderligere oplevelser kræver tid eller erstatter andre stop.",
   "price": 90,
   "priceText": "Hos udbyderen selv ca. $90 NZD pr. person.",
   "priceSource": "operator",
@@ -3624,7 +3624,7 @@ window.tripIdeaNotes = {
  "2026-12-09": "Lavvande i Kāwhia kl. 17.02 (LINZ). Grav efter varmt vand i sandet ca. kl. 15 til 19.",
  "2026-12-10": "Højvande i Raglan kl. 11.50. Det er der, man hopper fra gangbroen.",
  "after": "Vinturen: Enjois heldagstur på Waiheke man 14 dec koster $122 på BookMe plus færge $64, i alt $186 pr. person plus frokost. Op til fire vingårde med 3 til 5 smagninger hver. Der var 7 pladser til den pris fre 20 nov. Gavekort og Viator: priserne på Gifting Owl og Viator kunne ikke læses, fordi begge sider afviser automatiske opslag. De gule punkter viser, hvor de efter alt at dømme kan bruges. Tjek prisen i appen, før I regner med den. Overnatning i Auckland er ikke valgt. Touchwood i Remuera havde lør 21 nov teltplads uden strøm til $75 pr. nat og en lille hytte til $130 pr. nat, som passer, når bilen er solgt.",
- "2026-12-07": "Otumuheke-floden i Spa Thermal Park i Taupō er et gratis varmt bad, 10 min til fods fra parkeringen. Hold hovedet over vandet. Sejlturen med Sail Barbary kl. 14 er dagens bedste køb, og der er gratis pubquiz i Taupō mandag aften.",
+ "2026-12-07": "Kør fra Mangahuia via Huka Falls til Kerosene Creek (bad) og Waimangu (2–2½ time), og sov ved Rotorua Blue Lake TOP 10, forslag og ikke booket. Taranaki Falls, sejltur, ekstra varme bade og Taupō-quiz er ikke med i denne fyldte dag. Hold hovedet over vandet i den varme bæk. Sammenlign camps under Vælg jeres næste overnatninger.",
  "2026-12-11": "Coromandel ligger før Auckland den 11. Vælg korte stop i Kauaeranga Valley, Pinnacles som lang vandredag eller Cathedral Cove med eventuelt The Lost Spring som lang køredag. Coastal Walkway kræver ændret tidsramme. Se sammenligningen i dagsprogrammet.",
  "2026-11-26": "En hel dag fra The Barn. Vælg gåtur til Tinline, Coquille, Apple Tree eller Stilwell Bay og retur samme vej. Sammenlign afstande og tidsbudgetter i programmet; strandpauser kommer oveni. Kajak og vandtaxi er fortsat muligheder, ikke booket."
 };

@@ -1,0 +1,20 @@
+.trip-choices { margin: 22px 0 26px; border: 2px solid var(--ink); padding: clamp(16px,3vw,28px); scroll-margin-top: 90px; }
+.trip-choices > h3 { margin:0 0 8px; font-size:26px; line-height:1.15; }
+.trip-choices p { max-width:70ch; }
+.trip-choices > details { border-top:1px solid var(--ink-2); padding:14px 0; }
+.trip-choices summary { cursor:pointer; font-weight:700; line-height:1.5; }
+.trip-choices h4 { font-size:21px; margin:14px 0 8px; }
+.trip-choice-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:16px 0; }
+.trip-choice-list label { display:block; border:1px solid var(--ink-2); padding:16px; cursor:pointer; line-height:1.5; }
+.trip-choice-list label.is-chosen { outline:3px solid var(--ink); outline-offset:-3px; }
+.trip-choice-list label:focus-within { outline:3px solid var(--ink); outline-offset:3px; }
+.trip-choice-list input { width:20px; height:20px; margin:0 8px 10px 0; vertical-align:middle; accent-color:var(--ink); }
+.trip-choice-list strong { font-size:18px; }
+.trip-choice-list span { display:block; margin-top:10px; }
+.trip-choice-list small { display:block; margin-top:12px; line-height:1.5; }
+.trip-choices button { font:inherit; cursor:pointer; padding:11px 16px; border:1px solid var(--ink); background:transparent; color:var(--ink); min-height:44px; }
+.trip-choices button:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+.trip-choices .choice-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+.trip-choices textarea { box-sizing:border-box; width:100%; min-height:140px; margin-top:12px; font:inherit; padding:12px; }
+.trip-choices [data-group-status] { font-weight:700; }
+@media (max-width:760px) { .trip-choice-list { grid-template-columns:1fr; } .trip-choice-list label { padding:14px; } }

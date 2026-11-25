@@ -86,6 +86,7 @@
       "url": "https://metservice.com/rural/regions/taranaki/locations/hawera",
       "widget": true
     },
+    "rotorua": {"label":"Rotorua","type":"urban","loc":"rotorua","url":"https://www.metservice.com/towns-cities/regions/rotorua/locations/rotorua","widget":true},
     "taupo": {
       "label": "Taupō",
       "type": "urban",
@@ -174,7 +175,7 @@
     "wanganui",
     "hawera",
     "tongariro",
-    "taupo",
+    "rotorua",
     "te-kuiti",
     "hamilton",
     "auckland",

@@ -37,10 +37,10 @@ activities = {
     "s44": ("vista", 30), "s43": ("beach", 60), "s10": ("city", 90),
     "s58": ("hike", 210), "s55": ("hike", 330),
     "s12": ("city", 60), "s64": ("walk", 60), "s14": ("drive", 0),
-    "s65": ("city", 30), "s66": ("drive", 0), "s67": ("waterfall", 60),
+    "s65": ("city", 30), "s66": ("drive", 0),
     "s68": ("vista", 25), "s15": ("hike", 480), "s16": ("waterfall", 120),
     "s17": ("walk", 45), "s18": ("waterfall", 45), "s20": ("swim", 45),
-    "s21": ("hike", 120), "s22": ("city", 60), "s23": ("hike", 60),
+    "s21": ("hike", 150), "s22": ("city", 60), "s23": ("hike", 60),
     "s24": ("cave", 120), "s25": ("cave", 45), "s26": ("beach", 60),
     "s27": ("surf", 120), "s28": ("hike", 150), "s29": ("swim", 90),
     "s30": ("hike", 45), "s31": ("vista", 45), "s32": ("hike", 240),
@@ -122,7 +122,7 @@ for index, leg_index in leg_for_day.items():
         if spots[anchor].get("st") in {"out", "maybe", "after", "idea"}:
             continue
         selected.append(spots[anchor])
-    start = 420 if index in {0, 4, 20, 27} else 780 if index == 11 else 510 if index == 13 else 600 if index == 1 else 540
+    start = 480 if index == 23 else 420 if index in {0, 4, 20, 27} else 780 if index == 11 else 510 if index == 13 else 600 if index == 1 else 540
     days[index]["segments"] = road_day(index, leg_index, selected, start)
 
 days[10]["note"] = "Ankomst til Kerr Bay 24. november og booket nat 24.–25. er bekræftet af jer. Køretider og stop undervejs er fortsat anslået, ikke bekræftede besøg."
