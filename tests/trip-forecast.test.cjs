@@ -13,7 +13,7 @@ test('camp dates still include nights, departure and optional Picton stays',()=>
  assert.deepEqual(entry(5).days.map(d=>d.date),['2026-11-21','2026-11-22','2026-11-23']);
  assert.deepEqual(entry(20).days.map(d=>d.date),['2026-11-15','2026-11-16']);
  assert.deepEqual(entry(21).days.map(d=>d.date),['2026-11-30','2026-12-01']);
- assert.equal(entry(21).optional,true);assert.equal(data.locationPlan.days[16].stay.name,'Mistletoe Bay Eco Village');
+ assert.equal(entry(21).optional,false);assert.equal(data.locationPlan.days[16].stay.name,'Whatamango Bay Campsite');
 });
 test('all camps have an explicitly named official MetService area',()=>{
  assert.equal(config.camps.length,data.bases.length);

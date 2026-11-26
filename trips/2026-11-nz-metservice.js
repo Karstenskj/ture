@@ -182,10 +182,12 @@
     "port-hills",
     "kaikoura",
     "blenheim",
-    "blenheim",
-    "nelson"
-  ]
+    "nelson",
+    "hawera"
+]
 };
+  config.areas['new-plymouth']={label:'New Plymouth',type:'urban',loc:'new-plymouth',url:'https://www.metservice.com/towns-cities/regions/taranaki/locations/new-plymouth',widget:true};
+  config.camps[13]='new-plymouth';
   config.areas.christchurch={label:'Christchurch',type:'urban',loc:'christchurch',url:'https://www.metservice.com/towns-cities/regions/christchurch/locations/christchurch',widget:true};
   root.TripMetService=config;
   if(typeof module==='object' && module.exports)module.exports=config;

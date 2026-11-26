@@ -1594,40 +1594,6 @@ window.tripIdeas = [
   "conf": "high"
  },
  {
-  "id": "mistletoe-bay-glowworms",
-  "name": "Gløde-orme og morild i Mistletoe Bay",
-  "maker": "Glow worms and phosphorescence, Mistletoe Bay Eco Village",
-  "area": "Mistletoe Bay",
-  "ll": [
-   -41.22323,
-   173.97284
-  ],
-  "cat": "glowworm",
-  "dates": [
-   "2026-11-29",
-   "2026-11-30"
-  ],
-  "when": "søn 29 eller man 30 nov efter mørkets frembrud, ca. kl. 21.30",
-  "price": 0,
-  "priceText": "Gratis for gæster",
-  "priceSource": "free",
-  "duration": "ca. 30 min",
-  "walk": true,
-  "open": "Hver aften efter mørkets frembrud",
-  "booking": "Ingen booking",
-  "weather": "Bedst i mørke, tørre nætter uden måne. Morild ses bedst i helt mørke",
-  "sum": "Indkørslen til campingpladsen lyser op af hundredvis af gløde-orme, og ved molen kan I røre vandet og se morild. Lige uden for teltet.",
-  "note": "Søndag er bedst, fordi I skal op kl. ca. 4.15 tirsdag. Sluk lygten tæt på ormene. Morild er der ikke hver aften.",
-  "links": [
-   [
-    "Udbyder",
-    "https://www.mistletoebay.co.nz/activities/"
-   ]
-  ],
-  "checked": "fre 20 nov og efterprøvet lør 21 nov",
-  "conf": "high"
- },
- {
   "id": "motueka-sunday-market-29-nov",
   "name": "Søndagsmarked i Motueka",
   "maker": "Motueka Sunday Market",
@@ -2939,82 +2905,6 @@ window.tripIdeas = [
   ]
  },
  {
-  "id": "black-labyrinth",
-  "name": "Black water rafting i Waitomo",
-  "maker": "Discover Waitomo (Legendary Black Water Rafting Co.) · Legendary Black Water Rafting Co. Black Labyrinth",
-  "area": "Waitomo Caves",
-  "ll": [
-   -38.26393,
-   175.12584
-  ],
-  "cat": "cave",
-  "dates": [
-   "2026-12-08"
-  ],
-  "when": "tir 8 dec, eftermiddag i Waitomo på vej til Marokopa",
-  "price": 199,
-  "priceText": "$199 pr. person. Våddragt, hjelm, støvler og bildæk er med",
-  "priceSource": "operator",
-  "duration": "3 timer, mød 30 min før",
-  "open": "Åbent alle dage undtagen juledag. Bookingsystemet viser ingen lukkede dage fra 21 nov til 21 dec, og starttider hver halve time mellem kl. 8.30 og 16.30",
-  "booking": "Book på nettet nogle dage før. Vælg start kl. 15.00 eller 15.30, så I når frem fra Blue Spring. Kontaktløs betaling, stedet tager ikke kontanter",
-  "weather": "Kører i regn. Ved meget kraftig regn kan floden i hulen stige, så ringer de og flytter jer",
-  "sum": "I flyder i et bildæk ned ad en underjordisk flod i Ruakuri-hulen, hopper baglæns ned ad små vandfald og ligger til sidst og kigger op på et loft af glødeorme. Den sjoveste af hulerne i Waitomo for to der vil være våde og have fart på.",
-  "note": "Ligger lige på loftet af budgettet. Mindst 45 kg. Vandet er koldt, ca. 10 grader. Bringe badetøj og håndklæde. Bookingsystemet viser kun at dagen er åben, ikke hvor mange pladser der er tilbage på et bestemt klokkeslæt, så book i god tid. Ca. 50 min på snoet vej videre til Marokopa bagefter",
-  "links": [
-   [
-    "Udbyder",
-    "https://www.waitomo.com/black-water-rafting/legendary-black-water-rafting-co-black-labyrinth"
-   ],
-   [
-    "Book",
-    "https://waitomo.zaui.net/booking/web/#/default/activity/6?"
-   ]
-  ],
-  "phone": "0800 228 464",
-  "checked": "fre 20 nov",
-  "conf": "high",
-  "top": "2026-12-08"
- },
- {
-  "id": "spellbound",
-  "name": "Spellbound: pris og afgangstjek",
-  "maker": "Spellbound Glowworm Tours",
-  "area": "Oparure ved Te Kūiti",
-  "ll": [
-   -38.31289,
-   175.08128
-  ],
-  "cat": "glowworm",
-  "dates": [
-   "2026-12-08"
-  ],
-  "when": "tir 8 dec, kun når en afgang er bekræftet",
-  "price": 85,
-  "priceText": "Essential med én hule koster $85 pr. voksen. Explorer med to huler koster $109. Begge priser er læst hos udbyderen lør 21 nov.",
-  "priceSource": "operator",
-  "duration": "Essential ca. 90 min. Explorer ca. 150 min.",
-  "detour": 15,
-  "open": "Udbyderen siger daglige ture, op til seks afgange. Afgangstider og ledige pladser tir 8 dec kunne ikke bekræftes, fordi Rezdy afviste opslaget med 405. Ikke bekræftet for datoen.",
-  "booking": "Ring på +64 27 419 1644 eller 0800 773 552 i NZ om dagens afgange. Mød 20 min før ved 334 Boddies Road, Oparure. Det er ikke Waitomo Village.",
-  "weather": "Kører normalt i regn, men aflyses ved oversvømmelse.",
-  "sum": "Opdatering af det eksisterende Spellbound-forslag. Essential giver bådturen blandt glowworms uden den ekstra tørre hule.",
-  "note": "could not be checked: bookingkalenderen var utilgængelig. Ingen afgangstid er gættet. Hjemmesiden nævner op til 45 min rolig gang fordelt på turen og enkelte korte stejle stykker. Tirsdagen er allerede lang. Turene afgår fra 334 Boddies Road i Oparure ved Te Kūiti, ikke fra Waitomo Village. Kør efter adressen og mød 20 min før.",
-  "links": [
-   [
-    "Udbyder",
-    "https://www.glowworm.co.nz/tour/the-essential-glowworm-tour"
-   ],
-   [
-    "Book",
-    "https://www.glowworm.co.nz/book-now"
-   ]
-  ],
-  "phone": "+64 27 419 1644",
-  "checked": "fre 20 nov og efterprøvet lør 21 nov",
-  "conf": "medium"
- },
- {
   "id": "awa-manutaki",
   "name": "Jetbåd i Aratiatia-strømfaldet",
   "maker": "AWA Manutaki (previously Rapids Jet)",
@@ -3118,79 +3008,6 @@ window.tripIdeas = [
   "phone": "0800 275 362 (NZ)",
   "checked": "lør 21 nov",
   "conf": "medium"
- },
- {
-  "id": "go-waitomo-ruakuri-cave",
-  "name": "Ruakuri grotten med glowworms, Waitomo",
-  "maker": "Discover Waitomo (waitomo.com) · Waitomo Ruakuri Cave Tour",
-  "area": "Waitomo",
-  "ll": [
-   -38.26816,
-   175.07837
-  ],
-  "cat": "glowworm",
-  "dates": [
-   "2026-12-08"
-  ],
-  "when": "tir 8 dec på vej til Marokopa. Ture fra kl. 10 til kl. 15.30, check in 30 min før.",
-  "price": 122,
-  "priceText": "Hos udbyderen selv ca. $122 NZD pr. person.",
-  "priceSource": "operator",
-  "booking": "Ukendt. Waitomo skriver at forudbestilling er nødvendig. Book senest lør 5 dec.",
-  "sum": "Ca. 2 timers guidet gåtur i New Zealands længste guidede grotte med glowworms tæt på.",
-  "note": "Grotten er bygget om til gangbroer og kørestole, så den er mere tur end eventyr. Discover Waitomo telefon 0800 456 922. Kan ikke sammenlignes, Gifting Owls pris kunne ikke læses fre 20 nov.",
-  "links": [
-   [
-    "Udbyder",
-    "https://www.waitomo.com/glowworms-and-caves/ruakuri-cave"
-   ]
-  ],
-  "checked": "fre 20 nov",
-  "conf": "low",
-  "vouchers": [
-   {
-    "kind": "Gifting Owl",
-    "text": "Direkte koster den $122 NZD pr. person, $244 NZD for to. Gavekortet dækker ca. $101 NZD, så I betaler ca. $143 NZD selv, hvis Gifting Owl tager samme pris. Prisen dér er ikke bekræftet, fordi siden afviser automatiske opslag. Tjek selv, før I regner med den.",
-    "url": "https://giftingowl.com/nz/waikato/waitomo-district/waitomo-ruakuri-cave-tour-1/"
-   }
-  ]
- },
- {
-  "id": "waitomo-glowworm-caves",
-  "name": "Glowworm Caves med båd, Waitomo",
-  "maker": "Discover Waitomo · Waitomo Glowworm Caves",
-  "area": "Waitomo Caves",
-  "ll": [
-   -38.26087,
-   175.10354
-  ],
-  "cat": "glowworm",
-  "dates": [
-   "2026-12-08"
-  ],
-  "when": "tir 8 dec, den billige og hurtige løsning",
-  "price": 85,
-  "priceText": "$85 pr. person. Med Ruakuri-hulen som kombi $179",
-  "priceSource": "operator",
-  "duration": "45 min, mød 30 min før",
-  "open": "Alle dage. Bookingsystemet har ture hvert 10. minut fra kl. 8.30 til 18 tir 8 dec",
-  "booking": "Book på nettet dagen før eller samme morgen",
-  "weather": "Kører i al slags vejr",
-  "sum": "Den klassiske tur med en kort gåtur gennem hulen og en bådtur i mørket under glødeormene. Billigste og hurtigste måde at se glødeorme i Waitomo, men den er stor og turistet.",
-  "note": "Store grupper og mange busser midt på dagen. Ingen fotografering inde i hulen. I ser også glødeorme gratis ved Mangapohue og Marokopa om aftenen, så denne er kun værd at tage hvis I springer black water rafting over",
-  "links": [
-   [
-    "Udbyder",
-    "https://www.waitomo.com/glowworms-and-caves/waitomo-glowworm-caves"
-   ],
-   [
-    "Book",
-    "https://waitomo.zaui.net/booking/web/#/default/"
-   ]
-  ],
-  "phone": "0800 456 922",
-  "checked": "fre 20 nov",
-  "conf": "high"
  },
  {
   "id": "raglan-limestone-express",
@@ -3607,8 +3424,8 @@ window.tripIdeas = [
  }
 ];
 window.tripIdeaNotes = {
- "2026-12-04": "Pouākai Tarns via Mangorei Track er planlagt: cirka 11–12 km og 5–6 timer med pauser. Afgang omkring kl. 07 fra Ōpunake; parkér ved Mangorei Road og gå retur til bilen samme vej. Tjek bjergvejr; byt eventuelt med søstoppet den 3. december.",
- "2026-11-30": "Mount Stokes kræver afklaring af passage begge veje: Kenepuru Road efter Portage er varslet lukket kl. 08–12 og 12.30–17. Parkering og rute står i Mount Stokes-kortet. Onahau Point eller bugten er et enklere valg før morgenfærgen.",
+ "2026-12-04": "Pouākai Tarns via Mangorei Track. Efter vandringen videre via Stratford (tank/indkøb, ingen overnatning) til Whangamōmona Campground. Valgt, ikke booket.",
+ "2026-11-30": "Mount Stokes er fast planlagt. Kørselsrute og DOCs sti vises på kortet. Kenepuru Road er varslet lukket 08–12 og12.30–17; afklar passage begge veje. Ingen andre glowworm-besøg er planlagt her.",
  "2026-11-21": "MetService fredag aften: tørt, skyer der letter til en fin eftermiddag ved kysten, svag vind og 17 grader. Enkelte byger i bjergene sidst på formiddagen. Zipline kl. 13 eller 14 passer med kørslen. Hejreturen kl. 15 kræver et opkald om morgenen.",
  "2026-11-22": "MetService lør 21 nov for Franz Josef: fint om morgenen, skyer om eftermiddagen og nordvestenvind. Gå Alex Knob tidligt. Er bjerget lukket inde, så er kajak på Ōkārito-lagunen kl. 8 eller kiwierne i Franz Josef gode bytter. Efter vandreturen er et privat varmt kar kl. 17.30 det oplagte.",
  "2026-11-23": "Morgenen er roligst på søen, så kajakleje kl. 9 passer før turen nordpå. Guldvask i Ross og frokost i Hokitika ligger på vejen.",
@@ -3618,13 +3435,14 @@ window.tripIdeaNotes = {
  "2026-11-28": "Afrejse fra Wharariki efter én booket nat. Kør til Nelson City TOP 10, planlagt 28.–29. november, men ikke booket. Aftal plads til bilen med tagtelt før booking. Tjek dagens tidevand, hvis I besøger stranden før afrejse.",
  "2026-11-29": "Kør fra Nelson mod Mistletoe Bay. Bad ved Pelorus Bridge og muslinger i Havelock er de to stop, der er værd at tage. Mussel Pot har lukket mandag og tirsdag og vil have bordbestilling.",
  "2026-12-01": "Airbnb i Vic Central på The Terrace er booket 1.–2. december. Check-in efter kl. 14, check-out før kl. 11. Parkering betales separat; Wilson Upper Willis Street er et undersøgt udendørs forslag. Wētā Workshop om eftermiddagen ($63) og gratis quiz på Three Sisters Brewery fra kl. 18.30.",
- "2026-12-03": "Lake Mangamahoe ligger nu på køreturen fra Waiinu til Ōpunake. Wilkies Pools og Dawson Falls er fjernet. Tawhiti Museum har lukket torsdag, så det er kun et muligt alternativ fredag, hvis vandringen ikke bliver til noget.",
+ "2026-12-03": "Lake Mangamahoe og New Plymouth. Én valgt nat på Fitzroy Beach, ikke booket.",
  "2026-12-06": "Aflyses Crossing: cykel på Old Coach Road eller Fishers Track ($75, ring først), Tawhai Falls, privat varmt kar i Tokaanu og minigolf og øl på Schnapps. Sky Waka kun i klart vejr.",
- "2026-12-08": "Black water rafting ($199, start kl. 15 eller 15.30) er den eneste huletur med fart på. Billigere: Spellbound $109 i lille gruppe eller Glowworm Caves $85. Hobbiton har kun plads kl. 16.20 og 16.50 og koster jer hulerne.",
+ "2026-12-08": "Blue Spring, Waitomo TOP 10, aftensmad ude på The Tomo og gratis glowworms ved Mangapohue cirka21.15–22.00. Ingen betalte glowworm-ture eller andre planlagte glowworm-steder. Aftal sen tilbagekomst på campen; intet er booket.",
  "2026-12-09": "Lavvande i Kāwhia kl. 17.02 (LINZ). Grav efter varmt vand i sandet ca. kl. 15 til 19.",
  "2026-12-10": "Højvande i Raglan kl. 11.50. Det er der, man hopper fra gangbroen.",
  "after": "Vinturen: Enjois heldagstur på Waiheke man 14 dec koster $122 på BookMe plus færge $64, i alt $186 pr. person plus frokost. Op til fire vingårde med 3 til 5 smagninger hver. Der var 7 pladser til den pris fre 20 nov. Gavekort og Viator: priserne på Gifting Owl og Viator kunne ikke læses, fordi begge sider afviser automatiske opslag. De gule punkter viser, hvor de efter alt at dømme kan bruges. Tjek prisen i appen, før I regner med den. Overnatning i Auckland er ikke valgt. Touchwood i Remuera havde lør 21 nov teltplads uden strøm til $75 pr. nat og en lille hytte til $130 pr. nat, som passer, når bilen er solgt.",
- "2026-12-07": "Kør fra Mangahuia via Huka Falls til Kerosene Creek (bad) og Waimangu (2–2½ time), og sov ved Lake Ōkaro Campsite, forslag og ikke booket. Taranaki Falls, sejltur, ekstra varme bade og Taupō-quiz er ikke med i denne fyldte dag. Hold hovedet over vandet i den varme bæk. Sammenlign camps under Vælg jeres næste overnatninger.",
- "2026-12-11": "Coromandel ligger før Auckland den 11. Vælg korte stop i Kauaeranga Valley, Pinnacles som lang vandredag eller Cathedral Cove med eventuelt The Lost Spring som lang køredag. Coastal Walkway kræver ændret tidsramme. Se sammenligningen i dagsprogrammet.",
- "2026-11-26": "En hel dag fra The Barn. Vælg gåtur til Tinline, Coquille, Apple Tree eller Stilwell Bay og retur samme vej. Sammenlign afstande og tidsbudgetter i programmet; strandpauser kommer oveni. Kajak og vandtaxi er fortsat muligheder, ikke booket."
+ "2026-12-07": "Huka Falls, bad i Kerosene Creek, Waimangu og kort Rotorua-besøg. Lake Ōkareka DOC er valgt 7.–8. december, ikke booket. Hold hovedet over vandet i den varme bæk.",
+ "2026-12-11": "Cathedral Cove er fast valgt før Auckland. Afgang tidligt fra Raglan; hovedplanen omfatter ikke Pinnacles, Coastal Walkway eller The Lost Spring oveni.",
+ "2026-11-26": "En hel dag fra The Barn. Vælg gåtur til Tinline, Coquille, Apple Tree eller Stilwell Bay og retur samme vej. Sammenlign afstande og tidsbudgetter i programmet; strandpauser kommer oveni. Kajak og vandtaxi er fortsat muligheder, ikke booket.",
+ "2026-12-05": "Fra Whangamōmona via Moki Tunnel og Tāngarākau Gorge til booket Mangahuia. Mount Damper er fjernet."
 };

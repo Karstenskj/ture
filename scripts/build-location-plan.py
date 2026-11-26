@@ -19,7 +19,7 @@ document = html.fromstring(source)
 match = re.search(r'(<script\b[^>]*\bid="rk-data"[^>]*>)(.*?)(</script>)', source, re.S)
 data = json.loads(match[2])
 
-coastal = {0, 6, 8, 9, 10, 12, 13, 16, 17, 19, 20, 21, 22}
+coastal = {0, 6, 8, 9, 10, 12, 13, 17, 19, 20, 21}
 for index, base in enumerate(data["bases"]):
     base["camp"] = index not in {11, 18}
     base["coastal"] = index in coastal
@@ -40,7 +40,7 @@ activities = {
     "s65": ("city", 30), "s66": ("drive", 0),
     "s68": ("vista", 25), "s15": ("hike", 480), "s16": ("waterfall", 120),
     "s17": ("walk", 45), "s18": ("waterfall", 45), "s20": ("swim", 45),
-    "s21": ("hike", 150), "s22": ("city", 60), "s23": ("hike", 60),
+    "s21": ("hike", 150), "coromandel-cove": ("walk", 180), "s22": ("city", 60), "s23": ("hike", 60),
     "s24": ("cave", 120), "s25": ("cave", 45), "s26": ("beach", 60),
     "s27": ("surf", 120), "s28": ("hike", 150), "s29": ("swim", 90),
     "s30": ("hike", 45), "s31": ("vista", 45), "s32": ("hike", 240),
@@ -65,7 +65,7 @@ data["helenaFlight"] = {
     "note": "Afgangen og flyets position er anslået ud fra 3½ timers direkte flyvning. Kun ankomsten kl. 18.10 er oplyst. Ikke flytracking."
 }
 
-stay_indexes = [0, 20, 19, 1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 23, 10, 10, 11, 12, 13, 13, 14, 14, 15, 16, 17, 17, 18]
+stay_indexes = [0, 20, 19, 1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 22, 10, 21, 11, 12, 13, 23, 14, 14, 15, 16, 17, 17, 18]
 leg_for_day = {0: 0, 1: 22, 2: 23, 4: 2, 5: 3, 6: 4, 7: 5, 9: 7, 10: 8, 11: 9, 13: 10,
                14: 24, 15: 11, 18: 14, 19: 15, 20: 16, 21: 17, 23: 18, 24: 19, 25: 20, 27: 21}
 calendar = document.xpath('//*[@data-calendar-day]')
@@ -117,7 +117,7 @@ for index, leg_index in leg_for_day.items():
     selected = []
     for card in article.xpath('.//article[@class="spot"]'):
         anchor = card.get("id", "")
-        if anchor not in spots or card.xpath('ancestor::details[@id="dag22"]'):
+        if (index == 24 and anchor == "s25") or anchor not in spots or card.xpath('ancestor::details[@id="dag22"]'):
             continue
         if spots[anchor].get("st") in {"out", "maybe", "after", "idea"}:
             continue
@@ -129,7 +129,7 @@ days[10]["note"] = "Ankomst til Kerr Bay 24. november og booket nat 24.–25. er
 days[11]["note"] = "Booket The Barn 25.–27. november. Ankomst ca. kl. 15.00 er forventet; køretider og afgang er anslået."
 days[13]["note"] = "Booket Wharariki 27.–28. november. Via ferrata er foreløbig planlagt kl. 09.30–13.30 inklusive udstyr, afhængigt af tørre forhold. Øvrige stop og tider er anslået."
 days[14]["note"] = "Planlagt Nelson City TOP 10 Holiday Park 28.–29. november; ikke booket. Plads til bilen med tagtelt skal aftales før booking. Køretider og stop er anslået."
-days[20]["note"] = "Pouākai Tarns via Mangorei Track er valgt til 4. december. Afgang fra Ōpunake ca. kl. 07 og cirka 5½ time til vandring og pauser er anslået. Tjek bjergvejr og sporstatus; aktiviteterne den 3. og 4. kan byttes efter vejret."
+days[20]["note"] = "Pouākai Tarns via Mangorei Track er valgt til 4. december. Afgang fra Fitzroy ca. kl. 07 og cirka 5½ time til vandring og pauser er anslået. Tjek bjergvejr og sporstatus; ny camp i Whangamōmona efter vandringen."
 
 def solo_day(index, start):
     base = days[index]["stay"]
@@ -198,16 +198,32 @@ days[8]["segments"] = [
     {"from": 975, "to": 990, "leg": 6, "portion": [.5, 1], "name": "tilbage til Otto/MacDonalds"},
 ]
 days[17]["segments"] = [
-    {"from": 285, "to": 365, "leg": 12, "name": "på vej til færgen i Picton"},
-    {"from": 365, "to": 465, "point": data["legs"][12]["pts"][-1], "activity": "walk", "name": "Picton · venter på færgen"},
+    {"from": 330, "to": 355, "leg": 12, "name": "på vej til færgen i Picton"},
+    {"from": 355, "to": 465, "point": data["legs"][12]["pts"][-1], "activity": "walk", "name": "Picton · venter på færgen"},
     {"from": 465, "to": 675, "ferry": 0, "activity": "ferry", "name": "Picton → Wellington"},
     {"from": 690, "to": 700, "leg": 13, "name": "på vej til Wellington"},
     {"from": 780, "to": 960, "point": spots["s10"]["ll"], "activity": "city", "name": "Wellington"},
 ]
-days[17]["note"] = "Færgen er ombooket og bekræftet til tir 1 dec kl. 07.45, Picton → Wellington. Sejltiden på cirka 3½ timer og ankomsttiden er anslået. Terminal og check-in-frist følger den nye billet. Airbnb i Vic Central på The Terrace er booket 1.–2. december; check-in efter kl. 14, check-out før kl. 11. Parkering er separat."
+days[17]["note"] = "Færgen er ombooket og bekræftet til tir 1 dec kl. 07.45, Picton → Wellington. Sejltiden på cirka 3½ timer og ankomsttiden er anslået. Foreslået afgang fra Whatamango kl.05.30. Terminal og check-in-frist følger billetten. Airbnb i Vic Central på The Terrace er booket 1.–2. december; check-in efter kl. 14, check-out før kl. 11. Parkering er separat."
+# Mount Stokes is fixed; the road closure can require waiting until 17:00.
+days[16]["segments"] = [
+    {"from": 360, "to": 460, "leg": 25, "name": "til Mount Stokes-parkeringen før vejlukningen"},
+    {"from": 460, "to": 760, "point": spots["s57"]["ll"], "activity": "hike", "name": "Mount Stokes · top og retur"},
+    {"from": 760, "to": 1020, "point": data["legs"][25]["pts"][-1], "activity": "food", "name": "frokost og mulig ventetid på vejadgang"},
+    {"from": 1020, "to": 1210, "leg": 26, "name": "til Whatamango Bay efter genåbning"},
+]
+days[16]["note"] = "Mount Stokes er fast planlagt 30. november. Tidlig afgang og den sene hjemkørsel er anslået ud fra varslede vejlukninger; passage er ikke aftalt. Illustrationens venteposition er ved parkeringen, ikke live GPS."
 days[22]["segments"] = [{"from": 450, "to": 930, "point": spots["s15"]["ll"], "activity": "hike", "name": "Tongariro Alpine Crossing"}]
 manu = data["activityTargets"][0]
 days[26]["segments"] = [{"from": 600, "to": 810, "point": manu["ll"], "activity": "surf", "name": "Muligt surfbesøg · Manu Bay"}]
+# Mangapohue is the selected free glowworm visit, after darkness.
+days[24]["segments"] += [
+    {"from": 1110, "to": 1200, "point": data["bases"][16]["ll"], "activity": "food", "name": "Aftensmad ude · The Tomo i Waitomo"},
+    {"from": 1220, "to": 1255, "leg": 27, "name": "til Mangapohue før mørket"},
+    {"from": 1275, "to": 1320, "point": spots["s25"]["ll"], "activity": "walk", "name": "Gratis glowworms · Mangapohue"},
+    {"from": 1320, "to": 1355, "leg": 28, "name": "retur til Waitomo TOP 10 efter glowworms"},
+]
+days[24]["note"] = "Check-in inden middag. Eneste planlagte glowworm-besøg er Mangapohue efter mørket. Aftensmad og sen indkørsel omkring22.30–23 skal afklares; ingen booking eller garanti."
 days[26]["note"] = "Surfbesøget er en mulighed i planen. Scenen viser et skøn og bekræfter ikke, at de faktisk surfer."
 
 data["locationPlan"] = {

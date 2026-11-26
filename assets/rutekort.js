@@ -248,6 +248,11 @@
 
   var all = [];
   var spotLabels = [];
+  // Foot tracks use the actual published track geometry, separately from roads.
+  (D.walks || []).forEach(function (walk) {
+    L.polyline(walk.pts, {className:'rk-case',weight:9,interactive:false}).addTo(map);
+    tap(L.polyline(walk.pts, {className:'rk-leg',weight:5,dashArray:'3 7',bubblingMouseEvents:false}),walk.html).addTo(map);
+  });
   (D.extras || []).forEach(function (x) {
     L.polyline(x.pts, { className: 'rk-case', weight: 7, dashArray: '8 8', interactive: false, smoothFactor: 1.5 }).addTo(map);
     tap(L.polyline(x.pts, { className: 'rk-extra', weight: 4, dashArray: '8 8', bubblingMouseEvents: false, smoothFactor: 1.5 }).addTo(map), x.html);
@@ -395,7 +400,7 @@
   if (window.ResizeObserver) new ResizeObserver(fit).observe(map.getContainer());
   document.addEventListener('DOMContentLoaded', fit, { once: true });
   // Vent til fanens endelige layout er på plads, før hele ruten indrammes.
-  requestAnimationFrame(function () { fit(); showTimes(); });
+  requestAnimationFrame(function () { fit(); showTimes(); if (location.hash === '#map-stokes') showStokesRoute(); });
 
   // CSS-baseret fuld skærm virker også i Safari på iPhone.
   var topbar = document.createElement('div');
@@ -405,10 +410,24 @@
   var btns = document.createElement('div');
   btns.className = 'rk-btns';
   btns.innerHTML = '<button type="button" class="rk-btn" data-a="route">Vis ruten</button><button type="button" class="rk-btn" data-a="me">Find os</button>' +
+    ((D.walks || []).some(function (walk) {return walk.id === 'stokes';}) ? '<button type="button" class="rk-btn" id="map-stokes" data-a="stokes">Mount Stokes · rute</button>' : '') +
     ((D.campOptions || []).length ? '<button type="button" class="rk-btn" data-a="camp-options">Campingforslag</button>' : '') +
     (D.legend ? '<button type="button" class="rk-btn" data-a="legend" aria-expanded="false" aria-controls="rk-legend">Forklaring</button>' : '');
   map.getContainer().appendChild(topbar);
   map.getContainer().appendChild(btns);
+  var stokesBtn = btns.querySelector('[data-a="stokes"]');
+  function showStokesRoute() {
+    var walk = (D.walks || []).filter(function (walk) {return walk.id === 'stokes';})[0];
+    if (!walk) return;
+    close();
+    box.classList.remove('rk-camp-options-view');
+    var road = (D.legs || []).filter(function (leg) {return leg.id === 'stokes-out';})[0];
+    map.fitBounds(walk.pts.concat(road ? road.pts : []), {paddingTopLeft:[35,85],paddingBottomRight:[60,140],animate:!reducedMotion.matches});
+  }
+  if (stokesBtn) {
+    stokesBtn.addEventListener('click',showStokesRoute);
+    window.addEventListener('hashchange',function () {if (location.hash === '#map-stokes') showStokesRoute();});
+  }
   var campOptionsBtn = btns.querySelector('[data-a="camp-options"]');
   if (campOptionsBtn) campOptionsBtn.addEventListener('click', function () {
     close();
