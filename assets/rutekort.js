@@ -514,38 +514,89 @@
         paddingTopLeft: [32, 66], paddingBottomRight: [32, 84], maxZoom: 8, animate: false
       });
     }
-    function setFilmMarker(marker) {
-      if (activeFilmMarker && activeFilmMarker.getElement()) activeFilmMarker.getElement().classList.remove('rk-film-marker-active');
-      activeFilmMarker = marker;
-      if (marker && marker.getElement()) marker.getElement().classList.add('rk-film-marker-active');
+    function updateFilmLabel(marker, label) {
+      var element = marker.getElement();
+      if (!element) return;
+      var description = label.number + '. ' + marker.filmPoint.name + ' · ' + label.timeTitle;
+      element.title = description;
+      element.setAttribute('aria-label', description);
+      element.querySelector('.rk-film-number').textContent = label.number;
+      element.querySelector('.rk-film-time').textContent = label.time;
     }
-    function setFilmPoints(points) {
+    function setFilmMarker(marker, label) {
+      if (activeFilmMarker && activeFilmMarker.getElement()) {
+        activeFilmMarker.getElement().classList.remove('rk-film-marker-active');
+        activeFilmMarker.setZIndexOffset(0);
+        updateFilmLabel(activeFilmMarker, activeFilmMarker.filmPoint);
+      }
+      activeFilmMarker = marker;
+      if (marker && marker.getElement()) {
+        marker.getElement().classList.add('rk-film-marker-active');
+        marker.setZIndexOffset(1000);
+        updateFilmLabel(marker, label);
+      }
+      layoutFilmLabels();
+    }
+    function layoutFilmLabels() {
+      if (map.getZoom() == null) return;
+      var size = map.getSize(), anchors = [], labels = [];
+      filmPoints.forEach(function (marker) {
+        var element = marker.getElement();
+        if (!element) return;
+        var point = map.latLngToContainerPoint(marker.getLatLng());
+        if (point.x < 0 || point.x > size.x || point.y < 0 || point.y > size.y) return;
+        var label = element.querySelector('.rk-film-time');
+        labels.push({ label: label, point: point, width: label.offsetWidth, height: label.offsetHeight, active: marker === activeFilmMarker });
+        anchors.push({ x: point.x - 13, y: point.y - 13, width: 26, height: 26 });
+      });
+      labels.sort(function (a, b) { return Number(b.active) - Number(a.active); });
+      labels.forEach(function (item) {
+        var p = item.point, w = item.width, h = item.height;
+        var options = [
+          { side: 'right', x: p.x + 15, y: p.y - h / 2 },
+          { side: 'left', x: p.x - 15 - w, y: p.y - h / 2 },
+          { side: 'top', x: p.x - w / 2, y: p.y - 15 - h },
+          { side: 'bottom', x: p.x - w / 2, y: p.y + 15 }
+        ];
+        function overlap(rect) {
+          if (rect.x < 2 || rect.y < 2 || rect.x + w > size.x - 2 || rect.y + h > size.y - 2) return Infinity;
+          return anchors.reduce(function (area, other) {
+            return area + Math.max(0, Math.min(rect.x + w + 2, other.x + other.width) - Math.max(rect.x - 2, other.x)) *
+              Math.max(0, Math.min(rect.y + h + 2, other.y + other.height) - Math.max(rect.y - 2, other.y));
+          }, 0);
+        }
+        var best = options.reduce(function (a, b) { return overlap(b) < overlap(a) ? b : a; });
+        item.label.dataset.side = best.side;
+        anchors.push({ x: best.x, y: best.y, width: w, height: h });
+      });
+    }
+    function setFilmPoints(points, refit) {
       close();
       filmMarkers.clearLayers();
       filmPoints.clear();
       points.forEach(function (point) {
         var marker = L.marker(point.ll, {
-          icon: icon('rk-pin k rk-film-pin', safe(point.number), null, point.name),
-          title: point.name, alt: point.name, bubblingMouseEvents: false
+          icon: icon('rk-pin k rk-film-pin', '<span class="rk-film-number"></span><span class="rk-film-time"></span>'),
+          title: point.name, bubblingMouseEvents: false
         }).addTo(filmMarkers);
+        marker.filmPoint = point;
         marker.on('click', function () {
           box.dispatchEvent(new CustomEvent('rk-film-select', { detail: point.id }));
         });
         filmPoints.set(point.id, marker);
       });
       map.whenReady(function () {
-        filmPoints.forEach(function (marker) {
-          var element = marker.getElement();
-          if (element) element.setAttribute('aria-label', marker.options.title);
-        });
+        filmPoints.forEach(function (marker) { updateFilmLabel(marker, marker.filmPoint); });
+        layoutFilmLabels();
       });
       overviewBtn.disabled = !points.length;
-      filmOverview();
+      if (refit || map.getZoom() == null) filmOverview();
     }
     map.getContainer().setAttribute('aria-label', 'New Zealand-kort med den valgte films optagesteder');
     box.addEventListener('rk-film-close', function () { setFilmMarker(null); });
     overviewBtn.addEventListener('click', function () { close(); filmOverview(); });
     window.addEventListener('resize', resizeMap);
+    map.on('moveend resize', layoutFilmLabels);
     mobile.addEventListener('change', showTimes);
     document.addEventListener('keydown', function (event) {
       if (event.key !== 'Escape') return;
@@ -555,19 +606,14 @@
     box.filmMap = {
       controls: topbar,
       setPoints: setFilmPoints,
-      showPoint: function (id, html, center, trigger) {
+      showPoint: function (id, html, center, trigger, label) {
         var marker = filmPoints.get(id);
         if (!marker) return;
         resizeMap();
         var ll = marker.getLatLng();
         if (center) moveTo(ll, Math.max(map.getZoom() || 0, 9), true);
-        setFilmMarker(marker);
-        open(html, ll, trigger || marker.getElement());
-      },
-      updateDetails: function (html) {
-        if (!sheetOpen) return;
-        inner.innerHTML = html;
-        positionPoint(false);
+        setFilmMarker(marker, label);
+        open(html, ll, trigger || (sheetOpen && lastTrigger) || marker.getElement());
       },
       close: close
     };

@@ -11,11 +11,11 @@
 <link rel="preconnect" href="https://server.arcgisonline.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="../assets/style.css?v=20261126-filmguide">
-<script src="2026-11-nz-films-data.js?v=20261126-filmguide" defer></script>
+<link rel="stylesheet" href="../assets/style.css?v=20261126-tidslinje">
+<script src="2026-11-nz-films-data.js?v=20261126-tidslinje" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
-<script src="../assets/rutekort.js?v=20261126-filmguide" defer></script>
-<script src="../assets/film-guide.js?v=20261126-filmguide" defer></script>
+<script src="../assets/rutekort.js?v=20261126-tidslinje" defer></script>
+<script src="../assets/film-guide.js?v=20261126-tidslinje" defer></script>
 </head>
 <body class="theme-cpha film-guide">
 <div class="wrap">
@@ -24,12 +24,12 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
       Den store NZ-tur
     </a>
-    <a class="film-jump" href="#filmsteder">Til optagestederne</a>
+    <a class="film-jump" href="#filmsteder">Til tidslinjen</a>
   </nav>
   <main>
     <header class="top">
       <h1>Middle-earth i New Zealand</h1>
-      <p class="standfirst">Find ud af, hvor Hobbitten og Ringenes Herre blev optaget. Vælg en film for at se dens steder, fotos og scener.</p>
+      <p class="standfirst">Find ud af, hvor Hobbitten og Ringenes Herre blev optaget. Vælg filmen og den udgave, du ser, og følg optagestederne scene for scene.</p>
     </header>
     <noscript><p>Slå JavaScript til for at vælge film og se optagesteder.</p></noscript>
     <p id="film-load-error" role="status" hidden>Filmguiden kunne ikke indlæses. Prøv at genindlæse siden.</p>
@@ -70,14 +70,14 @@
       </section>
       <section class="film-locations" id="filmsteder" aria-labelledby="film-locations-title">
         <div class="film-locations-header">
-          <h2 id="film-locations-title">Optagesteder og scener</h2>
+          <h2 id="film-locations-title">Scenernes tidslinje</h2>
           <label class="film-search" for="film-search">Søg efter scene eller sted
             <input type="search" id="film-search" autocomplete="off" placeholder="F.eks. Hobbiton">
           </label>
         </div>
-        <p id="film-timing-note">Minuttallene regnes fra filmens start. Vælg den udgave, du ser.</p>
+        <p id="film-timing-note">Tiderne er omtrentlige og regnes fra filmens start. Kortet viser scenens starttid. Vælg en scene for at se stedet, også når filmen vender tilbage til samme sted.</p>
         <p id="film-result-count" role="status"></p>
-        <div class="film-location-list" id="film-location-list"></div>
+        <ol class="film-location-list" id="film-location-list"></ol>
       </section>
       <footer class="film-footer">
         <details id="film-sources" hidden>
