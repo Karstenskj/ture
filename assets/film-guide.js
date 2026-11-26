@@ -144,7 +144,7 @@
         const time = scene.time?.[editionId];
         const range = time?.length === 2 && time.every(Number.isFinite) ? time : null;
         return { place, scene, key: String(index + 1), range };
-      }))
+      }).filter(({ scene }) => editionId === 'extended' || !scene.extendedOnly))
       .sort((a, b) => (a.range?.[0] ?? Infinity) - (b.range?.[0] ?? Infinity))
       .map((entry, index) => ({ ...entry, number: index + 1 }));
   }
