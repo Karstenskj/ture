@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Middle-earth i New Zealand · Filmguide · Ture</title>
+<meta name="description" content="Se Hobbitten og Ringenes Herre i historiens rækkefølge og find de newzealandske optagesteder på kortet.">
+<meta name="theme-color" content="#153524">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://server.arcgisonline.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="../assets/style.css?v=20261126-filmguide">
+<script src="2026-11-nz-films-data.js?v=20261126-filmguide" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+<script src="../assets/rutekort.js?v=20261126-filmguide" defer></script>
+<script src="../assets/film-guide.js?v=20261126-filmguide" defer></script>
+</head>
+<body class="theme-cpha film-guide">
+<div class="wrap">
+  <nav class="film-nav" aria-label="Navigation">
+    <a class="back" href="2026-11-nz-rundtur.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      Den store NZ-tur
+    </a>
+    <a class="film-jump" href="#filmsteder">Til optagestederne</a>
+  </nav>
+  <main>
+    <header class="top">
+      <h1>Middle-earth i New Zealand</h1>
+      <p class="standfirst">Find ud af, hvor Hobbitten og Ringenes Herre blev optaget. Vælg en film for at se dens steder, fotos og scener.</p>
+    </header>
+    <noscript><p>Slå JavaScript til for at vælge film og se optagesteder.</p></noscript>
+    <p id="film-load-error" role="status" hidden>Filmguiden kunne ikke indlæses. Prøv at genindlæse siden.</p>
+    <div id="film-content" hidden>
+      <section class="film-order" aria-labelledby="film-order-title">
+        <h2 id="film-order-title">Se filmene i historiens rækkefølge</h2>
+        <div class="film-trilogies">
+          <div class="film-trilogy">
+            <h3>Hobbitten</h3>
+            <ol id="film-hobbit-order"></ol>
+          </div>
+          <div class="film-trilogy">
+            <h3>Ringenes Herre</h3>
+            <ol id="film-lotr-order" start="4"></ol>
+          </div>
+        </div>
+      </section>
+      <section class="film-map-section" id="filmkort" aria-labelledby="film-title">
+        <div class="film-map-header">
+          <div>
+            <h2 id="film-title"></h2>
+            <p id="film-meta"></p>
+          </div>
+          <label class="film-edition" for="film-edition">Filmudgave
+            <select id="film-edition" aria-describedby="film-timing-note">
+              <option value="theatrical">Biografudgave</option>
+              <option value="extended">Udvidet udgave</option>
+            </select>
+          </label>
+        </div>
+        <details class="film-streaming" id="film-streaming" hidden>
+          <summary>Hvor kan jeg se filmen?</summary>
+          <p id="film-streaming-note"></p>
+          <div class="film-actions" id="film-streaming-links"></div>
+        </details>
+        <div class="rk rk-booted" id="rk" hidden><div class="rk-map" id="rk-map"></div></div>
+        <p class="film-map-fallback" id="film-map-fallback" hidden>Kortet kunne ikke indlæses. Du kan stadig finde optagestederne og åbne dem i Google Maps nedenfor.</p>
+      </section>
+      <section class="film-locations" id="filmsteder" aria-labelledby="film-locations-title">
+        <div class="film-locations-header">
+          <h2 id="film-locations-title">Optagesteder og scener</h2>
+          <label class="film-search" for="film-search">Søg efter scene eller sted
+            <input type="search" id="film-search" autocomplete="off" placeholder="F.eks. Hobbiton">
+          </label>
+        </div>
+        <p id="film-timing-note">Minuttallene regnes fra filmens start. Vælg den udgave, du ser.</p>
+        <p id="film-result-count" role="status"></p>
+        <div class="film-location-list" id="film-location-list"></div>
+      </section>
+      <footer class="film-footer">
+        <details id="film-sources" hidden>
+          <summary>Kilder og kortpunkter</summary>
+          <div id="film-source-details"></div>
+        </details>
+      </footer>
+    </div>
+  </main>
+</div>
+<script type="application/json" id="rk-data">{"filmGuide":true}</script>
+</body>
+</html>

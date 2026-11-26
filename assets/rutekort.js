@@ -17,6 +17,7 @@
      bases:   [{ll: [lat, lon], label: "tir 17 nov", name, html}]                  hvor I sover
      spots:   [{ll, n, name, left, k: egen ønske, st: out/after/maybe/idea, html}] nummererede steder, navnet fra zoom 8
      legend:  "<span>…</span>"                                                    forklaringen på farverne i bunden af kortet
+     filmGuide: true                                                              filmsteder sættes via #rk.filmMap
 
    Et tryk åbner et kort nedefra med alt om stedet, som i en kortapp.
    Knapperne giver fuld skærm og "her er vi". Gør ingenting uden data eller Leaflet.
@@ -70,6 +71,7 @@
     if (sheetOpen && selectedPoint) positionPoint(false);
   }
   function setQuiet(on) {
+    if (D.filmGuide) return;
     quietMap = !!on && phoneView.matches;
     box.classList.toggle('rk-quiet',quietMap);
     map.getContainer().setAttribute('aria-label',phoneView.matches ? (quietMap ? 'Kort over turen. Tryk for at vise menu, knapper og nøgletal.' : 'Kort over turen. Tryk på et frit sted for at skjule menu, knapper og nøgletal.') : 'Kort over turen med rute, overnatninger og steder.');
@@ -94,6 +96,7 @@
   var wheelGestureZoom = null, lastWheelInput = 0;
   map.getContainer().addEventListener('wheel', function (event) {
     if (map.getZoom() == null) return;
+    if (D.filmGuide && !box.classList.contains('full') && !event.ctrlKey && !event.metaKey) return;
     event.preventDefault();
     var inputTime = performance.now();
     if (wheelGestureZoom == null || inputTime-lastWheelInput > 180) wheelGestureZoom = map.getZoom();
@@ -113,7 +116,8 @@
       if (Math.abs(difference) < .002 || document.hidden) {
         map.setZoomAround(wheelPoint,wheelTarget,{animate:false});
         wheelFrame = null; smoothZooming = false;
-        showTimes(); refreshWorld(); showAnimals();
+        showTimes();
+        if (!D.filmGuide) { refreshWorld(); showAnimals(); }
         return;
       }
       map.setZoomAround(wheelPoint,map.getZoom()+difference*amount,{animate:false});
@@ -162,14 +166,14 @@
     map.stop();
     map.panBy(point.subtract(target), { animate: animate !== false && !reducedMotion.matches, duration: .35, easeLinearity: .25 });
   }
-  function open(html, ll) {
+  function open(html, ll, trigger) {
     var wasOpen = sheetOpen;
     sheetToken++;
     sheetOpen = true;
     userTouched = true;
     if (!wasOpen) quietBeforeSheet = quietMap;
     setQuiet(false);
-    lastTrigger = document.activeElement;
+    lastTrigger = trigger || document.activeElement;
     selectedPoint = ll || null;
     inner.innerHTML = html;
     if (window.TripForecast) requestAnimationFrame(window.TripForecast.mount);
@@ -211,6 +215,7 @@
     selectedPoint = null;
     lastTrigger = null;
     if (atmosphere) refreshWorld();
+    if (D.filmGuide) box.dispatchEvent(new CustomEvent('rk-film-close'));
   }
   expand.addEventListener('click', function () {
     var expanded = sheet.classList.toggle('expanded');
@@ -226,6 +231,7 @@
     if (phoneView.matches) setQuiet(!quietMap);
   });
   map.getContainer().addEventListener('keydown', function (event) {
+    if (D.filmGuide) return;
     if (phoneView.matches && event.target === map.getContainer() && (event.key === 'Enter' || event.key === ' ')) {
       event.preventDefault();setQuiet(!quietMap);
     }
@@ -394,6 +400,7 @@
   function fit() {
     syncDragging();
     resizeMap();
+    if (D.filmGuide) return;
     var pane = box.closest('#kort');
     if (!fitted && (!pane || !pane.hidden) && box.offsetWidth && box.offsetHeight && document.readyState !== 'loading') { map.fitBounds(all.length ? all : [[-47.3, 166.4], [-34.4, 178.6]], { padding: [16, 16], animate: false }); fitted = true; showTimes(); }
   }
@@ -405,11 +412,15 @@
   // CSS-baseret fuld skærm virker også i Safari på iPhone.
   var topbar = document.createElement('div');
   topbar.className = 'rk-topbar';
-  topbar.innerHTML = '<button type="button" class="rk-btn rk-menu" data-a="menu" aria-haspopup="dialog">Menu</button><button type="button" class="rk-btn" data-a="full" aria-pressed="false">Fuld skærm</button>' +
-    (document.getElementById('program') ? '<a class="rk-btn rk-program" href="#program">Program</a>' : '');
+  var filmLink = document.querySelector('a.trip-film-link');
+  topbar.innerHTML = (D.filmGuide ? '' : '<button type="button" class="rk-btn rk-menu" data-a="menu" aria-haspopup="dialog">Menu</button>') +
+    '<button type="button" class="rk-btn" data-a="full" aria-pressed="false">Fuld skærm</button>' +
+    (document.getElementById('program') ? '<a class="rk-btn rk-program" href="#program">Program</a>' : '') +
+    (filmLink ? '<a class="rk-btn rk-program" href="' + safe(filmLink.getAttribute('href')) + '">' + safe(filmLink.textContent) + '</a>' : '');
   var btns = document.createElement('div');
   btns.className = 'rk-btns';
-  btns.innerHTML = '<button type="button" class="rk-btn" data-a="route">Vis ruten</button><button type="button" class="rk-btn" data-a="me">Find os</button>' +
+  btns.innerHTML = D.filmGuide ? '<button type="button" class="rk-btn" data-a="film-overview">Vis alle steder</button>' :
+    '<button type="button" class="rk-btn" data-a="route">Vis ruten</button><button type="button" class="rk-btn" data-a="me">Find os</button>' +
     ((D.walks || []).some(function (walk) {return walk.id === 'stokes';}) ? '<button type="button" class="rk-btn" id="map-stokes" data-a="stokes">Mount Stokes · rute</button>' : '') +
     ((D.campOptions || []).length ? '<button type="button" class="rk-btn" data-a="camp-options">Campingforslag</button>' : '') +
     (D.legend ? '<button type="button" class="rk-btn" data-a="legend" aria-expanded="false" aria-controls="rk-legend">Forklaring</button>' : '');
@@ -435,7 +446,7 @@
     campOptionsBtn.setAttribute('aria-pressed', 'true');
     map.fitBounds((D.campOptions || []).map(function (camp) { return camp.ll; }), {paddingTopLeft: [35, 90], paddingBottomRight: [45, 165], maxZoom: 9, animate: !reducedMotion.matches});
   });
-  if (window.TripHistory) window.TripHistory.mount({
+  if (!D.filmGuide && window.TripHistory) window.TripHistory.mount({
     map: map, L: L, box: box, controls: btns, trips: D.pastTrips,
     open: open, close: close
   });
@@ -452,7 +463,7 @@
   var fullBtn = topbar.querySelector('[data-a="full"]');
   var savedScroll = 0;
   function syncDragging() {
-    if (!touch || box.classList.contains('full') || (box.closest('#kort') && !box.closest('#kort').hidden)) map.dragging.enable();
+    if (D.filmGuide || !touch || box.classList.contains('full') || (box.closest('#kort') && !box.closest('#kort').hidden)) map.dragging.enable();
     else map.dragging.disable();
   }
   function setFull(on) {
@@ -470,8 +481,9 @@
     requestAnimationFrame(resizeMap);
   }
   fullBtn.addEventListener('click', function () { setFull(!box.classList.contains('full')); });
-  topbar.querySelector('[data-a="menu"]').addEventListener('click', function () {
-    var links = [].slice.call(document.querySelectorAll('.tabs a')).filter(function (link) {return link.getAttribute('href') !== '#kort';});
+  var menuBtn = topbar.querySelector('[data-a="menu"]');
+  if (menuBtn) menuBtn.addEventListener('click', function () {
+    var links = [].slice.call(document.querySelectorAll('.tabs a, a.trip-film-link')).filter(function (link) {return link.getAttribute('href') !== '#kort';});
     open('<div class="rk-body"><h3>Turmenu</h3><nav class="rk-menu-links" aria-label="Turens sider">' + links.map(function (link) {return '<a href="' + safe(link.getAttribute('href')) + '">' + safe(link.textContent) + '</a>';}).join('') + '</nav></div>');
   });
   // Store kameraskift flyver som i en kortapp; små skift glider; uden bevægelse springer de.
@@ -487,6 +499,82 @@
     if (reducedMotion.matches || map.getZoom() == null) map.fitBounds(bounds, L.extend({ animate: false }, options));
     else map.flyToBounds(bounds, L.extend({ duration: .9, easeLinearity: .25 }, options));
   }
+
+  if (D.filmGuide) {
+    var filmMarkers = L.layerGroup().addTo(map);
+    var filmPoints = new Map();
+    var activeFilmMarker = null;
+    var overviewBtn = btns.querySelector('[data-a="film-overview"]');
+
+    function filmOverview() {
+      resizeMap();
+      var points = Array.from(filmPoints.values(), function (marker) { return marker.getLatLng(); });
+      map.stop();
+      map.fitBounds(points.length ? points : [[-47.3, 166.4], [-34.4, 178.6]], {
+        paddingTopLeft: [32, 66], paddingBottomRight: [32, 84], maxZoom: 8, animate: false
+      });
+    }
+    function setFilmMarker(marker) {
+      if (activeFilmMarker && activeFilmMarker.getElement()) activeFilmMarker.getElement().classList.remove('rk-film-marker-active');
+      activeFilmMarker = marker;
+      if (marker && marker.getElement()) marker.getElement().classList.add('rk-film-marker-active');
+    }
+    function setFilmPoints(points) {
+      close();
+      filmMarkers.clearLayers();
+      filmPoints.clear();
+      points.forEach(function (point) {
+        var marker = L.marker(point.ll, {
+          icon: icon('rk-pin k rk-film-pin', safe(point.number), null, point.name),
+          title: point.name, alt: point.name, bubblingMouseEvents: false
+        }).addTo(filmMarkers);
+        marker.on('click', function () {
+          box.dispatchEvent(new CustomEvent('rk-film-select', { detail: point.id }));
+        });
+        filmPoints.set(point.id, marker);
+      });
+      map.whenReady(function () {
+        filmPoints.forEach(function (marker) {
+          var element = marker.getElement();
+          if (element) element.setAttribute('aria-label', marker.options.title);
+        });
+      });
+      overviewBtn.disabled = !points.length;
+      filmOverview();
+    }
+    map.getContainer().setAttribute('aria-label', 'New Zealand-kort med den valgte films optagesteder');
+    box.addEventListener('rk-film-close', function () { setFilmMarker(null); });
+    overviewBtn.addEventListener('click', function () { close(); filmOverview(); });
+    window.addEventListener('resize', resizeMap);
+    mobile.addEventListener('change', showTimes);
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      if (sheetOpen) close();
+      else if (box.classList.contains('full')) setFull(false);
+    });
+    box.filmMap = {
+      controls: topbar,
+      setPoints: setFilmPoints,
+      showPoint: function (id, html, center, trigger) {
+        var marker = filmPoints.get(id);
+        if (!marker) return;
+        resizeMap();
+        var ll = marker.getLatLng();
+        if (center) moveTo(ll, Math.max(map.getZoom() || 0, 9), true);
+        setFilmMarker(marker);
+        open(html, ll, trigger || marker.getElement());
+      },
+      updateDetails: function (html) {
+        if (!sheetOpen) return;
+        inner.innerHTML = html;
+        positionPoint(false);
+      },
+      close: close
+    };
+    setFull(false);
+    return;
+  }
+
   var routeBounds = null;
   btns.querySelector('[data-a="route"]').addEventListener('click', function () {
     box.classList.remove('rk-camp-options-view');

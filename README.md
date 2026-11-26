@@ -1,5 +1,11 @@
 # Ture
 
+## Filmguide til NZ-turen · 26 november 2026
+
+`trips/2026-11-nz-film.html` åbnes fra Filmguide i rundturens topbjælke, kort og mobilmenu. Den viser Hobbitten 1–3 efterfulgt af Ringenes Herre 1–3 med ét skiftbart filmkort, søgbar stedliste, lokal Set-markering og valg mellem biografudgave og Extended Edition. Kortet genbruger `assets/rutekort.js`; den særskilte `filmGuide`-tilstand viser kun filmsteder og starter hverken GPS eller turens positionsanimationer. Den almindelige turside bruger fortsat samme kortadfærd.
+
+Indholdet ligger i `trips/2026-11-nz-films-data.js`: 81 forskellige steder og 103 sceneposter med kilder, cirka-tidsvinduer pr. filmudgave og kortpunkternes præcision. Tiderne bygger på scene-/kapiteloversigter og er ikke verificeret billede for billede. Ukendte tider er tomme, og omstridte tilknytninger forklares. Fotos ligger i `trips/img/2026-11-nz-films/` med fotograf, kilde og licens i data; manglende frie jordfotos erstattes af tydeligt mærkede satellitfotos fra kortets eksisterende Esri-tjeneste. Områdefotos må ikke beskrives som præcise kameraopstillinger. Streaminglinks bekræfter ikke adgang på brugerens konto; Apple TV Store er adskilt fra Apple TV+-abonnementet. Bevar de individuelle kilder og billedkreditter ved senere ændringer.
+
 Statisk side med rejseplaner. Ingen build, ingen afhængigheder, ingen npm. Ren HTML og CSS, som ligger direkte på GitHub Pages.
 
 **Live:** https://karstenskj.github.io/ture/
