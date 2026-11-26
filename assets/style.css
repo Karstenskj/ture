@@ -1436,6 +1436,17 @@ body:not(:has(:target:not(#kort))) .rk:not(.rk-booted) { position: fixed; inset:
 .film-guide .rk-film-time[data-side="top"] { top: auto; bottom: 100%; left: 50%; transform: translateX(-50%); }
 .film-guide .rk-film-time[data-side="bottom"] { top: 100%; left: 50%; transform: translateX(-50%); }
 .film-guide .rk-film-marker-active .rk-film-time { border-color: var(--map-dark); background: var(--map-green); }
+
+@media (max-width: 719px), (hover: none) and (pointer: coarse) {
+  .film-guide .rk-pin.rk-film-pin { font-size: 11px; }
+  .film-guide .rk-film-time {
+    padding: 3px 7px;
+    border-width: 2px;
+    font-size: 1.25rem;
+  }
+  .film-guide .rk-film-marker-active .rk-film-time { font-size: 1.5rem; }
+}
+
 .film-guide .film-map-fallback { margin: 10px 0 0; padding: 14px 18px; background: var(--card); border: 1px solid var(--line-2); border-radius: 10px; }
 .film-guide .film-location-list { margin: 12px 0 0; padding: 0; list-style: none; border-block-start: 1px solid var(--line-2); }
 .film-guide .film-location-list > li { border-block-end: 1px solid var(--line-2); scroll-margin-top: 12px; }
