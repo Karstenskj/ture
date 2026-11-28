@@ -346,3 +346,6 @@ Brugeren vil sammenligne og vælge direkte på hjemmesiden. `assets/trip-choices
 
 
 **28. november — Nelson også booket:** Brugeren bekræfter Nelson City TOP 10 Holiday Park i nat, 28.–29. november, én nat til to voksne og bil med tagtelt. Base 22/c-nelson-top10 er markeret i den fælles bookingliste, og kalender, program, kortkort, bookingopgave og positionsplan er opdateret. Pris, betalingsstatus og præcis pladstype er ikke oplyst og må ikke opfindes. Denne bekræftelse erstatter de tidligere oplysninger om, at Nelson ikke var booket.
+
+
+**28. november — enklere kortbetjening:** Brugeren fjerner Mount Stokes · rute-knappen, SHOW/HIDE old trips-knappen og boksen med antal tidligere NZ-ture. Historiklaget vises som grå linjer uden betjening via `showControls: false` og uden at ændre kortets udsnit ved indlæsning. Mount Stokes-links fra programmet virker fortsat via `#map-stokes`; selve vandringen og ruternes data er bevaret. Cacheversionerne på NZ-siden er opdateret.

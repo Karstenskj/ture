@@ -421,12 +421,10 @@
   btns.className = 'rk-btns';
   btns.innerHTML = D.filmGuide ? '<button type="button" class="rk-btn" data-a="film-overview">Vis alle steder</button>' :
     '<button type="button" class="rk-btn" data-a="route">Vis ruten</button><button type="button" class="rk-btn" data-a="me">Find os</button>' +
-    ((D.walks || []).some(function (walk) {return walk.id === 'stokes';}) ? '<button type="button" class="rk-btn" id="map-stokes" data-a="stokes">Mount Stokes · rute</button>' : '') +
     ((D.campOptions || []).length ? '<button type="button" class="rk-btn" data-a="camp-options">Campingforslag</button>' : '') +
     (D.legend ? '<button type="button" class="rk-btn" data-a="legend" aria-expanded="false" aria-controls="rk-legend">Forklaring</button>' : '');
   map.getContainer().appendChild(topbar);
   map.getContainer().appendChild(btns);
-  var stokesBtn = btns.querySelector('[data-a="stokes"]');
   function showStokesRoute() {
     var walk = (D.walks || []).filter(function (walk) {return walk.id === 'stokes';})[0];
     if (!walk) return;
@@ -435,10 +433,7 @@
     var road = (D.legs || []).filter(function (leg) {return leg.id === 'stokes-out';})[0];
     map.fitBounds(walk.pts.concat(road ? road.pts : []), {paddingTopLeft:[35,85],paddingBottomRight:[60,140],animate:!reducedMotion.matches});
   }
-  if (stokesBtn) {
-    stokesBtn.addEventListener('click',showStokesRoute);
-    window.addEventListener('hashchange',function () {if (location.hash === '#map-stokes') showStokesRoute();});
-  }
+  window.addEventListener('hashchange',function () {if (location.hash === '#map-stokes') showStokesRoute();});
   var campOptionsBtn = btns.querySelector('[data-a="camp-options"]');
   if (campOptionsBtn) campOptionsBtn.addEventListener('click', function () {
     close();
@@ -448,6 +443,7 @@
   });
   if (!D.filmGuide && window.TripHistory) window.TripHistory.mount({
     map: map, L: L, box: box, controls: btns, trips: D.pastTrips,
+    showControls: false,
     open: open, close: close
   });
   var metrics = document.createElement('div');

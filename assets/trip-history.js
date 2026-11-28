@@ -16,6 +16,10 @@
       hit.on('click', function () { options.open(trip.html); });
       layer.addLayer(hit);
     });
+    if (options.showControls === false) {
+      layer.addTo(map);
+      return {layer: layer};
+    }
     var button = doc.createElement('button');
     button.type = 'button';
     button.className = 'rk-btn rk-history-toggle';
