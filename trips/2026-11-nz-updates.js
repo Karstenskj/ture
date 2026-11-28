@@ -2,6 +2,10 @@
 // Brug kun oplysninger, Karsten eller Helena har fortalt. Ingen skønnede hændelser.
 window.tripUpdates = [
   {
+    date: '2026-11-28', place: 'De sidste campingnætter før færgen er booket', anchor: 'c-waikawa',
+    text: 'Mistletoe Bay 29.–30. november og Waikawa Bay Holiday Park 30. november–1. december er booket. Efter Mount Stokes sover vi i Waikawa før morgenfærgen til Wellington.'
+  },
+  {
     date: '2026-11-14', place: 'Færgen til Wellington er booket',
     text: 'Ombookingen er bekræftet: Picton → Wellington tirsdag 1. december kl. 07.45 for to voksne og bilen.'
   },

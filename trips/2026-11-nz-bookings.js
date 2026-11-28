@@ -41,6 +41,14 @@ window.tripBookings = {
     base: 9, from: '2026-11-27', until: '2026-11-28',
     task: 'book-wharariki-20261113'
   },
+  'c-mistletoe': {
+    base: 10, from: '2026-11-29', until: '2026-11-30',
+    task: 'book-mistletoe-20261113', adults: 2, total: 48
+  },
+  'c-waikawa': {
+    base: 21, from: '2026-11-30', until: '2026-12-01',
+    task: 'book-waikawa-20261128', adults: 2, total: 46.13
+  },
   'camp-day-13': {
     base: 11, from: '2026-12-01', until: '2026-12-02',
     task: 't10-20261113'

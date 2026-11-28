@@ -129,6 +129,7 @@ days[10]["note"] = "Ankomst til Kerr Bay 24. november og booket nat 24.–25. er
 days[11]["note"] = "Booket The Barn 25.–27. november. Ankomst ca. kl. 15.00 er forventet; køretider og afgang er anslået."
 days[13]["note"] = "Booket Wharariki 27.–28. november. Via ferrata er foreløbig planlagt kl. 09.30–13.30 inklusive udstyr, afhængigt af tørre forhold. Øvrige stop og tider er anslået."
 days[14]["note"] = "Planlagt Nelson City TOP 10 Holiday Park 28.–29. november; ikke booket. Plads til bilen med tagtelt skal aftales før booking. Køretider og stop er anslået."
+days[15]["note"] = "Mistletoe Bay er booket 29.–30. november til to voksne, én nat, NZ$48. Check-in efter kl. 14 og check-out før kl. 10. Køretid og stop fra Nelson er anslået."
 days[20]["note"] = "Pouākai Tarns via Mangorei Track er valgt til 4. december. Afgang fra Fitzroy ca. kl. 07 og cirka 5½ time til vandring og pauser er anslået. Tjek bjergvejr og sporstatus; ny camp i Whangamōmona efter vandringen."
 
 def solo_day(index, start):
@@ -198,21 +199,22 @@ days[8]["segments"] = [
     {"from": 975, "to": 990, "leg": 6, "portion": [.5, 1], "name": "tilbage til Otto/MacDonalds"},
 ]
 days[17]["segments"] = [
-    {"from": 330, "to": 355, "leg": 12, "name": "på vej til færgen i Picton"},
-    {"from": 355, "to": 465, "point": data["legs"][12]["pts"][-1], "activity": "walk", "name": "Picton · venter på færgen"},
+    {"from": 330, "to": 350, "leg": 12, "name": "Waikawa Bay → Bluebridge i Picton"},
+    {"from": 350, "to": 405, "point": data["legs"][12]["pts"][-1], "activity": "walk", "name": "Bluebridge · check-in senest kl. 06.45"},
+    {"from": 405, "to": 465, "point": data["legs"][12]["pts"][-1], "activity": "walk", "name": "Bluebridge · venter på ombordkørsel"},
     {"from": 465, "to": 675, "ferry": 0, "activity": "ferry", "name": "Picton → Wellington"},
     {"from": 690, "to": 700, "leg": 13, "name": "på vej til Wellington"},
     {"from": 780, "to": 960, "point": spots["s10"]["ll"], "activity": "city", "name": "Wellington"},
 ]
-days[17]["note"] = "Færgen er ombooket og bekræftet til tir 1 dec kl. 07.45, Picton → Wellington. Sejltiden på cirka 3½ timer og ankomsttiden er anslået. Foreslået afgang fra Whatamango kl.05.30. Terminal og check-in-frist følger billetten. Airbnb i Vic Central på The Terrace er booket 1.–2. december; check-in efter kl. 14, check-out før kl. 11. Parkering er separat."
+days[17]["note"] = "Bluebridge er ombooket og bekræftet til tir 1 dec kl. 07.45, Picton → Wellington. Planlagt afgang fra den bookede Waikawa Bay Holiday Park kl. 05.30; ca. 10 minutters kørsel til 1 Lagoon Road, med ekstra tid i illustrationen. Check-in lukker kl. 06.45 efter operatørens aktuelle regel. Turen fra campen til terminalen går uden om de varslede lukninger på Port Underwood Road og Queen Charlotte Drive ved Bythells Bay. Aftal den praktiske tidlige udkørsel med campen. Sejltid og ankomst er anslået. Airbnb i Vic Central er booket 1.–2. december; check-in efter kl. 14 og check-out før kl. 11. Parkering er separat."
 # Mount Stokes is fixed; the road closure can require waiting until 17:00.
 days[16]["segments"] = [
     {"from": 360, "to": 460, "leg": 25, "name": "til Mount Stokes-parkeringen før vejlukningen"},
     {"from": 460, "to": 760, "point": spots["s57"]["ll"], "activity": "hike", "name": "Mount Stokes · top og retur"},
     {"from": 760, "to": 1020, "point": data["legs"][25]["pts"][-1], "activity": "food", "name": "frokost og mulig ventetid på vejadgang"},
-    {"from": 1020, "to": 1210, "leg": 26, "name": "til Whatamango Bay efter genåbning"},
+    {"from": 1020, "to": 1200, "leg": 26, "name": "til booket Waikawa Bay efter genåbning"},
 ]
-days[16]["note"] = "Mount Stokes er fast planlagt 30. november. Tidlig afgang og den sene hjemkørsel er anslået ud fra varslede vejlukninger; passage er ikke aftalt. Illustrationens venteposition er ved parkeringen, ikke live GPS."
+days[16]["note"] = "Mount Stokes er fast planlagt 30. november efter check-out fra Mistletoe Bay. Natten i Waikawa Bay Holiday Park er booket, NZ$46,13 inklusive kortgebyr. Tidlig afgang og hjemkørsel efter mulig ventetid til kl. 17 er anslået; passage er ikke aftalt. Sen ankomst til campen og tidlig udkørsel til færgen skal aftales. Illustrationens venteposition er ved parkeringen, ikke live GPS."
 days[22]["segments"] = [{"from": 450, "to": 930, "point": spots["s15"]["ll"], "activity": "hike", "name": "Tongariro Alpine Crossing"}]
 manu = data["activityTargets"][0]
 days[26]["segments"] = [{"from": 600, "to": 810, "point": manu["ll"], "activity": "surf", "name": "Muligt surfbesøg · Manu Bay"}]
