@@ -89,7 +89,8 @@ test('evening and overnight boundaries, hikes, and ambiguous days stay honest',(
   assert.equal(at('2026-11-27T20:00:00+13:00').phase,'during');
   assert.equal(at('2026-11-28T20:00:00+13:00').name,'Nelson City TOP 10 Holiday Park');
   assert.equal(at('2026-11-28T20:00:00+13:00').phase,'during');
-  assert.match(at('2026-11-28T20:00:00+13:00').note,/ikke booket/);
+  assert.match(at('2026-11-28T20:00:00+13:00').note,/er booket 28.–29. november/);
+  assert.doesNotMatch(at('2026-11-28T20:00:00+13:00').note,/ikke booket/);
   assert.match(at('2026-12-01T10:00:00+13:00').note,/ombooket og bekræftet/);
   assert.equal(at('2026-12-01T10:00:00+13:00').scene,'ferry');
   assert.equal(data.ferries[0].booking.departure,'2026-12-01T07:45:00+13:00');

@@ -41,6 +41,10 @@ window.tripBookings = {
     base: 9, from: '2026-11-27', until: '2026-11-28',
     task: 'book-wharariki-20261113'
   },
+  'c-nelson-top10': {
+    base: 22, from: '2026-11-28', until: '2026-11-29',
+    task: 'book-nelson-top10-20261125', adults: 2
+  },
   'c-mistletoe': {
     base: 10, from: '2026-11-29', until: '2026-11-30',
     task: 'book-mistletoe-20261113', adults: 2, total: 48

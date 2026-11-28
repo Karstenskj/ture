@@ -128,7 +128,7 @@ for index, leg_index in leg_for_day.items():
 days[10]["note"] = "Ankomst til Kerr Bay 24. november og booket nat 24.–25. er bekræftet af jer. Køretider og stop undervejs er fortsat anslået, ikke bekræftede besøg."
 days[11]["note"] = "Booket The Barn 25.–27. november. Ankomst ca. kl. 15.00 er forventet; køretider og afgang er anslået."
 days[13]["note"] = "Booket Wharariki 27.–28. november. Via ferrata er foreløbig planlagt kl. 09.30–13.30 inklusive udstyr, afhængigt af tørre forhold. Øvrige stop og tider er anslået."
-days[14]["note"] = "Planlagt Nelson City TOP 10 Holiday Park 28.–29. november; ikke booket. Plads til bilen med tagtelt skal aftales før booking. Køretider og stop er anslået."
+days[14]["note"] = "Nelson City TOP 10 Holiday Park er booket 28.–29. november, én nat til to voksne og bil med tagtelt. Bekræftet af jer 28. november; pris og præcis pladstype er ikke oplyst. Køretider og stop er anslået."
 days[15]["note"] = "Mistletoe Bay er booket 29.–30. november til to voksne, én nat, NZ$48. Check-in efter kl. 14 og check-out før kl. 10. Køretid og stop fra Nelson er anslået."
 days[20]["note"] = "Pouākai Tarns via Mangorei Track er valgt til 4. december. Afgang fra Fitzroy ca. kl. 07 og cirka 5½ time til vandring og pauser er anslået. Tjek bjergvejr og sporstatus; ny camp i Whangamōmona efter vandringen."
 
